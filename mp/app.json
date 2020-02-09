@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/person/person"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "儒此有趣",
+    "navigationStyle": "default",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "首页",
+      "iconPath": "/images/tabBar/home.png",
+      "selectedIconPath": "/images/tabBar/home_s.png"
+    },{
+      "pagePath": "pages/person/person",
+      "text": "个人中心",
+      "iconPath": "/images/tabBar/person.png",
+      "selectedIconPath": "/images/tabBar/person_s.png"
+    }],
+    "selectedColor": "#0081ff"
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}

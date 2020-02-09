@@ -1,0 +1,8 @@
+<swiper class="card-swiper " circular="true" autoplay="false" interval="5000" duration="500" bindchange="cardSwiper" >
+  <swiper-item  class="swiper-banner" wx:for="{{swiperList}}" wx:key >
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+     
+    </view>
+  </swiper-item>
+</swiper>
