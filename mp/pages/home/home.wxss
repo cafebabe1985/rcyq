@@ -8,3 +8,38 @@
  height:220rpx !important
 
 }
+.home-banner{
+  padding-top:30rpx
+}
+.box-size{
+  height: 20rpx
+}
+.cu-card.article>.cu-item .content>image {
+  width:300rpx
+}
+.navbar-wrap {
+  width: 100%;
+}
+.navbar-wrap .fixed-nav{
+  top: 0;
+  left: 0;
+  /* z-index: 100; */
+    
+}
+.
+.navbar-wrap .fixed{
+   position: fixed;
+   width: 100%
+}
+
+
+
+.image-tag{
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  margin-right: -75rpx
+}
+
+

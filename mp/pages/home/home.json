@@ -1,5 +1,9 @@
 {
   "navigationBarTextStyle": "black",
   "navigationBarBackgroundColor": "#fff",
-   "usingComponents": {}
+   "usingComponents": {
+     "scenic":"/pages/scenic/scenic",
+     "active":"/pages/active/active",
+     "news": "/pages/news/news"
+   }
 }

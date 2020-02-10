@@ -1,8 +1,123 @@
-<swiper class="card-swiper " circular="true" autoplay="false" interval="5000" duration="500" bindchange="cardSwiper" >
-  <swiper-item  class="swiper-banner" wx:for="{{swiperList}}" wx:key >
-    <view class="swiper-item">
-      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
-     
+<!--轮播区-->
+<view class="home-banner bg-white">
+  <swiper class="card-swiper " circular="true" autoplay="false" interval="5000" duration="500" bindchange="cardSwiper">
+    <swiper-item class="swiper-banner  radius shadow-warp bg-white " wx:for="{{swiperList}}" wx:key>
+      <view class="swiper-item">
+        <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+<!--吸顶分页导航-->
+<view class="navbar-wrap" id="fixedViewWrap">
+  <view class="bg-white nav text-center fixed-nav {{isFixedTop?'fixed':''}}" id="navbar">
+    <view class="cu-item {{0==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="0">
+      <text class="cuIcon-cascades"></text> 小片
     </view>
-  </swiper-item>
-</swiper>
+    <view class="cu-item {{1==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="1">
+      <text class="cuIcon-footprint"></text> 活动
+    </view>
+    <view class="cu-item {{2==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="2">
+      <text class="cuIcon-news"></text> 快讯
+    </view>
+  </view>
+  <!--分页列表头部0 小片城市滚动条导航-->
+  <view  
+  wx:if="{{0==TabCur}}"  
+  class="bg-white nav text-center  {{isFixedTop?'fixed':''}}" style="left:0;top:{{navbarHeight}}px;">
+    <scroll-view 
+       scroll-x class="bg-white nav {{isFixedTop?'fixed':''}}" style="left:0;top:{{navbarHeight}}px" scroll-with-animation scroll-left="{{scrollLeft}}">
+      <view class="cu-item {{index==navCur?'text-green cu-tag  light round':''}}" wx:for="{{10}}" wx:key bindtap="navSelect" data-id="{{index}}">
+        Tab{{index}}
+      </view>
+    </scroll-view>
+  </view>
+<!--分页列表头部1 活动按钮导航-->
+  <view  
+  wx:if="{{1==TabCur}}"  
+  class="bg-white nav text-center  {{isFixedTop?'fixed':''}}" style="left:0;top:{{navbarHeight}}px;">
+    <view 
+        class="bg-white nav {{isFixedTop?'fixed':''}}" style="left:0;top:{{navbarHeight}}px" >
+      <view class="cu-item {{0==activeNavCur?'text-green cu-tag  light round':''}}"  wx:key bindtap="activeNavCurSelect" data-id="0">
+        参与活动
+      </view>
+      <view class="cu-item {{1==activeNavCur?'text-green cu-tag  light round':''}}"  wx:key bindtap="activeNavCurSelect" data-id="1">
+        发起活动
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<!--占位区域-->
+<view style="height:{{isFixedTop?fixedViewWrapHeight:0}}px"></view>
+<!-- 内容列表区域 0 小片列表-->
+<view wx:if="{{0==TabCur}}" class="cu-card article no-card solid-bottom" wx:for="item in 10">
+  <view class="cu-item shadow">
+    <view class="title">
+      <view class="box-size"></view>
+    </view>
+    <view class="content">
+      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-content" style='color:black;font-weight:bold ;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;width:400rpx;margin-bottom:-100rpx;font-size:15px !important'> 折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
+        <!-- <view>
+          <view class="  light    text-cut  padding-xs" style='width:360rpx;text-align:left;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;'>黄河入海口AAAA景区，凡间这无穷的循环，将有我来终结！真正的恩典因不</view>
+        </view> -->
+        <view class='flex justify-between'>
+          <view class="cu-tag  light  ">2020-02-02</view>
+          <view class="cu-tag  light  bg-white text-blue">浏览数:999</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 内容列表区域 1 活动列表-->
+<view wx:if="{{1==TabCur}}" class="cu-card article no-card solid-bottom" wx:for="item in 10">
+  <view class="cu-item shadow">
+    <view class="title">
+      <view class="text-cut" style='font-size:15px !important'>无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。</view>
+    </view>
+    <view class="content">
+      <view class="cu-tag bg-yellow image-tag">史诗</view>
+      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="aspectFill" style='width:300rpx'></image>
+
+      <view class="desc">
+        <view class="text-content">
+          <view> 2020-02-02 至 2020-02-06</view>
+          <view class="margin-top flex justify-between">
+            <view>线上活动</view>
+            <view class='cu-tag bg-green light round'>免费</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class=" flex justify-between padding-left padding-right padding-top-sm">
+      <view class="flex text-cut" style='width:420rpx;overflow:hidden'>
+        <view wx:for="wxfoqwqrr" class='margin-right-sm text-green'>*关键字</view>
+      </view>
+      <view class="cu-tag bg-red light sm ">仅剩17名额</view>
+    </view>
+  </view>
+</view>
+<!--内容列表区域 2 快讯列表-->
+<view wx:if="{{2==TabCur}}" class="cu-card article no-card solid-bottom" wx:for="item in 10">
+  <view class="cu-item shadow">
+    <view class="title">
+      <view class="box-size"></view>
+    </view>
+    <view class="content">
+
+      <view class="desc">
+        <view class="text-content" style='color:black;'> 折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
+        <view class="flex justify-between">
+          <view class="cu-tag  light  ">2020-02-02</view>
+          <view class='cu-tag bg-blue light  margin-right-sm'>图文</view>
+        </view>
+
+      </view>
+      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="aspectFill"></image>
+    </view>
+  </view>
+</view>
