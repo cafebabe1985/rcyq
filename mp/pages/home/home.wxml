@@ -1,9 +1,14 @@
 <!--轮播区-->
+<wxs src="../../common/tools.wxs" module="tools" />
 <view class="home-banner bg-white">
   <swiper class="card-swiper " circular="true" autoplay="false" interval="5000" duration="500" bindchange="cardSwiper">
-    <swiper-item class="swiper-banner  radius shadow-warp bg-white " wx:for="{{swiperList}}" wx:key>
-      <view class="swiper-item">
-        <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    <swiper-item 
+       class="swiper-banner  radius shadow-warp bg-white " wx:for="{{swiperList}}" wx:key="index">
+      <view class="swiper-item" 
+      data-imgs="{{swiperList}}"
+      data-index = "{{index}}"
+      bindtap="previewImage">
+        <image src="{{apiBaseUrl+item.img}}" mode="aspectFill"></image>
 
       </view>
     </swiper-item>
@@ -28,8 +33,8 @@
   class="bg-white nav text-center  {{isFixedTop?'fixed':''}}" style="left:0;top:{{navbarHeight}}px;">
     <scroll-view 
        scroll-x class="bg-white nav {{isFixedTop?'fixed':''}}" style="left:0;top:{{navbarHeight}}px" scroll-with-animation scroll-left="{{scrollLeft}}">
-      <view class="cu-item {{index==navCur?'text-green cu-tag  light round':''}}" wx:for="{{10}}" wx:key bindtap="navSelect" data-id="{{index}}">
-        Tab{{index}}
+      <view class="cu-item {{index==navCur?'text-green cu-tag  light round':''}}" wx:for="{{cityTabs}}" wx:key="index" bindtap="navSelect" data-id="{{index}}" data-name="{{item.name}}">
+        {{item.name}}
       </view>
     </scroll-view>
   </view>
@@ -53,28 +58,28 @@
 <!--占位区域-->
 <view style="height:{{isFixedTop?fixedViewWrapHeight:0}}px"></view>
 <!-- 内容列表区域 0 小片列表-->
-<view wx:if="{{0==TabCur}}" class="cu-card article no-card solid-bottom" wx:for="item in 10">
+<view wx:if="{{0==TabCur}}" class="cu-card article no-card solids-bottom solids-top" wx:for="{{scenics}}" wx:key="index"
+data-item="{{item}}"
+bindtap="goNewsDetail">
   <view class="cu-item shadow">
     <view class="title">
-      <view class="box-size"></view>
+       <view class="text-cut">{{item.scenicName}}</view>
     </view>
     <view class="content">
-      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="aspectFill"></image>
+      <image src="{{apiBaseUrl+item.poster}}" mode="aspectFill"></image>
       <view class="desc">
-        <view class="text-content" style='color:black;font-weight:bold ;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;width:400rpx;margin-bottom:-100rpx;font-size:15px !important'> 折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
-        <!-- <view>
-          <view class="  light    text-cut  padding-xs" style='width:360rpx;text-align:left;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;'>黄河入海口AAAA景区，凡间这无穷的循环，将有我来终结！真正的恩典因不</view>
-        </view> -->
+        <view class="text-content" > {{item.title}}</view>
+       
         <view class='flex justify-between'>
-          <view class="cu-tag  light  ">2020-02-02</view>
-          <view class="cu-tag  light  bg-white text-blue">浏览数:999</view>
+          <view class="cu-tag  light  ">{{tools.dateHandle(item.createTime)}}</view>
+          <view class="cu-tag  light  bg-white text-blue">浏览数:{{item.hit}}</view>
         </view>
       </view>
     </view>
   </view>
 </view>
 <!-- 内容列表区域 1 活动列表-->
-<view wx:if="{{1==TabCur}}" class="cu-card article no-card solid-bottom" wx:for="item in 10">
+<view wx:if="{{1==TabCur}}" class="cu-card article no-card solid-bottom" wx:for="item in 10" wx:key ="index">
   <view class="cu-item shadow">
     <view class="title">
       <view class="text-cut" style='font-size:15px !important'>无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。</view>
@@ -102,7 +107,9 @@
   </view>
 </view>
 <!--内容列表区域 2 快讯列表-->
-<view wx:if="{{2==TabCur}}" class="cu-card article no-card solid-bottom" wx:for="item in 10">
+<view wx:if="{{2==TabCur}}" class="cu-card article no-card solid-bottom" wx:for="{{news}}" wx:key="index"
+data-item="{{item}}"
+bindtap="goNewsDetail">
   <view class="cu-item shadow">
     <view class="title">
       <view class="box-size"></view>
@@ -110,14 +117,16 @@
     <view class="content">
 
       <view class="desc">
-        <view class="text-content" style='color:black;'> 折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
+        <view class="text-content" style='color:black;'> {{item.title}}</view>
         <view class="flex justify-between">
-          <view class="cu-tag  light  ">2020-02-02</view>
-          <view class='cu-tag bg-blue light  margin-right-sm'>图文</view>
+          <view class="cu-tag  light  ">{{tools.dateHandle(item.createTime)}}</view>
+          <view 
+          v-if="{{tools.contentTypeHandle(item.contentType)}}"
+          class='cu-tag bg-blue light  margin-right-sm'>{{tools.contentTypeHandle(item.newsType)}}</view>
         </view>
 
       </view>
-      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="aspectFill"></image>
+      <image src="{{apiBaseUrl+item.poster}}" mode="aspectFill"></image>
     </view>
   </view>
 </view>

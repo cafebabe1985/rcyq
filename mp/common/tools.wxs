@@ -1,0 +1,28 @@
+
+var dateHandle = function (date) {
+  return date.substring(0,10)
+}
+
+var contentTypeHandle = function (type) {
+  switch(type){
+    case '0':
+    return '公众号'
+    break
+    case '1':
+    return '图文'
+    break
+    case '2':
+    return '视频'
+    break
+    default:
+    return ''
+  }
+}
+var pathHandle = function (base,src) {
+  return (src.indexOf("http:") != -1 || src.indexOf("https:") != -1) ? src : base+ src
+}
+module.exports = {
+  dateHandle: dateHandle,
+  contentTypeHandle: contentTypeHandle,
+  pathHandle: pathHandle
+};

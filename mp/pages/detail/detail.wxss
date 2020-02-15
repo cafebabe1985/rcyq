@@ -1,0 +1,7 @@
+.text-lg{
+  line-height: 60rpx;
+  
+}
+.text-lg img{
+  width: 100%
+}

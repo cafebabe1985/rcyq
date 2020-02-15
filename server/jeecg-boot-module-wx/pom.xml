@@ -51,5 +51,10 @@
             <!--<artifactId>weixin-java-mp</artifactId>-->
             <!--<version>${weixin-java-mp.version}</version>-->
         <!--</dependency>-->
+        <dependency>
+            <groupId>com.github.binarywang</groupId>
+            <artifactId>wx-java-miniapp-spring-boot-starter</artifactId>
+            <version>3.6.0</version>
+        </dependency>
     </dependencies>
 </project>

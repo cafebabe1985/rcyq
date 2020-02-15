@@ -103,7 +103,7 @@ public class ShiroConfig {
 		filterChainDefinitionMap.put("/**/*.jpg", "anon");
 		filterChainDefinitionMap.put("/**/*.png", "anon");
 		filterChainDefinitionMap.put("/**/*.ico", "anon");
-
+		filterChainDefinitionMap.put("/**/*.mp4", "anon");
 		// update-begin--Author:sunjianlei Date:20190813 for：排除字体格式的后缀
 		filterChainDefinitionMap.put("/**/*.ttf", "anon");
 		filterChainDefinitionMap.put("/**/*.woff", "anon");

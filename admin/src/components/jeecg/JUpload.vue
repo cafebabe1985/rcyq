@@ -1,7 +1,7 @@
 <template>
   <a-upload
     name="file"
-    :multiple="true"
+    :multiple="multiple"
     :action="uploadAction"
     :headers="headers"
     :data="{'isup':1,'bizPath':bizPath}"
@@ -44,6 +44,11 @@
       }
     },
     props:{
+      multiple:{
+        type:Boolean,
+        required:false,
+        default:false
+      },
       text:{
         type:String,
         required:false,
