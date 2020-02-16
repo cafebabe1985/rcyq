@@ -19,6 +19,9 @@
         <a-form-item label="封面图" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <j-upload v-decorator="['poster', validatorRules.poster]" :trigger-change="true"></j-upload>
         </a-form-item>
+        <a-form-item label="点击数" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input-number v-decorator="[ 'hit', validatorRules.hit]" placeholder="请输入点击数" style="width: 100%"/>
+        </a-form-item>
         <a-form-item label="内容" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <j-editor v-decorator="['content',{trigger:'input'}]"/>
         </a-form-item>
@@ -86,6 +89,8 @@
           ]},
           poster: {rules: [
             {required: true, message: '请输入封面图!'},
+          ]},
+          hit: {rules: [
           ]},
           content: {rules: [
             {required: true, message: '请输入内容!'},

@@ -82,13 +82,16 @@
    maxlength="150" cursor-spacing="10"></input>
    <button 
    wx:if="{{isComment}}"
-   class="cu-btn bg-green shadow"
+   class="cu-btn bg-orange shadow"
   bindtap="submitComment"
   >发表</button>
    <button
   wx:if="{{!isComment}}"
-   class="cu-btn bg-green shadow"
+   class="cu-btn bg-orange shadow"
   bindtap="enableInput"
   >写评论</button>
-  
+  <button
+    class="cu-btn bg-blue shadow margin-left "
+  open-type="share"
+  ><text class="cuIcon-share"></text>分享</button>
 </view>

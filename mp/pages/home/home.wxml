@@ -79,30 +79,32 @@ bindtap="goNewsDetail">
   </view>
 </view>
 <!-- 内容列表区域 1 活动列表-->
-<view wx:if="{{1==TabCur}}" class="cu-card article no-card solid-bottom" wx:for="item in 10" wx:key ="index">
+<view wx:if="{{1==TabCur}}" class="cu-card article no-card solid-bottom" wx:for="{{actives}}" wx:key ="index">
   <view class="cu-item shadow">
     <view class="title">
-      <view class="text-cut" style='font-size:15px !important'>无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。</view>
+      <view class="text-cut" style='font-size:15px !important'>{{item.name}}</view>
     </view>
     <view class="content">
       <view class="cu-tag bg-yellow image-tag">史诗</view>
-      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="aspectFill" style='width:300rpx'></image>
+      <image src="{{apiBaseUrl+item.poster}}" mode="aspectFill" style='width:300rpx'></image>
 
       <view class="desc">
         <view class="text-content">
-          <view> 2020-02-02 至 2020-02-06</view>
+          <view> {{item.startTime}} 至 {{item.endTime}}</view>
           <view class="margin-top flex justify-between">
             <view>线上活动</view>
-            <view class='cu-tag bg-green light round'>免费</view>
+            <view class='cu-tag bg-green light round'>
+            {{item.cost > 0?item.cost:'免费'}}
+            </view>
           </view>
         </view>
       </view>
     </view>
     <view class=" flex justify-between padding-left padding-right padding-top-sm">
       <view class="flex text-cut" style='width:420rpx;overflow:hidden'>
-        <view wx:for="wxfoqwqrr" class='margin-right-sm text-green'>*关键字</view>
+        <!-- <view wx:for="wxfoqwqrr" class='margin-right-sm text-green'>*关键字</view> -->
       </view>
-      <view class="cu-tag bg-red light sm ">仅剩17名额</view>
+      <view class="cu-tag bg-red light sm ">仅剩{{item.remain}}名额</view>
     </view>
   </view>
 </view>

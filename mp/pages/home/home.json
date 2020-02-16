@@ -1,6 +1,7 @@
 {
   "navigationBarTextStyle": "black",
   "navigationBarBackgroundColor": "#fff",
+  "enablePullDownRefresh":true,
    "usingComponents": {
      "scenic":"/pages/scenic/scenic",
      "active":"/pages/active/active",

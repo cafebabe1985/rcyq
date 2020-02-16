@@ -1,6 +1,8 @@
 <template>
   <div class="tinymce-editor">
+    
     <editor
+   
       v-model="myValue"
       :init="init"
       :disabled="disabled"
@@ -55,8 +57,12 @@ export default {
     }
   },
   data() {
+    // console.log(this)
+    let content = this
     return {
       //初始化配置
+      loading: false,
+      errMessage: '',
       init: {
         language_url: '/tinymce/langs/zh_CN.js',
         language: 'zh_CN',
@@ -72,26 +78,47 @@ export default {
           if (meta.filetype == 'media') {
             let input = document.createElement('input') //创建一个隐藏的input
             input.setAttribute('type', 'file')
-            input.setAttribute('accept', "video/*")
-            
-            let that = this
-            input.onchange = function() {
-              
-              let file = this.files[0] //只选取第一个文件。如果要选取全部，后面注意做修改
-             
-              if(file.type.indexOf('video')==-1){
+            input.setAttribute('accept', 'video/*')
 
+            let that = this
+
+            input.onchange = function() {
+              let file = this.files[0] //只选取第一个文件。如果要选取全部，后面注意做修改
+
+              if (file.type.indexOf('video') == -1) {
               }
               let formData = new FormData()
-              
+
               formData.append('file', file)
-              
-              uploadAction(window._CONFIG['domianURL'] + '/sys/common/upload', formData, e => {
-                console.log(e)
-              }).then(res => {
-                cb(res.message, { title: file.name })
-                console.log(res)
+            
+              if ((file.size / 1024 / 1024) > 10) {
+                content.errMessage = '文件超过10M,请压缩文件,否则无法上传成功'
+                cb("文件超过10M,上传失败", { title: file.name })
+              } else {
+                content.errMessage = ''
+                content.loading = true
+                 uploadAction(window._CONFIG['domianURL'] + '/sys/common/upload', 
+                 formData, e => {
+                   if(e.lengthComputable){
+console.log(`${e.loaded/e.total*100}`.substring(0,4)+'%')
+// cb(`${e.loaded/e.total*100}`.substring(0,4)+'%', { title: file.name })
+                   }
+                   
+                
               })
+                .then(res => {
+                  cb(res.message, { title: file.name })
+                  content.loading = false
+                  content.errMessage = 'ok'
+                  return
+                })
+                .catch(err => {
+                  content.errMessage = '网络错误'
+                  cb("网络错误,上传失败", { title: file.name })
+                })
+              }
+             
+              // }
             }
             //触发点击
             input.click()
@@ -122,6 +149,14 @@ export default {
     }
   },
   watch: {
+    loading(nv) {
+     
+      this.$emit('updateLoading', nv)
+    },
+    errMessage(nv) {
+     
+      this.$emit('updateErrMessage', nv)
+    },
     value(newValue) {
       this.myValue = newValue == null ? '' : newValue
     },

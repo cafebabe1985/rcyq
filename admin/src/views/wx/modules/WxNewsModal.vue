@@ -30,7 +30,9 @@
         <a-form-item label="内容" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <j-editor v-decorator="['content',{trigger:'input'}]"/>
         </a-form-item>
-        
+        <a-form-item label="浏览数" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input-number v-decorator="[ 'hit', validatorRules.hit]" placeholder="请输入浏览数" style="width: 100%"/>
+        </a-form-item>
         <a-form-item label="跳转地址" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <a-input v-decorator="[ 'targetUrl', validatorRules.targetUrl]" placeholder="请输入跳转地址"></a-input>
         </a-form-item>
@@ -134,9 +136,11 @@
             if(!this.model.id){
               httpurl+=this.url.add;
               method = 'post';
+              this.model['createBy'] = JSON.parse(localStorage.getItem("pro__Login_Userinfo")).value.id
             }else{
               httpurl+=this.url.edit;
                method = 'put';
+               this.model['updateBy'] = JSON.parse(localStorage.getItem("pro__Login_Userinfo")).value.id
             }
             let formData = Object.assign(this.model, values);
             console.log("表单提交数据",formData)

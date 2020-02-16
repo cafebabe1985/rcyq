@@ -26,6 +26,7 @@ export function uploadAction(url,parameter,callback) {
     data: parameter,
     onUploadProgress:(progressEvent)=>{ //原生获取上传进度的事件
       if(progressEvent.lengthComputable){
+        
           //属性lengthComputable主要表明总共需要完成的工作量和已经完成的工作是否可以被测量
           //如果lengthComputable为false，就获取不到progressEvent.total和progressEvent.loaded
           callback(progressEvent);

@@ -19,6 +19,7 @@ Page({
    */
   data: {
     apiBaseUrl: config.apiBaseUrl,
+    queryPath:null,
     pagePath: null,
     detailId: null,
     modelType: null,
@@ -45,6 +46,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   async onLoad(opt) {
+    this.data.queryPath = `id=${opt.id}&type=${opt.type}&path=${opt.path}`
     if (opt.path) {
       this.setData({
         pagePath: opt.path
@@ -261,7 +263,12 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage(e) {
+      console.log(e)
+      return {
+        title:this.data.detail.title,
+        path: `/pages/detail/detail?${this.data.queryPath}`,
+        imageUrl:this.data.apiBaseUrl+this.data.detail.poster
+      }
   }
 })

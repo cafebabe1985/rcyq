@@ -16,7 +16,7 @@ import org.jeecg.common.aspect.annotation.Dict;
 /**
  * @Description: 快讯表
  * @Author: jeecg-boot
- * @Date:   2020-02-12
+ * @Date:   2020-02-15
  * @Version: V1.0
  */
 @Data

@@ -239,7 +239,7 @@
           }
         ],
         url: {
-          list: "/wx/wxScenic/list",
+          list: `/wx/wxScenic/list?createBy=${JSON.parse(localStorage.getItem("pro__Login_Userinfo")).value.id}`,
           delete: "/wx/wxScenic/delete",
           deleteBatch: "/wx/wxScenic/deleteBatch",
           exportXlsUrl: "/wx/wxScenic/exportXls",

@@ -3,6 +3,9 @@ import {
   Scenic
 } from '../../net/scenic.js'
 import {
+  Active
+} from '../../net/active.js'
+import {
   News
 } from '../../net/news.js'
 import {
@@ -37,11 +40,13 @@ Page({
     scenics: null,
     swiperList: null,
     news: null,
+    actives:null,
     scenicPageNo: 1,
     newsPageNo: 1,
-   
-    finishScenic:false,
-    finishNews:false
+    activePageNo:1,
+    finishScenic: false,
+    finishActive: false,
+    finishNews: false
   },
   tabSelect(e) {
     if (e.currentTarget.dataset.id == 2) {
@@ -71,7 +76,7 @@ Page({
       navCur: index,
       scrollLeft: (index - 1) * 60,
       scenics: resScenicData.result.records,
-      
+
     })
   },
   activeNavCurSelect(e) {
@@ -123,7 +128,7 @@ Page({
     } else if (this.data.canIUse) {
       if (app.userInfoReadyCallback) {
         app.userInfoReadyCallback = res => {
-         
+
           this.setData({
             userInfo: res.userInfo,
             hasUserInfo: true
@@ -152,49 +157,64 @@ Page({
     }
   },
   doLoadPageData() {
-    
-    if(this.data.TabCur == 0) {
-       if(this.data.finishScenic){
-         
-       return
-      }else{
-         wx.showLoading({
-           title: '加载中',
-         })
-        this.data.scenicPageNo++
-        this.loadScenic(this.data.scenicPageNo, 10)
-        
-      }        
-    } else if (this.data.TabCur == 1){
 
-      
-    } else if (this.data.TabCur == 2){
-      if (this.data.finishNews) {
-       
+    if (this.data.TabCur == 0) {
+      if (this.data.finishScenic) {
         return
       } else {
-        wx.showLoading({
-          title: '加载中',
-        })
+        this.data.scenicPageNo++
+        this.loadScenic(this.data.scenicPageNo, 10)
+
+      }
+    } else if (this.data.TabCur == 1) {
+      if (this.data.finishActive) {
+        return
+      } else {
+        this.data.activePageNo++
+        this.loadActive(this.data.activePageNo, 10)
+
+      }
+
+    } else if (this.data.TabCur == 2) {
+      if (this.data.finishNews) {
+
+        return
+      } else {
+        
         this.data.newsPageNo++
         this.loadNews(this.data.newsPageNo, 10)
-        
-      }    
+
+      }
     }
-    
+
   },
   //加载新的景区
-  async loadScenic(pageNo,pageSize){
-
+  async loadScenic(pageNo, pageSize) {
     const resScenicData = await Scenic.listScenic(pageNo, pageSize, 'createTime', 'desc', 1)
     let newScenic = resScenicData.result.records
     let totalScenic = resScenicData.result.total
     this.data.scenics.push(...newScenic)
     this.setData({
-      scenics:this.data.scenics,
-      finishScenic: newScenic.length == 0 ? true : newScenic.length==totalScenic
+      navCur:0,
+      scrollLeft:0,
+      scenics: this.data.scenics,
+      finishScenic: newScenic.length == 0 ? true : newScenic.length == totalScenic
     })
-    
+
+  },
+  //加载新的活动
+  async loadActive(pageNo, pageSize) {
+    const resActiveData = await Active.listActive(pageNo, pageSize, 'createTime', 'desc', 1)
+    let newActive = resActiveData.result.records
+    let totalActive = resActiveData.result.total
+    this.data.actives.push(...newActive)
+    this.setData({
+      navCur: 0,
+      scrollLeft: 0,
+      actives: this.data.actives,
+      finishActive: newActive.length == 0 ? true : newActive.length == totalActive
+    })
+
   },
   //加载新的快讯
   async loadNews(pageNo, pageSize) {
@@ -207,18 +227,27 @@ Page({
       finishNews: newNews.length == 0 ? true : newNews.length == totalNews
     })
   },
-  async initPage(){
+  //初始化页面数据
+  async initPage() {
     this.handleUserInfo()
-    const resScenicData = await Scenic.listScenic(1, 10, 'createTime', 'desc', 1)
-
-    const resNewsData = await News.listNews(1, 10, 'createTime', 'desc', 1)
+    this.data.scenicPageNo = 1
+    this.data.newsPageNo = 1
+    this.data.activePageNo = 1
+    const resScenicData = await Scenic.listScenic(this.data.scenicPageNo, 10, 'createTime', 'desc', 1)
+    const resActiveData = await Active.listActive(this.data.activePageNo, 10, 'createTime', 'desc', 1)
+    const resNewsData = await News.listNews(this.data.newsPageNo, 10, 'createTime', 'desc', 1)
     const resSwiperData = await Swiper.listSwiper(1, 6, 'displayOrder', 'asc', 1)
     const resCityTabData = await CityTab.listCityTab('displayOrder', 'asc')
-
+    this.data.finishNews = false
+    this.data.finishScenic = false
+    this.data.finishActive = false
     this.setData({
+      navCur:0,
+      scrollLeft:0,
       scenics: resScenicData.result.records,
       news: resNewsData.result.records,
       swiperList: resSwiperData.result.records,
+      actives: resActiveData.result.records,
       cityTabs: this.data.cityTabs.concat(resCityTabData.result.records)
     })
     wx.hideLoading()
@@ -227,26 +256,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   async onLoad(options) {
-    console.log("onLoad")
+   
     wx.showLoading({
       title: '内容加载中',
     })
-        
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady () {
-    console.log("onReady")
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  async onShow () {
-    console.log("onShow")
-    this.initPage()
     wx.createSelectorQuery().select('#fixedViewWrap').boundingClientRect((rect) => {
 
       this.setData({
@@ -255,7 +268,6 @@ Page({
 
     }).exec();
     if (this.data.navbarInitTop == 0) {
-
       //获取节点距离顶部的距离
       wx.createSelectorQuery().select('#navbar').boundingClientRect((rect) => {
 
@@ -269,12 +281,29 @@ Page({
       }).exec();
 
     }
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady() {
+    console.log("onReady")
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  async onShow() {
+    console.log("onShow")
+    this.initPage()
+    
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide () {
+  onHide() {
     console.log("onHide")
   },
 
@@ -288,18 +317,20 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-
+  onPullDownRefresh() {
+   
+    this.initPage()
+    wx.stopPullDownRefresh()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-    
+
     this.doLoadPageData()
-    setTimeout(() => { wx.hideLoading()},1000)
-    
+    setTimeout(() => { wx.hideLoading() }, 1000)
+
   },
 
   /**
@@ -312,19 +343,16 @@ Page({
    * 监听页面滑动事件
    */
   onPageScroll: function (e) {
-
+    
     let scrollTop = parseInt(e.scrollTop); //滚动条距离顶部高度
-
     //判断'滚动条'滚动的距离 和 '元素在初始时'距顶部的距离进行判断
     let isSatisfy = (scrollTop >= this.data.navbarInitTop)
     //为了防止不停的setData, 这儿做了一个等式判断。 只有处于吸顶的临界值才会不相等
     if (this.data.isFixedTop === isSatisfy) {
       return false;
     }
-
     this.setData({
       isFixedTop: isSatisfy,
-
     });
   }
 

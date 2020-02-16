@@ -31,6 +31,9 @@
         <a-form-item label="封面" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <j-upload v-decorator="['poster', validatorRules.poster]" :trigger-change="true"></j-upload>
         </a-form-item>
+        <a-form-item label="浏览数" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input-number v-decorator="[ 'hit', validatorRules.hit]" placeholder="请输入浏览数" style="width: 100%"/>
+        </a-form-item>
         <a-form-item label="跳转地址" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <a-input v-decorator="[ 'targetUrl', validatorRules.targetUrl]" placeholder="请输入跳转地址"></a-input>
         </a-form-item>
@@ -93,6 +96,8 @@
           ]},
           poster: {rules: [
             {required: true, message: '请输入封面!'},
+          ]},
+          hit: {rules: [
           ]},
           targetUrl: {rules: [
           ]},

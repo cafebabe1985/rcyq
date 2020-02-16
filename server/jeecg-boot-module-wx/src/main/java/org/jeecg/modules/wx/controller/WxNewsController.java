@@ -36,7 +36,7 @@ import com.alibaba.fastjson.JSON;
  /**
  * @Description: 快讯表
  * @Author: jeecg-boot
- * @Date:   2020-02-12
+ * @Date:   2020-02-15
  * @Version: V1.0
  */
 @RestController
@@ -76,9 +76,9 @@ public class WxNewsController extends JeecgController<WxNews, IWxNewsService> {
 	  */
 	 @GetMapping(value = "/listInfo")
 	 public Result<?> queryPageListInfo(WxNews wxNews,
-									@RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
-									@RequestParam(name="pageSize", defaultValue="10") Integer pageSize,
-									HttpServletRequest req) {
+										@RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
+										@RequestParam(name="pageSize", defaultValue="10") Integer pageSize,
+										HttpServletRequest req) {
 		 QueryWrapper<WxNews> queryWrapper = QueryGenerator.initQueryWrapper(wxNews, req.getParameterMap());
 		 Page<WxNews> page = new Page<WxNews>(pageNo, pageSize);
 		 IPage<WxNews> pageList = wxNewsService.page(page, queryWrapper);
@@ -90,8 +90,7 @@ public class WxNewsController extends JeecgController<WxNews, IWxNewsService> {
 		 pageList.setRecords(records);
 		 return Result.ok(pageList);
 	 }
-
-	 /**
+	/**
 	 *   添加
 	 *
 	 * @param wxNews
@@ -147,7 +146,6 @@ public class WxNewsController extends JeecgController<WxNews, IWxNewsService> {
 	 */
 	@GetMapping(value = "/queryById")
 	public Result<?> queryById(@RequestParam(name="id",required=true) String id) {
-		wxNewsService.updateHit(id);
 		WxNews wxNews = wxNewsService.getById(id);
 		if(wxNews==null) {
 			return Result.error("未找到对应数据");

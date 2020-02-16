@@ -36,7 +36,7 @@ import com.alibaba.fastjson.JSON;
  /**
  * @Description: 景区小片信息表
  * @Author: jeecg-boot
- * @Date:   2020-02-12
+ * @Date:   2020-02-15
  * @Version: V1.0
  */
 @RestController
@@ -76,15 +76,15 @@ public class WxScenicController extends JeecgController<WxScenic, IWxScenicServi
 	  */
 	 @GetMapping(value = "/listInfo")
 	 public Result<?> queryPageListInfo(WxScenic wxScenic,
-									@RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
-									@RequestParam(name="pageSize", defaultValue="10") Integer pageSize,
-									HttpServletRequest req) {
+										@RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
+										@RequestParam(name="pageSize", defaultValue="10") Integer pageSize,
+										HttpServletRequest req) {
 		 QueryWrapper<WxScenic> queryWrapper = QueryGenerator.initQueryWrapper(wxScenic, req.getParameterMap());
 		 Page<WxScenic> page = new Page<WxScenic>(pageNo, pageSize);
 		 IPage<WxScenic> pageList = wxScenicService.page(page, queryWrapper);
 		 List<WxScenic> records = pageList.getRecords();
 		 for (WxScenic o:records
-			  ) {
+		 ) {
 			 o.setContent("");
 		 }
 		 pageList.setRecords(records);
@@ -146,7 +146,6 @@ public class WxScenicController extends JeecgController<WxScenic, IWxScenicServi
 	 */
 	@GetMapping(value = "/queryById")
 	public Result<?> queryById(@RequestParam(name="id",required=true) String id) {
-		wxScenicService.updateHit(id);
 		WxScenic wxScenic = wxScenicService.getById(id);
 		if(wxScenic==null) {
 			return Result.error("未找到对应数据");
