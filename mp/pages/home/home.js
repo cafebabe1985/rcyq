@@ -83,6 +83,11 @@ Page({
     this.setData({
       activeNavCur: e.currentTarget.dataset.id,
     })
+    if (e.currentTarget.dataset.id == 1){
+      wx.navigateTo({
+        url: '/pages/createActive/createActive',
+      })
+    }
   },
   cardSwiper() { },
   handleFilePath(path) {
@@ -266,7 +271,7 @@ Page({
         fixedViewWrapHeight: rect.height + 1
       });
 
-    }).exec();
+    }).exec()
     if (this.data.navbarInitTop == 0) {
       //获取节点距离顶部的距离
       wx.createSelectorQuery().select('#navbar').boundingClientRect((rect) => {

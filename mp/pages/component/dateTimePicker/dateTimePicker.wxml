@@ -1,0 +1,7 @@
+<picker mode="multiSelector" bindchange="bindMultiPickerChange" 
+bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+<!-- <input disabled style="margin-bottom:-8px"></input> -->
+  <!-- <input value='{{time}}' placeholder='{{placeholder}}' /> -->
+  <view class="picker padding" style="width:100%;{{placeholderStyle}}">{{time?time:placeholder}}</view>
+  
+</picker>

@@ -1,28 +1,75 @@
 
 var dateHandle = function (date) {
-  return date.substring(0,10)
+  return date.substring(0, 10)
 }
 
 var contentTypeHandle = function (type) {
-  switch(type){
+  switch (type) {
     case '0':
-    return '公众号'
-    break
+      return '公众号'
+      break
     case '1':
-    return '图文'
-    break
+      return '图文'
+      break
     case '2':
-    return '视频'
-    break
+      return '视频'
+      break
     default:
-    return ''
+      return ''
   }
 }
-var pathHandle = function (base,src) {
-  return (src.indexOf("http:") != -1 || src.indexOf("https:") != -1) ? src : base+ src
+var pathHandle = function (base, src) {
+  return (src.indexOf("http:") != -1 || src.indexOf("https:") != -1) ? src : base + src
+}
+
+var keywordsHandle = function (str) {
+
+  var strs = str ? str.split(" ") : []
+  for (var i = 0; i < strs.length; i++) {
+    strs[i] = strs[i].trim()
+  }
+  return strs
+}
+
+var enrolStatusHandle = function (s, e, es, ee) {
+  var now = getDate().getTime()
+  var ss = getDate(s).getTime()//开始
+  var es = getDate(e).getTime()//结束
+  var ess = getDate(es).getTime()//报名开始
+  var ees = getDate(ees).getTime()//报名结束
+  if (now < ess) {
+    return '未开始'
+  } else if (now >= ess && now <= ees) {
+    return '报名中'
+  }
+
+  if (now >= ss && now <= es) {
+    return '进行中'
+  }
+
+  if (now > es) {
+    return '已结束'
+  }
+}
+var activeTypeHandle = function (index) {
+
+  switch (index) {
+    case '0':
+      return ''
+      break
+    case '1':
+      return '线上活动'
+      break
+    default:
+      return ''
+      break
+  }
 }
 module.exports = {
   dateHandle: dateHandle,
   contentTypeHandle: contentTypeHandle,
-  pathHandle: pathHandle
+  pathHandle: pathHandle,
+  keywordsHandle: keywordsHandle,
+  enrolStatusHandle: enrolStatusHandle,
+  activeTypeHandle: activeTypeHandle
 };

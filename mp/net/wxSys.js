@@ -54,6 +54,13 @@ class WxSys {
       data
     })
   }
+/**
+ * 文件上传
+ */
+  static async uploadFile(data) {
+
+   
+  }
 }
 
 export {

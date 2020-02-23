@@ -5,7 +5,12 @@
     "pages/scenic/scenic",
     "pages/active/active",
     "pages/news/news",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/createActive/createActive",
+    "pages/locationMap/locationMap",
+    "pages/addEnrolWriteOpt/addEnrolWriteOpt",
+    "pages/agreementPage/agreementPage",
+    "pages/costSetting/costSetting"
   ],
   "window": {
     "backgroundTextStyle": "light",

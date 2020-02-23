@@ -51,6 +51,10 @@
 			"currentL": -1,
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
 			"current": 1,
 			"list": [
@@ -65,6 +69,34 @@
 					"id": -1,
 					"name": "scenic",
 					"pathName": "pages/scenic/scenic",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "createActive",
+					"pathName": "pages/createActive/createActive",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "map",
+					"pathName": "pages/locationMap/locationMap",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "addopt",
+					"pathName": "pages/addEnrolWriteOpt/addEnrolWriteOpt",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "costSetting",
+					"pathName": "pages/costSetting/costSetting",
 					"scene": null
 				}
 			]

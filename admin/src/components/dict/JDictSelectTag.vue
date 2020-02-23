@@ -1,5 +1,7 @@
 <template>
-  <a-radio-group v-if="tagType=='radio'" @change="handleInput" :value="value" :disabled="disabled">
+  <a-radio-group 
+  :defaultValue="defaultValue"
+  v-if="tagType=='radio'" @change="handleInput" :value="value" :disabled="disabled">
     <a-radio v-for="(item, key) in dictOptions" :key="key" :value="item.value">{{ item.text }}</a-radio>
   </a-radio-group>
 
@@ -24,7 +26,8 @@
       triggerChange: Boolean,
       disabled: Boolean,
       value: String,
-      type: String
+      type: String,
+      defaultValue:String
     },
     data() {
       return {
@@ -67,7 +70,7 @@
         }else{
           val = e
         }
-        console.log(val);
+       
         if(this.triggerChange){
           this.$emit('change', val);
         }else{

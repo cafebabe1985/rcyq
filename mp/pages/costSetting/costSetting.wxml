@@ -1,0 +1,55 @@
+<form>
+  <view class="cu-form-group">
+    <view class="title">付费类型</view>
+    <picker bindchange="pickerChange" value="{{type}}" range="{{typePicker}}">
+      <view class="picker">
+        {{typePicker[type]}}
+      </view>
+    </picker>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">活动总名额</view>
+    <input class="text-right" placeholder-style="{{numberValidate?'':'color:red'}}" placeholder="{{numberValidate?'':numberErrMessage}}" value="{{number}}" bindinput="onNumberInput" type="number" bindblur="onNumberBlur"></input>
+    <text>人</text>
+  </view>
+  <view wx:if="{{type!=0}}">
+    <view class="cu-form-group">
+      <view class="title">退款设置</view>
+      <picker bindchange="refundChange" value="{{refundType}}" range="{{refundPicker}}">
+        <view class="picker">
+          {{refundPicker[refundType]}}
+        </view>
+      </picker>
+    </view>
+    <view class="group-label margin action">
+      <text class="cuIcon-title text-orange text-lg"></text>
+      <text class="text-bold text-lg">费用设置</text>
+    </view>
+    <view class="cu-form-group margin-bottom-sm" wx:for="{{opts}}" wx:key="index" wx:for-item="opt" wx:for-index="i">
+      <view class="flex align-center padding" style="width:100%">
+        <view style="width:70rpx" class="margin-right-sm" data-opt="{{opt}}" data-index="{{i}}" bindtap="{{optValidate[i].remove?'moveOpt':'addOpt'}}">
+          <text class="{{optValidate[i].remove?'cuIcon-move bg-red':'cuIcon-add bg-olive'}} text-white" style="font-size:48rpx"></text>
+        </view>
+        <view style="width:100%">
+          <view class="cu-form-group">
+            <view class="title">费用名称</view>
+            <input class="text-right" bindinput="onOptNameInput" placeholder-style="{{optValidate[i].name?'':'color:red'}}" placeholder="{{optValidate[i].name?'15个字以内':'*请填费用名称'}}" maxlength="15" data-index="{{i}}" value="{{opt.name}}"></input>
+          </view>
+          <view class="cu-form-group">
+            <view class="title">金额</view>
+            <input class="text-right" type="digit" bindinput="onOptCostInput" placeholder-style="{{optValidate[i].cost?'':'color:red'}}" placeholder="{{optValidate[i].cost?'':'*请填金额'}}" data-index="{{i}}" value="{{opt.cost}}"></input>
+          </view>
+          <view class="cu-form-group">
+            <view class="title">名额</view>
+            <input class="text-right" type="number" bindinput="onOptNumberInput" placeholder-style="{{optValidate[i].number?'':'color:red'}}" placeholder="{{optValidate[i].number?'':'*请填名额'}}" maxlength="20" name="opts_{{i}}" data-index="{{i}}" value="{{opt.number}}"></input>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view class="padding ">
+    <button class="cu-btn block bg-olive margin-tb-sm lg" bindtap="onConfig">确定</button>
+    <button class="cu-btn block bg-white margin-tb-sm lg" bindtap="onCancel">取消</button>
+  </view>
+</form>

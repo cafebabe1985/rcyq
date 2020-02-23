@@ -1,0 +1,37 @@
+<form>
+  <view class="cu-form-group">
+    <view class="title">报名填写项类型</view>
+    <picker bindchange="pickerChange" value="{{type}}" range="{{typePicker}}">
+      <view class="picker">
+        {{typePicker[type]}}
+      </view>
+    </picker>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">报名填写项名称</view>
+    <input placeholder-style="{{nameValidate?'':'color:red'}}" placeholder="{{nameValidate?'8个字以内':'*请填写候选项'}}" maxlength="8" value="{{name}}" bindinput="onNameInput"
+    bindblur="onNameBlur"></input>
+  </view>
+
+  <view wx:if="{{type!=0}}">
+    <view class="group-label margin action">
+      <text class="cuIcon-title text-orange text-lg"></text>
+      <text class="text-bold text-lg">候选项</text>
+    </view>
+    <view class="cu-form-group" wx:for="{{opts}}" 
+    wx:key="index" wx:for-item="opt" wx:for-index="i">
+      <view style="width:70rpx" class="margin-right-sm" data-opt="{{opt}}" data-index="{{i}}" bindtap="{{(optValidate[i]&&(i<opts.length-1))?'moveOpt':'addOpt'}}">
+        <text class="{{(optValidate[i]&&(i!=opts.length-1))?'cuIcon-move bg-red':'cuIcon-add bg-olive'}} text-white" style="font-size:48rpx"></text>
+      </view>
+      <input bindinput="onOptInput" placeholder-style="{{optValidate[i]?'':'color:red'}}" placeholder="{{optValidate[i]?'输入候选项,20个字以内':'*请填写候选项'}}" maxlength="20" name="opts_{{i}}" data-index="{{i}}" value="{{opt}}"></input>
+    </view>
+  </view>
+  <view class="padding ">
+    <button class="cu-btn block bg-olive margin-tb-sm lg"
+    bindtap="onConfig"
+    >确定</button>
+    <button class="cu-btn block bg-white margin-tb-sm lg"
+    bindtap="onCancel"
+    >取消</button>
+  </view>
+</form>

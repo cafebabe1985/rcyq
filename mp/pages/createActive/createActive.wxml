@@ -1,0 +1,191 @@
+<!--pages/createActive/createActive.wxml-->
+<form  bindreset="formReset">
+  <view class="cu-form-group">
+    <input placeholder="{{validates.name.validate?'活动主题':'*必须填写主题名称'}}" placeholder-style="{{validates.name.validate?'':'color:red'}}" name="name" maxlength="30" value="{{form.name}}" data-name="name" data-key="validates.name.validate" bindblur="onBlur"></input>
+    <view class="title">限30字</view>
+  </view>
+  <view class="group-label margin action">
+    <text class="cuIcon-titles text-green"></text>
+    <text class="text-bold">活动详情</text>
+  </view>
+
+  <wxEditor editorHeight="{{editorHeight}}" placeholder="输入活动详情" bindGetEditorContents="getEditorContents" bindGetFocus="getEditorFocus" name="detail"></wxEditor>
+  <view wx:if="{{!fullEditor}}">
+
+    <view class="group-label margin action">
+      <text class="cuIcon-titles text-green"></text>
+      <text class="text-bold">基本信息</text>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">活动开始</view>
+      <dateTimePicker name="startTime" style="width:70%" time="{{form.startTime}}" 
+      placeholder="{{validates.startTime.validate?'选择开始时间':'*必须填写开始时间'}}"
+      placeholderStyle="{{validates.startTime.validate?'':'color:red'}}"
+      bindMultiPickerChange="changeStartTime"></dateTimePicker>
+      <text class="cuIcon-right lg text-gray"></text>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">活动结束</view>
+      <dateTimePicker name="endTime" style="width:70%" time="{{form.endTime}}" 
+      placeholder="{{validates.endTime.validate?'选择结束时间':validates.endTime.errMessage}}"
+      placeholderStyle="{{validates.endTime.validate?'':'color:red'}}"
+      bindMultiPickerChange="changeEndTime"></dateTimePicker>
+      <text class="cuIcon-right lg text-gray"></text>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">报名截止</view>
+      <dateTimePicker name="endEnrol" style="width:70%" time="{{form.endEnrol}}" 
+       placeholder="{{validates.endEnrol.validate?'选择报名截止时间':'*必须填写报名截止时间'}}"
+      placeholderStyle="{{validates.endEnrol.validate?'':'color:red'}}"
+      bindMultiPickerChange="changeEndEnrol"></dateTimePicker>
+      <text class="cuIcon-right lg text-gray"></text>
+    </view>
+    <view class="cu-form-group">
+      <input name="address" maxlength="50" placeholder="{{validates.address.validate?'活动地点':'*必须填写活动地点'}}" placeholder-style="{{validates.address.validate?'':'color:red'}}" value="{{form.address}}" data-name="address" data-key="validates.address.validate" bindblur="onBlur"></input>
+
+    </view>
+    <view class="cu-form-group" bindtap="chooseImage">
+      <view class="title">活动封面
+      </view>
+      <view wx:if="{{!validates.poster.validate}}" class="text-red">
+*请上传封面
+      </view>
+      <view class="cu-avatar radius margin-left bg-gray" style="background-image:url({{apiBaseUrl+form.poster}});"></view>
+    </view>
+    <view class="group-label margin action">
+      <text class="cuIcon-titles text-green"></text>
+      <text class="text-bold">报名设置</text>
+    </view>
+    <view class="cu-form-group" bindtap="goCostSetting">
+      <view class="title">活动费用</view>
+      <input value="{{form.cost.type==='0'?'免费':'收费'}}" name="cost.type" style="text-align:right;height:100%" disabled>
+      </input>
+      <text class="cuIcon-right lg text-gray"></text>
+    </view>
+
+    <view class="margin" wx:for="{{form.cost.items}}" wx:key="index">
+      <view class="sawtooth ">
+        <view class="">
+          <view class="flex  p-xs margin-bottom-sm mb-sm align-center">
+            <view class="flex-twice   margin-xs radius">
+              <view class="solid-bottom text-xl padding-sm">
+                <text class="text-black text-bold">{{item.name}}</text>
+              </view>
+              <view class="padding-sm">名额{{item.number}}人</view>
+            </view>
+            <view class="flex-sub text-xxl  padding-sm margin-xs radius">
+              <text class="text-price text-olive">{{item.cost}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="cu-form-group ">
+      <view class="title">活动保险</view>
+      <picker bindchange="pickerChange" value="{{form.insuranceType}}" range="{{picker}}">
+        <view class="picker">
+          {{picker[form.insuranceType]}}
+        </view>
+      </picker>
+    </view>
+    <view class="cu-form-group ">
+      <view class="title">报名填写项</view>
+    </view>
+    <view class="bg-white">
+      <view class="grid col-3  text-center" wx:key="index">
+        <view class="" wx:for="{{enrolWriteOpts}}" wx:key="index" data-opt="{{item}}" data-index="{{index}}" bindtap="onTapEnrolWriteOpts">
+          <button style="width:90%;" class="cu-btn lg margin-bottom {{item.value == '0'?'bg-gray':'bg-olive'}}">{{item.name}}</button>
+        </view>
+        <view bindtap="toAddEnrolWriteOpt">
+          <button style="width:90%;" class="cu-btn lg margin-bottom bg-gray">
+            <text class="cuIcon-add text-gray" style="font-size:60rpx"></text>
+          </button>
+        </view>
+      </view>
+    </view>
+    <view class="cu-form-group enrol-way-swith solids-top">
+      <view class="title">报名方式</view>
+      <view class="flex olive-border shadow-warp" bindtap="onChangeEnrolWay">
+        <view class="padding-xs {{form.enrolWay=='0'?'bg-olive sub-tab':''}}" style="width:80rpx">个人</view>
+        <view class="padding-xs {{form.enrolWay=='1'?'bg-olive sub-tab':''}}">组队</view>
+      </view>
+    </view>
+    <view wx:if="{{form.enrolWay=='1'}}" class="padding-sm">
+      <view class="cu-form-group">
+        <view class="title">队伍数量</view>
+        <input 
+        placeholder="{{validates.teamSize.validate?'填写队伍数量':validates.teamSize.errMessage}}" 
+        placeholder-style="{{validates.teamSize.validate?'':'color:red'}}"
+        type="number" value="{{form.teamSize}}"
+        bindinput="onTeamSizeBlur"
+        ></input>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">每队人数上限</view>
+        <input placeholder="{{validates.everyTeamMax.validate?'默认不限':'*不能小于人数下限'}}" 
+        placeholder-style="{{validates.everyTeamMax.validate?'':'color:red'}}"
+        type="number" value="{{form.everyTeamMax}}" bindblur="setMax"
+        
+        ></input>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">每队人数下限</view>
+        <input placeholder="默认不限" type="number" value="{{form.everyTeamMin}}"
+        
+        bindblur="setMin"
+        ></input>
+      </view>
+    </view>
+    <view class="cu-form-group" bindtap="onShowMoreSetting">
+      <view class="title">更多设置</view>
+      <text class="cuIcon-{{showMoreSetting?'fold':'unfold'}} lg text-gray"></text>
+    </view>
+    <view wx:if="{{showMoreSetting}}">
+
+      <view class="cu-form-group">
+        <view class="title">报名需审核</view>
+        <switch class="olive radius  my-switch" 
+        data-key="needExamineEnrol"
+        bindchange="onChangeSwitch"
+        ></switch>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">允许人报名</view>
+        <switch class="olive radius my-switch" checked
+        data-key="allowEnrolAgent"
+        bindchange="onChangeSwitch"
+        ></switch>
+      </view>
+      <view class="cu-form-group">
+        <textarea maxlength="200" name="notice" value="{{form.notice}}" bindinput="textareaAInput" placeholder="填写报名须知"></textarea>
+      </view>
+      <view class="padding bg-white text-right">{{textCurrentTotal}}/200</view>
+    </view>
+    <view class="flex padding-sm justify-center align-center" bindtap="goAgreementPage">
+      <checkbox class="round xs margin-sm" checked></checkbox>
+      <view>我同意《儒此有趣小程序服务协议》</view>
+    </view>
+    <view class="btn-area">
+      <button formType="submit" class="cu-button margin-sm bg-olive" 
+      bindtap="doSubmit"
+      >发布</button>
+      <button formType="reset" class="cu-button margin-sm">保存草稿</button>
+    </view>
+  </view>
+</form>
+
+<view class="cu-modal {{showOptModal?'show':''}}" bindtap="hideOptModal">
+  <view class="cu-dialog" catchtap>
+    <radio-group class="block">
+      <view class="cu-list menu text-left">
+        <view class="cu-item" bindtap="editOpt">
+          <view class="flex-sub text-center">编辑</view>
+        </view>
+        <view class="cu-item text-center" bindtap="deleteOpt">
+          <view class="flex-sub text-red">删除</view>
+        </view>
+      </view>
+    </radio-group>
+  </view>
+</view>

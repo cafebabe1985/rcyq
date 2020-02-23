@@ -1,0 +1,8 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "dateTimePicker": "/pages/component/dateTimePicker/dateTimePicker",
+    "wxEditor":"/pages/component/editor/wxEditor"
+  }
+}

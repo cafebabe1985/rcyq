@@ -26,20 +26,18 @@
   /* z-index: 100; */
     
 }
-.
+
 .navbar-wrap .fixed{
    position: fixed;
    width: 100%
 }
-
-
 
 .image-tag{
   position: relative;
   top: 0;
   left: 0;
   z-index: 100;
-  margin-right: -75rpx
+  margin-right: -90rpx
 }
 
 
