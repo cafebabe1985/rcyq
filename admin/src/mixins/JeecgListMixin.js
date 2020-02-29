@@ -74,6 +74,7 @@ export const JeecgListMixin = {
         if (res.success) {
           this.dataSource = res.result.records;
           this.ipagination.total = res.result.total;
+          console.log(this.dataSource)
         }
         if(res.code===510){
           this.$message.warning(res.message)

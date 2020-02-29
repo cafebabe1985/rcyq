@@ -1,402 +1,580 @@
 <template>
-  <a-modal :title="title" :width="1200" :visible="visible" :maskClosable="false" :confirmLoading="confirmLoading"
-    @ok="handleOk" @cancel="handleCancel">
+  <a-modal :title="title" :width="width" :visible="visible" :confirmLoading="confirmLoading" @ok="handleOk"
+    @cancel="handleCancel" cancelText="关闭">
     <a-spin :spinning="confirmLoading">
-      <!-- 主表单区域 -->
       <a-form :form="form">
-        <a-row>
 
-          <a-col :span="24">
-            <a-form-item label="活动主题" :labelCol="labelCol2" :wrapperCol="wrapperCol2">
-              <a-input v-decorator="[ 'name', validatorRules.name]" placeholder="请输入活动名称"></a-input>
-            </a-form-item>
+        <a-form-item label="活动名称" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="[ 'name', validatorRules.name]" placeholder="请输入活动名称"></a-input>
+        </a-form-item>
+        <a-form-item label="活动开始时间" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <j-date placeholder="请选择活动开始时间" v-decorator="[ 'startTime', validatorRules.startTime]" :trigger-change="true"
+            :show-time="true" date-format="YYYY-MM-DD HH:mm:ss" style="width: 100%" />
+        </a-form-item>
+        <a-form-item label="活动结束时间" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <j-date placeholder="请选择活动结束时间" v-decorator="[ 'endTime', validatorRules.endTime]" :trigger-change="true"
+            :show-time="true" date-format="YYYY-MM-DD HH:mm:ss" style="width: 100%" />
+        </a-form-item>
+        <a-form-item label="报名截止时间" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <j-date placeholder="请选择报名截止时间" v-decorator="[ 'endEnrol', validatorRules.endEnrol]" :trigger-change="true"
+            :show-time="true" date-format="YYYY-MM-DD HH:mm:ss" style="width: 100%" />
+        </a-form-item>
+        <a-form-item label="封面图" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <j-upload v-decorator="['poster', validatorRules.poster]" :trigger-change="true"></j-upload>
+        </a-form-item>
+        <a-form-item label="详细说明" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <j-editor v-decorator="['detail',{trigger:'input'}]" />
+        </a-form-item>
+
+
+        <a-form-item label="活动地点" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="[ 'address', validatorRules.address]" placeholder="请输入活动地点"></a-input>
+        </a-form-item>
+
+
+        <a-form-item label="保险类型" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <j-dict-select-tag type="list" v-decorator="['insuranceType', validatorRules.insuranceType]"
+            :trigger-change="true" dictCode="insurance_type" placeholder="请选择保险类型" />
+        </a-form-item>
+
+
+        <a-divider>费用设置</a-divider>
+
+        <a-form-item label="活动费用" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <j-dict-select-tag type="radio" v-decorator="['cost.type', validatorRules.costType]" :trigger-change="true"
+            dictCode="cost_type" placeholder="请选择报名方式" @change="handleCostTypeChange" />
+        </a-form-item>
+        <div v-if="form.getFieldValue('cost.type')&& form.getFieldValue('cost.type')!='0'">
+        <!-- <a-form-item label="活动总名额" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input-number style="width:100%" v-decorator="['cost.number', validatorRules.costNumber]"
+            placeholder="填写总名额"></a-input-number>
+        </a-form-item> -->
+        <a-form-item label="退款方式" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <j-dict-select-tag type="radio" v-decorator="['cost.refundType', validatorRules.refundType]"
+            :trigger-change="true" dictCode="refund_type" placeholder="请选择退款方式" />
+        </a-form-item>
+        <a-col :offset="5">
+ <a-button  type="primary" style="margin-right:15px;margin-bottom:10px" @click="addCostOpt">
+              新增收费项目
+            </a-button>
           </a-col>
-          <a-col :span="24">
-            <a-form-item label="活动开始时间" :labelCol="labelCol2" :wrapperCol="wrapperCol2">
-              <j-date placeholder="请选择活动开始时间" v-decorator="[ 'startTime', validatorRules.startTime]"
-                :trigger-change="true" :show-time="true" date-format="YYYY-MM-DD HH:mm:ss" style="width: 100%" />
-            </a-form-item>
-          </a-col>
-          <a-col :span="24">
-            <a-form-item label="活动结束时间" :labelCol="labelCol2" :wrapperCol="wrapperCol2">
-              <j-date placeholder="请选择活动结束时间" v-decorator="[ 'endTime', validatorRules.endTime]" :trigger-change="true"
-                :show-time="true" date-format="YYYY-MM-DD HH:mm:ss" style="width: 100%" />
-            </a-form-item>
-          </a-col>
-          <a-col :span="24">
-            <a-form-item label="报名截止时间" :labelCol="labelCol2" :wrapperCol="wrapperCol2">
-              <j-date placeholder="请选择报名截止时间" v-decorator="[ 'endEnrol', validatorRules.endEnrol]"
-                :trigger-change="true" :show-time="true" date-format="YYYY-MM-DD HH:mm:ss" style="width: 100%" />
-            </a-form-item>
-          </a-col>
-          <a-col :span="24">
-            <a-form-item label="活动地点" :labelCol="labelCol2" :wrapperCol="wrapperCol2">
-              <a-input v-decorator="[ 'address', validatorRules.address]" placeholder="请输入活动地点"></a-input>
-            </a-form-item>
-          </a-col>
-          <a-col :span="24">
-            <a-form-item label="活动封面" :labelCol="labelCol2" :wrapperCol="wrapperCol2">
-              <j-upload v-decorator="['poster',validatorRules.poster]" :trigger-change="true"></j-upload>
-            </a-form-item>
-          </a-col>
-          <a-col :span="24">
-            <a-form-item label="活动详情" :labelCol="labelCol2" :wrapperCol="wrapperCol2">
-              <j-editor v-decorator="['detail',{trigger:'input'}]" />
-            </a-form-item>
-          </a-col>
-          <a-divider>报名方式--个人/组队</a-divider>
-          <a-col :span="24">
-            <a-form-item label="报名方式" 
+        <div v-for="(item,index) in form.getFieldValue('keys')" :key="index">
+
+          <a-col :span="5" style="text-align:right;height:100px;line-height:100px">
            
-            :labelCol="labelCol2" :wrapperCol="wrapperCol2">
-              <j-dict-select-tag 
-               defaultValue="0"
-              @change="handleEnrolWayChange" type="radio"
-                v-decorator="['enrolWay']" :trigger-change="true" dictCode="enrol_way"
-                placeholder="请选择报名方式" />
-            </a-form-item>
+            <a-button  
+            @click="removeOpt(index)"
+            type="danger" style="margin-right:15px;">
+              删除
+            </a-button>
           </a-col>
-          <div v-if="showEnrolOpt">
+          <a-col :span="18">
 
-
-            <a-col :span="24">
-              <a-form-item label="队伍数量" :labelCol="labelCol2" :wrapperCol="wrapperCol2">
-                <a-input-number v-decorator="[ 'teamSize', validatorRules.teamSize]" placeholder="请输入队伍数量"
-                  style="width: 100%" />
-              </a-form-item>
-            </a-col>
-            <a-col :span="24">
-              <a-form-item label="每队人数上限" :labelCol="labelCol2" :wrapperCol="wrapperCol2">
-                <a-input-number v-decorator="[ 'everyTeamMax', validatorRules.everyTeamMax]" placeholder="请输入每队人数上限"
-                  style="width: 100%" />
-              </a-form-item>
-            </a-col>
-            <a-col :span="24">
-              <a-form-item label="每队人数下限" :labelCol="labelCol2" :wrapperCol="wrapperCol2">
-                <a-input-number v-decorator="[ 'everyTeamMin', validatorRules.everyTeamMin]" placeholder="请输入每队人数下限"
-                  style="width: 100%" />
-              </a-form-item>
-            </a-col>
-          </div>
-          <a-divider>其他报名设置</a-divider>
-
-          <a-col :span="24">
-            <a-form-item label="需要审核报名" :labelCol="labelCol2" :wrapperCol="wrapperCol2">
-              <j-dict-select-tag 
-              defaultValue="1"
-              type="radio" v-decorator="['needExamineEnrol']" :trigger-change="true"
-                dictCode="need_examine" placeholder="请选择需要审核报名" />
-            </a-form-item>
-          </a-col>
-          <a-col :span="24">
-            <a-form-item 
-            defaultValue="0"
-            label="允许代替报名" :labelCol="labelCol2" :wrapperCol="wrapperCol2">
-              <j-dict-select-tag type="radio" v-decorator="['allowEnrolAgent']" :trigger-change="true"
-                dictCode="allow_enrol" placeholder="请选择允许代替报名" />
-            </a-form-item>
-          </a-col>
-          <a-col :span="24">
-            <a-form-item label="报名须知" :labelCol="labelCol2" :wrapperCol="wrapperCol2">
-              <a-input v-decorator="[ 'notice', validatorRules.notice]" placeholder="请输入报名须知"></a-input>
-            </a-form-item>
-          </a-col>
-          <a-divider></a-divider>
-          <a-col :span="24">
-            <a-form-item 
-            label="报名填写项" 
-            :labelCol="labelCol2" 
-            :wrapperCol="wrapperCol2">
-
-              <a-checkbox-group 
-              @change="onEnrolWriteChange"
-              v-decorator="[ 'enrolWriteOpts']"
-              :defaultValue="defultWriteOpts"
-              >
-                <a-checkbox :value="item" 
-                v-for="(item,index) in enrolWriteOpts" 
-                :key="index" >{{item.name}}</a-checkbox>
-               <a-button 
-               @click="addOpts"
-               type="primary" style="margin-left:5px" >
-                <a-icon type="plus" /> 
-              </a-button>
-              </a-checkbox-group>
-            </a-form-item>
-              
-          </a-col>
-<div v-if="showAddEnrolWriteForm">
-  <a-col :span="24">
-            <a-form-item label="报名填写项类型" :labelCol="labelCol2" :wrapperCol="wrapperCol2">
-              <j-dict-select-tag 
-                @change="handleEnrolWriteTypeChange" 
-                type="radio"
-                defaultValue="0"
-                v-decorator="['enrolWriteType']" 
-                :trigger-change="true" 
-                dictCode="enrol_write_type"
-                placeholder="请选择报名填写类型" />
-            </a-form-item>
-          </a-col>
-          <a-col :span="24">
-            <a-form-item label="报名填写项名称" :labelCol="labelCol2" :wrapperCol="wrapperCol2">
-              <a-input v-decorator="[ 'enrolWriteName']" placeholder="请输入填写项名称"></a-input>
-            </a-form-item>
-          </a-col>
-          <div v-if="showAddEnrolWriteOpt">
-            <a-col :span="24">
-            <a-form-item label="候选项" :labelCol="labelCol2" :wrapperCol="wrapperCol2">
-              <a-input v-decorator="[ 'enrolWriteOpt']" placeholder="请输入候选项"></a-input>
-            </a-form-item>
-          </a-col>
-          </div>
-           <a-divider />
-</div>
-          <!-- <a-col :span="24">
-            <a-form-item v-for="(k, index) in form.getFieldValue('keys')" :key="k"
-              v-bind="index <= 4 ? formItemLayout : formItemLayoutWithOutLabel" :label="index <= 4 ? 'Passengers' : ''"
-              :required="false">
+            <a-form-item label="" :labelCol="labelCol" :wrapperCol="wrapperCol">
               <a-input v-decorator="[
-          `names[${k}]`,
+          `cost[opts][${index}][name]`,
           {
             validateTrigger: ['change', 'blur'],
             preserve: true,
             rules: [{
-              required: true,
-              whitespace: true,
-              message: 'Please input passenger\'s name or delete this field.',
+             validator:validateCostOpt,
+              message: '必填',
             }],
           }
-        ]" placeholder="passenger name" style="width: 60%; margin-right: 8px" />
-              <a-icon v-if="form.getFieldValue('keys').length > 1" class="dynamic-delete-button" type="minus-circle-o"
-                :disabled="form.getFieldValue('keys').length === 1" @click="() => remove(k)" />
+        ]" 
+        placeholder="费用名称" maxLength="15"></a-input>
             </a-form-item>
-            <a-form-item v-bind="formItemLayoutWithOutLabel">
-              <a-button type="dashed" style="width: 60%" @click="add">
-                <a-icon type="plus" /> Add field
-              </a-button>
-            </a-form-item>
-            <a-form-item v-bind="formItemLayoutWithOutLabel">
-              <a-button type="primary" html-type="submit">
-                Submit
-              </a-button>
-            </a-form-item>
-          </a-col> -->
+            <a-form-item label="" :labelCol="labelCol" :wrapperCol="wrapperCol">
 
-          <a-divider />
-          <a-col :span="24">
-            <a-form-item label="发布状态" :labelCol="labelCol2" :wrapperCol="wrapperCol2">
-              <j-dict-select-tag type="radio" v-decorator="['displayType',validatorRules.displayType]"
-                :trigger-change="true" dictCode="display_type" placeholder="请选择发布状态" />
+              <a-input-number 
+              v-decorator="[
+         `cost[opts][${index}][cost]`,
+          {
+            validateTrigger: ['change', 'blur'],
+            preserve: true,
+            rules: [{
+             validator:validateCostOpt,
+              message: '必填',
+            }],
+          }
+        ]" 
+              placeholder="金额" style="width:100%" type="number"></a-input-number>
             </a-form-item>
+            <a-form-item label="" :labelCol="labelCol" :wrapperCol="wrapperCol">
+              <a-input-number  
+              v-decorator="[
+          `cost[opts][${index}][number]`,
+          {
+            validateTrigger: ['change', 'blur'],
+            preserve: true,
+            rules: [{
+             validator:validateCostOpt,
+              message: '必填',
+            }],
+          }
+        ]" 
+              placeholder="名额'" style="width:100%" type="number"></a-input-number>
+            </a-form-item>
+            <a-divider />
           </a-col>
+           </div> 
+        </div>
+       
+        <a-divider></a-divider>
+        <a-form-item label="报名方式" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <j-dict-select-tag type="radio" v-decorator="['enrolWay', validatorRules.enrolWay]" :trigger-change="true"
+            dictCode="enrol_way" placeholder="请选择报名方式" />
+        </a-form-item>
+        <div v-if="form.getFieldValue('enrolWay')&&form.getFieldValue('enrolWay') != '0'">
+          <a-form-item label="队伍数量" :labelCol="labelCol" :wrapperCol="wrapperCol">
+            <a-input-number v-decorator="[ 'teamSize', validatorRules.teamSize]" placeholder="请输入队伍数量"
+              style="width: 100%" />
+          </a-form-item>
+          <a-form-item label="每队人数上限" :labelCol="labelCol" :wrapperCol="wrapperCol">
+            <a-input-number v-decorator="[ 'everyTeamMax', validatorRules.everyTeamMax]" placeholder="请输入每队人数上限"
+              style="width: 100%" />
+          </a-form-item>
+          <a-form-item label="每队人数下限" :labelCol="labelCol" :wrapperCol="wrapperCol">
+            <a-input-number v-decorator="[ 'everyTeamMin', validatorRules.everyTeamMin]" placeholder="请输入每队人数下限"
+              style="width: 100%" />
+          </a-form-item>
+        </div>
 
-        </a-row>
+        <a-divider>其他设置</a-divider>
+        <a-form-item label="需要审核报名" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <j-dict-select-tag type="radio" v-decorator="['needExamineEnrol', validatorRules.needExamineEnrol]"
+            :trigger-change="true" dictCode="need_examine" placeholder="请选择需要审核报名" />
+        </a-form-item>
+        <a-form-item label="允许代替报名" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <j-dict-select-tag type="radio" v-decorator="['allowEnrolAgent', validatorRules.allowEnrolAgent]"
+            :trigger-change="true" dictCode="allow_enrol" placeholder="请选择允许代替报名" />
+        </a-form-item>
+        <a-form-item label="报名须知" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input v-decorator="[ 'notice', validatorRules.notice]" placeholder="请输入报名须知"></a-input>
+        </a-form-item>
+       
+            <a-form-item label="报名填写项" :labelCol="labelCol" :wrapperCol="wrapperCol">
+              <a-checkbox-group 
+             
+              v-decorator="[ 'enrolWriteOpts',validatorRules.enrolWriteOpts]"
+              >
+                <a-checkbox 
+                :disabled="item.required"
+                :value="item" 
+                v-for="(item,index) in enrolWriteOpts" :key="index">
+                {{item.name}}</a-checkbox>
+                <a-button @click="addEnrolOpts" type="primary" style="margin-left:5px">
+                  <a-icon type="plus" />
+                </a-button>
+              </a-checkbox-group>
+            </a-form-item>
+            <div v-if="showAddEnrolWriteForm">
+
+           
+            <a-form-item label="报名填写项类型" :labelCol="labelCol" :wrapperCol="wrapperCol">
+                <j-dict-select-tag @change="handleEnrolWriteTypeChange" type="radio" v-model="enrolWriteOptsItem.type"
+                  :trigger-change="true" dictCode="enrol_write_type" placeholder="请选择报名填写类型" />
+              </a-form-item>
+              <a-form-item label="报名填写项名称" 
+              :labelCol="labelCol" :wrapperCol="wrapperCol"
+              :validate-status="enrolWriteOptsItem.name?'success':'error'"
+              :help="enrolWriteOptsItem.name?'':'*必须填写名称'"
+              >
+                <a-input v-model="enrolWriteOptsItem.name" placeholder="请输入填写项名称"></a-input>
+              </a-form-item>
+ <div v-if="showAddEnrolWriteOpt">
+              <a-col v-for="(item,index) in writeOptItems" :key="index" :span="24">
+                <a-form-item :label="'候选项'+(index+1)" :labelCol="labelCol" :wrapperCol="wrapperCol">
+                  <div class="flex-center">
+                    <a-input v-model="writeOptItems[index]" placeholder="请输入候选项">
+
+                    </a-input>
+                    <a-button v-if="index===writeOptItems.length-1" 
+                    @click="addEnrolOptsItem" type="primary"
+                      style="margin-left:5px">
+                      <a-icon type="plus" />
+                    </a-button>
+                    <a-button v-else @click="removeEnrolOptsItem(index)" type="danger" style="margin-left:5px">
+                      <a-icon type="minus" />
+                    </a-button>
+                  </div>
+
+                </a-form-item>
+
+              </a-col>
+            </div>
+            <a-col :span="12" :offset="3">
+
+              <a-button type="primary" style="margin-bottom:10px" @click="configAddItem"> 添加</a-button>
+
+            </a-col>
+
+            <a-divider />
+ </div>
+         
+        <a-divider></a-divider>
+        <a-form-item label="发布状态" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <j-dict-select-tag type="radio" v-decorator="['displayType', validatorRules.displayType]"
+            :trigger-change="true" dictCode="display_type" placeholder="请选择发布状态" />
+        </a-form-item>
+
       </a-form>
-
-      <!-- 子表单区域 -->
-      <!-- <a-tabs v-model="activeKey" @change="handleChangeTabs">
-        <a-tab-pane tab="活动费用表" :key="refKeys[0]" :forceRender="true">
-          <wx-active-cost-form ref="wxActiveCostForm" @validateError="validateError"></wx-active-cost-form>
-        </a-tab-pane>
-      
-      </a-tabs> -->
-
     </a-spin>
   </a-modal>
 </template>
 
 <script>
+import { httpAction } from '@/api/manage'
 import pick from 'lodash.pick'
-import { FormTypes, getRefPromise } from '@/utils/JEditableTableUtil'
-import { JEditableTableMixin } from '@/mixins/JEditableTableMixin'
-import WxActiveCostForm from './WxActiveCostForm.vue'
+import { validateDuplicateValue } from '@/utils/util'
 import JDate from '@/components/jeecg/JDate'
 import JUpload from '@/components/jeecg/JUpload'
 import JDictSelectTag from '@/components/dict/JDictSelectTag'
 import JEditor from '@/components/jeecg/JEditor'
-
+let id=0
 export default {
   name: 'WxActiveModal',
-  mixins: [JEditableTableMixin],
   components: {
-    WxActiveCostForm,
     JDate,
     JUpload,
     JDictSelectTag,
     JEditor
   },
   data() {
+    
+    let enrolWriteOpts = [
+      {
+        name:'昵称',
+        key:'nickName',
+        value:'1',
+        required:true,
+        type:'0',
+        diy:'0'
+      },
+      {
+        name: '手机',
+        key: 'phone',
+        value: '1',
+        required: true,
+        type: '0',
+        diy: '0'
+      },
+      {
+        name: '性别',
+        key: 'gender',
+        value: '0',
+        required: false,
+        type: '0',
+        diy: '0'
+      },
+      {
+        name: '真实姓名',
+        key: 'realName',
+        value: '0',
+        required: false,
+        type: '0',
+        diy: '0'
+      },
+      {
+        name: '身份证号',
+        key: 'cardId',
+        value: '0',
+        required: false,
+        type: '0',
+        diy: '0'
+      }
+    ]
     return {
-      showAddEnrolWriteForm: false,
-      showEnrolOpt: false,
-      showAddEnrolWriteOpt: false,
+      optsInited: false,
+      showAddEnrolWriteOpt:false,
+      showAddEnrolWriteForm:false,
+      writeOptItems: [''],
+      title: '操作',
+      width: 1000,
+      visible: false,
+      enrolWriteOpts:enrolWriteOpts,
+      model: {},
       labelCol: {
-        span: 3
+        xs: { span: 24 },
+        sm: { span: 5 }
       },
       wrapperCol: {
-        span: 20
+        xs: { span: 24 },
+        sm: { span: 16 }
       },
-      labelCol2: {
-        span: 3
-      },
-      wrapperCol2: {
-        span: 20
-      },
-      enrolWriteOpts: [
-        {
-          name: '昵称',
-          key: 'nickName',
-          value: '1',
-          required: true,
-          type: '0',
-          diy: '0'
-        },
-        {
-          name: '手机',
-          key: 'phone',
-          value: '1',
-          required: true,
-          type: '0',
-          diy: '0'
-        },
-        {
-          name: '性别',
-          key: 'gender',
-          value: '0',
-          required: false,
-          type: '0',
-          diy: '0'
-        },
-        {
-          name: '真实姓名',
-          key: 'realName',
-          value: '0',
-          required: false,
-          type: '0',
-          diy: '0'
-        },
-        {
-          name: '身份证号',
-          key: 'cardId',
-          value: '0',
-          required: false,
-          type: '0',
-          diy: '0'
-        }
-      ],
-      // 新增时子表默认添加几行空数据
-      addDefaultRowNum: 1,
+      confirmLoading: false,
       validatorRules: {
-        name: { rules: [{ required: true, message: '请输入活动名称!' }] },
-        startTime: { rules: [{ required: true, message: '请输入活动开始时间!' }] },
-        endTime: { rules: [{ required: true, message: '请输入活动结束时间!' }] },
-        endEnrol: { rules: [{ required: true, message: '请输入报名截止时间!' }] },
-        poster: { rules: [{ required: true, message: '请输入封面图!' }] },
-        detail: { rules: [{ required: true, message: '请输入详细说明!' }] },
-        displayType: { rules: [{ required: true, message: '请输入发布状态!' }] },
-        teamSize: {},
-        address: { rules: [{ required: true, message: '请输入活动地点!' }] },
-        enrolWay: { rules: [{ required: true, message: '请输入报名方式!' }] },
-        needExamineEnrol: {},
-        allowEnrolAgent: {},
-        notice: {},
-        insuranceType: { rules: [{ required: true, message: '请输入保险类型!' }] },
-        everyTeamMax: {},
-        everyTeamMin: {}
+        name: {
+          rules: [{ required: true, message: '请输入活动名称!' }]
+        },
+        startTime: {
+          rules: [{ required: true, message: '请输入活动开始时间!' }]
+        },
+        endTime: {
+          rules: [{ required: true, message: '请输入活动结束时间!' },
+          {
+              validator: (rule, value, callback) => {
+                let s = this.form.getFieldValue('startTime')
+                if (s && s>=value) {
+                  callback(true)
+                } else {
+                  callback()
+                }
+              },
+              message: '结束时间要晚于开始时间'
+            }
+         
+          ]
+        },
+        endEnrol: {
+          rules: [{ required: true, message: '请输入报名截止时间!' },
+          {
+              validator: (rule, value, callback) => {
+                let e = this.form.getFieldValue('endTime')
+                if (e && e<=value) {
+                  callback(true)
+                } else {
+                  callback()
+                }
+              },
+              message: '报名截止时间要早于结束时间'
+            }]
+        },
+        poster: {
+          rules: [{ required: true, message: '请输入封面图!' }]
+        },
+        detail: {
+          rules: [{ required: true, message: '请输入详细说明!' }]
+        },
+        displayType: {
+          rules: [{ required: true, message: '请输入发布状态!' }]
+        },
+        costType: {
+          initialValue: '0'
+        },
+        refundType: {
+          initialValue: '0',
+          preserve: true
+        },
+        teamSize: {
+          rules: [
+            {
+              validator: (rule, value, callback) => {
+                if (this.form.getFieldValue('enrolWay') != '0' && !value) {
+                  callback(true)
+                } else {
+                  callback()
+                }
+              },
+              message: '必须填写队伍数量'
+            },
+            { pattern: /^-?\d+$/, message: '请输入整数!' }
+          ]
+        },
+        
+        address: {
+          rules: [{ required: true, message: '请输入活动地点!' }]
+        },
+        enrolWay: {
+          rules: [{ required: true, message: '请输入报名方式!' }],
+          initialValue: '0'
+        },
+        needExamineEnrol: {
+          rules: [],
+          initialValue: '0'
+        },
+        allowEnrolAgent: {
+          rules: [],
+          initialValue: '1'
+        },
+        notice: {
+          rules: []
+        },
+        insuranceType: {
+          rules: [{ required: true, message: '请输入保险类型!' }]
+        },
+        everyTeamMax: {
+          rules: []
+        },
+        everyTeamMin: {
+          rules: []
+        },
+        enrolWriteOpts:{
+          initialValue:[
+            enrolWriteOpts[0],enrolWriteOpts[1]
+          ]
+           
+        },
+       
       },
-      refKeys: ['wxActiveCost'],
-      tableKeys: [],
-      activeKey: 'wxActiveCost',
-      // 活动费用表
-      wxActiveCostTable: {
-        loading: false,
-        dataSource: [],
-        columns: []
-      },
+ enrolWriteOptsItem: {
+          name:null,
+          type:null,
+          opts:null
+        },
       url: {
-        add: '/wx/wxActive/add',
-        edit: '/wx/wxActive/edit',
-        wxActiveCost: {
-          list: '/wx/wxActive/queryWxActiveCostByMainId'
-        }
+        add: '/wx/wxActive/addVO',
+        edit: '/wx/wxActive/edit'
       }
     }
   },
-  computed: {
-    defultWriteOpts() {
-      return [this.enrolWriteOpts[0], this.enrolWriteOpts[1]]
-    }
+  beforeCreate() {
+   this.form = this.$form.createForm(this)
+    // this.form.getFieldDecorator('cost[opts]', { initialValue: [], preserve: true });
+    this.form.getFieldDecorator('keys', { initialValue: [], preserve: true });
+  },
+  created(){
+    
   },
   methods: {
-    addOpts() {
-      this.showAddEnrolWriteForm = true
-    },
     handleEnrolWriteTypeChange(e) {
+      this.enrolWriteOptsItem.type = e
       if (e != '0') {
         this.showAddEnrolWriteOpt = true
       } else {
         this.showAddEnrolWriteOpt = false
       }
     },
-    handleEnrolWayChange(e) {
-      if (e === '1') {
-        this.showEnrolOpt = true
-      } else {
-        this.showEnrolOpt = false
+    addEnrolOpts(){
+       this.enrolWriteOptsItem = {
+        name: '',
+        key: 'OPTI',
+        value: '0',
+        required: false,
+        type: '0',
+        diy: '1'
       }
-    },
-    onEnrolWriteChange(e) {
-      console.log(this.form)
-      this.form.setFieldsValue({ enrolWriteOpts: e })
-      console.log(this.form.getFieldsValue())
-    },
-    getAllTable() {
-      let values = this.tableKeys.map(key => getRefPromise(this, key))
-      return Promise.all(values)
-    },
-    /** 调用完edit()方法之后会自动调用此方法 */
-    editAfter() {
-      let fieldval = pick(
-        this.model,
-        'name',
-        'startTime',
-        'endTime',
-        'endEnrol',
-        'poster',
-        'detail',
-        'displayType',
-        'teamSize',
-        'address',
-        'enrolWay',
-        'needExamineEnrol',
-        'allowEnrolAgent',
-        'notice',
-        'insuranceType',
-        'everyTeamMax',
-        'everyTeamMin',
-        'enrolWriteOpts'
-      )
-      this.$nextTick(() => {
-        this.form.setFieldsValue(fieldval)
-        // this.$refs.wxActiveCostForm.initFormData(this.url.wxActiveCost.list, this.model.id)
-      })
-      // 加载子表数据
-      // if (this.model.id) {
-      //   let params = { id: this.model.id }
-      // }
-    },
-    /** 整理成formData */
-    classifyIntoFormData(allValues) {
-      let main = Object.assign(this.model, allValues.formValue)
+      this.showAddEnrolWriteForm = true
 
-      return {
-        ...main, // 展开
-        wxActiveCostList: this.$refs.wxActiveCostForm.getFormData()
+    },
+    removeEnrolOptsItem(index){
+      this.writeOptItems.splice(index, 1)
+    },
+    addEnrolOptsItem(){
+      this.writeOptItems.push('')
+      
+    },
+    configAddItem() {
+      if (this.enrolWriteOptsItem.name) {
+        this.enrolWriteOptsItem.opts = this.writeOptItems
+        this.enrolWriteOpts.push(this.enrolWriteOptsItem)
+        this.showAddEnrolWriteForm = false
+      } 
+    },
+    validateCostOpt(r, v, cb) {
+      if (this.form.getFieldValue('cost[type]') != '0') {
+        if (!v) {
+          cb(true)
+        } else {
+          cb()
+        }
       }
     },
-    validateError(msg) {
-      this.$message.error(msg)
+    onCostOptInput() {},
+    handleCostTypeChange(val) {
+     
+    },
+    removeOpt(index){
+    
+       const keys = this.form.getFieldValue('keys');
+     
+      this.form.setFieldsValue({
+        keys: keys.filter(key => key !== index)
+      })
+    
+    },
+    addCostOpt() {
+   
+     const keys = this.form.getFieldValue('keys');
+      const nextKeys = keys.concat(id);
+     
+      this.form.setFieldsValue({
+        keys: nextKeys,
+      })
+      id++
+   
+    
+    },
+    add() {
+      this.edit({})
+    },
+    edit(record) {
+      this.form.resetFields()
+      this.model = Object.assign({}, record)
+      this.visible = true
+      this.$nextTick(() => {
+        this.form.setFieldsValue(
+          pick(
+            this.model,
+            'name',
+            'startTime',
+            'endTime',
+            'endEnrol',
+            'poster',
+            'detail',
+            'displayType',
+            'teamSize',
+            'address',
+            'enrolWay',
+            'needExamineEnrol',
+            'allowEnrolAgent',
+            'notice',
+            'insuranceType',
+            'everyTeamMax',
+            'everyTeamMin'
+          )
+        )
+      })
+    },
+    close() {
+      this.$emit('close')
+      this.visible = false
+    },
+    handleOk() {
+      const that = this
+      // 触发表单验证
+      this.form.validateFields((err, values) => {
+        if (!err) {
+          that.confirmLoading = true
+          let httpurl = ''
+          let method = ''
+          if (!this.model.id) {
+            httpurl += this.url.add
+            method = 'post'
+          } else {
+            httpurl += this.url.edit
+            method = 'put'
+          }
+          let formData = Object.assign(this.model, values)
+          formData.cost.number = 0
+          if(formData.cost.type != ''){
+            if(formData.cost.opts){
+              for(let i in formData.cost.opts){
+                formData.cost.number += parseInt(formData.cost.opts[i].number)
+                
+              }
+            }
+          }
+         
+          console.log('表单提交数据', formData)
+          httpAction(httpurl, formData, method)
+            .then(res => {
+              if (res.success) {
+                that.$message.success(res.message)
+                that.$emit('ok')
+              } else {
+                that.$message.warning(res.message)
+              }
+            })
+            .finally(() => {
+              that.confirmLoading = false
+              that.close()
+            })
+        }
+      })
+    },
+    handleCancel() {
+      this.close()
     },
     popupCallback(row) {
       this.form.setFieldsValue(
@@ -417,14 +595,10 @@ export default {
           'notice',
           'insuranceType',
           'everyTeamMax',
-          'everyTeamMin',
-          'enrolWriteOpts'
+          'everyTeamMin'
         )
       )
     }
   }
 }
 </script>
-
-<style scoped>
-</style>

@@ -236,12 +236,12 @@
             dataIndex: 'poster',
             scopedSlots: {customRender: 'imgSlot'}
           },
-          {
-            title:'详细说明',
-            align:"center",
-            dataIndex: 'detail',
-            scopedSlots: {customRender: 'htmlSlot'}
-          },
+          // {
+          //   title:'详细说明',
+          //   align:"center",
+          //   dataIndex: 'detail',
+          //   scopedSlots: {customRender: 'htmlSlot'}
+          // },
           {
             title:'发布状态',
             align:"center",
@@ -335,7 +335,7 @@
           }
         ],
         url: {
-          list: "/wx/wxActive/list",
+          list: "/wx/wxActive/listVO",
           delete: "/wx/wxActive/delete",
           deleteBatch: "/wx/wxActive/deleteBatch",
           exportXlsUrl: "/wx/wxActive/exportXls",

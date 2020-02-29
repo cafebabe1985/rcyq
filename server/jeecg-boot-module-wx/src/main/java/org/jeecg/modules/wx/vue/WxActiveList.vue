@@ -86,7 +86,7 @@
               </a-form-item>
             </a-col>
           </template>
-          <a-col :md="6" :sm="8">
+          <a-col :md="6" :sm="8" >
             <span style="float: left;overflow: hidden;" class="table-page-search-submitButtons">
               <a-button type="primary" @click="searchQuery" icon="search">查询</a-button>
               <a-button type="primary" @click="searchReset" icon="reload" style="margin-left: 8px">重置</a-button>
@@ -133,7 +133,8 @@
         :dataSource="dataSource"
         :pagination="ipagination"
         :loading="loading"
-        :rowSelection="{selectedRowKeys: selectedRowKeys, onChange: onSelectChange}"
+        :rowSelection="{fixed:true,selectedRowKeys: selectedRowKeys, onChange: onSelectChange}"
+        
         @change="handleTableChange">
 
         <template slot="htmlSlot" slot-scope="text">
@@ -331,7 +332,7 @@
             title: '操作',
             dataIndex: 'action',
             align:"center",
-            scopedSlots: { customRender: 'action' },
+            scopedSlots: { customRender: 'action' }
           }
         ],
         url: {
@@ -348,7 +349,6 @@
          allowEnrolAgent:[],
          insuranceType:[],
         },
-
       }
     },
     computed: {
