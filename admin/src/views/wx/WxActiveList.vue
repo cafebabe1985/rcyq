@@ -4,7 +4,7 @@
     <div class="table-page-search-wrapper">
       <a-form layout="inline" @keyup.enter.native="searchQuery">
         <a-row :gutter="24">
-          <a-col :md="6" :sm="8">
+          <a-col :md="12" :sm="8">
             <a-form-item label="活动名称">
               <a-input placeholder="请输入活动名称" v-model="queryParam.name"></a-input>
             </a-form-item>
@@ -236,12 +236,12 @@
             dataIndex: 'poster',
             scopedSlots: {customRender: 'imgSlot'}
           },
-          // {
-          //   title:'详细说明',
-          //   align:"center",
-          //   dataIndex: 'detail',
-          //   scopedSlots: {customRender: 'htmlSlot'}
-          // },
+          {
+            title:'创建人',
+            align:"center",
+            dataIndex: 'createBy',
+            
+          },
           {
             title:'发布状态',
             align:"center",

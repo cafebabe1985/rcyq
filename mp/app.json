@@ -10,7 +10,8 @@
     "pages/locationMap/locationMap",
     "pages/addEnrolWriteOpt/addEnrolWriteOpt",
     "pages/agreementPage/agreementPage",
-    "pages/costSetting/costSetting"
+    "pages/costSetting/costSetting",
+    "pages/activeDetail/activeDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

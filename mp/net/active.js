@@ -22,7 +22,7 @@ class Active {
     }
 
     return await Http.wxGet({
-      url: 'wx/wxActive/list',
+      url: 'wx/wxActive/listVO0d',
       data
     })
   }
@@ -42,7 +42,16 @@ class Active {
       data
     })
   }
+  /**
+     * 添加活动
+     */
+  static async addActive(data) {
 
+    return await Http.wxPost({
+      url: 'wx/wxActive/addVO',
+      data
+    })
+  }
 }
 
 export {

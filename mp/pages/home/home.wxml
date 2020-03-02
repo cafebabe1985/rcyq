@@ -85,12 +85,12 @@ bindtap="goNewsDetail">
       <view class="text-cut" style='font-size:15px !important'>{{item.name}}</view>
     </view>
     <view class="content">
-      <view class="cu-tag bg-yellow image-tag">{{tools.enrolStatusHandle(item.startTime,item.endTime,item.enrolStartTime,item.enrolEndTime)}}</view>
+      <view class="cu-tag bg-yellow image-tag">{{tools.enrolStatusHandle(item.startTime,item.endTime,item.enrolStartTime,item.endEnrol)}}</view>
       <image src="{{apiBaseUrl+item.poster}}" mode="aspectFill" style='width:300rpx'></image>
 
       <view class="desc">
         <view class="text-content">
-          <view> {{item.startTime}} 至 {{item.endTime}}</view>
+          <view> {{tools.dateHandle(item.startTime)}} 至 {{tools.dateHandle(item.endTime)}}</view>
           <view class="margin-top flex justify-between">
             <view>{{tools.activeTypeHandle(item.type)}}</view>
             <view class='cu-tag bg-green light round'>
@@ -102,12 +102,18 @@ bindtap="goNewsDetail">
     </view>
     <view class=" flex justify-between padding-left padding-right padding-top-sm">
       <view class="flex text-cut" style='width:420rpx;overflow:hidden'>
-        <view wx:for="{{tools.keywordsHandle(item.keyWords)}}" 
+      <view>
+      {{item.address}}
+      </view>
+        <!-- <view wx:for="{{tools.keywordsHandle(item.keyWords)}}" 
         wx:key="index"
         wx:for-item = "child"
-        class='margin-right-sm text-green'>{{child}}</view>
+        class='margin-right-sm text-green'>{{child}}</view> -->
       </view>
-      <view class="cu-tag bg-red light sm ">仅剩{{item.remain}}名额</view>
+      <view class="cu-tag bg-red light sm ">
+      {{item.cost.number?'仅剩'+item.cost.number+'名额':'名额不限'}}
+      
+      </view>
     </view>
   </view>
 </view>

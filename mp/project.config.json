@@ -97,6 +97,13 @@
 					"id": -1,
 					"name": "costSetting",
 					"pathName": "pages/costSetting/costSetting",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "activeDetail",
+					"pathName": "pages/activeDetail/activeDetail",
 					"scene": null
 				}
 			]

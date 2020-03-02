@@ -19,6 +19,7 @@
           <j-date placeholder="请选择报名截止时间" v-decorator="[ 'endEnrol', validatorRules.endEnrol]" :trigger-change="true"
             :show-time="true" date-format="YYYY-MM-DD HH:mm:ss" style="width: 100%" />
         </a-form-item>
+        
         <a-form-item label="封面图" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <j-upload v-decorator="['poster', validatorRules.poster]" :trigger-change="true"></j-upload>
         </a-form-item>
@@ -154,10 +155,8 @@
         </a-form-item>
        
             <a-form-item label="报名填写项" :labelCol="labelCol" :wrapperCol="wrapperCol">
-              <a-checkbox-group 
-             
-              v-decorator="[ 'enrolWriteOpts',validatorRules.enrolWriteOpts]"
-              >
+              <a-checkbox-group              
+              v-decorator="[ 'enrolWriteOpts',validatorRules.enrolWriteOpts]">
                 <a-checkbox 
                 :disabled="item.required"
                 :value="item" 
@@ -168,9 +167,7 @@
                 </a-button>
               </a-checkbox-group>
             </a-form-item>
-            <div v-if="showAddEnrolWriteForm">
-
-           
+            <div v-if="showAddEnrolWriteForm">           
             <a-form-item label="报名填写项类型" :labelCol="labelCol" :wrapperCol="wrapperCol">
                 <j-dict-select-tag @change="handleEnrolWriteTypeChange" type="radio" v-model="enrolWriteOptsItem.type"
                   :trigger-change="true" dictCode="enrol_write_type" placeholder="请选择报名填写类型" />
@@ -231,7 +228,49 @@ import JDate from '@/components/jeecg/JDate'
 import JUpload from '@/components/jeecg/JUpload'
 import JDictSelectTag from '@/components/dict/JDictSelectTag'
 import JEditor from '@/components/jeecg/JEditor'
-let id=0
+let id = 0
+const enrolWriteOpts = [
+  {
+    name: '昵称',
+    key: 'nickName',
+    value: '1',
+    required: true,
+    type: '0',
+    diy: '0'
+  },
+  {
+    name: '手机',
+    key: 'phone',
+    value: '1',
+    required: true,
+    type: '0',
+    diy: '0'
+  },
+  {
+    name: '性别',
+    key: 'gender',
+    value: '0',
+    required: false,
+    type: '0',
+    diy: '0'
+  },
+  {
+    name: '真实姓名',
+    key: 'realName',
+    value: '0',
+    required: false,
+    type: '0',
+    diy: '0'
+  },
+  {
+    name: '身份证号',
+    key: 'cardId',
+    value: '0',
+    required: false,
+    type: '0',
+    diy: '0'
+  }
+]
 export default {
   name: 'WxActiveModal',
   components: {
@@ -241,58 +280,15 @@ export default {
     JEditor
   },
   data() {
-    
-    let enrolWriteOpts = [
-      {
-        name:'昵称',
-        key:'nickName',
-        value:'1',
-        required:true,
-        type:'0',
-        diy:'0'
-      },
-      {
-        name: '手机',
-        key: 'phone',
-        value: '1',
-        required: true,
-        type: '0',
-        diy: '0'
-      },
-      {
-        name: '性别',
-        key: 'gender',
-        value: '0',
-        required: false,
-        type: '0',
-        diy: '0'
-      },
-      {
-        name: '真实姓名',
-        key: 'realName',
-        value: '0',
-        required: false,
-        type: '0',
-        diy: '0'
-      },
-      {
-        name: '身份证号',
-        key: 'cardId',
-        value: '0',
-        required: false,
-        type: '0',
-        diy: '0'
-      }
-    ]
     return {
       optsInited: false,
-      showAddEnrolWriteOpt:false,
-      showAddEnrolWriteForm:false,
+      showAddEnrolWriteOpt: false,
+      showAddEnrolWriteForm: false,
       writeOptItems: [''],
       title: '操作',
       width: 1000,
       visible: false,
-      enrolWriteOpts:enrolWriteOpts,
+      enrolWriteOpts: enrolWriteOpts,
       model: {},
       labelCol: {
         xs: { span: 24 },
@@ -311,11 +307,12 @@ export default {
           rules: [{ required: true, message: '请输入活动开始时间!' }]
         },
         endTime: {
-          rules: [{ required: true, message: '请输入活动结束时间!' },
-          {
+          rules: [
+            { required: true, message: '请输入活动结束时间!' },
+            {
               validator: (rule, value, callback) => {
                 let s = this.form.getFieldValue('startTime')
-                if (s && s>=value) {
+                if (s && s >= value) {
                   callback(true)
                 } else {
                   callback()
@@ -323,22 +320,23 @@ export default {
               },
               message: '结束时间要晚于开始时间'
             }
-         
           ]
         },
         endEnrol: {
-          rules: [{ required: true, message: '请输入报名截止时间!' },
-          {
+          rules: [
+            { required: true, message: '请输入报名截止时间!' },
+            {
               validator: (rule, value, callback) => {
                 let e = this.form.getFieldValue('endTime')
-                if (e && e<=value) {
+                if (e && e <= value) {
                   callback(true)
                 } else {
                   callback()
                 }
               },
               message: '报名截止时间要早于结束时间'
-            }]
+            }
+          ]
         },
         poster: {
           rules: [{ required: true, message: '请输入封面图!' }]
@@ -371,7 +369,7 @@ export default {
             { pattern: /^-?\d+$/, message: '请输入整数!' }
           ]
         },
-        
+
         address: {
           rules: [{ required: true, message: '请输入活动地点!' }]
         },
@@ -399,33 +397,26 @@ export default {
         everyTeamMin: {
           rules: []
         },
-        enrolWriteOpts:{
-          initialValue:[
-            enrolWriteOpts[0],enrolWriteOpts[1]
-          ]
-           
-        },
-       
+        enrolWriteOpts: {
+          initialValue: [enrolWriteOpts[0], enrolWriteOpts[1]]
+        }
       },
- enrolWriteOptsItem: {
-          name:null,
-          type:null,
-          opts:null
-        },
+      enrolWriteOptsItem: {
+        name: null,
+        type: null,
+        opts: null
+      },
       url: {
         add: '/wx/wxActive/addVO',
-        edit: '/wx/wxActive/edit'
+        edit: '/wx/wxActive/editVO'
       }
     }
   },
   beforeCreate() {
-   this.form = this.$form.createForm(this)
-    // this.form.getFieldDecorator('cost[opts]', { initialValue: [], preserve: true });
-    this.form.getFieldDecorator('keys', { initialValue: [], preserve: true });
+    this.form = this.$form.createForm(this)
+    this.form.getFieldDecorator('keys', { initialValue: [], preserve: true })
   },
-  created(){
-    
-  },
+  created() {},
   methods: {
     handleEnrolWriteTypeChange(e) {
       this.enrolWriteOptsItem.type = e
@@ -435,8 +426,8 @@ export default {
         this.showAddEnrolWriteOpt = false
       }
     },
-    addEnrolOpts(){
-       this.enrolWriteOptsItem = {
+    addEnrolOpts() {
+      this.enrolWriteOptsItem = {
         name: '',
         key: 'OPTI',
         value: '0',
@@ -445,63 +436,134 @@ export default {
         diy: '1'
       }
       this.showAddEnrolWriteForm = true
-
     },
-    removeEnrolOptsItem(index){
+    removeEnrolOptsItem(index) {
       this.writeOptItems.splice(index, 1)
     },
-    addEnrolOptsItem(){
+    addEnrolOptsItem() {
       this.writeOptItems.push('')
-      
     },
     configAddItem() {
       if (this.enrolWriteOptsItem.name) {
         this.enrolWriteOptsItem.opts = this.writeOptItems
         this.enrolWriteOpts.push(this.enrolWriteOptsItem)
         this.showAddEnrolWriteForm = false
-      } 
+      }
     },
     validateCostOpt(r, v, cb) {
-      if (this.form.getFieldValue('cost[type]') != '0') {
+      console.log(this.form.getFieldValue('cost.type') != '0')
+      if (this.form.getFieldValue('cost.type') != '0') {
         if (!v) {
           cb(true)
         } else {
           cb()
         }
+      } else {
+        cb()
       }
     },
     onCostOptInput() {},
-    handleCostTypeChange(val) {
-     
-    },
-    removeOpt(index){
-    
-       const keys = this.form.getFieldValue('keys');
-     
+    handleCostTypeChange(val) {},
+    removeOpt(index) {
+      const keys = this.form.getFieldValue('keys')
+
       this.form.setFieldsValue({
         keys: keys.filter(key => key !== index)
       })
-    
     },
     addCostOpt() {
-   
-     const keys = this.form.getFieldValue('keys');
-      const nextKeys = keys.concat(id);
-     
+      const keys = this.form.getFieldValue('keys')
+      const nextKeys = keys.concat(id)
+
       this.form.setFieldsValue({
-        keys: nextKeys,
+        keys: nextKeys
       })
       id++
-   
-    
     },
     add() {
-      this.edit({})
+      this.edit({}, 1)
     },
-    edit(record) {
+    edit(record, isEdit) {
       this.form.resetFields()
       this.model = Object.assign({}, record)
       this.visible = true
+
+      if (isEdit != 1) {
+        this.form.getFieldDecorator('teamSize', { initialValue: null, preserve: true })
+        this.form.getFieldDecorator('everyTeamMax', { initialValue: null, preserve: true })
+        this.form.getFieldDecorator('everyTeamMin', { initialValue: null, preserve: true })
+        if (record.cost && record.cost.opts) {
+          this.form.getFieldDecorator('cost.type', { initialValue: record.cost.type, preserve: true })
+          this.form.getFieldDecorator('cost.id', { initialValue: record.cost.id, preserve: true })
+          this.form.getFieldDecorator('cost.number', { initialValue: null, preserve: true })
+          this.form.getFieldDecorator('cost.refundType', { initialValue: null, preserve: true })
+          if (record.cost.opts.length > 0) {
+            for (let index in record.cost.opts) {
+              this.form.getFieldDecorator(`cost[opts][${index}][id]`, {
+                initialValue: record.cost.opts[index]['id'],
+                preserve: true
+              })
+              this.form.getFieldDecorator(`cost[opts][${index}][name]`, {
+                initialValue: record.cost.opts[index]['name'],
+                preserve: true
+              })
+              this.form.getFieldDecorator(`cost[opts][${index}][cost]`, {
+                initialValue: record.cost.opts[index]['cost'],
+                preserve: true
+              })
+              this.form.getFieldDecorator(`cost[opts][${index}][number]`, {
+                initialValue: record.cost.opts[index]['number'],
+                preserve: true
+              })
+            }
+            let keyn = record.cost.opts
+            let keysEd = []
+            for (let i in keyn) {
+              keysEd.push(parseInt(i))
+            }
+            this.model.keys = keysEd
+          }
+        }
+
+        let indexs = []
+        let remain = []
+        let dfTrail = enrolWriteOpts.length - 1
+
+        let catArr = enrolWriteOpts.concat(record.enrolWriteOpts).filter((cur, index, arr) => {
+          if (index <= dfTrail) {
+            for (let i in record.enrolWriteOpts) {
+              if (cur.name === record.enrolWriteOpts[i].name) {
+                if (indexs.indexOf(index) == -1) {
+                  indexs.push(index)
+                }
+                let j = parseInt(i) + parseInt(dfTrail) + 1
+                if (remain.indexOf(j) == -1) {
+                  remain.push(j)
+                }
+              }
+            }
+          }
+          return true
+        })
+
+        for (let i in indexs) {
+          catArr[indexs[i]] = catArr[remain[i]]
+        }
+
+        let catArr2 = catArr.filter((cur, index, arr) => {
+          if (remain.indexOf(index) == -1) {
+            return true
+          }
+        })
+        catArr2[0].required = true
+        catArr2[1].required = true
+        this.enrolWriteOpts = catArr2
+        this.validatorRules.enrolWriteOpts.initialValue = record.enrolWriteOpts
+      } else {
+        this.enrolWriteOpts = enrolWriteOpts
+        this.validatorRules.enrolWriteOpts.initialValue = [enrolWriteOpts[0], enrolWriteOpts[1]]
+      }
+
       this.$nextTick(() => {
         this.form.setFieldsValue(
           pick(
@@ -521,9 +583,13 @@ export default {
             'notice',
             'insuranceType',
             'everyTeamMax',
-            'everyTeamMin'
+            'everyTeamMin',
+            'cost',
+            'enrolWriteOpts',
+            'keys'
           )
         )
+        console.log(this.form.getFieldsValue())
       })
     },
     close() {
@@ -547,15 +613,14 @@ export default {
           }
           let formData = Object.assign(this.model, values)
           formData.cost.number = 0
-          if(formData.cost.type != ''){
-            if(formData.cost.opts){
-              for(let i in formData.cost.opts){
+          if (formData.cost['type'] != '') {
+            if (formData.cost.opts) {
+              for (let i in formData.cost.opts) {
                 formData.cost.number += parseInt(formData.cost.opts[i].number)
-                
               }
             }
           }
-         
+
           console.log('表单提交数据', formData)
           httpAction(httpurl, formData, method)
             .then(res => {
@@ -567,7 +632,18 @@ export default {
               }
             })
             .finally(() => {
+              this.optsInited = false
+              this.showAddEnrolWriteOpt = false
+              this.showAddEnrolWriteForm = false
+              this.writeOptItems = ['']
+              this.enrolWriteOptsItem = {
+                name: null,
+                type: null,
+                opts: null
+              }
+              this.enrolWriteOpts = enrolWriteOpts
               that.confirmLoading = false
+
               that.close()
             })
         }
@@ -575,29 +651,6 @@ export default {
     },
     handleCancel() {
       this.close()
-    },
-    popupCallback(row) {
-      this.form.setFieldsValue(
-        pick(
-          row,
-          'name',
-          'startTime',
-          'endTime',
-          'endEnrol',
-          'poster',
-          'detail',
-          'displayType',
-          'teamSize',
-          'address',
-          'enrolWay',
-          'needExamineEnrol',
-          'allowEnrolAgent',
-          'notice',
-          'insuranceType',
-          'everyTeamMax',
-          'everyTeamMin'
-        )
-      )
     }
   }
 }

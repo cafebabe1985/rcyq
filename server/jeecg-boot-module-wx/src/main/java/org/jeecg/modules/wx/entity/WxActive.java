@@ -100,4 +100,5 @@ public class WxActive implements Serializable {
 	/**每队人数下限*/
 	@Excel(name = "每队人数下限", width = 15)
     private java.lang.Integer everyTeamMin;
+
 }

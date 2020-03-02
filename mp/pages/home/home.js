@@ -60,7 +60,10 @@ Page({
         TabCur: e.currentTarget.dataset.id,
       })
     }
-
+    wx.pageScrollTo({
+      scrollTop: 0,
+      duration: 300
+    })
   },
   async navSelect(e) {
     let index = e.currentTarget.dataset.id
@@ -209,7 +212,7 @@ Page({
   },
   //加载新的活动
   async loadActive(pageNo, pageSize) {
-    const resActiveData = await Active.listActive(pageNo, pageSize, 'createTime', 'desc', 1)
+    const resActiveData = await Active.listActive(pageNo, pageSize, 'createTime', 'desc', 1,{displayType:'1'})
     let newActive = resActiveData.result.records
     let totalActive = resActiveData.result.total
     this.data.actives.push(...newActive)
@@ -239,7 +242,8 @@ Page({
     this.data.newsPageNo = 1
     this.data.activePageNo = 1
     const resScenicData = await Scenic.listScenic(this.data.scenicPageNo, 10, 'createTime', 'desc', 1)
-    const resActiveData = await Active.listActive(this.data.activePageNo, 10, 'createTime', 'desc', 1)
+    const resActiveData = await Active.listActive(this.data.activePageNo, 10, 'createTime', 'desc', 1,{displayType:'1'})
+
     const resNewsData = await News.listNews(this.data.newsPageNo, 10, 'createTime', 'desc', 1)
     const resSwiperData = await Swiper.listSwiper(1, 6, 'displayOrder', 'asc', 1)
     const resCityTabData = await CityTab.listCityTab('displayOrder', 'asc')
@@ -255,6 +259,7 @@ Page({
       actives: resActiveData.result.records,
       cityTabs: this.data.cityTabs.concat(resCityTabData.result.records)
     })
+   
     wx.hideLoading()
   },
   /**

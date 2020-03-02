@@ -2,6 +2,9 @@
 import {
   config
 } from '../../config/config.js'
+import {
+  Active
+} from '../../net/active.js'
 Page({
 
   /**
@@ -110,8 +113,8 @@ Page({
       teamSize:'',
       everyTeamMax:'',
       everyTeamMin:'',
-      needExamineEnrol:null,
-      allowEnrolAgent:null,
+      needExamineEnrol:'0',
+      allowEnrolAgent:'1',
       displayType:'0',
       notice:'',
       insuranceType:'0',
@@ -119,7 +122,7 @@ Page({
         type:'0',
         number:'',
         refundType:0,
-        items:[]
+        opts:[]
       },
       enrolWriteOpts:null,
     }
@@ -341,14 +344,30 @@ Page({
       }
     });
   },
-  doSubmit() {
+ async doSubmit(e) {
     
     if (this.validateAll()){
       this.data.form.enrolWriteOpts = this.data.enrolWriteOpts.filter((item)=>{
         return item.value === '1'
       })
-      console.log(this.data.form)
-    }else{
+     
+      this.data.form.startTime = this.data.form.startTime+":00"
+      this.data.form.endTime = this.data.form.endTime + ":00"
+      this.data.form.endEnrol = this.data.form.endEnrol + ":00"
+      let userInfo =  wx.getStorageSync("userInfo")
+      this.data.form.createBy = userInfo.openId
+      
+      if (e.currentTarget.dataset.name=== 'preview'){
+          wx.navigateTo({
+            url: '/pages/activeDetail/activeDetail',
+            success:(res)=>{
+              res.eventChannel.emit('acceptData',this.data.form)
+            }
+          })
+      }else{
+        let res = await Active.addActive(this.data.form)
+      }
+     }else{
       this.setData({
         form: this.data.form
       })
@@ -403,7 +422,7 @@ Page({
         return false
       }
     }
-    console.log(this.data.validates)
+    
     return true
   },
   formReset(e) {

@@ -61,6 +61,8 @@ public class WxActiveController extends JeecgController<WxActive, IWxActiveServi
 	private IWxEnrolWriteItemService wxEnrolWriteItemService;
 	@Autowired
 	private IWxActiveVOService wxActiveVOService;
+	@Autowired
+	private IWxUserService wxUserService;
 
 	/**
 	 * 分页列表查询
@@ -104,7 +106,14 @@ public class WxActiveController extends JeecgController<WxActive, IWxActiveServi
 		 for (WxActiveVO avo:records
 			  ) {
 			 String activeId = avo.getId();
-			 avo.setDetail("");
+			 WxUser wxUser = new WxUser();
+			 wxUser.setOpenId(avo.getCreateBy());
+			 Wrapper<WxUser> wxUserMa = new QueryWrapper<>(wxUser);
+			 WxUser wxUserOne = wxUserService.getOne(wxUserMa);
+			 if(null!= wxUserOne){
+				 avo.setCreateUserInfo(wxUserOne);
+			 }
+
 			 WxActiveCostVO wxActiveCost = new WxActiveCostVO();
 			 wxActiveCost.setActiveId(activeId);
 			 Wrapper<WxActiveCostVO> costMapQuery = new QueryWrapper<>(wxActiveCost);
@@ -116,7 +125,6 @@ public class WxActiveController extends JeecgController<WxActive, IWxActiveServi
 				one.setOpts(wxActiveCostItemService.list(costItemMapQuery));
 				avo.setCost(one);
 			}
-
 			 WxActiveEnrolWriteVO wxActiveEnrolWriteVO = new WxActiveEnrolWriteVO();
 			 wxActiveEnrolWriteVO.setActiveId(activeId);
 			 Wrapper<WxActiveEnrolWriteVO> enrolWriteVOWrapper = new QueryWrapper<>(wxActiveEnrolWriteVO);
@@ -136,7 +144,72 @@ public class WxActiveController extends JeecgController<WxActive, IWxActiveServi
 				v.setOpts(sl);
 			 }
 			 avo.setEnrolWriteOpts(enrolWriteOpts);
-//			System.out.println(wxActiveCostService.list(costMapQuery));
+
+		 }
+		 return Result.ok(pageList);
+	 }
+	 /**
+	  *
+	  * @param wxActive
+	  * @param pageNo
+	  * @param pageSize
+	  * @param req
+	  * @return
+	  */
+	 @GetMapping(value = "/listVO0d")
+	 public Result<?> queryPageListVO0d(WxActiveVO wxActive,
+									  @RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
+									  @RequestParam(name="pageSize", defaultValue="10") Integer pageSize,
+									  HttpServletRequest req) {
+
+		 Map<String, String[]> parameterMap = req.getParameterMap();
+		 QueryWrapper<WxActiveVO> queryWrapper = QueryGenerator.initQueryWrapper(wxActive, req.getParameterMap());
+		 Page<WxActiveVO> page = new Page<WxActiveVO>(pageNo, pageSize);
+		 IPage<WxActiveVO> pageList = wxActiveVOService.page(page, queryWrapper);
+		 List<WxActiveVO> records = pageList.getRecords();
+		 for (WxActiveVO avo:records
+		 ) {
+			 String activeId = avo.getId();
+			 avo.setDetail("");
+			 WxActiveCostVO wxActiveCost = new WxActiveCostVO();
+			 wxActiveCost.setActiveId(activeId);
+			 WxUser wxUser = new WxUser();
+			 wxUser.setOpenId(avo.getCreateBy());
+			 Wrapper<WxUser> wxUserMa = new QueryWrapper<>(wxUser);
+			 WxUser wxUserOne = wxUserService.getOne(wxUserMa);
+			 if(null!= wxUserOne){
+				 avo.setCreateUserInfo(wxUserOne);
+			 }
+			 Wrapper<WxActiveCostVO> costMapQuery = new QueryWrapper<>(wxActiveCost);
+			 WxActiveCostVO one = wxActiveCostVOService.getOne(costMapQuery);
+			 WxActiveCostItem item = new WxActiveCostItem();
+			 if(null != one){
+				 item.setCostId(one.getId());
+				 Wrapper<WxActiveCostItem> costItemMapQuery = new QueryWrapper<>(item);
+				 one.setOpts(wxActiveCostItemService.list(costItemMapQuery));
+				 avo.setCost(one);
+			 }
+
+			 WxActiveEnrolWriteVO wxActiveEnrolWriteVO = new WxActiveEnrolWriteVO();
+			 wxActiveEnrolWriteVO.setActiveId(activeId);
+			 Wrapper<WxActiveEnrolWriteVO> enrolWriteVOWrapper = new QueryWrapper<>(wxActiveEnrolWriteVO);
+			 List<WxActiveEnrolWriteVO> enrolWriteOpts = wxActiveEnrolWriteVOService.list(enrolWriteVOWrapper);
+			 for (WxActiveEnrolWriteVO v:enrolWriteOpts
+			 ) {
+				 String vId = v.getId();
+				 WxEnrolWriteItem item1 = new WxEnrolWriteItem();
+				 item1.setEnrolWriteId(vId);
+				 Wrapper<WxEnrolWriteItem> ewWrapper = new QueryWrapper<>(item1);
+				 List<WxEnrolWriteItem> list = wxEnrolWriteItemService.list(ewWrapper);
+				 ArrayList<String> sl = new ArrayList<>();
+				 for (WxEnrolWriteItem i:list
+				 ) {
+					 sl.add(i.getName());
+				 }
+				 v.setOpts(sl);
+			 }
+			 avo.setEnrolWriteOpts(enrolWriteOpts);
+
 		 }
 		 return Result.ok(pageList);
 	 }
@@ -161,8 +234,9 @@ public class WxActiveController extends JeecgController<WxActive, IWxActiveServi
 	 @Transactional
 	 @PostMapping(value = "/addVO")
 	 public Result<?> addVO(@RequestBody WxActiveVO wxActive) {
-System.out.println(wxActive);
+
 	 	WxActive wa = new WxActive();
+	 	wa.setCreateBy(wxActive.getCreateBy());
 	 	wa.setName(wxActive.getName());
 	 	wa.setDetail(wxActive.getDetail());
 	 	wa.setAddress(wxActive.getAddress());
@@ -234,8 +308,94 @@ System.out.println(wxActive);
 		wxActiveService.updateById(wxActive);
 		return Result.ok("编辑成功!");
 	}
-	
-	/**
+	 /**
+	  *  编辑
+	  *
+	  * @param wxActive
+	  * @return
+	  */
+	 @PutMapping(value = "/editVO")
+	 public Result<?> editVO(@RequestBody WxActiveVO wxActive) {
+		 String activeId = wxActive.getId();
+		 WxActive wa = new WxActive();
+		 wa.setName(wxActive.getName());
+		 wa.setDetail(wxActive.getDetail());
+		 wa.setAddress(wxActive.getAddress());
+		 wa.setAllowEnrolAgent(wxActive.getAllowEnrolAgent());
+		 wa.setEndEnrol(wxActive.getEndEnrol());
+		 wa.setStartTime(wxActive.getStartTime());
+		 wa.setEndTime(wxActive.getEndTime());
+		 wa.setEnrolWay(wxActive.getEnrolWay());
+		 wa.setDisplayType(wxActive.getDisplayType());
+		 wa.setEveryTeamMax(wxActive.getEveryTeamMax());
+		 wa.setEveryTeamMin(wxActive.getEveryTeamMin());
+		 wa.setInsuranceType(wxActive.getInsuranceType());
+		 wa.setPoster(wxActive.getPoster());
+		 wa.setNeedExamineEnrol(wxActive.getNeedExamineEnrol());
+		 wa.setTeamSize(wxActive.getTeamSize());
+		 wa.setNotice(wxActive.getNotice());
+		 wa.setId(activeId);
+	 	wxActiveService.updateById(wa);
+		 WxActiveCostVO costVO = wxActive.getCost();
+		 WxActiveCost cost = new WxActiveCost();
+		 cost.setActiveId(costVO.getActiveId());
+		 cost.setNumber(costVO.getNumber());
+		 cost.setType(costVO.getType());
+		 cost.setRefundType(costVO.getRefundType());
+		 cost.setId(costVO.getId());
+		 wxActiveCostService.updateById(cost);
+		 List<WxActiveCostItem> opts = costVO.getOpts();
+		 if(null!= opts){
+			  wxActiveCostItemService.updateBatchById(opts);
+		 }
+		 List<WxActiveEnrolWrite> waews = new ArrayList<>();
+		 List<WxActiveEnrolWriteVO> enrolWriteOptsVO = wxActive.getEnrolWriteOpts();
+		 //更新报名填写项：1.删除活动的选项；2.增加新的
+		 //1.1删除报名项和候选项
+		 WxActiveEnrolWrite waew = new WxActiveEnrolWrite();
+		 waew.setActiveId(activeId);
+		 Wrapper<WxActiveEnrolWrite> waewMapQuery = new QueryWrapper<>(waew);
+		 List<WxActiveEnrolWrite> aewlist = wxActiveEnrolWriteService.list(waewMapQuery);
+
+		 boolean remove = wxActiveEnrolWriteService.remove(waewMapQuery);
+
+		 for (WxActiveEnrolWrite waeItem:aewlist
+			  ) {
+			 WxEnrolWriteItem wewq = new WxEnrolWriteItem();
+			 wewq.setEnrolWriteId(waeItem.getId());
+			 Wrapper<WxEnrolWriteItem> itemQuery = new QueryWrapper<>(wewq);
+			 wxEnrolWriteItemService.remove(itemQuery);
+		 }
+
+		 //2.增加新的报名填写想和候选项
+		 for(int i = 0;i<enrolWriteOptsVO.size();i++){
+
+			 waew = new WxActiveEnrolWrite();
+			 waew.setDiy(enrolWriteOptsVO.get(i).getDiy());
+			 waew.setName(enrolWriteOptsVO.get(i).getName());
+			 waew.setType(enrolWriteOptsVO.get(i).getType());
+			 waew.setValue(enrolWriteOptsVO.get(i).getValue());
+			 waew.setActiveId(activeId);
+			 wxActiveEnrolWriteService.save(waew);
+			 String newWaewId = waew.getId();
+			 System.out.println(newWaewId);
+			 List<String> opts1 = enrolWriteOptsVO.get(i).getOpts();
+			 if(null != opts1){
+				 List<WxEnrolWriteItem> enrolWriteItems = new ArrayList<>();
+				 for (String s:opts1
+				 ) {
+					 WxEnrolWriteItem wew = new WxEnrolWriteItem();
+					 wew.setName(s);
+					 wew.setEnrolWriteId(newWaewId);
+					 enrolWriteItems.add(wew);
+				 }
+				wxEnrolWriteItemService.saveBatch(enrolWriteItems);
+			 }
+		 }
+		 return Result.ok("编辑成功!");
+	 }
+
+	 /**
 	 *   通过id删除
 	 *
 	 * @param id

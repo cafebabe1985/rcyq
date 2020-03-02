@@ -191,14 +191,17 @@ Page({
       this.checkNumber()
       let optsRes = this.checkOpts()
 
-      if (this.data.numberValidate && optsRes) {
+      if ( optsRes) {
+        this.data.number = 0
+        for(let i in this.data.opts){
+          this.data.number += parseInt(this.data.opts[i].number) 
+        }
+         
         ok = true
       }
     } else {
-      this.checkNumber()
-      if (this.data.numberValidate) {
-        ok = true
-      }
+      ok=true
+    
     }
     if (ok) {
       let pages = getCurrentPages()
@@ -209,7 +212,7 @@ Page({
           type: this.data.type,
           number: this.data.number,
           refundType: this.data.refundType,
-          items: this.data.type==0?[]:this.data.opts
+          opts: this.data.type==0?[]:this.data.opts
         }
         console.log(newOpt)
         
@@ -232,7 +235,7 @@ Page({
     eventChannel.on('acceptCost', (cost) => {
       console.log(cost)
       if (cost) {
-        let items = cost.items.length > 0 ? cost.items :
+        let items = cost.opts.length > 0 ? cost.opts :
           [{
             name: '',
             cost: '',
