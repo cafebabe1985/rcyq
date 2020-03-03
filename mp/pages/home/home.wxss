@@ -40,4 +40,6 @@
   margin-right: -90rpx
 }
 
-
+page{
+  background-color: white
+}

@@ -65,11 +65,76 @@ var activeTypeHandle = function (index) {
       break
   }
 }
+var costTypeHandle = function(type){
+  switch (type){
+    case "0":
+    return "免费"
+    break
+    case "1":
+    return "报名后付费"
+    break
+    case "2":
+    return "活动中收费"
+    break
+    default:
+    return ""
+  }
+}
+
+var costHandle=function(cost){
+  
+  var total
+  if (cost && cost.opts && cost.opts.length>0){
+    total = 0
+    for (var i=0;i<cost.opts.length;i++){
+      total += parseFloat(cost.opts[i].cost)
+    }
+    if(total&&total>0){
+      return "￥"+ total
+    }else{
+      return "待定"
+    }
+  }else{
+    return "待定"
+  }
+}
+var needExamineEnrolTypeHandle = function(type){
+  if(type == '0'){
+    return '不需要'
+  }else{
+    return '需要'
+  }
+}
+var allowEnrolAgentTypeHandle = function(type){
+  if (type == '0') {
+    return '不允许'
+  } else {
+    return '允许'
+  }
+}
+var insuranceTypeHandle = function(type){
+  var index = parseInt(type)
+  var insuranceType= ['无保险要求', '会员自行购买', '主办方统一购买']
+  return insuranceType[index]
+}
+var enrolWayHandle = function(type){
+  if (type == '0') {
+    return '个人报名'
+  } else {
+    return '团队报名'
+  }
+}
 module.exports = {
   dateHandle: dateHandle,
   contentTypeHandle: contentTypeHandle,
   pathHandle: pathHandle,
   keywordsHandle: keywordsHandle,
   enrolStatusHandle: enrolStatusHandle,
-  activeTypeHandle: activeTypeHandle
+  activeTypeHandle: activeTypeHandle,
+  costTypeHandle: costTypeHandle,
+  costHandle: costHandle,
+  needExamineEnrolTypeHandle: needExamineEnrolTypeHandle,
+  allowEnrolAgentTypeHandle: allowEnrolAgentTypeHandle,
+  insuranceTypeHandle: insuranceTypeHandle,
+  enrolWayHandle: enrolWayHandle
 };

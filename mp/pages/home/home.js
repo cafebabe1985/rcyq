@@ -107,6 +107,12 @@ Page({
       urls: imgs // 需要预览的图片http链接列表
     })
   },
+  goActiveDetail(e){
+    wx.navigateTo({
+      url: `/pages/activeDetail/activeDetail?id=${e.currentTarget.dataset.id}`,
+
+    })
+  },
   goNewsDetail(e) {
     let url
     if (e.currentTarget.dataset.item.newsType == '0') {

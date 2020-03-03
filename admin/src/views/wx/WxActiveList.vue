@@ -243,6 +243,11 @@
             
           },
           {
+            title:'点击数',
+            align:"center",
+            dataIndex: 'hit'
+          },
+          {
             title:'发布状态',
             align:"center",
             dataIndex: 'displayType',

@@ -85,6 +85,11 @@ Page({
       detail = await Scenic.getScenicById(id)
 
     }
+    /**
+     * 格式化富文本
+     * 1.图片居中
+     * 2.分离视频
+     * */
     detail.result.content = formatRichText(detail.result.content)
     let cstr = detail.result.content
     if (!cstr) {

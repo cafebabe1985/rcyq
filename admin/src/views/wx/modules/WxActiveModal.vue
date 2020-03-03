@@ -26,7 +26,12 @@
         <a-form-item label="详细说明" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <j-editor v-decorator="['detail',{trigger:'input'}]" />
         </a-form-item>
-
+        
+        <a-form-item label="点击数" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input-number 
+          style="width:100%"
+          v-decorator="[ 'hit']" placeholder="请输入活动地点"></a-input-number>
+        </a-form-item>
 
         <a-form-item label="活动地点" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <a-input v-decorator="[ 'address', validatorRules.address]" placeholder="请输入活动地点"></a-input>
@@ -586,7 +591,8 @@ export default {
             'everyTeamMin',
             'cost',
             'enrolWriteOpts',
-            'keys'
+            'keys',
+            'hit'
           )
         )
         console.log(this.form.getFieldsValue())

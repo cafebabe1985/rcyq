@@ -11,7 +11,8 @@
     "pages/addEnrolWriteOpt/addEnrolWriteOpt",
     "pages/agreementPage/agreementPage",
     "pages/costSetting/costSetting",
-    "pages/activeDetail/activeDetail"
+    "pages/activeDetail/activeDetail",
+    "pages/enrolPage/enrolPage"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -79,8 +79,10 @@ bindtap="goNewsDetail">
   </view>
 </view>
 <!-- 内容列表区域 1 活动列表-->
-<view wx:if="{{1==TabCur}}" class="cu-card article no-card solid-bottom" wx:for="{{actives}}" wx:key ="index">
-  <view class="cu-item shadow">
+<view wx:if="{{1==TabCur}}" class="cu-card article no-card solids-bottom" wx:for="{{actives}}" wx:key ="index">
+  <view class="cu-item shadow" 
+  data-id="{{item.id}}"
+  bindtap="goActiveDetail">
     <view class="title">
       <view class="text-cut" style='font-size:15px !important'>{{item.name}}</view>
     </view>
@@ -92,9 +94,9 @@ bindtap="goNewsDetail">
         <view class="text-content">
           <view> {{tools.dateHandle(item.startTime)}} 至 {{tools.dateHandle(item.endTime)}}</view>
           <view class="margin-top flex justify-between">
-            <view>{{tools.activeTypeHandle(item.type)}}</view>
+            <view>费用:{{tools.costHandle(item.cost)}}</view>
             <view class='cu-tag bg-green light round'>
-            {{item.cost > 0?item.cost:'免费'}}
+            {{tools.costTypeHandle(item.cost.type)}}
             </view>
           </view>
         </view>
@@ -103,12 +105,10 @@ bindtap="goNewsDetail">
     <view class=" flex justify-between padding-left padding-right padding-top-sm">
       <view class="flex text-cut" style='width:420rpx;overflow:hidden'>
       <view>
+<text class="cuIcon-locationfill"></text>
       {{item.address}}
       </view>
-        <!-- <view wx:for="{{tools.keywordsHandle(item.keyWords)}}" 
-        wx:key="index"
-        wx:for-item = "child"
-        class='margin-right-sm text-green'>{{child}}</view> -->
+      
       </view>
       <view class="cu-tag bg-red light sm ">
       {{item.cost.number?'仅剩'+item.cost.number+'名额':'名额不限'}}
@@ -118,7 +118,7 @@ bindtap="goNewsDetail">
   </view>
 </view>
 <!--内容列表区域 2 快讯列表-->
-<view wx:if="{{2==TabCur}}" class="cu-card article no-card solid-bottom" wx:for="{{news}}" wx:key="index"
+<view wx:if="{{2==TabCur}}" class="cu-card article no-card solids-bottom" wx:for="{{news}}" wx:key="index"
 data-item="{{item}}"
 bindtap="goNewsDetail">
   <view class="cu-item shadow">
