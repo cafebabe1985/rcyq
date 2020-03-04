@@ -295,9 +295,7 @@ Page({
           });
         }
       }).exec();
-
     }
-
   },
 
   /**
@@ -311,7 +309,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   async onShow() {
-    console.log("onShow")
+   
     this.initPage()
     
   },

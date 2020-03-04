@@ -468,6 +468,8 @@ public class WxActiveController extends JeecgController<WxActive, IWxActiveServi
         wxUser.setOpenId(wxActive.getCreateBy());
         Wrapper<WxUser> wxUserMa = new QueryWrapper<>(wxUser);
         wxActive.setCreateUserInfo(wxUserService.getOne(wxUserMa));
+        wxActive.setHit(wxActive.getHit()+1);
+        wxActiveVOService.updateById(wxActive);
         return Result.ok(wxActive);
     }
 

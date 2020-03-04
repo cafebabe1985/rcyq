@@ -256,8 +256,9 @@ const enrolWriteOpts = [
     key: 'gender',
     value: '0',
     required: false,
-    type: '0',
-    diy: '0'
+    type: '1',
+    diy: '0',
+    opts:["未知","男","女"]
   },
   {
     name: '真实姓名',

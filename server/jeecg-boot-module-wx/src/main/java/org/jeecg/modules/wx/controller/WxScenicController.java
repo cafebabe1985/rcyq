@@ -150,6 +150,8 @@ public class WxScenicController extends JeecgController<WxScenic, IWxScenicServi
 		if(wxScenic==null) {
 			return Result.error("未找到对应数据");
 		}
+		wxScenic.setHit(wxScenic.getHit()+1);
+		wxScenicService.updateById(wxScenic);
 		return Result.ok(wxScenic);
 	}
 

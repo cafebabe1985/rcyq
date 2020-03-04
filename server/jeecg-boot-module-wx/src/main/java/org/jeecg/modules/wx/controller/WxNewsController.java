@@ -150,6 +150,8 @@ public class WxNewsController extends JeecgController<WxNews, IWxNewsService> {
 		if(wxNews==null) {
 			return Result.error("未找到对应数据");
 		}
+		wxNews.setHit(wxNews.getHit()+1);
+		wxNewsService.updateById(wxNews);
 		return Result.ok(wxNews);
 	}
 

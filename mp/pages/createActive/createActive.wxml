@@ -1,5 +1,5 @@
 <!--pages/createActive/createActive.wxml-->
-<form  bindreset="formReset">
+<form bindreset="formReset">
   <view class="cu-form-group">
     <input placeholder="{{validates.name.validate?'活动主题':'*必须填写主题名称'}}" placeholder-style="{{validates.name.validate?'':'color:red'}}" name="name" maxlength="30" value="{{form.name}}" data-name="name" data-key="validates.name.validate" bindblur="onBlur"></input>
     <view class="title">限30字</view>
@@ -18,26 +18,17 @@
     </view>
     <view class="cu-form-group">
       <view class="title">活动开始</view>
-      <dateTimePicker name="startTime" style="width:70%" time="{{form.startTime}}" 
-      placeholder="{{validates.startTime.validate?'选择开始时间':'*必须填写开始时间'}}"
-      placeholderStyle="{{validates.startTime.validate?'':'color:red'}}"
-      bindMultiPickerChange="changeStartTime"></dateTimePicker>
+      <dateTimePicker name="startTime" style="width:70%" time="{{form.startTime}}" placeholder="{{validates.startTime.validate?'选择开始时间':'*必须填写开始时间'}}" placeholderStyle="{{validates.startTime.validate?'':'color:red'}}" bindMultiPickerChange="changeStartTime"></dateTimePicker>
       <text class="cuIcon-right lg text-gray"></text>
     </view>
     <view class="cu-form-group">
       <view class="title">活动结束</view>
-      <dateTimePicker name="endTime" style="width:70%" time="{{form.endTime}}" 
-      placeholder="{{validates.endTime.validate?'选择结束时间':validates.endTime.errMessage}}"
-      placeholderStyle="{{validates.endTime.validate?'':'color:red'}}"
-      bindMultiPickerChange="changeEndTime"></dateTimePicker>
+      <dateTimePicker name="endTime" style="width:70%" time="{{form.endTime}}" placeholder="{{validates.endTime.validate?'选择结束时间':validates.endTime.errMessage}}" placeholderStyle="{{validates.endTime.validate?'':'color:red'}}" bindMultiPickerChange="changeEndTime"></dateTimePicker>
       <text class="cuIcon-right lg text-gray"></text>
     </view>
     <view class="cu-form-group">
       <view class="title">报名截止</view>
-      <dateTimePicker name="endEnrol" style="width:70%" time="{{form.endEnrol}}" 
-       placeholder="{{validates.endEnrol.validate?'选择报名截止时间':'*必须填写报名截止时间'}}"
-      placeholderStyle="{{validates.endEnrol.validate?'':'color:red'}}"
-      bindMultiPickerChange="changeEndEnrol"></dateTimePicker>
+      <dateTimePicker name="endEnrol" style="width:70%" time="{{form.endEnrol}}" placeholder="{{validates.endEnrol.validate?'选择报名截止时间':'*必须填写报名截止时间'}}" placeholderStyle="{{validates.endEnrol.validate?'':'color:red'}}" bindMultiPickerChange="changeEndEnrol"></dateTimePicker>
       <text class="cuIcon-right lg text-gray"></text>
     </view>
     <view class="cu-form-group">
@@ -48,7 +39,7 @@
       <view class="title">活动封面
       </view>
       <view wx:if="{{!validates.poster.validate}}" class="text-red">
-*请上传封面
+        *请上传封面
       </view>
       <view class="cu-avatar radius margin-left bg-gray" style="background-image:url({{apiBaseUrl+form.poster}});"></view>
     </view>
@@ -114,27 +105,15 @@
     <view wx:if="{{form.enrolWay=='1'}}" class="padding-sm">
       <view class="cu-form-group">
         <view class="title">队伍数量</view>
-        <input 
-        placeholder="{{validates.teamSize.validate?'填写队伍数量':validates.teamSize.errMessage}}" 
-        placeholder-style="{{validates.teamSize.validate?'':'color:red'}}"
-        type="number" value="{{form.teamSize}}"
-        bindinput="onTeamSizeBlur"
-        ></input>
+        <input placeholder="{{validates.teamSize.validate?'填写队伍数量':validates.teamSize.errMessage}}" placeholder-style="{{validates.teamSize.validate?'':'color:red'}}" type="number" value="{{form.teamSize}}" bindinput="onTeamSizeBlur"></input>
       </view>
       <view class="cu-form-group">
         <view class="title">每队人数上限</view>
-        <input placeholder="{{validates.everyTeamMax.validate?'默认不限':'*不能小于人数下限'}}" 
-        placeholder-style="{{validates.everyTeamMax.validate?'':'color:red'}}"
-        type="number" value="{{form.everyTeamMax}}" bindblur="setMax"
-        
-        ></input>
+        <input placeholder="{{validates.everyTeamMax.validate?'默认不限':'*不能小于人数下限'}}" placeholder-style="{{validates.everyTeamMax.validate?'':'color:red'}}" type="number" value="{{form.everyTeamMax}}" bindblur="setMax"></input>
       </view>
       <view class="cu-form-group">
         <view class="title">每队人数下限</view>
-        <input placeholder="默认不限" type="number" value="{{form.everyTeamMin}}"
-        
-        bindblur="setMin"
-        ></input>
+        <input placeholder="默认不限" type="number" value="{{form.everyTeamMin}}" bindblur="setMin"></input>
       </view>
     </view>
     <view class="cu-form-group" bindtap="onShowMoreSetting">
@@ -145,17 +124,11 @@
 
       <view class="cu-form-group">
         <view class="title">报名需审核</view>
-        <switch class="olive radius  my-switch" 
-        data-key="needExamineEnrol"
-        bindchange="onChangeSwitch"
-        ></switch>
+        <switch class="olive radius  my-switch" data-key="needExamineEnrol" bindchange="onChangeSwitch"></switch>
       </view>
       <view class="cu-form-group">
         <view class="title">允许人报名</view>
-        <switch class="olive radius my-switch" checked
-        data-key="allowEnrolAgent"
-        bindchange="onChangeSwitch"
-        ></switch>
+        <switch class="olive radius my-switch" checked data-key="allowEnrolAgent" bindchange="onChangeSwitch"></switch>
       </view>
       <view class="cu-form-group">
         <textarea maxlength="200" name="notice" value="{{form.notice}}" bindinput="textareaAInput" placeholder="填写报名须知"></textarea>
@@ -167,14 +140,9 @@
       <view>我同意《儒此有趣小程序服务协议》</view>
     </view>
     <view class="btn-area">
-    <button  class="cu-button margin-sm bg-orange" 
-    data-name = "preview"
-      bindtap="doSubmit"
-      >预览</button>
-      <button formType="submit" class="cu-button margin-sm bg-olive" 
-      bindtap="doSubmit"
-      >发布</button>
-      <button  class="cu-button margin-sm">保存草稿</button>
+      <button class="cu-button margin-sm bg-orange" data-name="preview" bindtap="doSubmit">预览</button>
+      <button formType="submit" class="cu-button margin-sm bg-olive" bindtap="doSubmit">发布</button>
+      <button class="cu-button margin-sm">保存草稿</button>
     </view>
   </view>
 </form>

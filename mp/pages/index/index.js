@@ -18,7 +18,7 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
+  onLoad () {
     
   },
   async getUserInfo(e) {
@@ -36,7 +36,5 @@ Page({
       delta: 1
     })
    
-   
-    
   }
 })

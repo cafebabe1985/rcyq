@@ -52,6 +52,27 @@ class Active {
       data
     })
   }
+
+  /**
+     * 活动报名
+     */
+  static async addActiveEnrol(data) {
+
+    return await Http.wxPost({
+      url: 'wx/wxActiveEnrolUser/add',
+      data
+    })
+  }
+
+  /**
+     * 报名查重
+     */
+  static async checkReEnrol(data) {
+    return await Http.wxGet({
+      url: 'wx/wxActiveEnrolUser/checkDouble',
+      data
+    })
+  }
 }
 
 export {
