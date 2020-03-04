@@ -73,6 +73,16 @@ class Active {
       data
     })
   }
+
+  /**
+     * 活动报名列表
+     */
+  static async listActiveEnrol(data) {
+    return await Http.wxGet({
+      url: 'wx/wxActiveEnrolUser/listAll',
+      data
+    })
+  }
 }
 
 export {

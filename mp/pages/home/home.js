@@ -46,7 +46,8 @@ Page({
     activePageNo:1,
     finishScenic: false,
     finishActive: false,
-    finishNews: false
+    finishNews: false,
+    finishLoad:false
   },
   tabSelect(e) {
     if (e.currentTarget.dataset.id == 2) {
@@ -265,7 +266,7 @@ Page({
       actives: resActiveData.result.records,
       cityTabs: this.data.cityTabs.concat(resCityTabData.result.records)
     })
-   
+   console.log(this.data.actives)
     wx.hideLoading()
   },
   /**
@@ -296,21 +297,22 @@ Page({
         }
       }).exec();
     }
+    this.data.finishLoad = true
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-    console.log("onReady")
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   async onShow() {
-   
-    this.initPage()
+  //  if(!this.data.finishLoad){
+     this.initPage()
+  //  }  
     
   },
 
@@ -318,14 +320,15 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide() {
-    console.log("onHide")
+    this.finishLoad = false
+    
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-    console.log("onUnload")
+    
   },
 
   /**

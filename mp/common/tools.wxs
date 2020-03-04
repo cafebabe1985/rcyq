@@ -124,6 +124,31 @@ var enrolWayHandle = function(type){
     return '团队报名'
   }
 }
+
+var handleEnrolUserInfo = function(opt,index,info){
+  var gender = info.userGender
+  var cid = info.userCid
+  var realName = info.userRealName
+  var metaInfo = JSON.parse(info.metaInfo)
+  if(opt.name === '性别'){
+    return gender
+  }else
+  if (opt.name === '身份证号') {
+    return cid
+  }else
+  if (opt.name === '真实姓名') {
+    return realName
+  }else{
+    for(var i=0 ;i< metaInfo.length;i++){
+      if (opt.name === metaInfo[i].name){
+        
+        return metaInfo[i].label || metaInfo[i].value
+      }
+    }
+  }
+
+}
+
 module.exports = {
   dateHandle: dateHandle,
   contentTypeHandle: contentTypeHandle,
@@ -136,5 +161,6 @@ module.exports = {
   needExamineEnrolTypeHandle: needExamineEnrolTypeHandle,
   allowEnrolAgentTypeHandle: allowEnrolAgentTypeHandle,
   insuranceTypeHandle: insuranceTypeHandle,
-  enrolWayHandle: enrolWayHandle
+  enrolWayHandle: enrolWayHandle,
+  handleEnrolUserInfo: handleEnrolUserInfo
 };

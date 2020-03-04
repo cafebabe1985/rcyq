@@ -63,6 +63,8 @@ public class WxActiveController extends JeecgController<WxActive, IWxActiveServi
     private IWxActiveVOService wxActiveVOService;
     @Autowired
     private IWxUserService wxUserService;
+    @Autowired
+    private IWxActiveEnrolUserService wxActiveEnrolUserService;
 
     /**
      * 分页列表查询
@@ -205,7 +207,11 @@ public class WxActiveController extends JeecgController<WxActive, IWxActiveServi
                 v.setOpts(sl);
             }
             avo.setEnrolWriteOpts(enrolWriteOpts);
+            WxActiveEnrolUser wxAeu = new WxActiveEnrolUser();
+            wxAeu.setActiveId(avo.getId());
 
+            Wrapper<WxActiveEnrolUser> aeu = new QueryWrapper<>(wxAeu);
+            avo.setEnrolTotal(wxActiveEnrolUserService.count(aeu));
         }
         return Result.ok(pageList);
     }
@@ -312,6 +318,7 @@ public class WxActiveController extends JeecgController<WxActive, IWxActiveServi
      * @param wxActive
      * @return
      */
+    @Transactional
     @PutMapping(value = "/editVO")
     public Result<?> editVO(@RequestBody WxActiveVO wxActive) {
         String activeId = wxActive.getId();

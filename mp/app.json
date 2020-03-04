@@ -12,7 +12,8 @@
     "pages/agreementPage/agreementPage",
     "pages/costSetting/costSetting",
     "pages/activeDetail/activeDetail",
-    "pages/enrolPage/enrolPage"
+    "pages/enrolPage/enrolPage",
+    "pages/enrolUserPage/enrolUserPage"
   ],
   "window": {
     "backgroundTextStyle": "light",

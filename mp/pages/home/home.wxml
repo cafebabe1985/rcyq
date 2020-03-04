@@ -111,7 +111,7 @@ bindtap="goNewsDetail">
       
       </view>
       <view class="cu-tag bg-red light sm ">
-      {{item.cost.number?'仅剩'+item.cost.number+'名额':'名额不限'}}
+      {{item.cost.number?(item.cost.number-item.enrolTotal==0?'名额已满':'仅剩'+(item.cost.number-item.enrolTotal)+'名额'):'名额不限'}}
       
       </view>
     </view>
