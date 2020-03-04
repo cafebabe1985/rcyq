@@ -107,8 +107,8 @@ Component({
     bindMultiPickerColumnChange: function (e) {
       //获取年份
       if (e.detail.column == 0) {
-        let choose_year = this.data.multiArray[e.detail.column][e.detail.value];
-        console.log(choose_year);
+        let choose_year = this.data.multiArray[e.detail.column][e.detail.value]
+       
         this.setData({
           choose_year
         })
@@ -139,7 +139,7 @@ Component({
           });
         } else if (num == 2) { //判断2月份天数
           let year = parseInt(this.data.choose_year);
-          console.log(year);
+        
           if (((year % 400 == 0) || (year % 100 != 0)) && (year % 4 == 0)) {
             for (let i = 1; i <= 29; i++) {
               if (i < 10) {

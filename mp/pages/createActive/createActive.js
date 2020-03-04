@@ -320,7 +320,7 @@ Page({
     let value = e.detail.value
     let key = e.currentTarget.dataset.key
     this.data.form[key] = value?'1':'0'
-    console.log(this.data.form)
+   
   },
   chooseImage() {
     wx.chooseImage({
@@ -408,7 +408,7 @@ Page({
       }
     }
     if (this.data.form.enrolWay === '1' && parseInt(this.data.form.teamSize) == 0){
-      console.log(this.data.form.teamSize)
+     
       this.data.validates.teamSize.validate = false
       this.data.validates.teamSize.errMessage = '*不能为0'
       this.setData({

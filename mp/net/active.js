@@ -57,7 +57,6 @@ class Active {
      * 活动报名
      */
   static async addActiveEnrol(data) {
-
     return await Http.wxPost({
       url: 'wx/wxActiveEnrolUser/add',
       data
@@ -77,9 +76,46 @@ class Active {
   /**
      * 活动报名列表
      */
-  static async listActiveEnrol(data) {
+  static async listActiveEnrol(other) {
+    let data = {
+     enrolStatus:'1'
+    }
+    if (other) {
+      Object.assign(data, other)
+    }
     return await Http.wxGet({
       url: 'wx/wxActiveEnrolUser/listAll',
+      data
+    })
+  }
+
+  /**
+   * 活动收藏列表
+   */
+  static async listActiveFavorite(data) {   
+   
+    return await Http.wxGet({
+      url: 'wx/wxActiveFavorite/listAll',
+      data
+    })
+  }
+  /**
+    * 检查是否已经收藏
+    */
+  static async checkActiveFavorite(data) {
+
+    return await Http.wxGet({
+      url: 'wx/wxActiveFavorite/count',
+      data
+    })
+  }
+  /**
+   * 添加活动收藏
+   */
+  static async addActiveFavorite(data) {
+
+    return await Http.wxPost({
+      url: 'wx/wxActiveFavorite/add',
       data
     })
   }

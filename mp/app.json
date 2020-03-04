@@ -13,7 +13,8 @@
     "pages/costSetting/costSetting",
     "pages/activeDetail/activeDetail",
     "pages/enrolPage/enrolPage",
-    "pages/enrolUserPage/enrolUserPage"
+    "pages/enrolUserPage/enrolUserPage",
+    "pages/test/test"
   ],
   "window": {
     "backgroundTextStyle": "light",

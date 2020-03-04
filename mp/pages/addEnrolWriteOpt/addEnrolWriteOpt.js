@@ -126,7 +126,7 @@ Page({
     }
     if (ok) {
       let pages = getCurrentPages()
-      console.log(pages)
+      
       if(pages.length>1){
       let pre = pages[pages.length - 2]
         let newOpt = {
@@ -176,7 +176,7 @@ Page({
       }
       
     })
-    console.log(this.data.isEdit)
+    
   },
 
   /**

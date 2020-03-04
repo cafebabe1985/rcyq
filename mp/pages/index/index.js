@@ -23,18 +23,43 @@ Page({
   },
   async getUserInfo(e) {
     app.globalData.userInfo = e.detail.userInfo
-    const resdata = await WxSys.getInfo(app.globalData.sessionKey, e.detail)
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+    wx.checkSession({
+     async success(){
+        let resdata = await WxSys.getInfo(app.globalData.sessionKey, e.detail)
+        this.setData({
+          userInfo: e.detail.userInfo,
+          hasUserInfo: true
+        })
+        let storageUser = wx.getStorageSync('userInfo')
+        if (!storageUser) {
+          wx.setStorageSync('userInfo', resdata)
+        }
+        wx.navigateBack({
+          delta: 1
+        })
+      },
+     async fail(){
+        wx.login({
+          success: async res => {
+            let resdata = await WxSys.login(res.code)
+            let jsonObj = resdata
+            app.globalData.sessionKey = jsonObj.sessionKey
+            let resdata2 = await WxSys.getInfo(app.globalData.sessionKey, e.detail)
+            this.setData({
+              userInfo: e.detail.userInfo,
+              hasUserInfo: true
+            })
+            let storageUser = wx.getStorageSync('userInfo')
+            if (!storageUser) {
+              wx.setStorageSync('userInfo', resdata2)
+            }
+            wx.navigateBack({
+              delta: 1
+            })
+          }
+        })
+      }
     })
-    let storageUser = wx.getStorageSync('userInfo')
-    if (!storageUser){
-      wx.setStorageSync('userInfo', resdata)
-    }
-    wx.navigateBack({
-      delta: 1
-    })
-   
+      
   }
 })

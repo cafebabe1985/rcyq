@@ -100,6 +100,7 @@ public class WxLoginController {
     @GetMapping("/phone")
     public String phone(String sessionKey, String signature,
                         String rawData, String encryptedData, String iv) {
+        System.out.println("getphone");
         final WxMaService wxService = WxMaConfiguration.getMaService(appid);
 
         // 用户信息校验

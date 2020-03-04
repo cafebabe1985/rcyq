@@ -214,12 +214,12 @@ Page({
           refundType: this.data.refundType,
           opts: this.data.type==0?[]:this.data.opts
         }
-        console.log(newOpt)
+       
         
         pre.setData({
           "form.cost": newOpt
         })
-        console.log(pre.data.form)
+      
         wx.navigateBack()
       }
     } else {
@@ -233,7 +233,7 @@ Page({
   onLoad(options) {
     const eventChannel = this.getOpenerEventChannel()
     eventChannel.on('acceptCost', (cost) => {
-      console.log(cost)
+     
       if (cost) {
         let items = cost.opts.length > 0 ? cost.opts :
           [{

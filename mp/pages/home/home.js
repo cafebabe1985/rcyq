@@ -1,4 +1,5 @@
 // pages/home/home.js
+import { WxSys } from '../../net/wxSys.js'
 import {
   Scenic
 } from '../../net/scenic.js'
@@ -92,6 +93,14 @@ Page({
         url: '/pages/createActive/createActive',
       })
     }
+  },
+ async getPhoneNumber(e){
+    
+  //  let res =await WxSys.getPhone(app.globalData.sessionKey, e.detail)
+    
+wx.navigateTo({
+  url: '/pages/createActive/createActive',
+})
   },
   cardSwiper() { },
   handleFilePath(path) {
@@ -266,7 +275,7 @@ Page({
       actives: resActiveData.result.records,
       cityTabs: this.data.cityTabs.concat(resCityTabData.result.records)
     })
-   console.log(this.data.actives)
+  
     wx.hideLoading()
   },
   /**

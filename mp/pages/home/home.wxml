@@ -44,12 +44,21 @@
   class="bg-white nav text-center  {{isFixedTop?'fixed':''}}" style="left:0;top:{{navbarHeight}}px;">
     <view 
         class="bg-white nav {{isFixedTop?'fixed':''}}" style="left:0;top:{{navbarHeight}}px" >
-      <view class="cu-item {{0==activeNavCur?'text-green cu-tag  light round':''}}"  wx:key bindtap="activeNavCurSelect" data-id="0">
-        参与活动
-      </view>
-      <view class="cu-item {{1==activeNavCur?'text-green cu-tag  light round':''}}"  wx:key bindtap="activeNavCurSelect" data-id="1">
-        发起活动
-      </view>
+      <!-- <view class="cu-item {{0==activeNavCur?'text-green cu-tag  light round':''}}"  wx:key bindtap="activeNavCurSelect" data-id="0"> -->
+        <button class="cu-btn  margin-sm bg-orange">参与活动</button>
+      <!-- </view> -->
+      <!-- <view class="cu-item {{1==activeNavCur?'text-green cu-tag  light round':''}}"  wx:key bindtap="activeNavCurSelect" data-id="1"> -->
+      <button 
+        class="cu-btn margin-sm line-orange"
+            bindtap="getPhoneNumber">
+       <text class="cuIcon-add text-orange"></text>
+        发起活动</button>
+        <!-- <button 
+        class="cu-btn margin-sm line-orange"
+        open-type="getPhoneNumber"     bindgetphonenumber="getPhoneNumber">
+       <text class="cuIcon-add text-orange"></text>
+        发起活动</button> -->
+      <!-- </view> -->
     </view>
   </view>
 

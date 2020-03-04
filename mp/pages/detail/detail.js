@@ -269,7 +269,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage(e) {
-      console.log(e)
+    
       return {
         title:this.data.detail.title,
         path: `/pages/detail/detail?${this.data.queryPath}`,
