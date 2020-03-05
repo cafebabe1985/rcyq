@@ -1,2 +1,69 @@
-<!--pages/person/person.wxml-->
-<text>pages/person/person.wxml</text>
+<wxs src="../../common/tools.wxs" module="tools" />
+<scroll-view scroll-y class="scrollPage">
+  <view class="UCenter-bg margin-top-sm margin-left-sm margin-right-sm radius">
+  <view class="flex  align-end">
+     <image src="{{userInfo.avatarUrl}}" class="png round margin-xs" mode="widthFix"></image>
+     <view class="margin-xs padding-sm">
+     
+    <view class="text-xl">{{userInfo.nickName}}
+      <text class="text-df {{tools.handleGenderCss(userInfo.gender)}}"></text>
+    </view>
+    <view class="margin-top-sm">
+      <text class="cuIcon-vip text-yellow"></text>
+      {{tools.handleVipLevel(userInfo.vipLevel)}}
+    </view>
+    </view>
+    </view>
+   </view>
+  
+  <view class="padding-xs flex text-center text-grey bg-white shadow-warp margin-bottom-sm margin-left-sm margin-right-sm">
+    <view class="flex flex-sub flex-direction solid-right">
+      <view class="text-xxl text-orange">{{favorCount}}</view>
+      <view class="margin-top-xs">
+        <text class="cuIcon-favorfill text-orange"></text> 收藏</view>
+    </view>
+    <view class="flex flex-sub flex-direction solid-right">
+      <view class="text-xxl text-blue">{{activityCount}}</view>
+      <view class="margin-top-xs">
+        <text class="cuIcon-activityfill text-blue"></text> 参加</view>
+    </view>
+    <view class="flex flex-sub flex-direction">
+      <view class="text-xxl text-green">{{scoreCount}}</view>
+      <view class="margin-top-xs">
+        <text class="cuIcon-rankfill text-green"></text> 积分</view>
+    </view>
+  </view>
+  <view class="cu-list menu  margin-sm shadow-lg radius">
+    <!-- <view class="cu-item arrow">
+      <view class="content">
+        <text class="cuIcon-myfill text-orange"></text>
+        <text class="text-grey">个人信息</text>
+      </view>
+    </view> -->
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/about/log/log" hover-class="none">
+        <text class="cuIcon-vip text-yellow"></text>
+        <text class="text-grey">会员权限</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content" >
+        <text class="cuIcon-footprint text-blue"></text>
+        <text class="text-grey">我参与的</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <button class="cu-btn content" >
+        <text class="cuIcon-favor text-cyan"></text>
+        <text class="text-grey">我的收藏</text>
+      </button>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" hover-class="none">
+        <text class="cuIcon-servicefill text-red"></text>
+        <text class="text-grey">联系客服</text>
+      </navigator>
+    </view>
+  </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>

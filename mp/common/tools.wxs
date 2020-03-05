@@ -149,6 +149,31 @@ var handleEnrolUserInfo = function(opt,index,info){
 
 }
 
+var handleGenderCss = function(value){
+  switch(value){
+    case '0':
+    return ''
+    break
+    case '1':
+      return 'cuIcon-male text-blue'
+      break
+      case '2':
+      return 'cuIcon-female text-pink'
+      default:
+      break
+  }
+}
+ 
+var handleVipLevel = function(vip){
+  if(vip == '1'){
+    return '蓝V'
+  } else if (vip == '2'){
+    return '黄V'
+  }else{
+    return '普通会员'
+  }
+}
+
 module.exports = {
   dateHandle: dateHandle,
   contentTypeHandle: contentTypeHandle,
@@ -162,5 +187,7 @@ module.exports = {
   allowEnrolAgentTypeHandle: allowEnrolAgentTypeHandle,
   insuranceTypeHandle: insuranceTypeHandle,
   enrolWayHandle: enrolWayHandle,
-  handleEnrolUserInfo: handleEnrolUserInfo
+  handleEnrolUserInfo: handleEnrolUserInfo,
+  handleGenderCss: handleGenderCss,
+  handleVipLevel: handleVipLevel
 };

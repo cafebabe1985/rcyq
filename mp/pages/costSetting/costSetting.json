@@ -1,5 +1,6 @@
 {
   "navigationBarTextStyle": "black",
   "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "费用设置",
   "usingComponents": {}
 }

@@ -46,6 +46,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   async onLoad(opt) {
+    wx.setNavigationBarTitle({
+      title: opt.type=='0'? '景区详情':'咨询详情'
+    })
     this.data.queryPath = `id=${opt.id}&type=${opt.type}&path=${opt.path}`
     if (opt.path) {
       this.setData({

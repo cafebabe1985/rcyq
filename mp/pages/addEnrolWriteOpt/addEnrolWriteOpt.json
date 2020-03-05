@@ -1,4 +1,6 @@
-{"navigationBarTextStyle": "black",
+{
+  "navigationBarTextStyle": "black",
   "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "报名填写项设置",
   "usingComponents": {}
 }
