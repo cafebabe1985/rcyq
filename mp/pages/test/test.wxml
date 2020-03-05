@@ -1,0 +1,7 @@
+
+<button 
+        class="cu-btn margin-sm line-orange"
+        open-type="getPhoneNumber"     bindgetphonenumber="getPhoneNumber">
+       <text class="cuIcon-add text-orange"></text>
+        发起活动</button>
+     

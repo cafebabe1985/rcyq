@@ -1,0 +1,52 @@
+<wxs src="../../common/tools.wxs" module="tools" />
+<view class="cu-card article" wx:for="{{enrolUsers}}">
+  <view class="cu-item shadow">
+    <view class="title">
+      <view class="text-cut">{{item.enrolInfo.userNickName}}</view>
+    </view>
+    <view class="content">
+      <image src="{{item.userInfo?item.userInfo.avatarUrl:item.agentInfo.avatarUrl}}" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-content">
+          <view>报名时间:{{item.enrolInfo.createTime}}</view>
+          <view>联系方式:{{item.enrolInfo.userPhone}}</view>
+         </view>
+        <view>
+          <view class="cu-tag bg-red light sm">{{item.enrolInfo.userType=='0'?item.userInfo.nickName+' 本人报名':item.agentInfo.nickName+' 帮报'}}</view>
+         
+        </view>       
+      </view>      
+    </view>
+    <view class="padding flex justify-between">
+    <view class="bg-orange padding-xs radius" 
+    data-phone="{{item.enrolInfo.userPhone}}"
+    bindtap="contactEnroler">
+    <text class="cuIcon-phone"></text>
+    电话联系</view>
+    <view 
+    wx:if="{{enrolWriteOpts.length>0}}"
+    class="padding-xs radius" 
+    data-index="{{index}}"
+    bindtap="showMore">更多信息
+    <text class="{{showEnrolUserMore[index]?'cuIcon-fold': 'cuIcon-unfold'}}"></text>
+    </view>
+    </view>
+    <view class="cu-list menu solids-top" wx:if="{{showEnrolUserMore[index]}}">
+    <view class="cu-item " 
+    wx:for="{{enrolWriteOpts}}"
+    wx:for-item="opt"
+    wx:for-index="i"
+    wx:key
+    >
+      <view class="content">
+        <text class="cuIcon-title text-green"></text>
+        <text class="text-grey">{{opt.name}}</text>
+      </view>
+      <view class="action">
+        <text class="text-grey text-sm">{{tools.handleEnrolUserInfo(opt,i,item.enrolInfo)}}</text>
+      </view>
+    </view>
+    </view>
+  </view>
+  
+</view>

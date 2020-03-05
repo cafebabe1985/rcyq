@@ -1,0 +1,53 @@
+<form class="padding-sm">
+	<view wx:for="{{formItems}}" 
+  wx:key="index"
+   style="justify-content:initial !important"
+  class="cu-form-group">
+		<view class="title">{{item.name}}</view>
+		<input wx:if="{{item.type === '0'}}" 
+    placeholder="请确保内容准确"
+    data-name="{{item.name}}"
+    data-diy="{{item.diy}}"
+    data-index = "{{index}}"
+    bindinput="handleTextInput"
+    ></input>
+    <picker wx:if="{{item.type ==='1' && item.diy==='0'}}" 
+    mode="selector"
+    data-diy="{{item.diy}}"
+     data-index = "{{index}}"
+    bindchange="singlePickerChange" 
+    value="{{formObj.userGender.value}}" 
+    range="{{item.opts}}">
+			<view class="picker">
+			{{item.opts[formObj.userGender.value]}}
+			</view>
+		</picker>
+    <picker wx:if="{{item.type ==='1' && item.diy==='1'}}" 
+    mode="selector"
+    data-diy="{{item.diy}}"
+    data-index = "{{index}}"
+    bindchange="singlePickerChange" 
+    value="{{formObj.metaInfo['diy'+index]['value']}}" 
+    range="{{item.opts}}">
+			<view class="picker">
+			{{item.opts[formObj.metaInfo['diy'+index]['value']]}}
+			</view>
+		</picker>
+     <checkbox-group 
+    
+     wx:if="{{item.type ==='2'}}"
+    data-index="{{index}}"
+      bindchange="checkboxChange">
+  <view class="checkbox"
+   style="margin:20rpx;width:100%"
+   wx:for="{{item.opts}}" wx:for-index="cur" wx:for-item="child">
+    <checkbox value="{{cur}}"/>{{child}}  </view>
+</checkbox-group>
+	</view>
+  <button class="cu-btn block bg-green margin"
+  bindtap="configEnrol"
+  >确认报名</button>
+  <button class="cu-btn block line-black margin" 
+  bindtap="cancelEnrol"
+  >取消报名</button>
+</form>

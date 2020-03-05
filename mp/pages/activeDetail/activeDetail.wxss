@@ -1,0 +1,31 @@
+/* pages/activeDetail/activeDetail.wxss */
+.fixed-bar{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%
+}
+page{
+  background-color: white
+}
+.sawtooth {
+  background-image: radial-gradient(transparent 0px, transparent 4px, #eee 4px);
+  background-size: 12px 15px;
+  background-position: 0px 10px;
+  position: relative;
+  border-left-style: solid;
+  border-left-width: 5px;
+  border-left-color: #8dc63f;
+}
+
+.sawtooth:before {
+  content: ' ';
+  display: block;
+  background-color: #eee;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0px;
+  right: 8px;
+  z-index: -1;
+}

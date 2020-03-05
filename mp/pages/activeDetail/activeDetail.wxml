@@ -1,0 +1,182 @@
+<wxs src="../../common/tools.wxs" module="tools" />
+
+<view class=" text-xl bg-white  text-center">
+  <image src="{{apiBaseUrl+detail.poster}}" mode="aspectFit" style="height:230rpx;width:100%"></image>
+  <text class="text-black ">{{detail.name}}
+  </text>
+</view>
+
+<view class="cu-list menu-avatar">
+  <view class="cu-item">
+    <view class="cu-avatar round lg" style="background-image:url({{detail.createUserInfo.avatarUrl}})"></view>
+    <view class="content">
+      <view class="text-grey text-cyan">{{detail.createUserInfo.nickName}}</view>
+      <view class="text-gray text-sm">
+        {{detail.createTime}}
+      </view>
+    </view>
+    <view class="action">
+      <text class="text-sm">
+							<text class="cuIcon-attentionfill text-blue  margin-right-xs"></text>{{detail.hit}}
+      </text>
+      <!-- <view class=" text-sm margin-top-sm">
+        <text class="cuIcon-share   margin-right-xs"></text>{{detail.share?detail.share:0}}</view> -->
+    </view>
+  </view>
+</view>
+<view class="cu-list menu bg-white padding" style="margin-top:0">
+  <view class="cu-item " style="background-color:#1cbbb415">
+    <view class="content ">
+      <view class="text-cyan text-sm margin-bottom-xs">
+        <text class="cuIcon-timefill"></text>活动时间: {{detail.startTime}} 至 {{detail.endTime}}
+      </view>
+      <view class="text-cyan text-sm margin-bottom-xs">
+        <text class="cuIcon-locationfill"></text>地点: {{detail.address}}</view>
+      <view class="text-cyan text-sm">
+        <text class="cuIcon-pay"></text>费用: {{detail.cost.type=='0'?'免费':tools.costHandle(detail.cost)}}</view>
+    </view>
+
+  </view>
+</view>
+<view class="bg-white nav text-center">
+  <view class="cu-item {{index==TabCur?'text-cyan cur':''}}" wx:for="{{tabs}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+    {{item}}
+  </view>
+  <view wx:if="{{detail.cost.type !='0'}}" class="cu-item {{4==TabCur?'text-cyan cur':''}}" bindtap="tabSelect" data-id="4">
+    费用
+  </view>
+</view>
+<!--详情-->
+<view wx:if="{{0==TabCur&&content.length>0}}" class="padding bg-white solid-bottom text-lg" style="line-hight:38px !important;margin-bottom:65px" wx:for="{{content}}" wx:key="index">
+
+  <rich-text wx:if="{{item.type==0}}" nodes="{{item.content}}">
+  </rich-text>
+  <video style="width:100%" wx:if="{{item.type==1}}" src="{{tools.pathHandle(apiBaseUrl,item.src)}}" controls></video>
+</view>
+<view wx:if="{{0==TabCur && content.length==0}}" class="text-center margin text-lg">
+  此活动暂无详情
+</view>
+
+<!--报名信息-->
+<view wx:if="{{1==TabCur}}" class="bg-white" style="margin-bottom:65px">
+  <view class="cu-list menu text-left solid-top">
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-titles text-cyan"></text>
+        <text class="text-cyan">已报名:{{enrolUsers.length>0?enrolUsers.length:'暂无'}}{{detail.cost.number?'/'+detail.cost.number:''}}</text>
+      </view>
+      <view class="action" wx:if="{{enrolUsers.length>0}}">
+        <view class="cu-avatar-group">
+          <view wx:for="{{enrolAvatars}}" class="cu-avatar round" style="background-image:url({{item.userInfo.avatarUrl}});"></view>
+        </view>
+
+        <button class="cu-btn bg-blue shadow round sm"
+        bindtap="goAllEnrolUsers"
+        >看全部</button>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{detail.notice}}">
+    <view class="cu-list menu text-left">
+      <view class="cu-item">
+        <view class="text-left  content">
+          <text class="cuIcon-titles text-cyan"></text>
+          <text class="text-cyan">报名须知</text>
+        </view>
+      </view>
+    </view>
+    <view class="padding-left-lg padding-right-lg">
+      {{detail.notice}}
+    </view>
+  </view>
+  <view>
+    <view class="cu-list menu text-left">
+      <view class="cu-item">
+        <view class="text-left  content">
+          <text class="cuIcon-titles text-cyan"></text>
+          <text class="text-cyan">事项说明</text>
+        </view>
+      </view>
+    </view>
+    <view class="margin-left-lg margin-right-lg solids">
+      <view class="cu-list menu sm-borders">
+        <view class="cu-item ">
+          <view class="content">
+            <text class="cuIcon-title text-green"></text>
+            <text class="text-grey">报名方式</text>
+          </view>
+          <view class="action">
+            <text class="text-cyan text cu-tag">{{tools.enrolWayHandle(detail.enrolWay)}}</text>
+          </view>
+        </view>
+        <view class="cu-item ">
+          <view class="content">
+            <text class="cuIcon-title text-green"></text>
+            <text class="text-grey">代他人报名</text>
+          </view>
+          <view class="action">
+            <text class="text-cyan text cu-tag">{{tools.allowEnrolAgentTypeHandle(detail.allowEnrolAgent)}}</text>
+          </view>
+        </view>
+        <view class="cu-item ">
+          <view class="content">
+            <text class="cuIcon-title text-green"></text>
+            <text class="text-grey">报名需审核</text>
+          </view>
+          <view class="action">
+            <text class="text-cyan text cu-tag">{{tools.needExamineEnrolTypeHandle(detail.needExamineEnrol)}}</text>
+          </view>
+        </view>
+        <view class="cu-item ">
+          <view class="content">
+            <text class="cuIcon-title text-green"></text>
+            <text class="text-grey">保险方式</text>
+          </view>
+          <view class="action">
+            <text class="text-cyan text cu-tag">{{tools.insuranceTypeHandle(detail.insuranceType)}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!--费用 -->
+<view wx:if="{{4==TabCur}}" style="margin-bottom:65px">
+  <view class="margin" wx:for="{{detail.cost.opts}}" wx:key="index">
+    <view class="sawtooth ">
+      <view class="">
+        <view class="flex  p-xs margin-bottom-sm mb-sm align-center">
+          <view class="flex-twice   margin-xs radius">
+            <view class="solid-bottom text-xl padding-sm">
+              <text class="text-black text-bold">{{item.name}}</text>
+            </view>
+            <view class="padding-sm">名额{{item.number}}人</view>
+          </view>
+          <view class="flex-sub text-xxl  padding-sm margin-xs radius">
+            <text class="text-price text-olive">{{item.cost}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!--actionBar 操作条-->
+<view 
+wx:if="{{!preview}}"
+class="cu-bar bg-gray tabbar border shop fixed-bar">
+  <!-- <view class="action text-black">
+    <view class="cuIcon-home"></view> 首页
+  </view> -->
+  <button class="action"   
+  bindtap="contactCreator">
+    <view class="cuIcon-service text-green">
+      <view class="cu-tag"></view>
+    </view>
+    电联发起人
+  </button>
+  <view class="action {{favorite?'text-orange':'text-black'}}" bindtap="addFavorite">
+    <view class="cuIcon-{{favorite?'favorfill':'favor'}} "></view> 收藏
+  </view>
+  <view class=" bg-red submit " data-agent="false" bindtap="goEnrolPage">立即报名</view>
+  <view wx:if="{{detail.allowEnrolAgent === '1' }}" class=" bg-orange submit margin-left-xs" data-agent="true" bindtap="goEnrolPage">帮人报名</view>
+</view>
