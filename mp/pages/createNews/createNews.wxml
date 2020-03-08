@@ -1,0 +1,33 @@
+<form>
+  <view class="cu-form-group">
+    <view class="title">标题</view>
+    <input placeholder="20字以内" maxlength="20" value="{{form.title}}" data-key="title" bindblur="onInputBlur"></input>
+    <view wx:if="{{!validatorRules.title}}" class="text-red">*必填</view>
+  </view>
+
+  <view class="cu-form-group">
+    <view class="title">副标题</view>
+    <input placeholder="30字以内" maxlength="30" data-key="subTitle" bindblur="onInputBlur" value="{{form.subTitle}}"></input>
+    <view class="text-red" wx:if="{{!validatorRules.subTitle}}">*必填</view>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">编辑人</view>
+    <input placeholder="10字以内" maxlength="10" value="{{form.author}}" data-key="author" bindblur="onInputBlur"></input>
+    <view class="text-red" wx:if="{{!validatorRules.author}}">*必填</view>
+  </view>
+
+  <wxEditor editorHeight="{{editorHeight}}" placeholder="输入景点详情" bindGetEditorContents="getEditorContents" initText="{{form.content}}" bindGetFocus="getEditorFocus" id="editor"></wxEditor>
+
+  <view class="cu-form-group" bindtap="chooseImage">
+    <view class="title">封面图
+    </view>
+    <view class="text-red" wx:if="{{!validatorRules.poster}}">*必填</view>
+    <view class="cu-avatar radius margin-left bg-gray" style="background-image:url({{apiBaseUrl+form.poster}});"></view>
+  </view>
+
+  <view class="btn-area">
+
+    <button formType="submit" class="cu-button margin-sm bg-olive" bindtap="{{isEdit?'doEdit':'doSubmit'}}">提交</button>
+    <button formType="submit" class="cu-button margin-sm line-olive" data-status="3" bindtap="{{isEdit?'doEdit':'doSubmit'}}">存为草稿</button>
+  </view>
+</form>

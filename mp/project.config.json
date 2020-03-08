@@ -132,6 +132,48 @@
 					"id": -1,
 					"name": "pages/test/test",
 					"pathName": "pages/test/test",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 11,
+					"name": "pages/myCreateActive/myCreateActive",
+					"pathName": "pages/myCreateActive/myCreateActive",
+					"query": "id=o9McX1pC7rP1bl33FFl6y5zkMEuQ",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/myEnrol/myEnrol",
+					"pathName": "pages/myEnrol/myEnrol",
+					"query": "id=o9McX1pC7rP1bl33FFl6y5zkMEuQ",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/myFavorActive/myFavorActive",
+					"pathName": "pages/myFavorActive/myFavorActive",
+					"query": "id=o9McX1pC7rP1bl33FFl6y5zkMEuQ",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/createScenic/createScenic",
+					"pathName": "pages/createScenic/createScenic",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/applyScenicManager/applyScenicManager",
+					"pathName": "pages/applyScenicManager/applyScenicManager",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/applyScenicList/applyScenicList",
+					"pathName": "pages/applyScenicList/applyScenicList",
 					"scene": null
 				}
 			]

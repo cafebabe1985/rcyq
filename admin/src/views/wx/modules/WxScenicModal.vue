@@ -42,7 +42,18 @@
         </a-form-item>
         
         <a-form-item label="所在城市" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-input v-decorator="[ 'city', validatorRules.city]" placeholder="请输入所在城市"></a-input>
+          <a-select
+          v-decorator="[ 'city', validatorRules.city]"
+         
+          style="width: 100%"
+            placeholder="选择所在城市"
+  >
+    <a-select-option v-for="(item,index) in tabs" :key="index+''"
+    
+    >{{item.name}}</a-select-option>
+  </a-select>
+          
+          <!-- <a-input v-decorator="[ 'city', validatorRules.city]" placeholder="请输入所在城市"></a-input> -->
         </a-form-item>
         
         <a-form-item label="跳转地址" :labelCol="labelCol" :wrapperCol="wrapperCol">
@@ -65,7 +76,7 @@ import { validateDuplicateValue } from '@/utils/util'
 import JUpload from '@/components/jeecg/JUpload'
 import JDictSelectTag from '@/components/dict/JDictSelectTag'
 import JEditor from '@/components/jeecg/JEditor'
-
+import { getAction } from '@/api/manage'
 export default {
   name: 'WxScenicModal',
   components: {
@@ -90,6 +101,7 @@ export default {
         sm: { span: 16 }
       },
       confirmLoading: false,
+      tabs:[],
       validatorRules: {
         title: {
           rules: [{ required: true, message: '请输入广告标语!' }]
@@ -128,9 +140,20 @@ export default {
       }
     }
   },
-
-  created() {},
+ 
+ async mounted() {
+     await this.initCityTabs()
+  },
   methods: {
+     async initCityTabs(){
+          let listCityTabUrl ="/wx/scenicCityTab/list?column=createTime&order=desc"
+           let res = await getAction(listCityTabUrl)
+           if(res.success){
+                this.tabs = res.result.records
+           }
+          
+     
+      },
     add() {
       this.edit({})
     },

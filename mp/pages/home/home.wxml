@@ -140,10 +140,10 @@ bindtap="goNewsDetail">
         <view class="text-content" style='color:black;'> {{item.title}}</view>
         <view class="flex justify-between">
           <view class="cu-tag  light  ">{{tools.dateHandle(item.createTime)}}</view>
-          <view 
+          <!-- <view 
           v-if="{{tools.contentTypeHandle(item.contentType)}}"
-          class='cu-tag bg-blue light  margin-right-sm'>{{tools.contentTypeHandle(item.newsType)}}</view>
-        </view>
+          class='cu-tag bg-blue light  margin-right-sm'>{{tools.contentTypeHandle(item.newsType)}}</view>-->
+        </view> 
 
       </view>
       <image src="{{apiBaseUrl+item.poster}}" mode="aspectFill"></image>

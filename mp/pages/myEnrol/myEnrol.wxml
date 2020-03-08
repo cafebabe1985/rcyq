@@ -1,0 +1,30 @@
+<wxs src="../../common/tools.wxs" module="tools" />
+<view class="padding-sm">
+<text class="cuIcon-titles text-green"></text>
+我参加的活动:</view>
+<view wx:if="{{!list||list.length==0}}" class="padding text-lg text-center">您还没有报名参加任何活动</view>
+<view class="cu-list menu padding-sm">
+<view class="cu-item solids" wx:for="{{list}}"
+wx:key="{{index}}"
+>
+      <navigator class="content text-cut"
+      url="/pages/activeDetail/activeDetail?id={{item.enrolInfo.activeId}}"
+      >
+        <text class="cuIcon-title text-green"></text>
+        <text class="text-grey text-sm">{{item.activeInfo.name}}</text>
+      </navigator>
+      <view class="action">
+        <view class="cu-tag  bg-green light ">
+        {{tools.activeStatusHandle(item.activeInfo.startTime,item.activeInfo.endTime,item.activeInfo.endEnrol,item.enrolInfo.enrolStatus)}}
+        </view>
+        <button 
+        wx:if="{{tools.isEnrolOver(item.activeInfo.endEnrol)}}"
+        class="cu-btn sm round bg-red margin-left-sm shadow"
+        data-id="{{item.enrolInfo.id}}"
+        data-index = "{{index}}"
+        bindtap="cancelEnrol">
+        取消报名        
+        </button>
+      </view>
+    </view>
+    </view>

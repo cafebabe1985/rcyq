@@ -6,26 +6,7 @@ import { Http } from "../utils/http"
  */
 class User {
 
-  /**
-   * 获取景区小片Scenic列表
-   */
-  // static async listActive(pageNo, pageSize, column, order, status, other) {
-  //   let data = {
-  //     pageNo: pageNo,
-  //     pageSize: pageSize,
-  //     status: status || 1,
-  //     column: column,
-  //     order: order
-  //   }
-  //   if (other) {
-  //     Object.assign(data, other)
-  //   }
-
-  //   return await Http.wxGet({
-  //     url: 'wx/wxActive/listVO0d',
-  //     data
-  //   })
-  // }
+  
   /**
    * 根据openId获取登录用户信息
    */
@@ -42,9 +23,43 @@ class User {
       data
     })
   }
+  /**
+   * 根据openId获取景区管理员信息
+   */
+  static async getScenicManagerByOpenId(openId, other) {
+    let data = {
+      openId: openId
+    }
+    if (other) {
+      Object.assign(data, other)
+    }
 
+    return await Http.wxGet({
+      url: 'wx/applyScenic/getByOpenId',
+      data
+    })
+  }
+  /**
+   * 添加景区管理员申请
+   */
+  static async addScenicApply(data) {
+   
+    return await Http.wxPost({
+      url: 'wx/applyScenic/add',
+      data
+    })
+  }
 
-  
+  /**
+   * 通过openId查询用户信息
+   */
+  static async addScenicApply(data) {
+
+    return await Http.wxPost({
+      url: 'wx/applyScenic/add',
+      data
+    })
+  }
 }
 
 export {

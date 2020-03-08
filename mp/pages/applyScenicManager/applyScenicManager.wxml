@@ -1,0 +1,94 @@
+<form>
+  <view class="cu-form-group">
+    <view class="title">真实姓名</view>
+    <input maxlength="10" data-key="realName" bindblur="onInputBlur"
+    value="{{form.realName}}"
+    disabled="{{isApplyHandle}}"
+    ></input>
+    <view wx:if="{{!validatorRules.realName.validate}}" class="text-red">*{{validatorRules.realName.errMessage}}</view>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">所在地区
+      <text class="text-red" wx:if="{{!validatorRules.city.validate}}">*{{validatorRules.city.errMessage}}</text>
+    </view>
+    <picker bindchange="cityTabsChange" value="{{form.city}}" range="{{cityTabs}}" range-key="name"
+     disabled="{{isApplyHandle}}">
+      <view class="picker">
+        {{(form.city !=null)?cityTabs[form.city].name:'选择所在地区'}}
+      </view>
+    </picker>
+
+  </view>
+
+  <view class="cu-form-group">
+    <view class="title">身份证号</view>
+    <input maxlength="20" type="idcard" data-key="cid" bindblur="onInputBlur"
+     value="{{form.cid}}"
+     disabled="{{isApplyHandle}}"></input>
+    <view class="text-red" wx:if="{{!validatorRules.cid.validate}}">*{{validatorRules.cid.errMessage}}</view>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">手机号码</view>
+    <input maxlength="15" data-key="phone" type="number" 
+     value="{{form.phone}}" bindblur="onInputBlur"
+     disabled="{{isApplyHandle}}"></input>
+    <view wx:if="{{!validatorRules.phone.validate}}" class="text-red">*{{validatorRules.phone.errMessage}}</view>
+  </view>
+  <view class="cu-bar bg-white solids-top">
+    <view class="action">
+      上传身份证照片
+    </view>
+    
+  </view>
+  <view class="cu-form-group ">
+    <view class="grid col-2 grid-square flex-sub">
+      <view 
+      wx:if="{{form.cidfront}}"
+      class="bg-img" bindtap="ViewImage" data-url="{{form.cidfront}}">
+        <image src='{{apiBaseUrl+form.cidfront}}' mode='aspectFill'></image>
+        <view class="cu-tag bg-red" catchtap="DelImg" data-key = "cidfront">
+          <text class="cuIcon-close"></text>
+        </view>
+      </view>
+      <view 
+      data-key = "cidfront"
+      class="solids" bindtap="ChooseImage" wx:else>
+        <text class="cuIcon-cameraadd">
+        <text class="text-{{validatorRules.cidfront.validate?'black':'red'}} text-sm">{{validatorRules.cidfront.validate?'':'*'}}正面照</text>    
+        </text>
+      </view>
+
+    </view>
+ <view class="grid col-2 grid-square flex-sub">
+      <view 
+      wx:if="{{form.cidback}}"
+      class="bg-img" bindtap="ViewImage" data-url="{{form.cidback}}">
+        <image src='{{apiBaseUrl+form.cidback}}' mode='aspectFill'></image>
+        <view class="cu-tag bg-red" catchtap="DelImg" data-key = "cidback">
+          <text class="cuIcon-close"></text>
+        </view>
+      </view>
+      <view 
+      data-key = "cidback"
+      class="solids" bindtap="ChooseImage" wx:else>
+        <text class="cuIcon-cameraadd">
+        <text class="text-{{validatorRules.cidback.validate?'black':'red'}} text-sm">{{validatorRules.cidback.validate?'':'*'}}背面照</text>        
+        </text>
+      </view>
+
+    </view>
+
+  </view>
+  
+  <view class="btn-area">
+<button 
+wx:if="{{isApplyHandle}}"
+ class="cu-button margin-sm bg-olive" bindtap="doApply">
+    {{form.status == '0'?'授权':'撤销授权'}}</button>
+    <button 
+   wx:else
+    formType="submit" class="cu-button margin-sm bg-olive" bindtap="duSubmit">
+    提交</button>
+
+  </view>
+</form>

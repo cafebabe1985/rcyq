@@ -23,10 +23,11 @@ Page({
   },
   async getUserInfo(e) {
     app.globalData.userInfo = e.detail.userInfo
+    let _this = this
     wx.checkSession({
      async success(){
         let resdata = await WxSys.getInfo(app.globalData.sessionKey, e.detail)
-        this.setData({
+        _this.setData({
           userInfo: e.detail.userInfo,
           hasUserInfo: true
         })
@@ -45,7 +46,7 @@ Page({
             let jsonObj = resdata
             app.globalData.sessionKey = jsonObj.sessionKey
             let resdata2 = await WxSys.getInfo(app.globalData.sessionKey, e.detail)
-            this.setData({
+            _this.setData({
               userInfo: e.detail.userInfo,
               hasUserInfo: true
             })

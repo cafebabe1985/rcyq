@@ -38,7 +38,7 @@ import com.alibaba.fastjson.JSON;
  /**
  * @Description: 微信用户
  * @Author: jeecg-boot
- * @Date:   2020-02-14
+ * @Date:   2020-03-07
  * @Version: V1.0
  */
 @RestController
@@ -62,7 +62,6 @@ public class WxUserController extends JeecgController<WxUser, IWxUserService> {
 								   @RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
 								   @RequestParam(name="pageSize", defaultValue="10") Integer pageSize,
 								   HttpServletRequest req) {
-
 		QueryWrapper<WxUser> queryWrapper = QueryGenerator.initQueryWrapper(wxUser, req.getParameterMap());
 		Page<WxUser> page = new Page<WxUser>(pageNo, pageSize);
 		IPage<WxUser> pageList = wxUserService.page(page, queryWrapper);
@@ -118,31 +117,31 @@ public class WxUserController extends JeecgController<WxUser, IWxUserService> {
 	}
 	
 	/**
-	 * 通过openId查询
+	 * 通过id查询
 	 *
-	 * @param openId
+	 * @param id
 	 * @return
 	 */
-	@GetMapping(value = "/queryByOpenId")
-	public Result<?> queryByOpenId(@RequestParam(name="openId",required=true) String openId) {
-		WxUser user = new WxUser();
-		user.setOpenId(openId);
-		Wrapper<WxUser> userQuery = new QueryWrapper<>(user);
-		WxUser wxUser = wxUserService.getOne(userQuery);
+	@GetMapping(value = "/queryById")
+	public Result<?> queryById(@RequestParam(name="id",required=true) String id) {
+		WxUser wxUser = wxUserService.getById(id);
 		if(wxUser==null) {
 			return Result.error("未找到对应数据");
 		}
 		return Result.ok(wxUser);
 	}
 	 /**
-	  * 通过id查询
+	  * 通过openId查询
 	  *
-	  * @param id
+	  * @param openId
 	  * @return
 	  */
-	 @GetMapping(value = "/queryById")
-	 public Result<?> queryById(@RequestParam(name="id",required=true) String id) {
-		 WxUser wxUser = wxUserService.getById(id);
+	 @GetMapping(value = "/queryByOpenId")
+	 public Result<?> queryByOpenId(@RequestParam(name="openId",required=true) String openId) {
+		 WxUser user = new WxUser();
+		 user.setOpenId(openId);
+		 Wrapper<WxUser> userQuery = new QueryWrapper<>(user);
+		 WxUser wxUser = wxUserService.getOne(userQuery);
 		 if(wxUser==null) {
 			 return Result.error("未找到对应数据");
 		 }

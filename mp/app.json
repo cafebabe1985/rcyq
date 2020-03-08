@@ -14,7 +14,16 @@
     "pages/activeDetail/activeDetail",
     "pages/enrolPage/enrolPage",
     "pages/enrolUserPage/enrolUserPage",
-    "pages/test/test"
+    "pages/test/test",
+    "pages/myCreateActive/myCreateActive",
+    "pages/myEnrol/myEnrol",
+    "pages/myFavorActive/myFavorActive",
+    "pages/createScenic/createScenic",
+    "pages/applyScenicManager/applyScenicManager",
+    "pages/applyScenicList/applyScenicList",
+    "pages/myPublishScenic/myPublishScenice",
+    "pages/myCreateNews/myCreateNews",
+    "pages/createNews/createNews"
   ],
   "window": {
     "backgroundTextStyle": "light",

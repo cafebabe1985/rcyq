@@ -1,0 +1,22 @@
+ <view  class="bg-white nav text-center">
+  <view class="cu-item {{index==cur?'text-blue cur':''}}" wx:for="{{tabs}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+    {{item}}
+  </view>
+</view>
+ <view class="cu-list menu" >
+ <view wx:for="{{list}}" class="cu-item solids-bottom ">
+      <view class="content padding-tb-sm">
+        <view>
+        <text class="cuIcon-people text-red margin-right-xs"></text>
+        {{item.applyInfo.realName}}<text class="cuIcon-weixin text-green margin-left"></text>{{item.userInfo.nickName}}
+        </view>
+        <view class="text-gray text-sm">
+          <text class="{{item.applyInfo.status=='0'?'cuIcon-infofill text-red':'cuIcon-roundcheck text-green'}} margin-right-xs"></text> {{item.applyInfo.phone}}</view>
+      </view>
+      <view class="action">
+        <button class="cu-btn bg-blue round sm shadow" 
+        data-item="{{item}}" bindtap="handleApply">授权管理</button>
+      </view>
+    </view>
+  </view>
+ 

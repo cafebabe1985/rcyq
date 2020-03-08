@@ -19,6 +19,7 @@ Page({
    */
   data: {
     apiBaseUrl: config.apiBaseUrl,
+    isReview:false,
     queryPath:null,
     pagePath: null,
     detailId: null,
@@ -49,6 +50,11 @@ Page({
     wx.setNavigationBarTitle({
       title: opt.type=='0'? '景区详情':'咨询详情'
     })
+    if(opt.target){
+      this.setData({
+        isReview:true
+      })
+    }
     this.data.queryPath = `id=${opt.id}&type=${opt.type}&path=${opt.path}`
     if (opt.path) {
       this.setData({

@@ -11,6 +11,10 @@ Component({
       type:String,
       value: '开始输入...'
     },
+    initText:{
+      type:String,
+      value:"sdsfs"
+    },
     editorHeight:{
       type:Number,
       value: 100
@@ -35,9 +39,11 @@ Component({
    */
   lifetimes: {
     attached() {
+      
       const platform = wx.getSystemInfoSync().platform
       const isIOS = platform === 'ios'
       this.setData({ isIOS })
+      
       const that = this
       this.updatePosition(0)
       let keyboardHeight = 0
@@ -48,8 +54,7 @@ Component({
         setTimeout(() => {
           wx.pageScrollTo({
             scrollTop: 0,
-            success() {
-              
+            success() {              
               that.updatePosition(keyboardHeight)
               that.data.editorCtx.scrollIntoView()
             }
@@ -57,6 +62,9 @@ Component({
         }, duration)
 
       })
+    },
+    ready(){
+     this.onEditorReady()
     }
   },
   /**
@@ -77,9 +85,14 @@ Component({
       return statusBarHeight + navigationBarHeight
     },
     onEditorReady() {
-
-      this.createSelectorQuery().select('#editor').context((res) => {
+    this.createSelectorQuery().select('#editor').context((res) => {
+        
         this.data.editorCtx = res.context
+         this.data.editorCtx.setContents({
+          html: this.data.initText
+        }
+          
+          )
       }).exec()
     },
     blur(e) {

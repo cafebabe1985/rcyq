@@ -118,7 +118,7 @@ Page({
     if(agent == "false"){
      let res = await Active.checkReEnrol({
         activeId:this.data.detail.id,
-        userOpenId: this.data.userInfo.openId
+       userOpneId: this.data.userInfo.openId
       })
       if(!res.success){
         wx.showToast({

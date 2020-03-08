@@ -15,6 +15,33 @@ class Http {
     })
     return res.data
   }
+  //delete
+  static async wxDelete({ url, method = 'DELETE', data }) {
+    // 将wx.request方法转换成promise方法
+    const res = await promisic(wx.request)({
+      url: `${config.apiBaseUrl}${url}`,
+      method,
+      data,
+      header: {
+        appkey: config.appkey
+      }
+    })
+    return res.data
+  }
+
+  //put
+  static async wxPut({ url, method = 'PUT', data }) {
+    // 将wx.request方法转换成promise方法
+    const res = await promisic(wx.request)({
+      url: `${config.apiBaseUrl}${url}`,
+      method,
+      data,
+      header: {
+        appkey: config.appkey
+      }
+    })
+    return res.data
+  }
 //post
   static async wxPost({ url, method = 'POST', data }) {
     // 将wx.request方法转换成promise方法
@@ -28,6 +55,8 @@ class Http {
     })
     return res.data
   }
+
+
 
 }
 

@@ -366,7 +366,18 @@ Page({
             }
           })
       }else{
+        wx.showLoading({
+          title: '正在提交数据',
+        })
         let res = await Active.addActive(this.data.form)
+        wx.showToast({
+          title: '创建成功',
+          duration:1000
+        })
+        wx.hideLoading()
+        wx.navigateBack({
+          
+        })
       }
      }else{
       this.setData({

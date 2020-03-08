@@ -1,0 +1,8 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "发布景区资料",
+  "usingComponents": {
+    "wxEditor": "/pages/component/editor/wxEditor"
+  }
+}

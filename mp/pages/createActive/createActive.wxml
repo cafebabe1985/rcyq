@@ -142,7 +142,7 @@
     <view class="btn-area">
       <button class="cu-button margin-sm bg-orange" data-name="preview" bindtap="doSubmit">预览</button>
       <button formType="submit" class="cu-button margin-sm bg-olive" bindtap="doSubmit">发布</button>
-      <button class="cu-button margin-sm">保存草稿</button>
+      
     </view>
   </view>
 </form>

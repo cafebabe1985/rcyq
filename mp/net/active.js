@@ -7,7 +7,7 @@ import { Http } from "../utils/http"
 class Active {
 
   /**
-   * 获取景区小片Scenic列表
+   * 获取活动列表
    */
   static async listActive(pageNo, pageSize, column, order, status, other) {
     let data = {
@@ -27,7 +27,7 @@ class Active {
     })
   }
   /**
-   * 根据ID获取景区小片数据
+   * 根据ID获取活动
    */
   static async getActiveById(id, other) {
     let data = {
@@ -54,6 +54,32 @@ class Active {
   }
 
   /**
+     * 更改活动
+     */
+  static async editActive(data) {
+
+    return await Http.wxPut({
+      url: 'wx/wxActive/edit',
+      data
+    })
+  }
+
+  /**
+   * 删除活动
+    */
+  static async deleteById(id,other) {
+    let data = {
+      id: id
+    }
+    if (other) {
+      Object.assign(data, other)
+    }
+    return await Http.wxDelete({
+      url: 'wx/wxActive/delete',
+      data
+    })
+  }
+  /**
      * 活动报名
      */
   static async addActiveEnrol(data) {
@@ -62,7 +88,21 @@ class Active {
       data
     })
   }
-
+  /**
+     * 删除报名
+      */
+  static async deleteEnrolById(id,other) {
+    let data = {
+      id: id
+    }
+    if (other) {
+      Object.assign(data, other)
+    }
+    return await Http.wxDelete({
+      url: `wx/wxActiveEnrolUser/delete?id=${id}`,
+      data
+    })
+  }
   /**
      * 报名查重
      */
@@ -95,7 +135,7 @@ class Active {
   static async listActiveFavorite(data) {   
    
     return await Http.wxGet({
-      url: 'wx/wxActiveFavorite/listAll',
+      url: 'wx/wxActiveFavorite/listAllAndActive',
       data
     })
   }
@@ -116,6 +156,40 @@ class Active {
 
     return await Http.wxPost({
       url: 'wx/wxActiveFavorite/add',
+      data
+    })
+  }
+
+  /**
+   * 用户创建活动列表
+   * listVOall
+   */
+  static async listUserCreate(id,other) {
+    let data = {
+      createBy: id
+    }
+    if (other) {
+      Object.assign(data, other)
+    }
+    return await Http.wxGet({
+      url: 'wx/wxActive/listVOall',
+      data
+    })
+  }
+
+  /**
+   * 用户报名活动列表
+   * 
+   */
+  static async listUserEnrol(id, other) {
+    let data = {
+      userOpneId: id
+    }
+    if (other) {
+      Object.assign(data, other)
+    }
+    return await Http.wxGet({
+      url: 'wx/wxActiveEnrolUser/listEnrolAndActive',
       data
     })
   }

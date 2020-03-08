@@ -16,7 +16,7 @@ import org.jeecg.common.aspect.annotation.Dict;
 /**
  * @Description: 微信用户
  * @Author: jeecg-boot
- * @Date:   2020-02-14
+ * @Date:   2020-03-07
  * @Version: V1.0
  */
 @Data

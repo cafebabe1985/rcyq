@@ -1,8 +1,6 @@
 package org.jeecg.modules.wx.controller;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -12,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.jeecg.common.api.vo.Result;
 import org.jeecg.common.system.query.QueryGenerator;
 import org.jeecg.common.util.oConvertUtils;
+import org.jeecg.modules.wx.entity.WxActive;
 import org.jeecg.modules.wx.entity.WxActiveFavorite;
 import org.jeecg.modules.wx.service.IWxActiveFavoriteService;
 
@@ -20,6 +19,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 
+import org.jeecg.modules.wx.service.IWxActiveService;
 import org.jeecgframework.poi.excel.ExcelImportUtil;
 import org.jeecgframework.poi.excel.def.NormalExcelConstants;
 import org.jeecgframework.poi.excel.entity.ExportParams;
@@ -45,7 +45,8 @@ import com.alibaba.fastjson.JSON;
 public class WxActiveFavoriteController extends JeecgController<WxActiveFavorite, IWxActiveFavoriteService> {
 	@Autowired
 	private IWxActiveFavoriteService wxActiveFavoriteService;
-	
+	@Autowired
+	private IWxActiveService wxActiveService;
 	/**
 	 * 分页列表查询
 	 *
@@ -66,7 +67,7 @@ public class WxActiveFavoriteController extends JeecgController<WxActiveFavorite
 		return Result.ok(pageList);
 	}
 	 /**
-	  * 分页列表查询
+	  * 查询全部
 	  *
 	  * @param wxActiveFavorite
 	  *
@@ -81,6 +82,37 @@ public class WxActiveFavoriteController extends JeecgController<WxActiveFavorite
 
 		 List<WxActiveFavorite> pageList = wxActiveFavoriteService.list(queryWrapper);
 		 return Result.ok(pageList);
+	 }
+
+	 /**
+	  * 查询全部带活动信息
+	  *
+	  * @param wxActiveFavorite
+	  *
+	  * @param req
+	  * @return
+	  */
+	 @GetMapping(value = "/listAllAndActive")
+	 public Result<?> listAllAndActive(WxActiveFavorite wxActiveFavorite,
+
+									HttpServletRequest req) {
+		 QueryWrapper<WxActiveFavorite> queryWrapper = QueryGenerator.initQueryWrapper(wxActiveFavorite, req.getParameterMap());
+
+		 List<WxActiveFavorite> pageList = wxActiveFavoriteService.list(queryWrapper);
+		 List<Map<String,Object>> maps = new ArrayList<>();
+		 for (WxActiveFavorite af:pageList
+			  ) {
+			 String activeId = af.getActiveId();
+			 WxActive byId = wxActiveService.getById(activeId);
+			 if(null!= byId){
+				 Map<String,Object> map = new HashMap<>();
+				 map.put("favorInfo", af);
+				 map.put("activeInfo",byId);
+				 maps.add(map);
+			 }
+
+		 }
+		 return Result.ok(maps);
 	 }
 	 /**
 	  * 计数

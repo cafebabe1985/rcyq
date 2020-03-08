@@ -12,6 +12,7 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import org.jeecg.common.api.vo.Result;
 import org.jeecg.common.system.query.QueryGenerator;
 import org.jeecg.common.util.oConvertUtils;
+import org.jeecg.modules.wx.WxSysConst;
 import org.jeecg.modules.wx.entity.*;
 import org.jeecg.modules.wx.service.*;
 
@@ -215,6 +216,19 @@ public class WxActiveController extends JeecgController<WxActive, IWxActiveServi
         }
         return Result.ok(pageList);
     }
+    @GetMapping(value = "/listVOall")
+    public Result<?> queryPageListVO0d(WxActiveVO wxActive,
+                                       HttpServletRequest req) {
+
+        QueryWrapper<WxActiveVO> queryWrapper = QueryGenerator.initQueryWrapper(wxActive, req.getParameterMap());
+
+        List<WxActiveVO> records = wxActiveVOService.list(queryWrapper);
+        for (WxActiveVO vo:records
+             ) {
+            vo.setDetail("");
+        }
+        return Result.ok(records);
+    }
 
     /**
      * 添加
@@ -297,6 +311,21 @@ public class WxActiveController extends JeecgController<WxActive, IWxActiveServi
                 wxEnrolWriteItemService.saveBatch(enrolWriteItems);
             }
         }
+        WxUser wxUser = new WxUser();
+        wxUser.setOpenId(wxActive.getCreateBy());
+        Wrapper<WxUser> query = new QueryWrapper<>(wxUser);
+        WxUser one = wxUserService.getOne(query);
+        if(null!=one){
+            Integer accumulatePoint = one.getAccumulatePoint();
+            if(null != accumulatePoint){
+                one.setAccumulatePoint(accumulatePoint + WxSysConst.ADD_ACTIVE_SCORE);
+            }else{
+                one.setAccumulatePoint( WxSysConst.ADD_ACTIVE_SCORE);
+            }
+
+            wxUserService.update(one,query);
+        }
+
         return Result.ok("添加成功！");
     }
 

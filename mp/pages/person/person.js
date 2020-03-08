@@ -29,6 +29,7 @@ async getUserInfo(){
       userInfo:res.result
     })
   }
+  console.log(res.result)
     return res.result
   }
   return null
@@ -53,7 +54,14 @@ async getUserInfo(){
     }
     return e
   },
-  
+  goApplyScenic(){
+    if(this.data.userInfo.vipLevel === '1'){
+      return
+    }
+    wx.navigateTo({
+      url: '/pages/applyScenicManager/applyScenicManager',
+    })
+  },
   showModal(e) {
     this.setData({
       modalName: e.currentTarget.dataset.target
@@ -69,47 +77,47 @@ async getUserInfo(){
    * 生命周期函数--监听页面加载
    */
   async onLoad(options) {
-     let userInfo = await this.getUserInfo()
-    console.log(userInfo) 
-    let favorCountMax=0
-    let activityCountMax=0
-    let scoreCountMax =0
-    let resActive = await this.countEnrolCount(userInfo.openId)
-    let resFavor = await this.countFavorCount(userInfo.openId)
+    //  let userInfo = await this.getUserInfo()
+   
+    // let favorCountMax=0
+    // let activityCountMax=0
+    // let scoreCountMax =0
+    // let resActive = await this.countEnrolCount(userInfo.openId)
+    // let resFavor = await this.countFavorCount(userInfo.openId)
     
-    if(userInfo){
-      favorCountMax = resFavor.length
-      scoreCountMax = userInfo.accumulatePoint||0
-      activityCountMax = resActive.length
+    // if(userInfo){
+    //   favorCountMax = resFavor.length
+    //   scoreCountMax = userInfo.accumulatePoint||0
+    //   activityCountMax = resActive.length
 
-    }
-     let that = this;
-     wx.showLoading({
-       title: '数据加载中',
-       mask: true,
-     })
-     let i = 0;
-     numDH();
-     function numDH() {
-       if (i < 20) {
-         setTimeout(function () {
-           that.setData({
-             favorCount: that.data.favorCount >= favorCountMax ? favorCountMax : i,
-             activityCount: that.data.activityCount >= activityCountMax ? activityCountMax :i,
-             scoreCount: that.data.scoreCount >= scoreCountMax ? scoreCountMax : i
-           })
-           i++
-           numDH();
-         }, 70)
-       } else {
-         that.setData({
-           favorCount: that.coutNum(favorCountMax),
-           activityCount: that.coutNum(activityCountMax),
-           scoreCount: that.coutNum(scoreCountMax)
-         })
-       }
-     }
-     wx.hideLoading()
+    // }
+    //  let that = this;
+    //  wx.showLoading({
+    //    title: '数据加载中',
+    //    mask: true,
+    //  })
+    //  let i = 0;
+    //  numDH();
+    //  function numDH() {
+    //    if (i < 20) {
+    //      setTimeout(function () {
+    //        that.setData({
+    //          favorCount: that.data.favorCount >= favorCountMax ? favorCountMax : i,
+    //          activityCount: that.data.activityCount >= activityCountMax ? activityCountMax :i,
+    //          scoreCount: that.data.scoreCount >= scoreCountMax ? scoreCountMax : i
+    //        })
+    //        i++
+    //        numDH();
+    //      }, 70)
+    //    } else {
+    //      that.setData({
+    //        favorCount: that.coutNum(favorCountMax),
+    //        activityCount: that.coutNum(activityCountMax),
+    //        scoreCount: that.coutNum(scoreCountMax)
+    //      })
+    //    }
+    //  }
+    //  wx.hideLoading()
     
   },
 
@@ -123,8 +131,48 @@ async getUserInfo(){
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  async onShow () {
+    let userInfo = await this.getUserInfo()
 
+    let favorCountMax = 0
+    let activityCountMax = 0
+    let scoreCountMax = 0
+    let resActive = await this.countEnrolCount(userInfo.openId)
+    let resFavor = await this.countFavorCount(userInfo.openId)
+
+    if (userInfo) {
+      favorCountMax = resFavor.length
+      scoreCountMax = userInfo.accumulatePoint || 0
+      activityCountMax = resActive.length
+
+    }
+    let that = this;
+    wx.showLoading({
+      title: '数据加载中',
+      mask: true,
+    })
+    let i = 0;
+    numDH();
+    function numDH() {
+      if (i < 20) {
+        setTimeout(function () {
+          that.setData({
+            favorCount: that.data.favorCount >= favorCountMax ? favorCountMax : i,
+            activityCount: that.data.activityCount >= activityCountMax ? activityCountMax : i,
+            scoreCount: that.data.scoreCount >= scoreCountMax ? scoreCountMax : i
+          })
+          i++
+          numDH();
+        }, 70)
+      } else {
+        that.setData({
+          favorCount: that.coutNum(favorCountMax),
+          activityCount: that.coutNum(activityCountMax),
+          scoreCount: that.coutNum(scoreCountMax)
+        })
+      }
+    }
+    wx.hideLoading()
   },
 
   /**

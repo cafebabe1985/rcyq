@@ -92,6 +92,7 @@
 
   import { JeecgListMixin } from '@/mixins/JeecgListMixin'
   import WxUserModal from './modules/WxUserModal'
+  import {initDictOptions, filterMultiDictText} from '@/components/dict/JDictSelectUtil'
 
   export default {
     name: "WxUserList",

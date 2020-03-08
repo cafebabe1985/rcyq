@@ -132,7 +132,7 @@
       </a-table>
     </div>
 
-    <wxScenic-modal ref="modalForm" @ok="modalFormOk"></wxScenic-modal>
+    <wxScenic-modal ref="modalForm" @ok="modalFormOk" :cityTabs="tabs"></wxScenic-modal>
   </a-card>
 </template>
 
@@ -142,7 +142,11 @@
   import WxScenicModal from './modules/WxScenicModal'
   import JDictSelectTag from '@/components/dict/JDictSelectTag.vue'
   import {initDictOptions, filterMultiDictText} from '@/components/dict/JDictSelectUtil'
+  import { getAction } from '@/api/manage'
+  import { async } from 'q';
 
+   
+  
   export default {
     name: "WxScenicList",
     mixins:[JeecgListMixin],
@@ -151,8 +155,10 @@
       WxScenicModal
     },
     data () {
+        
       return {
         description: '景区小片信息表管理页面',
+        tabs:[],
         // 表头
         columns: [
           {
@@ -200,7 +206,16 @@
           {
             title:'所在城市',
             align:"center",
-            dataIndex: 'city'
+            dataIndex: 'city',
+            customRender: (text)=>{
+              if(!text){
+                return ''
+              }else{
+                let index = parseInt(text)
+                return this.tabs[index]?this.tabs[index]['name']:''
+                  
+              }
+            }
           },
           {
             title:'展示类型',
@@ -222,7 +237,7 @@
           {
             title:'内容类型',
             align:"center",
-            dataIndex: 'newsType',
+            dataIndex: 'newsType',            
             customRender:(text)=>{
               if(!text){
                 return ''
@@ -239,7 +254,9 @@
           }
         ],
         url: {
-          list: `/wx/wxScenic/list?createBy=${JSON.parse(localStorage.getItem("pro__Login_Userinfo")).value.id}`,
+          // list: `/wx/wxScenic/list?createBy=${JSON.parse(localStorage.getItem("pro__Login_Userinfo")).value.id}`,
+           list: "/wx/wxScenic/list",
+           
           delete: "/wx/wxScenic/delete",
           deleteBatch: "/wx/wxScenic/deleteBatch",
           exportXlsUrl: "/wx/wxScenic/exportXls",
@@ -255,8 +272,25 @@
       importExcelUrl: function(){
         return `${window._CONFIG['domianURL']}/${this.url.importExcelUrl}`;
       }
+      
     },
+    beforeMount(){
+
+    },
+  async mounted(){
+    await this.initCityTabs()
+   
+   },
     methods: {
+     async initCityTabs(){
+          let listCityTabUrl ="/wx/scenicCityTab/list?column=createTime&order=desc"
+           let res = await getAction(listCityTabUrl)
+           if(res.success){
+                this.tabs = res.result.records
+           }
+           
+     
+      },
       initDictConfig(){
         initDictOptions('display_type').then((res) => {
           if (res.success) {

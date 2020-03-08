@@ -1,0 +1,45 @@
+<wxs src="../../common/tools.wxs" module="tools" />
+<view class="navbar-wrap" id="fixedViewWrap">
+  <view class="bg-white nav text-center fixed-nav {{isFixedTop?'fixed':''}}" id="navbar">
+    <view class="cu-item {{0==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="0">
+      <text class="cuIcon-cascades"></text> 全部
+    </view>
+    <view class="cu-item {{1==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="1">
+      <text class="cuIcon-footprint"></text> 已发布
+    </view>
+    <view class="cu-item {{2==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="2">
+      <text class="cuIcon-news"></text> 待审核
+    </view>
+    <view class="cu-item {{3==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="3">
+      <text class="cuIcon-news"></text> 草稿
+    </view>
+  </view>
+  </view>
+  <view  class="cu-card article no-card solids-bottom solids-top" wx:for="{{scenics}}" wx:key="index"
+data-item="{{item}}"
+bindtap="goNewsDetail">
+  <view class="cu-item shadow">
+    <view class="title">
+       <view class="text-cut">{{item.scenicName}}</view>
+    </view>
+    <view class="content">
+      <image src="{{apiBaseUrl+item.poster}}" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-content" > {{item.title}}</view>
+       
+        <view class='flex justify-between'>
+          <view class="">{{tools.dateHandle(item.createTime)}}
+          <text class="tag bg-{{item.displayType=='1'?'green':'gray'}} padding-xs text-xs margin-left-sm round">{{tools.displayType(item.displayType)}}</text>
+          </view>
+          <view class="bg-white text-blue">
+          
+          浏览数:{{item.hit}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="cu-avatar lg round margin-left bg-red float-btn"
+bindtap="createScenic">
+    <text class="avatar-text">新建</text>
+  </view>

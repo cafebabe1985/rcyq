@@ -67,7 +67,9 @@
   </view>
 </view>
 <!--操作条-->
-<view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
+<view 
+wx:if="{{!isReview}}"
+class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
 
    <input 
    disabled="{{!isComment}}"

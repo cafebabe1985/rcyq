@@ -40,23 +40,48 @@
         <text class="text-grey">个人信息</text>
       </view>
     </view> -->
-    <view class="cu-item arrow">
-      <navigator class="content" url="/pages/about/log/log" hover-class="none">
+    <view class="cu-item arrow" bindtap="goApplyScenic">
+      <view class="content">
         <text class="cuIcon-vip text-yellow"></text>
-        <text class="text-grey">会员权限</text>
+        <text class="text-grey">成为景区负责人</text>
+      </view>
+         <view class="action">
+       
+        <text 
+        wx:if="{{userInfo.vipLevel == '1'}}"
+        class="cu-tag round bg-green light text-sm">已认证</text>
+      </view>
+     
+    </view>
+    <view class="cu-item arrow" wx:if="{{userInfo.vipLevel==='9'}}">
+     <navigator class="content" url="/pages/applyScenicList/applyScenicList" hover-class="none">
+        <text class="cuIcon-profile text-orange"></text>
+        <text class="text-grey">景区负责人管理</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow" wx:if="{{userInfo.vipLevel==='1'}}">
+     <navigator class="content" url="/pages/myPublishScenic/myPublishScenice?id={{userInfo.openId}}" hover-class="none">
+        <text class="cuIcon-evaluate text-pink"></text>
+        <text class="text-grey">我发布的景区资料</text>
       </navigator>
     </view>
     <view class="cu-item arrow">
-      <view class="content" >
-        <text class="cuIcon-footprint text-blue"></text>
-        <text class="text-grey">我参与的</text>
-      </view>
+     <navigator class="content" url="/pages/myCreateNews/myCreateNews?id={{userInfo.openId}}" hover-class="none">
+        <text class="cuIcon-newsfill text-brown"></text>
+        <text class="text-grey">我发布的快讯</text>
+      </navigator>
     </view>
     <view class="cu-item arrow">
-      <button class="cu-btn content" >
-        <text class="cuIcon-favor text-cyan"></text>
-        <text class="text-grey">我的收藏</text>
-      </button>
+      <navigator class="content" url="/pages/myEnrol/myEnrol?id={{userInfo.openId}}" hover-class="none" >
+        <text class="cuIcon-footprint text-cyan"></text>
+        <text class="text-grey">我参加的活动</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+       <navigator class="content" url="/pages/myFavorActive/myFavorActive?id={{userInfo.openId}}" hover-class="none" >
+        <text class="cuIcon-favor text-mauve"></text>
+        <text class="text-grey">我关注的活动</text>
+     </navigator>
     </view>
     <view class="cu-item arrow">
       <navigator class="content" hover-class="none">

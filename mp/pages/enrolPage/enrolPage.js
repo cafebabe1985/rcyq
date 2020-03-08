@@ -191,17 +191,20 @@ Page({
         title: '报名成功',
         duration:1000
       })
+    
       wx.navigateBack({
         
       })
     }else{
       wx.hideLoading()
       wx.showToast({
-        title: '请不要重复报名',
+        title: '网络故障',
         icon:'none',
         duration: 1000
       })
-     
+      wx.navigateBack({
+
+      })
     }
   },
   cancelEnrol() {
