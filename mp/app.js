@@ -1,25 +1,27 @@
 //app.js
-import { WxSys } from './net/wxSys.js'
+import {
+  WxSys
+} from './net/wxSys.js'
 
 App({
   async onLaunch() {
     //检查更新
     if (wx.canIUse('getUpdateManager')) {
       const updateManager = wx.getUpdateManager()
-      updateManager.onCheckForUpdate(function (res) {
+      updateManager.onCheckForUpdate(function(res) {
         if (res.hasUpdate) {
-          updateManager.onUpdateReady(function () {
+          updateManager.onUpdateReady(function() {
             wx.showModal({
               title: '更新提示',
               content: '新版本已经准备好，是否重启应用？',
-              success: function (res) {
+              success: function(res) {
                 if (res.confirm) {
                   updateManager.applyUpdate()
                 }
               }
             })
           })
-          updateManager.onUpdateFailed(function () {
+          updateManager.onUpdateFailed(function() {
             wx.showModal({
               title: '已经有新版本了哟~',
               content: '新版本已经上线啦~，请您删除当前小程序，重新搜索打开哟~'
@@ -40,19 +42,45 @@ App({
     wx.login({
       success: async res => {
         const resdata = await WxSys.login(res.code)
-       
-        if(resdata.success){
+        if (resdata.success) {
           let jsonObj = resdata.message
           this.globalData.sessionKey = jsonObj.sessionKey
-        }else{
+          let obj = JSON.parse(jsonObj)
+          let loginFirst = await WxSys.loginSys({
+            username: obj.openid,
+            password: obj.openid,
+            captcha: 'cafebabe'
+          })
+          console.log(loginFirst)
+          if (loginFirst.success) {
+            wx.setStorageSync("token", loginFirst.result.token)
+          } else {
+            let registRes = await WxSys.registWx({
+              openId: obj.openid,
+              type: 'wx'
+            })
+           
+            if (registRes.success) {
+              //登录
+              let loginRes = await WxSys.loginSys({
+                username: obj.openid,
+                password: obj.openid,
+                captcha: 'cafebabe'
+              })
+              wx.setStorageSync("token", loginRes.result.token)
+            }
+          }
+          //登录。。。
+
+        } else {
           wx.showToast({
             title: '抱歉服务器故障,小程序暂停运行',
-            icon:'none',
-            duration:2000
+            icon: 'none',
+            duration: 2000
           })
         }
-        
-        
+
+
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
@@ -65,7 +93,7 @@ App({
             wx.getUserInfo({
               success: async res => {
                 const resdata = await WxSys.getInfo(this.globalData.sessionKey, res.detail)
-               
+
                 wx.setStorageSync('userInfo', resdata)
 
                 // 可以将 res 发送给后台解码出 unionId
@@ -73,7 +101,7 @@ App({
                 // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
                 // 所以此处加入 callback 以防止这种情况
                 if (this.userInfoReadyCallback) {
-                
+
                   this.userInfoReadyCallback(res)
                   let userInforStore = wx.getStorageSync('userInfo') || null
                   if (!userInforStore) {
@@ -88,7 +116,7 @@ App({
         }
 
         //用户手机
-       
+
       }
     })
     wx.hideLoading()

@@ -365,7 +365,7 @@ public class SysUserController {
      * 导出excel
      *
      * @param request
-     * @param response
+     * @param
      */
     @RequestMapping(value = "/exportXls")
     public ModelAndView exportXls(SysUser sysUser,HttpServletRequest request) {
@@ -733,6 +733,32 @@ public class SysUserController {
 	@PostMapping("/register")
 	public Result<JSONObject> userRegister(@RequestBody JSONObject jsonObject, SysUser user) {
 		Result<JSONObject> result = new Result<JSONObject>();
+		String type = jsonObject.getString("type");
+		System.out.println(jsonObject);
+		if(null != type){
+            SysUser sysUserWx = new SysUser();
+            String wxname = jsonObject.getString("openId");
+            System.out.println(wxname);
+            String password = wxname;
+            try {
+                sysUserWx.setId(wxname);
+                sysUserWx.setCreateTime(new Date());// 设置创建时间
+                String salt = oConvertUtils.randomGen(8);
+                String passwordEncode = PasswordUtil.encrypt(wxname, password, salt);
+                sysUserWx.setSalt(salt);
+                sysUserWx.setUsername(wxname);
+                sysUserWx.setPassword(passwordEncode);
+                sysUserWx.setStatus(1);
+                sysUserWx.setDelFlag(CommonConstant.DEL_FLAG_0.toString());
+                sysUserWx.setActivitiSync(CommonConstant.ACT_SYNC_1);
+                sysUserService.addUserWithRole(sysUserWx,"wxuser");//默认临时角色 test
+                result.success("注册成功");
+                return result;
+            } catch (Exception e) {
+                result.error500("注册失败");
+                return result;
+            }
+        }
 		String phone = jsonObject.getString("phone");
 		String smscode = jsonObject.getString("smscode");
 		Object code = redisUtil.get(phone);
@@ -778,6 +804,7 @@ public class SysUserController {
 			user.setStatus(1);
 			user.setDelFlag(CommonConstant.DEL_FLAG_0.toString());
 			user.setActivitiSync(CommonConstant.ACT_SYNC_1);
+
 			sysUserService.addUserWithRole(user,"ee8626f80f7c2619917b6236f3a7f02b");//默认临时角色 test
 			result.success("注册成功");
 		} catch (Exception e) {
@@ -788,7 +815,7 @@ public class SysUserController {
 
 	/**
 	 * 
-	 * @param 根据用户名或手机号查询用户信息
+	 * @param
 	 * @return
 	 */
 	@GetMapping("/querySysUser")

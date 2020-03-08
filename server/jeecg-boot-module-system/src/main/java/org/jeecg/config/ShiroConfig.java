@@ -67,7 +67,7 @@ public class ShiroConfig {
 			}
 		}
 		//开发接口排除
-		filterChainDefinitionMap.put("/wx/**", "anon");
+		filterChainDefinitionMap.put("/wx/login", "anon");
 		//大屏请求排除
 
 		filterChainDefinitionMap.put("/big/screen/**", "anon");

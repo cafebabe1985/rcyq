@@ -5,12 +5,14 @@ class Http {
 //get
   static async wxGet({ url, method = 'GET', data }) {
     // 将wx.request方法转换成promise方法
+  let token =  wx.getStorageSync("token")
+  console.log(token)
     const res = await promisic(wx.request)({
       url: `${config.apiBaseUrl}${url}`,
       method,
       data,
       header: {
-        appkey: config.appkey
+        'X-Access-Token': token
       }
     })
     return res.data
@@ -18,12 +20,13 @@ class Http {
   //delete
   static async wxDelete({ url, method = 'DELETE', data }) {
     // 将wx.request方法转换成promise方法
+    let token = wx.getStorageSync("token")
     const res = await promisic(wx.request)({
       url: `${config.apiBaseUrl}${url}`,
       method,
       data,
       header: {
-        appkey: config.appkey
+        'X-Access-Token': token
       }
     })
     return res.data
@@ -32,12 +35,13 @@ class Http {
   //put
   static async wxPut({ url, method = 'PUT', data }) {
     // 将wx.request方法转换成promise方法
+    let token = wx.getStorageSync("token")
     const res = await promisic(wx.request)({
       url: `${config.apiBaseUrl}${url}`,
       method,
       data,
       header: {
-        appkey: config.appkey
+        'X-Access-Token': token
       }
     })
     return res.data
@@ -45,18 +49,17 @@ class Http {
 //post
   static async wxPost({ url, method = 'POST', data }) {
     // 将wx.request方法转换成promise方法
+    let token = wx.getStorageSync("token")
     const res = await promisic(wx.request)({
       url: `${config.apiBaseUrl}${url}`,
       method,
       data,
       header: {
-        appkey: config.appkey
+        'X-Access-Token': token
       }
     })
     return res.data
   }
-
-
 
 }
 

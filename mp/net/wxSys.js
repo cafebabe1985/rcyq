@@ -39,6 +39,28 @@ class WxSys {
     })
   }
   /**
+   * 注册微信用户
+   */
+  static async registWx(data) {
+   
+
+    return await Http.wxPost({
+      url: '/sys/user/register',
+      data
+    })
+  }
+  /**
+   * 登录系统
+   */
+  static async loginSys(data) {
+
+
+    return await Http.wxPost({
+      url: '/sys/login',
+      data
+    })
+  }
+  /**
    * 获取微信用户绑定手机号
    */
   static async getPhone(sessionKey, other) {

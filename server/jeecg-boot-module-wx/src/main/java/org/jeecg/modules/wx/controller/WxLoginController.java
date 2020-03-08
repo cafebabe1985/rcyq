@@ -32,7 +32,6 @@ public class WxLoginController {
 
     @Autowired
     private IWxUserService wxUserService;
-
     /**
      * 登陆接口
      */
@@ -45,6 +44,7 @@ public class WxLoginController {
 
         try {
             WxMaJscode2SessionResult session = wxService.getUserService().getSessionInfo(code);
+            String openid = session.getOpenid();
 
             return Result.ok( JSON.toJSONString(session));
         } catch (WxErrorException e) {
