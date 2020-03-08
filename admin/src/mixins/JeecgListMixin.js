@@ -52,7 +52,7 @@ export const JeecgListMixin = {
   },
   created() {
     if(!this.disableMixinCreated){
-      console.log(' -- mixin created -- ')
+     
       this.loadData();
       //初始化字典配置 在自己页面定义
       this.initDictConfig();
@@ -74,7 +74,7 @@ export const JeecgListMixin = {
         if (res.success) {
           this.dataSource = res.result.records;
           this.ipagination.total = res.result.total;
-          console.log(this.dataSource)
+         
         }
         if(res.code===510){
           this.$message.warning(res.message)
@@ -83,7 +83,7 @@ export const JeecgListMixin = {
       })
     },
     initDictConfig(){
-      console.log("--这是一个假的方法!")
+     
     },
     handleSuperQuery(arg) {
       //高级查询方法
@@ -230,7 +230,7 @@ export const JeecgListMixin = {
       if(this.selectedRowKeys && this.selectedRowKeys.length>0){
         param['selections'] = this.selectedRowKeys.join(",")
       }
-      console.log("导出参数",param)
+      
       downFile(this.url.exportXlsUrl,param).then((data)=>{
         if (!data) {
           this.$message.warning("文件下载失败")
@@ -254,7 +254,7 @@ export const JeecgListMixin = {
     /* 导入 */
     handleImportExcel(info){
       if (info.file.status !== 'uploading') {
-        console.log(info.file, info.fileList);
+       
       }
       if (info.file.status === 'done') {
         if (info.file.response.success) {

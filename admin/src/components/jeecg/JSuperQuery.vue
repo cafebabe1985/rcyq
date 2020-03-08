@@ -284,7 +284,7 @@
             matchType: this.selectValue,
             params: this.removeEmptyObject(utils.cloneObject(this.queryParamsModel))
           }
-          console.log('---高级查询参数--->', event)
+        
           this.emitCallback(event.params, event.matchType)
         } else {
           this.emitCallback()

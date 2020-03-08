@@ -451,7 +451,7 @@ export default {
       this.form.resetFields()
       this.model = Object.assign({}, record)
       this.visible = true
-      console.log(this.model)
+      
       this.$nextTick(() => {
         this.form.setFieldsValue(
           pick(
@@ -642,7 +642,7 @@ export default {
       }
     },
     onEnrolWriteChange(e) {
-      console.log(e)
+     
 
       this.form.setFieldsValue({ enrolWriteOpts: e })
     },

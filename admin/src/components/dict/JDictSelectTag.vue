@@ -44,7 +44,7 @@
       }
     },
     created() {
-      // console.log(this.dictCode);
+     
       if(!this.type || this.type==="list"){
         this.tagType = "select"
       }else{
@@ -58,7 +58,7 @@
         //根据字典Code, 初始化字典数组
         ajaxGetDictItems(this.dictCode, null).then((res) => {
           if (res.success) {
-//                console.log(res.result);
+
             this.dictOptions = res.result;
           }
         })

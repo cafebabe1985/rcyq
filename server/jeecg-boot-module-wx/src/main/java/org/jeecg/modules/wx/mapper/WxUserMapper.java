@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 /**
  * @Description: 微信用户
  * @Author: jeecg-boot
- * @Date:   2020-03-07
+ * @Date:   2020-03-08
  * @Version: V1.0
  */
 public interface WxUserMapper extends BaseMapper<WxUser> {

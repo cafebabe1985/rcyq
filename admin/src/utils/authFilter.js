@@ -14,7 +14,7 @@ function nodeDisabledAuth(code,formData){
   var permissionList = [];
   try {
     var obj = formData;
-    //console.log("页面权限禁用--NODE--开始",obj);
+   
     if (obj) {
       let bpmList = obj.permissionList;
       for (var bpm of bpmList) {
@@ -35,7 +35,7 @@ function nodeDisabledAuth(code,formData){
       permissions.push(item.action);
     }
   }
-  //console.log("页面权限----"+code);
+  
   if (!permissions.includes(code)) {
     return false;
   }else{

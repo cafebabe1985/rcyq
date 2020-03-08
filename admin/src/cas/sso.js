@@ -5,7 +5,7 @@ import store from '@/store'
  * 单点登录
  */
 const init = (callback) => {
-  console.log("-------单点登录开始-------");
+
   let token = Vue.ls.get(ACCESS_TOKEN);
   let st = getUrlParam("ticket");
   var sevice = "http://"+window.location.host+"/";
@@ -19,7 +19,7 @@ const init = (callback) => {
       window.location.href = window._CONFIG['casPrefixUrl']+"/login?service="+serviceUrl;
     }
   }
-  console.log("-------单点登录结束-------");
+  
 };
 const SSO = {
   init: init

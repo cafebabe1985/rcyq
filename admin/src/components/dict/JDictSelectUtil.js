@@ -75,14 +75,14 @@ export async function ajaxFilterDictText(dictCode, key) {
   if (!dictCode) {
     return '字典Code不能为空!';
   }
-  //console.log(`key : ${key}`);
+  
   if (!key) {
     return '';
   }
   //通过请求读取字典文本
   let res = await getAction(`/sys/dict/getDictText/${dictCode}/${key}`);
   if (res.success) {
-    // console.log('restult: '+ res.result);
+  
     return res.result;
   } else {
     return '';

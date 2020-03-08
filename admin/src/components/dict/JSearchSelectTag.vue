@@ -88,7 +88,7 @@
       initSelectValue(){
         if(this.async){
           if(!this.selectedAsyncValue || !this.selectedAsyncValue.key || this.selectedAsyncValue.key!=this.value){
-            console.log("这才请求后台")
+          
             getAction(`/sys/dict/loadDictItem/${this.dict}`,{key:this.value}).then(res=>{
               if(res.success){
                 let obj = {
@@ -104,7 +104,7 @@
         }
       },
       loadData(value){
-        console.log("数据加载",value)
+      
         this.lastLoad +=1
         const currentLoad = this.lastLoad
         this.options = []
@@ -117,7 +117,7 @@
               return
             }
             this.options = res.result
-            console.log("我是第一个",res)
+           
           }else{
             this.$message.warning(res.message)
           }
@@ -144,7 +144,7 @@
         return option.componentOptions.children[0].text.toLowerCase().indexOf(input.toLowerCase()) >= 0
       },
       handleChange (selectedValue) {
-        console.log("selectedValue",selectedValue)
+        
         this.selectedValue = selectedValue
         this.callback()
       },

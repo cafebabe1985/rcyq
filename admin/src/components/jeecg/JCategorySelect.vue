@@ -111,7 +111,7 @@
             }
             this.treeData = [...res.result]
           }else{
-            console.log("树一级节点查询结果-else",res)
+         
           }
         })
       },
@@ -122,8 +122,7 @@
           this.treeValue = []
         }else{
           getAction(this.view,{ids:this.value}).then(res=>{
-            console.log(124345)
-            console.log(124345,res)
+           
             if(res.success){
               let values = this.value.split(',')
               this.treeValue = res.result.map((item, index) => ({

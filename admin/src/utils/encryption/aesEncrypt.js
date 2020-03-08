@@ -29,7 +29,7 @@ export function encryption(word, keyStr, ivStr) {
     mode: CryptoJS.mode.CBC,
     padding: CryptoJS.pad.ZeroPadding
   });
-  // console.log("-=-=-=-", encrypted.ciphertext)
+
   return CryptoJS.enc.Base64.stringify(encrypted.ciphertext);
 
 }

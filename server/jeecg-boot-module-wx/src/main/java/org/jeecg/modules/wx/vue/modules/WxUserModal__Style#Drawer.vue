@@ -32,7 +32,7 @@
           <a-input v-decorator="[ 'province', validatorRules.province]" placeholder="请输入省份"></a-input>
         </a-form-item>
         <a-form-item label="头像" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-input v-decorator="[ 'avatarUrl', validatorRules.avatarUrl]" placeholder="请输入头像"></a-input>
+          <j-upload v-decorator="['avatarUrl', validatorRules.avatarUrl]" :trigger-change="true"></j-upload>
         </a-form-item>
         <a-form-item label="会员等级" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <a-input v-decorator="[ 'vipLevel', validatorRules.vipLevel]" placeholder="请输入会员等级"></a-input>
@@ -56,10 +56,12 @@
   import { httpAction } from '@/api/manage'
   import pick from 'lodash.pick'
   import { validateDuplicateValue } from '@/utils/util'
+  import JUpload from '@/components/jeecg/JUpload'
   
   export default {
     name: "WxUserModal",
     components: { 
+      JUpload,
     },
     data () {
       return {

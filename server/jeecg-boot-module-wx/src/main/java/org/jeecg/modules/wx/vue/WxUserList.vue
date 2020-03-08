@@ -153,7 +153,8 @@
           {
             title:'头像',
             align:"center",
-            dataIndex: 'avatarUrl'
+            dataIndex: 'avatarUrl',
+            scopedSlots: {customRender: 'imgSlot'}
           },
           {
             title:'会员等级',

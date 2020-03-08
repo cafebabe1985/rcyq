@@ -57,7 +57,7 @@ export default {
     }
   },
   data() {
-    // console.log(this)
+   
     let content = this
     return {
       //初始化配置
@@ -100,8 +100,7 @@ export default {
                  uploadAction(window._CONFIG['domianURL'] + '/sys/common/upload', 
                  formData, e => {
                    if(e.lengthComputable){
-console.log(`${e.loaded/e.total*100}`.substring(0,4)+'%')
-// cb(`${e.loaded/e.total*100}`.substring(0,4)+'%', { title: file.name })
+
                    }
                    
                 
@@ -145,7 +144,7 @@ console.log(`${e.loaded/e.total*100}`.substring(0,4)+'%')
       this.myValue = ''
     },
     uploadImg(file, type) {
-      console.log(file)
+      
     }
   },
   watch: {

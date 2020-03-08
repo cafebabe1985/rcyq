@@ -155,7 +155,7 @@
         return true
       },
       handleChange(info) {
-        console.log("--文件列表改变--")
+       
         let fileList = info.fileList
         if(info.file.status==='done'){
           if(info.file.response.success){
@@ -179,7 +179,7 @@
       },
       handleDelete(file){
         //如有需要新增 删除逻辑
-        console.log(file)
+       
       },
     },
     model: {

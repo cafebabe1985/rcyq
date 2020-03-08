@@ -147,7 +147,7 @@
         return new Promise((resolve)=>{
           if(this.remote==true){
             getAction("/sys/getCheckCode").then(res=>{
-              console.log("aaaaa",res)
+              
               if(res.success){
                 this.checkKey = res.result.key
                 this.code = res.result.code
@@ -158,7 +158,7 @@
                 resolve();
               }
             }).catch(()=>{
-              console.log("生成验证码连接服务器异常")
+             
               this.code = 'BUG'
               resolve();
             })

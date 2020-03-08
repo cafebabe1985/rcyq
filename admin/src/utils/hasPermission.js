@@ -33,10 +33,10 @@ export function filterNodePermission(el, binding, vnode) {
       }
     }
   } catch (e) {
-    //console.log("页面权限异常----", e);
+   
   }
   if (permissionList === null || permissionList === "" || permissionList === undefined||permissionList.length<=0) {
-    //el.parentNode.removeChild(el)
+   
     return false;
   }
   let permissions = [];
