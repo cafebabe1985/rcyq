@@ -33,12 +33,26 @@ App({
         content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
       })
     }
+    wx.showLoading({
+      title: '正在登录',
+    })
     // 登录
     wx.login({
       success: async res => {
         const resdata = await WxSys.login(res.code)
-        let jsonObj = resdata
-        this.globalData.sessionKey = jsonObj.sessionKey
+       
+        if(resdata.success){
+          let jsonObj = resdata.message
+          this.globalData.sessionKey = jsonObj.sessionKey
+        }else{
+          wx.showToast({
+            title: '抱歉服务器故障,小程序暂停运行',
+            icon:'none',
+            duration:2000
+          })
+        }
+        
+        
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
@@ -77,6 +91,7 @@ App({
        
       }
     })
+    wx.hideLoading()
     // 获取系统状态栏信息
     wx.getSystemInfo({
       success: e => {

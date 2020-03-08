@@ -23,7 +23,8 @@
     "pages/applyScenicList/applyScenicList",
     "pages/myPublishScenic/myPublishScenice",
     "pages/myCreateNews/myCreateNews",
-    "pages/createNews/createNews"
+    "pages/createNews/createNews",
+    "pages/manageEnrolUser/manageEnrolUser"
   ],
   "window": {
     "backgroundTextStyle": "light",

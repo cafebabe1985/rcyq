@@ -6,11 +6,11 @@
   </text>
 </view>
 
-<view class="cu-list menu-avatar">
+<view class="cu-list menu{{detail.createUserInfo?'-avatar':''}}">
   <view class="cu-item">
-    <view class="cu-avatar round lg" style="background-image:url({{detail.createUserInfo.avatarUrl}})"></view>
+    <view wx:if="{{detail.createUserInfo}}" class="cu-avatar round lg" style="background-image:url({{detail.createUserInfo.avatarUrl}})"></view>
     <view class="content">
-      <view class="text-grey text-cyan">{{detail.createUserInfo.nickName}}</view>
+      <view wx:if="{{detail.createUserInfo}}" class="text-grey text-cyan">{{detail.createUserInfo.nickName}}</view>
       <view class="text-gray text-sm">
         {{detail.createTime}}
       </view>

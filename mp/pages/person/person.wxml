@@ -71,6 +71,12 @@
         <text class="text-grey">我发布的快讯</text>
       </navigator>
     </view>
+      <view class="cu-item arrow">
+      <navigator class="content" url="/pages/myCreateActive/myCreateActive?id={{userInfo.openId}}" hover-class="none" >
+        <text class="cuIcon-activity text-blue"></text>
+        <text class="text-grey">我发起的活动</text>
+      </navigator>
+    </view>
     <view class="cu-item arrow">
       <navigator class="content" url="/pages/myEnrol/myEnrol?id={{userInfo.openId}}" hover-class="none" >
         <text class="cuIcon-footprint text-cyan"></text>

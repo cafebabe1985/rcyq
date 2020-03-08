@@ -11,7 +11,9 @@ import me.chanjar.weixin.common.error.WxErrorException;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.jeecg.common.api.vo.Result;
 import org.jeecg.common.system.query.QueryGenerator;
+import org.jeecg.common.system.util.JwtUtil;
 import org.jeecg.modules.wx.config.WxMaConfiguration;
 import org.jeecg.modules.wx.entity.WxUser;
 import org.jeecg.modules.wx.service.IWxUserService;
@@ -35,18 +37,19 @@ public class WxLoginController {
      * 登陆接口
      */
     @GetMapping("/login")
-    public String login(@RequestParam("code") String code) {
+    public Result<?> login(@RequestParam("code") String code) {
         if (StringUtils.isBlank(code)) {
-            return "empty jscode";
+            return  Result.error("授权码为空") ;
         }
         final WxMaService wxService = WxMaConfiguration.getMaService(appid);
 
         try {
             WxMaJscode2SessionResult session = wxService.getUserService().getSessionInfo(code);
-            return JSON.toJSONString(session);
+
+            return Result.ok( JSON.toJSONString(session));
         } catch (WxErrorException e) {
 
-            return e.toString();
+            return Result.error(e.toString()) ;
         }
     }
 

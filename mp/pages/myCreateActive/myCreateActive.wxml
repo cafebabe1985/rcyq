@@ -14,9 +14,14 @@ wx:key="{{index}}"
         <text class="text-grey text-sm">{{item.name}}</text>
       </navigator>
       <view class="action">
-        <view class="cu-tag  bg-green light ">
-        {{tools.activeStatusHandle(item.startTime,item.endTime,item.endEnrol,item.displayType)}}
-        </view>
+        <button        
+        class="cu-btn sm round bg-green margin-left-sm shadow"   
+        data-item = "{{item}}"
+        bindtap="enrolManage"
+        >
+        报名管理
+        
+        </button>
         <button 
         wx:if="{{item.displayType!='0'}}"
         class="cu-btn sm round bg-red margin-left-sm shadow"

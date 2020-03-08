@@ -75,6 +75,51 @@ public class WxActiveEnrolUserController extends JeecgController<WxActiveEnrolUs
 		return Result.ok(pageList);
 	}
 	 /**
+	  * 分页列表查询
+	  *
+	  * @param wxActiveEnrolUser
+	  * @param pageNo
+	  * @param pageSize
+	  * @param req
+	  * @return
+	  */
+	 @GetMapping(value = "/listPageUser")
+	 public Result<?> listPageUser(WxActiveEnrolUser wxActiveEnrolUser,
+									@RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
+									@RequestParam(name="pageSize", defaultValue="10") Integer pageSize,
+									HttpServletRequest req) {
+		 QueryWrapper<WxActiveEnrolUser> queryWrapper = QueryGenerator.initQueryWrapper(wxActiveEnrolUser, req.getParameterMap());
+		 Page<WxActiveEnrolUser> page = new Page<WxActiveEnrolUser>(pageNo, pageSize);
+		 IPage<WxActiveEnrolUser> pageList = wxActiveEnrolUserService.page(page, queryWrapper);
+		 List<WxActiveEnrolUser> records = pageList.getRecords();
+		 List<Map<String,Object>> listObj = new ArrayList<>();
+		 for (WxActiveEnrolUser wxeu:records
+		 ) {
+			 HashMap<String,Object> map = new HashMap<>();
+			 map.put("enrolInfo", wxeu);
+			 WxUser wxUser = new WxUser();
+			 String openId = wxeu.getUserOpneId();
+			 if(null!=openId){
+				 wxUser.setOpenId(openId);
+				 Wrapper<WxUser> aeu = new QueryWrapper<>(wxUser);
+				 map.put("userInfo",wxUserService.getOne(aeu));
+			 }else{
+				 String agentId = wxeu.getEnrolAgentOpenId();
+				 wxUser.setOpenId(agentId);
+				 Wrapper<WxUser> aeu = new QueryWrapper<>(wxUser);
+				 map.put("agentInfo",wxUserService.getOne(aeu));
+			 }
+			 listObj.add(map);
+		 }
+		 Page<Map<String,Object>> newPage = new Page<Map<String,Object>>(pageNo, pageSize);
+		 newPage.setRecords(listObj);
+		 newPage.setTotal(pageList.getTotal());
+		 newPage.setCurrent(pageList.getCurrent());
+		 newPage.setSize(pageList.getSize());
+
+		 return Result.ok(newPage);
+	 }
+	 /**
 	  * 全部查询
 	  *
 	  * @param wxActiveEnrolUser

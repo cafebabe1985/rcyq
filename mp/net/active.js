@@ -89,6 +89,15 @@ class Active {
     })
   }
   /**
+    * 更新报名
+    */
+  static async editActiveEnrol(data) {
+    return await Http.wxPut({
+      url: 'wx/wxActiveEnrolUser/edit',
+      data
+    })
+  }
+  /**
      * 删除报名
       */
   static async deleteEnrolById(id,other) {
@@ -128,7 +137,16 @@ class Active {
       data
     })
   }
-
+  /**
+      * 根据ID查询活动报名列表
+      */
+  static async listActiveEnrolById(data) {
+    
+    return await Http.wxGet({
+      url: 'wx/wxActiveEnrolUser/listAll',
+      data
+    })
+  }
   /**
    * 活动收藏列表
    */

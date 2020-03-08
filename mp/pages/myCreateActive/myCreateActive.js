@@ -11,8 +11,11 @@ Page({
     list:null
   },
  async listActive(id){
-   console.log(id)
-  let res = await Active.listUserCreate(id)
+   
+  let res = await Active.listUserCreate(id,{
+    column:'createTime',
+    order:'desc'
+  })
   console.log(res)
   this.setData({
     list:res.result
@@ -51,6 +54,15 @@ Page({
    })
   
   
+  },
+  enrolManage(e){
+    let item = e.currentTarget.dataset.item
+    wx.navigateTo({
+      url: '/pages/manageEnrolUser/manageEnrolUser',
+      success: (res) => {
+        res.eventChannel.emit('acceptData',item)
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载

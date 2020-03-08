@@ -78,6 +78,6 @@ public class WxActiveEnrolUser implements Serializable {
     private java.lang.String enrolAgentOpenId;
 
 	/**报名状态*/
-	@Excel(name = "帮助报名人ID", width = 15)
+	@Excel(name = "帮助状态", width = 15)
 	private java.lang.String enrolStatus;
 }
