@@ -9,6 +9,8 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import org.jeecg.common.api.vo.Result;
 import org.jeecg.common.system.query.QueryGenerator;
 import org.jeecg.common.util.oConvertUtils;
@@ -128,7 +130,23 @@ public class WxUserController extends JeecgController<WxUser, IWxUserService> {
 		}
 		return Result.ok(wxUser);
 	}
-
+	 /**
+	  * 通过openId查询
+	  *
+	  * @param openId
+	  * @return
+	  */
+	 @GetMapping(value = "/queryByOpenId")
+	 public Result<?> queryByOpenId(@RequestParam(name="openId",required=true) String openId) {
+		 WxUser user = new WxUser();
+		 user.setOpenId(openId);
+		 Wrapper<WxUser> userQuery = new QueryWrapper<>(user);
+		 WxUser wxUser = wxUserService.getOne(userQuery);
+		 if(wxUser==null) {
+			 return Result.error("未找到对应数据");
+		 }
+		 return Result.ok(wxUser);
+	 }
     /**
     * 导出excel
     *

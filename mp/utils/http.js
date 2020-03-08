@@ -6,7 +6,7 @@ class Http {
   static async wxGet({ url, method = 'GET', data }) {
     // 将wx.request方法转换成promise方法
   let token =  wx.getStorageSync("token")
-  console.log(token)
+  
     const res = await promisic(wx.request)({
       url: `${config.apiBaseUrl}${url}`,
       method,

@@ -143,27 +143,25 @@ wx.navigateTo({
   },
   handleUserInfo() {
     let storageUser = wx.getStorageSync('userInfo')
+    
     if (storageUser) {
-      this.setData({
-        userInfo: storageUser,
-        hasUserInfo: true
-      })
-      wx.switchTab('/pages/home/home')
+     
     } else if (this.data.canIUse) {
-      if (app.userInfoReadyCallback) {
+     
         app.userInfoReadyCallback = res => {
-
+          
+          console.log('callback',res)
           this.setData({
             userInfo: res.userInfo,
             hasUserInfo: true
           })
 
         }
-      } else {
-        wx.navigateTo({
-          url: `/pages/index/index`,
-        })
-      }
+      // else {
+      //   wx.navigateTo({
+      //     url: `/pages/index/index`,
+      //   })
+      // }
 
     } else {
 
@@ -253,7 +251,7 @@ wx.navigateTo({
   },
   //初始化页面数据
   async initPage() {
-    this.handleUserInfo()
+    // this.handleUserInfo()
     this.data.scenicPageNo = 1
     this.data.newsPageNo = 1
     this.data.activePageNo = 1

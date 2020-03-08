@@ -19,12 +19,13 @@ Page({
   },
 async getUserInfo(){
   let userInfo = wx.getStorageSync("userInfo")
+  console.log(userInfo)
   if (userInfo && userInfo.openId) {
-   
-  let res = await  User.getByOpenId(userInfo.openId)
-    
+    console.log(userInfo)
+  let res = await User.getByOpenId(userInfo.openId)
+    console.log(res)
   if(res.success){
-    
+    console.log(res)
     this.setData({
       userInfo:res.result
     })

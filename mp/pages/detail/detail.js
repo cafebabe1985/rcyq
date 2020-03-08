@@ -176,7 +176,7 @@ Page({
       title: '发表评论中',
     })
     this.data.myComment.commentContent = this.data.myComment.commentContent.replace(this.data.currentCommentPre, '')
-
+    console.log(this.data.myComment)
     const resdata = await Comment.addComment(this.data.myComment)
     if(resdata.code!=200){
       wx.showToast({

@@ -59,13 +59,12 @@ public class WxLoginController {
      * </pre>
      */
     @GetMapping("/info")
-    public String info(String sessionKey,
+    public Result<?> info(String sessionKey,
                        String signature, String rawData, String encryptedData, String iv) {
         final WxMaService wxService = WxMaConfiguration.getMaService(appid);
-
         // 用户信息校验
         if (!wxService.getUserService().checkUserInfo(sessionKey, rawData, signature)) {
-            return "user check failed";
+            return Result.error( 303,"user check failed");
         }
         // 解密用户信息
         WxMaUserInfo userInfo = wxService.getUserService().getUserInfo(sessionKey, encryptedData, iv);
@@ -88,11 +87,10 @@ public class WxLoginController {
                 wxUserService.save(wxUser);
             }catch (Exception e){
                 System.out.println(e.getMessage());
-                return JSON.toJSONString(userInfo);
+                return Result.ok(JSON.toJSONString(userInfo)) ;
             }
-
         }
-        return JSON.toJSONString(userInfo);
+        return Result.ok(JSON.toJSONString(userInfo));
     }
 
     /**
