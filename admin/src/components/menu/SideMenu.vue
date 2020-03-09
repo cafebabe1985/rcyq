@@ -5,7 +5,7 @@
     :collapsible="collapsible"
     v-model="collapsed"
     :trigger="null">
-    <logo />
+    <logo title="儒此有趣"/>
     <s-menu
       :collapsed="collapsed"
       :menu="menus"

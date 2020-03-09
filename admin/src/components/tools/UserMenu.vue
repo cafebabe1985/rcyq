@@ -16,24 +16,24 @@
         @change="searchMethods"
         @blur="hiddenClick"
       >
-        <a-select-option v-for="site in search " :value="site.id">{{site.meta.title}}</a-select-option>
+        <a-select-option v-for="site in search " :value="site.id" :key="site.id">{{site.meta.title}}</a-select-option>
       </a-select>
     </span>
     <!-- update-end author:sunjianlei date:20191@20 for: 解决全局样式冲突的问题 -->
     <!-- update_end  author:zhaoxin date:20191129 for: 做头部菜单栏导航 -->
-    <span class="action">
+    <!-- <span class="action">
       <a class="logout_title" target="_blank" href="http://jeecg-boot.mydoc.io">
         <a-icon type="question-circle-o"></a-icon>
       </a>
-    </span>
-    <header-notice class="action"/>
+    </span> -->
+    <!-- <header-notice class="action"/> -->
     <a-dropdown>
       <span class="action action-full ant-dropdown-link user-dropdown-menu">
         <a-avatar class="avatar" size="small" :src="getAvatar()"/>
         <span v-if="isDesktop()">欢迎您，{{ nickname() }}</span>
       </span>
       <a-menu slot="overlay" class="user-dropdown-menu-wrapper">
-        <a-menu-item key="0">
+        <!-- <a-menu-item key="0">
           <router-link :to="{ name: 'account-center' }">
             <a-icon type="user"/>
             <span>个人中心</span>
@@ -44,7 +44,7 @@
             <a-icon type="setting"/>
             <span>账户设置</span>
           </router-link>
-        </a-menu-item>
+        </a-menu-item> -->
         <a-menu-item key="3"  @click="systemSetting">
            <a-icon type="tool"/>
            <span>系统设置</span>

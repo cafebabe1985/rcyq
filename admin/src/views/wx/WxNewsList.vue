@@ -222,9 +222,8 @@
           }
         ],
         url: {
-          list: 
-          
-          `/wx/wxNews/list?createBy=${JSON.parse(localStorage.getItem("pro__Login_Userinfo")).value.id}`,
+          list:           
+          '/wx/wxNews/list',
           delete: "/wx/wxNews/delete",
           deleteBatch: "/wx/wxNews/deleteBatch",
           exportXlsUrl: "/wx/wxNews/exportXls",

@@ -2,7 +2,7 @@
 <view class="padding-sm">
 <text class="cuIcon-titles text-green"></text>
 我发起的活动:</view>
-<view wx:if="{{!list||list.length==0}}" class="padding text-lg text-center">您还没有发起过活动</view>
+<view wx:if="{{list.length==0}}" class="padding text-lg text-center">您还没有发起过活动</view>
 <view class="cu-list menu padding-sm">
 <view class="cu-item solids" wx:for="{{list}}"
 wx:key="{{index}}"

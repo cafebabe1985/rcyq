@@ -13,7 +13,7 @@ Component({
     },
     initText:{
       type:String,
-      value:"sdsfs"
+      value:""
     },
     editorHeight:{
       type:Number,

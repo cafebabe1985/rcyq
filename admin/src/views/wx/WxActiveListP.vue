@@ -340,7 +340,7 @@
           }
         ],
         url: {
-          list: "/wx/wxActive/listVO",
+          list: `/wx/wxActive/listVO?createBy=${JSON.parse(localStorage.getItem("pro__Login_Userinfo")).value.id}`,
           delete: "/wx/wxActive/delete",
           deleteBatch: "/wx/wxActive/deleteBatch",
           exportXlsUrl: "/wx/wxActive/exportXls",
