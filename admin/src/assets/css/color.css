@@ -1,0 +1,89 @@
+.my-bg--red{
+    background-color: #e54d42;
+  } 
+  .my-bg--orange{
+    background-color: #f37b1d;
+  } 
+  .my-bg--yellow{
+    background-color: #fbbd08;
+  } 
+  .my-bg--olive {
+    background-color: #8dc63f;
+  } 
+  .my-bg--green{
+    background-color:  #39b54a;
+  } 
+  .my-bg--cyan{
+    background-color:  #1cbbb4;
+  } 
+  .my-bg--blue{
+    background-color:  #0081ff;
+  } 
+  .my-bg--purple{
+    background-color: #6739b6;
+  } 
+  .my-bg--mauve{
+    background-color:  #9c26b0;
+  } 
+  .my-bg--pink{
+    background-color: #e03997;
+  } 
+  .my-bg--brown{
+    background-color:  #a5673f;
+  } 
+  .my-bg--grey{
+    background-color:  #8799a3;
+  } 
+  .my-bg--black{
+    background-color:  #333333;
+  } 
+.my-bg--darkGray {
+    background-color: #666666;
+  } 
+  .my-bg--gray{
+    background-color: #aaaaaa;
+  } 
+  .my-bg--ghostWhite{
+    background-color:  #f1f1f1;
+  } 
+  .my-bg--white{
+    background-color:  #ffffff;
+  } 
+  .my-bg--redLight{
+    background-color:   #fadbd9;
+  } 
+  .my-bg--orangeLight{
+    background-color:  #fde6d2;
+  } 
+	
+	.my-bg--yellowLight {
+    background-color:  #fef2ce;
+  } 
+  .my-bg--oliveLight{
+    background-color:  #e8f4d9;
+  } 
+  .my-bg--greenLight{
+    background-color:  #d7f0db;
+  } 
+  .my-bg--cyanLight{
+    background-color:  #d2f1f0;
+  } 
+  .my-bg--blueLight{
+    background-color:   #cce6ff;
+  } 
+  .my-bg--purpleLight{
+    background-color:   #e1d7f0;
+  }
+	 .my-bg--mauveLight{
+    background-color:   #ebd4ef;
+  } 
+  .my-bg--pinkLight{
+    background-color:  #f9d7ea;
+  } 
+  .my-bg--brownLight{
+    background-color:  #ede1d9;
+  } 
+	
+	.my-bg--greyLight {
+    background-color:   #e7ebed;
+  } 
