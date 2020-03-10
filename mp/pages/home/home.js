@@ -72,9 +72,11 @@ Page({
     let resScenicData
     if (index == 0) {
       resScenicData = await Scenic.listScenic(1, 10, 'createTime', 'desc', 1)
+      
     } else {
+     let city = parseInt(e.currentTarget.dataset.id) -1
       resScenicData = await Scenic.listScenic(1, 10, 'createTime', 'desc', 1, {
-        city: e.currentTarget.dataset.name
+        city: city
       })
     }
     this.setData({
