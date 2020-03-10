@@ -87,7 +87,7 @@ wx:if="{{isApplyHandle}}"
     {{form.status == '0'?'授权':'撤销授权'}}</button>
     <button 
    wx:else
-    formType="submit" class="cu-button margin-sm bg-olive" bindtap="duSubmit">
+    formType="submit" class="cu-button margin-sm bg-olive" bindtap="doSubmit">
     提交</button>
 
   </view>

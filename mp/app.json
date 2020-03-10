@@ -3,19 +3,17 @@
     "pages/index/index",
     "pages/home/home",
     "pages/person/person",
-    "pages/scenic/scenic",
-    "pages/active/active",
-    "pages/news/news",
+      
     "pages/detail/detail",
     "pages/createActive/createActive",
-    "pages/locationMap/locationMap",
+    
     "pages/addEnrolWriteOpt/addEnrolWriteOpt",
     "pages/agreementPage/agreementPage",
     "pages/costSetting/costSetting",
     "pages/activeDetail/activeDetail",
     "pages/enrolPage/enrolPage",
     "pages/enrolUserPage/enrolUserPage",
-    "pages/test/test",
+    
     "pages/myCreateActive/myCreateActive",
     "pages/myEnrol/myEnrol",
     "pages/myFavorActive/myFavorActive",

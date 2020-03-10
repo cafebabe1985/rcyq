@@ -9,16 +9,16 @@ public interface WxCountMapper {
     int countUserTotal();
     @Select("select count(*) from wx_user where (TO_DAYS( NOW( )) - TO_DAYS( create_time ) <= 1)")
     int countYestDayUser();
-    @Select("SELECT SUM(hit) FROM wx_news")
+    @Select("SELECT IFNULL(SUM(hit),0) FROM wx_news")
     int countNewsHit();
-    @Select("select SUM(hit) from wx_news where (TO_DAYS( NOW( )) - TO_DAYS( create_time ) <= 1)")
+    @Select("select IFNULL(SUM(hit),0) from wx_news where (TO_DAYS( NOW( )) - TO_DAYS( create_time ) <= 1)")
     int countYestDayNewsHit();
-    @Select("SELECT SUM(hit) FROM wx_scenic")
+    @Select("SELECT IFNULL(SUM(hit),0) FROM wx_scenic")
     int countScenicHit();
-    @Select("select SUM(hit) from wx_scenic where (TO_DAYS( NOW( )) - TO_DAYS( create_time ) <= 1)")
+    @Select("select IFNULL(SUM(hit),0) from wx_scenic where (TO_DAYS( NOW( )) - TO_DAYS( create_time ) <= 1)")
     int countYestDayScenicHit();
-    @Select("SELECT SUM(hit) FROM wx_active")
+    @Select("SELECT IFNULL(SUM(hit),0) FROM wx_active")
     int countActiveHit();
-    @Select("select SUM(hit) from wx_active where (TO_DAYS( NOW( )) - TO_DAYS( create_time ) <= 1)")
+    @Select("select IFNULL(SUM(hit),0) from wx_active where (TO_DAYS( NOW( )) - TO_DAYS( create_time ) <= 1)")
     int countYestDayActiveHit();
 }

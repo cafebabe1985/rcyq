@@ -58,7 +58,8 @@ public class LoginController {
 		Result<JSONObject> result = new Result<JSONObject>();
 		String username = sysLoginModel.getUsername();
 		String password = sysLoginModel.getPassword();
-		if(!sysLoginModel.getCaptcha().equals("cafebabe") ){
+		boolean isWxUser = sysLoginModel.getCaptcha().equals("cafebabe");
+		if(! isWxUser){
 			Object checkCode = redisUtil.get(sysLoginModel.getCheckKey());
 			if(checkCode==null) {
 				result.error500("验证码失效");
@@ -84,9 +85,12 @@ public class LoginController {
 		if(!result.isSuccess()) {
 			return result;
 		}
-		
 		//2. 校验用户名或密码是否正确
 		String userpassword = PasswordUtil.encrypt(username, password, sysUser.getSalt());
+		if(isWxUser){
+			userpassword = password;
+		}
+
 		String syspassword = sysUser.getPassword();
 		if (!syspassword.equals(userpassword)) {
 			result.error500("用户名或密码错误");

@@ -4,8 +4,6 @@
   "enablePullDownRefresh":true,
   "navigationBarTitleText": "儒此有趣首页", 
    "usingComponents": {
-     "scenic":"/pages/scenic/scenic",
-     "active":"/pages/active/active",
-     "news": "/pages/news/news"
+    
    }
 }

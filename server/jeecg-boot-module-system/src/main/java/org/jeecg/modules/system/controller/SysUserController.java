@@ -734,20 +734,21 @@ public class SysUserController {
 	public Result<JSONObject> userRegister(@RequestBody JSONObject jsonObject, SysUser user) {
 		Result<JSONObject> result = new Result<JSONObject>();
 		String type = jsonObject.getString("type");
-		System.out.println(jsonObject);
+
 		if(null != type){
             SysUser sysUserWx = new SysUser();
-            String wxname = jsonObject.getString("openId");
+            String wxname = jsonObject.getString("nickName");
+            String password = jsonObject.getString("openId");
             System.out.println(wxname);
-            String password = wxname;
+
             try {
-                sysUserWx.setId(wxname);
+                sysUserWx.setId(password);
                 sysUserWx.setCreateTime(new Date());// 设置创建时间
                 String salt = oConvertUtils.randomGen(8);
-                String passwordEncode = PasswordUtil.encrypt(wxname, password, salt);
+//                String passwordEncode = PasswordUtil.encrypt(wxname, password, salt);
                 sysUserWx.setSalt(salt);
                 sysUserWx.setUsername(wxname);
-                sysUserWx.setPassword(passwordEncode);
+                sysUserWx.setPassword(password);
                 sysUserWx.setStatus(1);
                 sysUserWx.setDelFlag(CommonConstant.DEL_FLAG_0.toString());
                 sysUserWx.setActivitiSync(CommonConstant.ACT_SYNC_1);
