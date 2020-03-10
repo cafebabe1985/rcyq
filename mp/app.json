@@ -3,17 +3,14 @@
     "pages/index/index",
     "pages/home/home",
     "pages/person/person",
-      
     "pages/detail/detail",
     "pages/createActive/createActive",
-    
     "pages/addEnrolWriteOpt/addEnrolWriteOpt",
     "pages/agreementPage/agreementPage",
     "pages/costSetting/costSetting",
     "pages/activeDetail/activeDetail",
     "pages/enrolPage/enrolPage",
     "pages/enrolUserPage/enrolUserPage",
-    
     "pages/myCreateActive/myCreateActive",
     "pages/myEnrol/myEnrol",
     "pages/myFavorActive/myFavorActive",
@@ -23,7 +20,8 @@
     "pages/myPublishScenic/myPublishScenice",
     "pages/myCreateNews/myCreateNews",
     "pages/createNews/createNews",
-    "pages/manageEnrolUser/manageEnrolUser"
+    "pages/manageEnrolUser/manageEnrolUser",
+    "pages/test/test"
   ],
   "window": {
     "backgroundTextStyle": "light",

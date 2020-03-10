@@ -5,6 +5,7 @@ import {
 import {
   Active
 } from '../../net/active.js'
+import { formatVideo } from '../../utils/formatHtml.js'
 Page({
 
   /**
@@ -264,9 +265,9 @@ Page({
       showOptModal:false
     })
   },
-  getEditorContents(e){
-      
-      this.data.form.detail = e.detail.html
+  getContents(e) {
+    this.data.form.detail = formatVideo(e)
+    wx.hideLoading()
   },
   getEditorFocus(){
 
@@ -346,7 +347,13 @@ Page({
     });
   },
  async doSubmit(e) {
-    
+   if (!this.data.form.detail) {
+     wx.showToast({
+       title: '请输入详情，并保存！',
+       icon: 'none'
+     })
+     return
+   }
     if (this.validateAll()){
       this.data.form.enrolWriteOpts = this.data.enrolWriteOpts.filter((item)=>{
         return item.value === '1'

@@ -9,7 +9,9 @@
     <text class="text-bold">活动详情</text>
   </view>
 
-  <wxEditor editorHeight="{{editorHeight}}" placeholder="输入活动详情" bindGetEditorContents="getEditorContents" bindGetFocus="getEditorFocus" name="detail"></wxEditor>
+  <wxEditor editorHeight="{{editorHeight}}" placeholder="输入活动详情" bindGetFocus="getEditorFocus" name="detail"
+  bindGetContents="getContents"
+  ></wxEditor>
   <view wx:if="{{!fullEditor}}">
 
     <view class="group-label margin action">

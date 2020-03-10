@@ -1,4 +1,5 @@
 // pages/createScenic/createScenic.js
+import { formatVideo } from '../../utils/formatHtml.js'
 import {
   config
 } from '../../config/config.js'
@@ -80,9 +81,9 @@ Page({
       return false
     }
   },
-  getEditorContents(e) {
-   
-    this.data.form.content = e.detail.html
+  getContents(e) {
+    this.data.form.content = formatVideo(e)
+    wx.hideLoading()
   },
   getEditorFocus() {
 
@@ -111,7 +112,13 @@ Page({
     });
   },
  async doSubmit(e){
-   
+   if (!this.data.form.content) {
+     wx.showToast({
+       title: '请输入详情，并保存！',
+       icon: 'none'
+     })
+     return
+   }
    if(e.currentTarget.dataset.status){
     
       this.data.form.displayType = e.currentTarget.dataset.status
@@ -193,7 +200,7 @@ Page({
   },
   async getUserInfo(id){
     let res = await User.getScenicManagerByOpenId(id)
-   
+   console.log(res)
     this.setData({
       "form.author": res.result.applyInfo.realName,
       "form.city": parseInt(res.result.applyInfo.city),

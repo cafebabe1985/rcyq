@@ -9,6 +9,9 @@ import {
 import {
   User
 } from '../../net/user.js'
+
+import { formatVideo} from '../../utils/formatHtml.js'
+
 Page({
 
   /**
@@ -64,6 +67,10 @@ Page({
 
     this.data.form.content = e.detail.html
   },
+  getContents(e){   
+    this.data.form.content = formatVideo(e)
+    wx.hideLoading()
+  },
   getEditorFocus() {
 
   },
@@ -91,7 +98,13 @@ Page({
     });
   },
   async doSubmit(e) {
-
+    if(!this.data.form.content){
+      wx.showToast({
+        title: '请输入详情，并保存！',
+        icon:'none'
+      })
+      return
+    }
     if (e.currentTarget.dataset.status) {
 
       this.data.form.displayType = e.currentTarget.dataset.status

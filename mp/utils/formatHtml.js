@@ -8,6 +8,7 @@
  * @returns {void|string|*}
  */
 function formatRichText(html) {
+  
   if(!html){
     return html
   }
@@ -27,6 +28,7 @@ function formatRichText(html) {
 }
 
 function scanVideo(html){
+  console.log(html)
   if(!html){
     return {
       richTexts:[],
@@ -38,6 +40,7 @@ function scanVideo(html){
   //2.取video
   const reg = /<video[^>]*controls="([^"]*)"[^>]*>(.*?)<\/video>/gi
   let videos = html.match(reg)
+  console.log(videos)
    //3.分割html
  let richTexts = html.replace(reg, '#cafebabe#').split("#cafebabe#")
   //4.取src字符串
@@ -55,8 +58,29 @@ function scanVideo(html){
     srcList
   }
 }
+function formatVideo(e){
+
+  let all = e.detail.html
+
+  let pattern = /<img src=""(.*?)class="the_video" (.*?)>/g
+  let patternDataCustom = /\bdata-custom="src\b\s*=\s*[\'\"]?([^\'\"]*)[\'\"]?/
+  let videoDataArr = all.match(pattern)
+  let rps = []
+  let vtagP = `<video controls="controls" width="300" height="150"><source src="`
+  let vtagS = `" type="video/mp4" /></video>`
+  for (let i in videoDataArr) {
+    let src = videoDataArr[i].match(patternDataCustom)[1]
+
+    let target = vtagP + src + vtagS
+    all = all.replace(pattern, target)
+  }
+
+  return all
+
+}
 
 module.exports = {
   formatRichText,
-  scanVideo
+  scanVideo,
+  formatVideo
 }

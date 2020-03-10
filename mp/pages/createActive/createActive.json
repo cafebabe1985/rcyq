@@ -4,6 +4,6 @@
   "navigationBarTitleText": "创建活动",
   "usingComponents": {
     "dateTimePicker": "/pages/component/dateTimePicker/dateTimePicker",
-    "wxEditor":"/pages/component/editor/wxEditor"
+    "wxEditor":"/pages/component/editor2/wxEditor"
   }
 }

@@ -94,6 +94,7 @@ Page({
       detail = await Scenic.getScenicById(id)
 
     }
+    console.log(detail)
     /**
      * 格式化富文本
      * 1.图片居中
@@ -126,7 +127,7 @@ Page({
       type: 0,
       content: videoObj.richTexts.pop()
     })
-
+    console.log(contents)
     this.setData({
       detail: detail.result,
       content: contents

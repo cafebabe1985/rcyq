@@ -124,7 +124,19 @@ public class ApplyScenicController extends JeecgController<ApplyScenic, IApplySc
 	 */
 	@PostMapping(value = "/add")
 	public Result<?> add(@RequestBody ApplyScenic applyScenic) {
+		ApplyScenic apply = new ApplyScenic();
+		apply.setUserOpenId(applyScenic.getUserOpenId());
+		QueryWrapper<ApplyScenic> queryWrapper = new QueryWrapper<>(apply);
+		List<ApplyScenic> list = applyScenicService.list(queryWrapper);
+		List<String> ids = new LinkedList<>();
 		applyScenicService.save(applyScenic);
+		if(list.size()>0){
+			for (ApplyScenic a:list
+				 ) {
+				ids.add(a.getId());
+			}
+		}
+		applyScenicService.removeByIds(ids);
 		return Result.ok("添加成功！");
 	}
 	 /**

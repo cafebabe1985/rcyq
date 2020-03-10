@@ -181,6 +181,13 @@
 					"id": -1,
 					"name": "pages/home/home",
 					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/test/test",
+					"pathName": "pages/test/test",
 					"scene": null
 				}
 			]
