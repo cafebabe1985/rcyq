@@ -11,7 +11,7 @@
               size="large"
               v-decorator="['username',validatorRules.username,{ validator: this.handleUsernameOrEmail }]"
               type="text"
-              placeholder="请输入帐户名 / jeecg">
+              placeholder="请输入帐户名 ">
               <a-icon slot="prefix" type="user" :style="{ color: 'rgba(0,0,0,.25)' }"/>
             </a-input>
           </a-form-item>
@@ -22,7 +22,7 @@
               size="large"
               type="password"
               autocomplete="false"
-              placeholder="密码 / 123456">
+              placeholder="密码 ">
               <a-icon slot="prefix" type="lock" :style="{ color: 'rgba(0,0,0,.25)' }"/>
             </a-input>
           </a-form-item>
@@ -48,42 +48,32 @@
 
 
         </a-tab-pane>
-        <a-tab-pane key="tab2" tab="手机号登陆">
-          <a-form-item>
-            <a-input
-              v-decorator="['mobile',validatorRules.mobile]"
+        <a-tab-pane key="tab2" tab="微信小程序账号">
+           <a-form-item>
+          <a-input
               size="large"
+              v-decorator="['username',validatorRules.username,{ validator: this.handleUsernameOrEmail }]"
               type="text"
-              placeholder="手机号">
-              <a-icon slot="prefix" type="mobile" :style="{ color: 'rgba(0,0,0,.25)' }"/>
+              placeholder="请输入微信昵称 ">
+              <a-icon slot="prefix" type="user" :style="{ color: 'rgba(0,0,0,.25)' }"/>
             </a-input>
           </a-form-item>
 
-          <a-row :gutter="16">
-            <a-col class="gutter-row" :span="16">
-              <a-form-item>
-                <a-input
-                  v-decorator="['captcha',validatorRules.captcha]"
-                  size="large"
-                  type="text"
-                  placeholder="请输入验证码">
-                  <a-icon slot="prefix" type="mail" :style="{ color: 'rgba(0,0,0,.25)' }"/>
-                </a-input>
-              </a-form-item>
-            </a-col>
-            <a-col class="gutter-row" :span="8">
-              <a-button
-                class="getCaptcha"
-                tabindex="-1"
-                :disabled="state.smsSendBtn"
-                @click.stop.prevent="getCaptcha"
-                v-text="!state.smsSendBtn && '获取验证码' || (state.time+' s')"></a-button>
-            </a-col>
-          </a-row>
+          <a-form-item>
+            <a-input
+              v-decorator="['password',validatorRules.password]"
+              size="large"
+              type="password"
+              autocomplete="false"
+              placeholder="小程序ID,个人中心查看">
+              <a-icon slot="prefix" type="lock" :style="{ color: 'rgba(0,0,0,.25)' }"/>
+            </a-input>
+          </a-form-item>
+
         </a-tab-pane>
       </a-tabs>
 
-      <a-form-item>
+      <!-- <a-form-item>
         <a-checkbox v-decorator="['rememberMe', {initialValue: true, valuePropName: 'checked'}]" >自动登陆</a-checkbox>
         <router-link :to="{ name: 'alteration'}" class="forge-password" style="float: right;">
           忘记密码
@@ -91,7 +81,7 @@
         <router-link :to="{ name: 'register'}" class="forge-password" style="float: right;margin-right: 10px" >
           注册账户
         </router-link>
-      </a-form-item>
+      </a-form-item> -->
 
       <a-form-item style="margin-top:24px">
         <a-button
@@ -248,14 +238,14 @@
         that.loginBtn = true;
         // 使用账户密码登陆
         if (that.customActiveKey === 'tab1') {
-          that.form.validateFields([ 'username', 'password','inputCode', 'rememberMe' ], { force: true }, (err, values) => {
+          that.form.validateFields([ 'username', 'password','inputCode' ], { force: true }, (err, values) => {
             if (!err) {
               loginParams.username = values.username
               // update-begin- --- author:scott ------ date:20190805 ---- for:密码加密逻辑暂时注释掉，有点问题
               //loginParams.password = md5(values.password)
               //loginParams.password = encryption(values.password,that.encryptedString.key,that.encryptedString.iv)
               loginParams.password = values.password
-              loginParams.remember_me = values.rememberMe
+              // loginParams.remember_me = values.rememberMe
               // update-begin- --- author:scott ------ date:20190805 ---- for:密码加密逻辑暂时注释掉，有点问题
               let checkParams = this.$refs.jgraphicCodeRef.getLoginParam()
               loginParams.captcha = checkParams.checkCode
@@ -272,22 +262,32 @@
               that.loginBtn = false;
             }
           })
-          // 使用手机号登陆
+          // 使用微信帐号登陆
         } else {
-          that.form.validateFields([ 'mobile', 'captcha', 'rememberMe' ], { force: true }, (err, values) => {
+            that.form.validateFields([ 'username', 'password' ], { force: true }, (err, values) => {
             if (!err) {
-              loginParams.mobile = values.mobile
-              loginParams.captcha = values.captcha
-              loginParams.remember_me = values.rememberMe
-              that.PhoneLogin(loginParams).then((res) => {
-                console.log(res.result);
+              loginParams.username = values.username
+              // update-begin- --- author:scott ------ date:20190805 ---- for:密码加密逻辑暂时注释掉，有点问题
+              //loginParams.password = md5(values.password)
+              //loginParams.password = encryption(values.password,that.encryptedString.key,that.encryptedString.iv)
+              loginParams.password = values.password
+              // loginParams.remember_me = values.rememberMe
+              // update-begin- --- author:scott ------ date:20190805 ---- for:密码加密逻辑暂时注释掉，有点问题
+            //  let checkParams = this.$refs.jgraphicCodeRef.getLoginParam()
+             loginParams.captcha = "cafebabe"
+            //  loginParams.checkKey = checkParams.checkKey
+
+              that.Login(loginParams).then((res) => {
                 this.departConfirm(res)
               }).catch((err) => {
                 that.requestFailed(err);
-              })
+              });
 
+
+            }else {
+              that.loginBtn = false;
             }
-          })
+        })
         }
       },
       getCaptcha (e) {

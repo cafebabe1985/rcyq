@@ -120,6 +120,62 @@ public class WxActiveEnrolUserController extends JeecgController<WxActiveEnrolUs
 		 return Result.ok(newPage);
 	 }
 	 /**
+	  * 分页列表查询根据活动ID
+	  *
+	  * @param wxActiveEnrolUser
+	  * @param pageNo
+	  * @param pageSize
+	  * @param req
+	  * @return
+	  */
+	 @GetMapping(value = "/listPageUserByAID")
+	 public Result<?> listPageUserByAID(WxActiveEnrolUser wxActiveEnrolUser,
+								   @RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
+								   @RequestParam(name="pageSize", defaultValue="10") Integer pageSize,
+								   HttpServletRequest req) {
+		 String activeId = req.getParameter("activeId");
+		 if(null == activeId){
+			 Page<Map<String,Object>> newPage2 = new Page<Map<String,Object>>(pageNo, pageSize);
+			 List<Map<String,Object>> listObj2 = new ArrayList<>();
+			 newPage2.setRecords(listObj2);
+			 newPage2.setTotal(0);
+			 newPage2.setCurrent(pageNo);
+			 newPage2.setSize(pageSize);
+		 	return Result.ok(newPage2);
+		 }
+		 QueryWrapper<WxActiveEnrolUser> queryWrapper = QueryGenerator.initQueryWrapper(wxActiveEnrolUser, req.getParameterMap());
+
+		 Page<WxActiveEnrolUser> page = new Page<WxActiveEnrolUser>(pageNo, pageSize);
+		 IPage<WxActiveEnrolUser> pageList = wxActiveEnrolUserService.page(page, queryWrapper);
+		 List<WxActiveEnrolUser> records = pageList.getRecords();
+		 List<Map<String,Object>> listObj = new ArrayList<>();
+		 for (WxActiveEnrolUser wxeu:records
+		 ) {
+			 HashMap<String,Object> map = new HashMap<>();
+			 map.put("enrolInfo", wxeu);
+			 WxUser wxUser = new WxUser();
+			 String openId = wxeu.getUserOpneId();
+			 if(null!=openId){
+				 wxUser.setOpenId(openId);
+				 Wrapper<WxUser> aeu = new QueryWrapper<>(wxUser);
+				 map.put("userInfo",wxUserService.getOne(aeu));
+			 }else{
+				 String agentId = wxeu.getEnrolAgentOpenId();
+				 wxUser.setOpenId(agentId);
+				 Wrapper<WxUser> aeu = new QueryWrapper<>(wxUser);
+				 map.put("agentInfo",wxUserService.getOne(aeu));
+			 }
+			 listObj.add(map);
+		 }
+		 Page<Map<String,Object>> newPage = new Page<Map<String,Object>>(pageNo, pageSize);
+		 newPage.setRecords(listObj);
+		 newPage.setTotal(pageList.getTotal());
+		 newPage.setCurrent(pageList.getCurrent());
+		 newPage.setSize(pageList.getSize());
+
+		 return Result.ok(newPage);
+	 }
+	 /**
 	  * 全部查询
 	  *
 	  * @param wxActiveEnrolUser

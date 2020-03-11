@@ -69,6 +69,7 @@ public class WxLoginController {
         // 解密用户信息
         WxMaUserInfo userInfo = wxService.getUserService().getUserInfo(sessionKey, encryptedData, iv);
         WxUser wxUser = new WxUser();
+        wxUser.setId(userInfo.getOpenId());
         wxUser.setNickName(userInfo.getNickName());
         wxUser.setAvatarUrl(userInfo.getAvatarUrl());
         wxUser.setCity(userInfo.getCity());

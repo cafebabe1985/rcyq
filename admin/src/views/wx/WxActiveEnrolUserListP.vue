@@ -206,8 +206,8 @@ import { getAction } from '@/api/manage'
           // }
         ],
         url: {
-          activeList:"/wx/wxActive/listVOall",
-          list: "/wx/wxActiveEnrolUser/listPageUser",
+          activeList:`/wx/wxActive/listVOall?createBy=${JSON.parse(localStorage.getItem("pro__Login_Userinfo")).value.id}`,
+          list: "/wx/wxActiveEnrolUser/listPageUserByAID",
           delete: "/wx/wxActiveEnrolUser/delete",
           deleteBatch: "/wx/wxActiveEnrolUser/deleteBatch",
           exportXlsUrl: "/wx/wxActiveEnrolUser/exportXls",
