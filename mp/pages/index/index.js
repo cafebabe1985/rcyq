@@ -5,8 +5,7 @@ const app = getApp()
 
 Page({
   data: {
-    StatusBar: app.globalData.StatusBar,
-    CustomBar: app.globalData.CustomBar,
+   
     motto: '欢迎使用儒此有趣微信小程序',
     userInfo: {},
     hasUserInfo: false,

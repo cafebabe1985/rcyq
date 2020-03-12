@@ -39,6 +39,10 @@ Page({
         required: true,
         validate: true
       },
+      phone:{
+        required:true,
+        validate:true
+      },
       poster: {
         required: true,
         validate: true
@@ -106,6 +110,7 @@ Page({
     form: {
       name: '',
       detail: '',
+      phone:'',
       startTime: '',
       endTime: '',
       endEnrol:'',
@@ -136,13 +141,26 @@ Page({
     let formKey = `form.${prop}`
     if(this.data.validates[prop].required){
       if(value){
-        this.setData({
-          [key]: true,
-          [formKey]: value
-        })
+        if (prop =='phone'){          
+            if (!(/^1[3456789]\d{9}$/.test(value))) {           
+              this.setData({
+                [key]: false
+              })
+            }else{
+              this.setData({
+                [key]: true,
+                [formKey]: value
+              })
+            }          
+        }else{
+          this.setData({
+            [key]: true,
+            [formKey]: value
+          })
+        }
+        
       }else{
         this.setData({
-
           [key]: false
         })
       }      

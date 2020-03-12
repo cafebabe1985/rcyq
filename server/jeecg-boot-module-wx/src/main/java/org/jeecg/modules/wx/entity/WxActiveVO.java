@@ -84,6 +84,9 @@ public class WxActiveVO implements Serializable {
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date endEnrol;
+    /**咨询电话*/
+    @Excel(name = "咨询电话", width = 15)
+    private java.lang.String phone;
     /**
      * 封面图
      */

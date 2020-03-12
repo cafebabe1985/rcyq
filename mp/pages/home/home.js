@@ -262,7 +262,7 @@ wx.navigateTo({
 
     const resNewsData = await News.listNews(this.data.newsPageNo, 10, 'createTime', 'desc', 1)
     const resSwiperData = await Swiper.listSwiper(1, 6, 'displayOrder', 'asc', 1)
-    const resCityTabData = await CityTab.listCityTab('displayOrder', 'asc')
+   
     this.data.finishNews = false
     this.data.finishScenic = false
     this.data.finishActive = false
@@ -273,7 +273,7 @@ wx.navigateTo({
       news: resNewsData.result.records,
       swiperList: resSwiperData.result.records,
       actives: resActiveData.result.records,
-      cityTabs: this.data.cityTabs.concat(resCityTabData.result.records)
+     
     })
   
     wx.hideLoading()
@@ -286,6 +286,10 @@ wx.navigateTo({
     wx.showLoading({
       title: '内容加载中',
     })
+    const resCityTabData = await CityTab.listCityTab('displayOrder', 'asc')
+this.setData({
+  cityTabs: this.data.cityTabs.concat(resCityTabData.result.records)
+})
     wx.createSelectorQuery().select('#fixedViewWrap').boundingClientRect((rect) => {
 
       this.setData({

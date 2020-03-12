@@ -159,7 +159,15 @@
           {
             title:'会员等级',
             align:"center",
-            dataIndex: 'vipLevel'
+            dataIndex: 'vipLevel',
+            customRender:(text)=>{
+              console.log(this.dictOptions)
+              if(!text){
+                return this.dictOptions['vip_level']['0']
+              }else{
+                return filterMultiDictText(this.dictOptions['vipLevel'], text+"")
+              }
+            }
           },
           {
             title:'积分',
@@ -186,6 +194,7 @@
           importExcelUrl: "wx/wxUser/importExcel",
         },
         dictOptions:{
+          vipLevel:[]
         },
       }
     },
@@ -196,6 +205,11 @@
     },
     methods: {
       initDictConfig(){
+        initDictOptions('vip_level').then((res) => {
+          if (res.success) {
+            this.$set(this.dictOptions, 'vipLevel', res.result)
+          }
+        })
       }
        
     }

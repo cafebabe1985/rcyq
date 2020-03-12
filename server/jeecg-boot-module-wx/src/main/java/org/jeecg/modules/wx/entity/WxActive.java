@@ -49,6 +49,9 @@ public class WxActive implements Serializable {
 	/**活动名称*/
 	@Excel(name = "活动名称", width = 15)
     private java.lang.String name;
+	/**咨询电话*/
+	@Excel(name = "咨询电话", width = 15)
+	private java.lang.String phone;
 	/**活动开始时间*/
 	@Excel(name = "活动开始时间", width = 20, format = "yyyy-MM-dd HH:mm:ss")
 	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")

@@ -138,9 +138,9 @@ Page({
     })
   },
   contactCreator(e){
-      // wx.makePhoneCall({
-      //   phoneNumber: this.data.,
-      // })
+      wx.makePhoneCall({
+        phoneNumber: this.data.detail.phone,
+      })
   },
  async addFavorite(){
    

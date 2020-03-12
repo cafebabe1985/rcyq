@@ -35,6 +35,11 @@
     </view>
     <view class="cu-form-group">
       <input name="address" maxlength="50" placeholder="{{validates.address.validate?'活动地点':'*必须填写活动地点'}}" placeholder-style="{{validates.address.validate?'':'color:red'}}" value="{{form.address}}" data-name="address" data-key="validates.address.validate" bindblur="onBlur"></input>
+    </view>
+    <view class="cu-form-group">
+      <input name="phone" maxlength="15" placeholder="{{validates.phone.validate?'咨询电话':'*正确填写咨询电话'}}" placeholder-style="{{validates.phone.validate?'':'color:red'}}" value="{{form.phone}}" data-name="phone" 
+      type="number"
+      data-key="validates.phone.validate" bindblur="onBlur"></input>
 
     </view>
     <view class="cu-form-group" bindtap="chooseImage">

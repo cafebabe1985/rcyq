@@ -251,6 +251,7 @@ public class WxActiveController extends JeecgController<WxActive, IWxActiveServi
     public Result<?> addVO(@RequestBody WxActiveVO wxActive) {
 
         WxActive wa = new WxActive();
+        wa.setPhone(wxActive.getPhone());
         wa.setCreateBy(wxActive.getCreateBy());
         wa.setHit(wxActive.getHit());
         wa.setName(wxActive.getName());
@@ -352,6 +353,7 @@ public class WxActiveController extends JeecgController<WxActive, IWxActiveServi
     public Result<?> editVO(@RequestBody WxActiveVO wxActive) {
         String activeId = wxActive.getId();
         WxActive wa = new WxActive();
+        wa.setPhone(wxActive.getPhone());
         wa.setName(wxActive.getName());
         wa.setHit(wxActive.getHit());
         wa.setDetail(wxActive.getDetail());
