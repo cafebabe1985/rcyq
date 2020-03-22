@@ -122,7 +122,7 @@ Page({
       everyTeamMin:'',
       needExamineEnrol:'0',
       allowEnrolAgent:'1',
-      displayType:'0',
+      displayType:'1',
       notice:'',
       insuranceType:'0',
       cost:{
@@ -483,7 +483,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad (options) {
-      
+    wx.hideShareMenu()
   },
 
   /**

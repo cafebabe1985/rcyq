@@ -256,7 +256,11 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage () {
+    return {
+      title:this.data.detail.name,
+      path: `/pages/activeDetail/activeDetail?id=${this.data.detail.id}`,
+      imageUrl: this.data.detail.poster
+    }
   }
 })

@@ -146,7 +146,7 @@ export default {
   },
   methods: {
      async initCityTabs(){
-          let listCityTabUrl ="/wx/scenicCityTab/list?column=createTime&order=desc"
+          let listCityTabUrl ="/wx/scenicCityTab/list?column=displayOrder&order=asc"
            let res = await getAction(listCityTabUrl)
            if(res.success){
                 this.tabs = res.result.records

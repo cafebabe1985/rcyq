@@ -19,18 +19,18 @@ Page({
   },
 async getUserInfo(){
   let userInfo = wx.getStorageSync("userInfo")
-  console.log(userInfo)
+  
   if (userInfo && userInfo.openId) {
-    console.log(userInfo)
+    
   let res = await User.getByOpenId(userInfo.openId)
-    console.log(res)
+   
   if(res.success){
-    console.log(res)
+    
     this.setData({
       userInfo:res.result
     })
   }
-  console.log(res.result)
+  
     return res.result
   }
   return null
@@ -63,6 +63,19 @@ async getUserInfo(){
       url: '/pages/applyScenicManager/applyScenicManager',
     })
   },
+  copyOpenId(){
+    
+    wx.setClipboardData({
+      data: this.data.userInfo.openId,
+      success:(res)=>{
+          wx.showToast({
+          title: '已复制ID到剪切板',
+          icon:'success',
+          duration:1000
+        })
+      }
+    })
+  },
   showModal(e) {
     this.setData({
       modalName: e.currentTarget.dataset.target
@@ -78,48 +91,8 @@ async getUserInfo(){
    * 生命周期函数--监听页面加载
    */
   async onLoad(options) {
-    //  let userInfo = await this.getUserInfo()
+    wx.hideShareMenu()
    
-    // let favorCountMax=0
-    // let activityCountMax=0
-    // let scoreCountMax =0
-    // let resActive = await this.countEnrolCount(userInfo.openId)
-    // let resFavor = await this.countFavorCount(userInfo.openId)
-    
-    // if(userInfo){
-    //   favorCountMax = resFavor.length
-    //   scoreCountMax = userInfo.accumulatePoint||0
-    //   activityCountMax = resActive.length
-
-    // }
-    //  let that = this;
-    //  wx.showLoading({
-    //    title: '数据加载中',
-    //    mask: true,
-    //  })
-    //  let i = 0;
-    //  numDH();
-    //  function numDH() {
-    //    if (i < 20) {
-    //      setTimeout(function () {
-    //        that.setData({
-    //          favorCount: that.data.favorCount >= favorCountMax ? favorCountMax : i,
-    //          activityCount: that.data.activityCount >= activityCountMax ? activityCountMax :i,
-    //          scoreCount: that.data.scoreCount >= scoreCountMax ? scoreCountMax : i
-    //        })
-    //        i++
-    //        numDH();
-    //      }, 70)
-    //    } else {
-    //      that.setData({
-    //        favorCount: that.coutNum(favorCountMax),
-    //        activityCount: that.coutNum(activityCountMax),
-    //        scoreCount: that.coutNum(scoreCountMax)
-    //      })
-    //    }
-    //  }
-    //  wx.hideLoading()
-    
   },
 
   /**

@@ -180,12 +180,12 @@ cas:
 #    token: rcyq
 #    aesKey: 111
 #    msgDataFormat: JSON
-wxAppId: wx9d1b994a08a10297
+wxAppId: wx2c26797cc5ed9741
 wx:
   miniapp:
     configs:
-      - appid: wx9d1b994a08a10297
-        secret: a74bf5c3af2d4868a53e4644fbdce97d
+      - appid: wx2c26797cc5ed9741
+        secret: 36c81028dfd0a63a74aa1393f93297fd
         token: rcyq
         aesKey: #微信小程序消息服务器配置的EncodingAESKey
         msgDataFormat: JSON

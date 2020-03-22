@@ -1,5 +1,0 @@
-<wxEditor editorHeight="{{editorHeight}}" placeholder="输入景点详情" bindGetEditorContents="getEditorContents" initText="{{form.content}}" bindGetFocus="getEditorFocus" id="editor"
-bindGetContents="getContents"
-></wxEditor>
-<button bindtap="getHtml">获取</button>
-<rich-text nodes="{{content}}"></rich-text>

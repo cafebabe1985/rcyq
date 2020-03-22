@@ -161,6 +161,12 @@
             }
           },
           {
+            title:'内容',
+            align:"center",
+            dataIndex: 'content',
+            scopedSlots: {customRender: 'htmlSlot'}
+          },
+          {
             title: '操作',
             dataIndex: 'action',
             align:"center",

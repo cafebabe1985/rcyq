@@ -59,7 +59,10 @@ public class LoginController {
 		String username = sysLoginModel.getUsername();
 		String password = sysLoginModel.getPassword();
 		boolean isWxUser = sysLoginModel.getCaptcha().equals("cafebabe");
-		if(! isWxUser){
+		System.out.println(isWxUser);
+		System.out.println(username);
+		System.out.println(password);
+		if(!isWxUser){
 			Object checkCode = redisUtil.get(sysLoginModel.getCheckKey());
 			if(checkCode==null) {
 				result.error500("验证码失效");
@@ -92,6 +95,7 @@ public class LoginController {
 		}
 
 		String syspassword = sysUser.getPassword();
+		System.out.println(syspassword+"^^^"+password);
 		if (!syspassword.equals(userpassword)) {
 			result.error500("用户名或密码错误");
 			return result;

@@ -4,8 +4,7 @@ import { WxSys } from '../../net/wxSys.js'
 const app = getApp()
 
 Page({
-  data: {
-   
+  data: {   
     motto: '欢迎使用儒此有趣微信小程序',
     userInfo: {},
     hasUserInfo: false,
@@ -14,81 +13,46 @@ Page({
   //事件处理函数
  
   goHome(){
-    console.log("gohome!!!!!!!!!!")
+   
     wx.switchTab({
       url: '/pages/home/home'
     })
   
   },
   async onLoad(opts) {   
+    wx.hideShareMenu()
     let userInfo = wx.getStorageSync("userInfo") 
-    console.log("onload->>>", userInfo)   
+   
     if (userInfo) {
       wx.showLoading({
         title: '自动登录中',
       })
       let loginFirst = await WxSys.loginSys({
-        username: userInfo.nickName,
+        username: userInfo.openId,
         password: userInfo.openId,
         captcha: 'cafebabe'
       })      
       if (loginFirst.success) {
         wx.setStorageSync("token", loginFirst.result.token)
-       // this.setUserInfo(sessionKey, obj)
-       wx.hideLoading()
+        wx.hideLoading()
        this.goHome()
         //跳转
       } 
-      // else {
-      //   let registRes = await WxSys.registWx({
-      //     nickName:userInfo.nickName,
-      //     openId: userInfo.openId,
-      //     type: 'wx'
-      //   })
-      //   if (registRes.success) {
-      //     //尝试登录
-      //     let loginRes = await WxSys.loginSys({
-      //       username: userInfo.nickName,
-      //       password: userInfo.openId,
-      //       captcha: 'cafebabe'
-      //     })
-      //     console.log(loginRes)
-      //     wx.setStorageSync("token", loginRes.result.token)
-      //     wx.hideLoading()
-      //    // this.setUserInfo(sessionKey, obj)
-      //     //跳转
-      //   }
-      // }
-      // wx.hideLoading()
-      // this.goHome()
+     
       return
     }
     console.log("没有缓存-》》》")
-    //没有缓存
-   // 获取用户信息
-  //  let _this = this
-  //   wx.getSetting({
-  //     success(res) {
-  //       if (res.authSetting['scope.userInfo']) {
-  //         wx.getUserInfo({
-  //           success:(res)=>{
-  //             console.log("获取了用户授权-》》》",res)
-  //             _this.doLogin(res)
-  //           }
-  //         })
-  //       }
-  //     }
-  //   })
+  
   },
 
   async setTokenAndUserInfo(openId, sessionKey, obj) {
     //如果没有，先获取用户信息
    let info = await this.setUserInfo(sessionKey, obj)
-   console.log(info)
+   
    //获取成功
    if(info){
      let loginFirst = await WxSys.loginSys({
-       username: info.nickName,
+       username: info.openId,
        password: info.openId,
        captcha: 'cafebabe'
      })
@@ -97,18 +61,18 @@ Page({
        wx.setStorageSync("token", loginFirst.result.token)
        wx.hideLoading()
        this.goHome()
-     //  this.setUserInfo(sessionKey, obj)
-       //跳转
+     
      } else {
        let registRes = await WxSys.registWx({
          nickName: info.nickName,
          openId: info.openId,
+
          type: 'wx'
        })
        if (registRes.success) {
          //尝试登录
          let loginRes = await WxSys.loginSys({
-           username: info.nickName,
+           username: info.openId,
            password: info.openId,
            captcha: 'cafebabe'
          })
@@ -154,8 +118,7 @@ Page({
       info = JSON.parse(resdata.message)
       wx.setStorageSync('userInfo', info)
       return info
-      // wx.hideLoading()
-      // this.goHome()
+     
     }else{
       return null
     }

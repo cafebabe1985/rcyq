@@ -88,9 +88,9 @@ spring:
         # 配置获取连接等待超时的时间
         maxWait: 90000
         # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
-        timeBetweenEvictionRunsMillis: 90000
+        timeBetweenEvictionRunsMillis: 100000
         # 配置一个连接在池中最小生存的时间，单位是毫秒
-        minEvictableIdleTimeMillis: 600000
+        minEvictableIdleTimeMillis: 1000000
         validationQuery: SELECT 1 FROM DUAL
         testWhileIdle: true
         testOnBorrow: false
@@ -108,6 +108,7 @@ spring:
           username: cafebabe1985
           password: cafebabe-1985
           driver-class-name: com.mysql.jdbc.Driver
+
           # 多数据源配置
           #multi-datasource1:
           #url: jdbc:mysql://localhost:3306/jeecg-boot2?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true
@@ -180,12 +181,12 @@ cas:
 #    token: rcyq
 #    aesKey: 111
 #    msgDataFormat: JSON
-wxAppId: wx9d1b994a08a10297
+wxAppId: wx2c26797cc5ed9741
 wx:
   miniapp:
     configs:
-      - appid: wx9d1b994a08a10297
-        secret: a74bf5c3af2d4868a53e4644fbdce97d
+      - appid: wx2c26797cc5ed9741
+        secret: 36c81028dfd0a63a74aa1393f93297fd
         token: rcyq
         aesKey: #微信小程序消息服务器配置的EncodingAESKey
         msgDataFormat: JSON

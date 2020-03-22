@@ -1,4 +1,4 @@
-<wxs src="../../common/tools.wxs" module="tools" />
+<wxs src="../../common/home.wxs" module="tools" />
 <view class="navbar-wrap" id="fixedViewWrap">
   <view class="bg-white nav text-center fixed-nav {{isFixedTop?'fixed':''}}" id="navbar">
     <view class="cu-item {{0==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="0">

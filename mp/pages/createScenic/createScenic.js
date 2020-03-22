@@ -212,6 +212,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   async onLoad (options) {
+    wx.hideShareMenu()
     this.initCityTab()
     this.getUserInfo(options.id)
     // const eventChannel = this.getOpenerEventChannel()

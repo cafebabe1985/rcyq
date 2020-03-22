@@ -202,6 +202,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   async onLoad(options) {
+    wx.hideShareMenu()
     this.getUserInfo(options.id)
     if (options.scenicId) {
       let res = await News.getNewsById(options.scenicId)

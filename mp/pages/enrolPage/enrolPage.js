@@ -216,6 +216,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    wx.hideShareMenu()
     this.data.agent = (options.agent == 'true')
     wx.setNavigationBarTitle({
       title: this.data.agent?'帮人报表单':'本人报名表单'

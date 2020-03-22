@@ -39,6 +39,7 @@ Page({
     navbarHeight: 0,
     fixedViewWrapHeight: 0,
     scenics: null,
+    scenicsBak:null,
     swiperList: null,
     news: null,
     actives:null,
@@ -71,19 +72,22 @@ Page({
     let index = e.currentTarget.dataset.id
     let resScenicData
     if (index == 0) {
-      resScenicData = await Scenic.listScenic(1, 10, 'createTime', 'desc', 1)
-      
+     
+      resScenicData = this.data.scenicsBak
     } else {
      let city = parseInt(e.currentTarget.dataset.id) -1
-      resScenicData = await Scenic.listScenic(1, 10, 'createTime', 'desc', 1, {
-        city: city
-      })
+    
+      resScenicData = this.data.scenicsBak.filter( 
+        (item)=>{
+          
+          return parseInt(item.city)===  city
+        }
+        )
     }
     this.setData({
       navCur: index,
       scrollLeft: (index - 1) * 60,
-      scenics: resScenicData.result.records,
-
+      scenics: resScenicData,
     })
   },
   activeNavCurSelect(e) {
@@ -97,8 +101,7 @@ Page({
     }
   },
  async getPhoneNumber(e){
-    
-  //  let res =await WxSys.getPhone(app.globalData.sessionKey, e.detail)
+   
     
 wx.navigateTo({
   url: '/pages/createActive/createActive',
@@ -109,15 +112,13 @@ wx.navigateTo({
     return config.apiBaseUrl + path
   },
   previewImage(e) {
-    let imgs = []
-    for (let i in e.currentTarget.dataset.imgs) {
-      imgs.push(this.data.apiBaseUrl +
-        e.currentTarget.dataset.imgs[i].img)
-    }
-    wx.previewImage({
-      current: e.currentTarget.dataset.index, // 当前显示图片的http链接
-      urls: imgs // 需要预览的图片http链接列表
+    
+    wx.navigateTo({
+      url: `/pages/webpage/webpage?id=${e.currentTarget.dataset.id}`,
+      
     })
+   
+    
   },
   goActiveDetail(e){
     wx.navigateTo({
@@ -152,18 +153,13 @@ wx.navigateTo({
      
         app.userInfoReadyCallback = res => {
           
-          console.log('callback',res)
           this.setData({
             userInfo: res.userInfo,
             hasUserInfo: true
           })
 
         }
-      // else {
-      //   wx.navigateTo({
-      //     url: `/pages/index/index`,
-      //   })
-      // }
+      
 
     } else {
 
@@ -217,11 +213,12 @@ wx.navigateTo({
     const resScenicData = await Scenic.listScenic(pageNo, pageSize, 'createTime', 'desc', 1)
     let newScenic = resScenicData.result.records
     let totalScenic = resScenicData.result.total
-    this.data.scenics.push(...newScenic)
+    this.data.scenicsBak.push(...newScenic)
+   
     this.setData({
       navCur:0,
       scrollLeft:0,
-      scenics: this.data.scenics,
+      scenics: this.data.scenicsBak,
       finishScenic: newScenic.length == 0 ? true : newScenic.length == totalScenic
     })
 
@@ -257,15 +254,17 @@ wx.navigateTo({
     this.data.scenicPageNo = 1
     this.data.newsPageNo = 1
     this.data.activePageNo = 1
-    const resScenicData = await Scenic.listScenic(this.data.scenicPageNo, 10, 'createTime', 'desc', 1)
+    const resScenicData = await Scenic.listScenic(this.data.scenicPageNo, 20, 'createTime', 'desc', 1)
+   
     const resActiveData = await Active.listActive(this.data.activePageNo, 10, 'createTime', 'desc', 1,{displayType:'1'})
 
-    const resNewsData = await News.listNews(this.data.newsPageNo, 10, 'createTime', 'desc', 1)
+    const resNewsData = await News.listNews(this.data.newsPageNo, 20, 'createTime', 'desc', 1)
     const resSwiperData = await Swiper.listSwiper(1, 6, 'displayOrder', 'asc', 1)
    
     this.data.finishNews = false
     this.data.finishScenic = false
     this.data.finishActive = false
+    this.data.scenicsBak = resScenicData.result.records
     this.setData({
       navCur:0,
       scrollLeft:0,
@@ -366,8 +365,12 @@ this.setData({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
+  onShareAppMessage () {
+    return{
+      title:'儒此有趣',
+      path:'/pages/home/home',
+      
+    }
   },
   /**
    * 监听页面滑动事件

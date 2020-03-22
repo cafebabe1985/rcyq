@@ -16,7 +16,7 @@ import org.jeecg.common.aspect.annotation.Dict;
 /**
  * @Description: 首页轮播图管理
  * @Author: jeecg-boot
- * @Date:   2020-02-11
+ * @Date:   2020-03-20
  * @Version: V1.0
  */
 @Data
@@ -64,4 +64,7 @@ public class WxSwiper implements Serializable {
 	/**是否展示*/
 	@Excel(name = "是否展示", width = 15)
     private java.lang.String display;
+	/**内容*/
+	@Excel(name = "内容", width = 15)
+    private java.lang.String content;
 }

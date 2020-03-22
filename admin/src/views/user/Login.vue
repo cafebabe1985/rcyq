@@ -49,7 +49,7 @@
 
         </a-tab-pane>
         <a-tab-pane key="tab2" tab="微信小程序账号">
-           <a-form-item>
+           <!-- <a-form-item>
           <a-input
               size="large"
               v-decorator="['username',validatorRules.username,{ validator: this.handleUsernameOrEmail }]"
@@ -57,7 +57,7 @@
               placeholder="请输入微信昵称 ">
               <a-icon slot="prefix" type="user" :style="{ color: 'rgba(0,0,0,.25)' }"/>
             </a-input>
-          </a-form-item>
+          </a-form-item> -->
 
           <a-form-item>
             <a-input
@@ -266,7 +266,7 @@
         } else {
             that.form.validateFields([ 'username', 'password' ], { force: true }, (err, values) => {
             if (!err) {
-              loginParams.username = values.username
+              loginParams.username = values.password
               // update-begin- --- author:scott ------ date:20190805 ---- for:密码加密逻辑暂时注释掉，有点问题
               //loginParams.password = md5(values.password)
               //loginParams.password = encryption(values.password,that.encryptedString.key,that.encryptedString.iv)

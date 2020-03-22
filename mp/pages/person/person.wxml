@@ -1,4 +1,4 @@
-<wxs src="../../common/tools.wxs" module="tools" />
+<wxs src="../../common/person.wxs" module="tools" />
 <scroll-view scroll-y class="scrollPage">
   <view class="UCenter-bg margin-top-sm margin-left-sm margin-right-sm radius">
   <view class="flex  align-end">
@@ -14,6 +14,7 @@
     </view>
     </view>
     </view>
+   
    </view>
   
   <view class="padding-xs flex text-center text-grey bg-white shadow-warp margin-bottom-sm margin-left-sm margin-right-sm">
@@ -88,6 +89,18 @@
         <text class="cuIcon-favor text-mauve"></text>
         <text class="text-grey">我关注的活动</text>
      </navigator>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-copy text-green"></text>
+        <text class="text-grey">页面登录凭证</text>
+      </view>
+      <view class="action">
+        <button class="cu-btn round bg-green shadow sm"
+        bindtap="copyOpenId"
+        >
+           获取ID</button>
+      </view>
     </view>
     <view class="cu-item arrow">
       <navigator class="content" hover-class="none">

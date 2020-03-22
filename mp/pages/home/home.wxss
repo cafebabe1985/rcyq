@@ -1,6 +1,6 @@
 .card-swiper swiper-item{
   width: 300rpx !important;
-  left: 0 !important;
+  left: 300rpx !important;
   padding: 0
   
 }

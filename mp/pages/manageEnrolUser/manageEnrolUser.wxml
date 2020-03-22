@@ -1,4 +1,4 @@
-<wxs src="../../common/tools.wxs" module="tools" />
+<wxs src="../../common/enrolUserPage.wxs" module="tools" />
 <view class="cu-card article" wx:for="{{enrolUsers}}">
   <view class="cu-item shadow">
     <view class="title">

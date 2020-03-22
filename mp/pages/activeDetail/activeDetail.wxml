@@ -1,4 +1,4 @@
-<wxs src="../../common/tools.wxs" module="tools" />
+<wxs src="../../common/activeDetail.wxs" module="tools" />
 
 <view class=" text-xl bg-white  text-center">
   <image src="{{apiBaseUrl+detail.poster}}" mode="aspectFit" style="height:230rpx;width:100%"></image>

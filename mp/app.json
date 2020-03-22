@@ -21,7 +21,7 @@
     "pages/myCreateNews/myCreateNews",
     "pages/createNews/createNews",
     "pages/manageEnrolUser/manageEnrolUser",
-    "pages/test/test"
+    "pages/webpage/webpage"
   ],
   "window": {
     "backgroundTextStyle": "light",

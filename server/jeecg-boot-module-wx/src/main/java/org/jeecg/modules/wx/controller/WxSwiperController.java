@@ -36,7 +36,7 @@ import com.alibaba.fastjson.JSON;
  /**
  * @Description: 首页轮播图管理
  * @Author: jeecg-boot
- * @Date:   2020-02-11
+ * @Date:   2020-03-20
  * @Version: V1.0
  */
 @RestController
@@ -65,7 +65,22 @@ public class WxSwiperController extends JeecgController<WxSwiper, IWxSwiperServi
 		IPage<WxSwiper> pageList = wxSwiperService.page(page, queryWrapper);
 		return Result.ok(pageList);
 	}
-	
+	 @GetMapping(value = "/list2")
+	 public Result<?> queryPageList2(WxSwiper wxSwiper,
+									@RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
+									@RequestParam(name="pageSize", defaultValue="10") Integer pageSize,
+									HttpServletRequest req) {
+		 QueryWrapper<WxSwiper> queryWrapper = QueryGenerator.initQueryWrapper(wxSwiper, req.getParameterMap());
+		 Page<WxSwiper> page = new Page<WxSwiper>(pageNo, pageSize);
+		 IPage<WxSwiper> pageList = wxSwiperService.page(page, queryWrapper);
+		 List<WxSwiper> records = pageList.getRecords();
+		 for (WxSwiper w:records
+			  ) {
+			 w.setContent("");
+		 }
+		 pageList.setRecords(records);
+		 return Result.ok(pageList);
+	 }
 	/**
 	 *   添加
 	 *

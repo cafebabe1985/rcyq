@@ -157,6 +157,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad (options) {
+    wx.hideShareMenu()
     const eventChannel = this.getOpenerEventChannel()
     eventChannel.on('acceptOpt',  (opt)=> {
       if(opt){

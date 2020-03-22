@@ -315,16 +315,20 @@ public class WxActiveController extends JeecgController<WxActive, IWxActiveServi
         WxUser wxUser = new WxUser();
         wxUser.setOpenId(wxActive.getCreateBy());
         Wrapper<WxUser> query = new QueryWrapper<>(wxUser);
-        WxUser one = wxUserService.getOne(query);
-        if(null!=one){
-            Integer accumulatePoint = one.getAccumulatePoint();
-            if(null != accumulatePoint){
-                one.setAccumulatePoint(accumulatePoint + WxSysConst.ADD_ACTIVE_SCORE);
-            }else{
-                one.setAccumulatePoint( WxSysConst.ADD_ACTIVE_SCORE);
-            }
+        try {
+            WxUser one = wxUserService.getOne(query);
+            if(null!=one){
+                Integer accumulatePoint = one.getAccumulatePoint();
+                if(null != accumulatePoint){
+                    one.setAccumulatePoint(accumulatePoint + WxSysConst.ADD_ACTIVE_SCORE);
+                }else{
+                    one.setAccumulatePoint( WxSysConst.ADD_ACTIVE_SCORE);
+                }
 
-            wxUserService.update(one,query);
+                wxUserService.update(one,query);
+            }
+        }catch (Exception e){
+
         }
 
         return Result.ok("添加成功！");

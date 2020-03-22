@@ -11,9 +11,7 @@
       <a-form :form="form">
 
         <a-form-item label="广告图" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-upload 
-          :multiple="false"
-          v-decorator="['img', validatorRules.img]" :trigger-change="true"></j-upload>
+          <j-upload v-decorator="['img', validatorRules.img]" :trigger-change="true"></j-upload>
         </a-form-item>
         <a-form-item label="跳转地址" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <a-input v-decorator="[ 'targetHref', validatorRules.targetHref]" placeholder="请输入跳转地址"></a-input>
@@ -30,6 +28,9 @@
         <a-form-item label="是否展示" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <j-dict-select-tag type="list" v-decorator="['display', validatorRules.display]" :trigger-change="true" dictCode="display_type" placeholder="请选择是否展示"/>
         </a-form-item>
+        <a-form-item label="内容" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <j-editor v-decorator="['content',{trigger:'input'}]"/>
+        </a-form-item>
 
       </a-form>
     </a-spin>
@@ -43,12 +44,14 @@
   import { validateDuplicateValue } from '@/utils/util'
   import JUpload from '@/components/jeecg/JUpload'
   import JDictSelectTag from "@/components/dict/JDictSelectTag"
+  import JEditor from '@/components/jeecg/JEditor'
 
   export default {
     name: "WxSwiperModal",
     components: { 
       JUpload,
       JDictSelectTag,
+      JEditor,
     },
     data () {
       return {
@@ -85,6 +88,8 @@
           display: {rules: [
             {required: true, message: '请输入是否展示!'},
           ]},
+          content: {rules: [
+          ]},
         },
         url: {
           add: "/wx/wxSwiper/add",
@@ -103,7 +108,7 @@
         this.model = Object.assign({}, record);
         this.visible = true;
         this.$nextTick(() => {
-          this.form.setFieldsValue(pick(this.model,'img','targetHref','type','name','displayOrder','display'))
+          this.form.setFieldsValue(pick(this.model,'img','targetHref','type','name','displayOrder','display','content'))
         })
       },
       close () {
@@ -146,7 +151,7 @@
         this.close()
       },
       popupCallback(row){
-        this.form.setFieldsValue(pick(row,'img','targetHref','type','name','displayOrder','display'))
+        this.form.setFieldsValue(pick(row,'img','targetHref','type','name','displayOrder','display','content'))
       },
 
       

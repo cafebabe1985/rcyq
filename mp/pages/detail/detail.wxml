@@ -1,4 +1,4 @@
-<wxs src="../../common/tools.wxs" module="tools" />
+<wxs src="../../common/activeDetail.wxs" module="tools" />
 <web-view wx:if="{{url}}" src="{{url}}"> </web-view>
 <view wx:else>
   <view class=" text-xxl bg-white padding">

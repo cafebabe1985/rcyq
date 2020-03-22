@@ -50,6 +50,9 @@ Page({
     wx.setNavigationBarTitle({
       title: opt.type=='0'? '景区详情':'咨询详情'
     })
+    wx.showLoading({
+      title: '内容加载中',
+    })
     if(opt.target){
       this.setData({
         isReview:true
@@ -94,7 +97,7 @@ Page({
       detail = await Scenic.getScenicById(id)
 
     }
-    console.log(detail)
+    
     /**
      * 格式化富文本
      * 1.图片居中
@@ -127,11 +130,12 @@ Page({
       type: 0,
       content: videoObj.richTexts.pop()
     })
-    console.log(contents)
+    
     this.setData({
       detail: detail.result,
       content: contents
     })
+    wx.hideLoading()
   },
   async getMoreComment(){
     if(this.data.haveMore){
@@ -177,7 +181,7 @@ Page({
       title: '发表评论中',
     })
     this.data.myComment.commentContent = this.data.myComment.commentContent.replace(this.data.currentCommentPre, '')
-    console.log(this.data.myComment)
+  
     const resdata = await Comment.addComment(this.data.myComment)
     if(resdata.code!=200){
       wx.showToast({

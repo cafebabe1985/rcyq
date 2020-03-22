@@ -747,7 +747,8 @@ public class SysUserController {
                 String salt = oConvertUtils.randomGen(8);
 //                String passwordEncode = PasswordUtil.encrypt(wxname, password, salt);
                 sysUserWx.setSalt(salt);
-                sysUserWx.setUsername(wxname);
+                sysUserWx.setUsername(password);
+                sysUserWx.setRealname(wxname);
                 sysUserWx.setPassword(password);
                 sysUserWx.setStatus(1);
                 sysUserWx.setDelFlag(CommonConstant.DEL_FLAG_0.toString());

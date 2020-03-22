@@ -11,7 +11,7 @@ class Swiper {
    */
   static async listSwiper(pageNo, pageSize, column, order, display) {
     return await Http.wxGet({
-      url: 'wx/wxSwiper/list',
+      url: 'wx/wxSwiper/list2',
       data: {
         pageNo: pageNo,
         pageSize: pageSize,
@@ -19,6 +19,22 @@ class Swiper {
         column: column,
         order: order
         }
+    })
+  }
+  /**
+  * 根据ID获取轮播图
+  */
+  static async getById(id, other) {
+    let data = {
+      id: id
+    }
+    if (other) {
+      Object.assign(data, other)
+    }
+
+    return await Http.wxGet({
+      url: 'wx/wxSwiper/queryById',
+      data
     })
   }
 

@@ -1,12 +1,13 @@
 <!--轮播区-->
-<wxs src="../../common/tools.wxs" module="tools" />
+<wxs src="../../common/home.wxs" module="tools" />
 <view class="home-banner bg-white">
   <swiper class="card-swiper " circular="true" autoplay="false" interval="5000" duration="500" bindchange="cardSwiper">
     <swiper-item 
        class="swiper-banner  radius shadow-warp bg-white " wx:for="{{swiperList}}" wx:key="index">
       <view class="swiper-item" 
       data-imgs="{{swiperList}}"
-      data-index = "{{index}}"
+      data-id = "{{item.id}}"
+      data-url="{{item.targetHref}}"
       bindtap="previewImage">
         <image src="{{apiBaseUrl+item.img}}" mode="aspectFill"></image>
 
@@ -16,15 +17,18 @@
 </view>
 <!--吸顶分页导航-->
 <view class="navbar-wrap" id="fixedViewWrap">
-  <view class="bg-white nav text-center fixed-nav {{isFixedTop?'fixed':''}}" id="navbar">
-    <view class="cu-item {{0==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="0">
-      <text class="cuIcon-cascades"></text> 小片
+  <view class="bg-white nav flex text-center fixed-nav {{isFixedTop?'fixed':''}}" id="navbar">
+    <view class="cu-item flex-sub {{0==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="0" style="margin:0 70rpx">
+      <!-- <text class="cuIcon-cascades"></text>  -->
+      小片
     </view>
-    <view class="cu-item {{1==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="1">
-      <text class="cuIcon-footprint"></text> 活动
+    <view class="cu-item flex-sub {{1==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="1" style="margin:0 70rpx">
+      <!-- <text class="cuIcon-footprint"></text>  -->
+      活动
     </view>
-    <view class="cu-item {{2==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="2">
-      <text class="cuIcon-news"></text> 快讯
+    <view class="cu-item flex-sub {{2==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="2" style="margin:0 70rpx">
+      <!-- <text class="cuIcon-news"></text>  -->
+      快讯
     </view>
   </view>
   <!--分页列表头部0 小片城市滚动条导航-->
@@ -53,12 +57,7 @@
             bindtap="getPhoneNumber">
        <text class="cuIcon-add text-orange"></text>
         发起活动</button>
-        <!-- <button 
-        class="cu-btn margin-sm line-orange"
-        open-type="getPhoneNumber"     bindgetphonenumber="getPhoneNumber">
-       <text class="cuIcon-add text-orange"></text>
-        发起活动</button> -->
-      <!-- </view> -->
+       
     </view>
   </view>
 
@@ -93,7 +92,9 @@ bindtap="goNewsDetail">
   data-id="{{item.id}}"
   bindtap="goActiveDetail">
     <view class="title">
-      <view class="text-cut" style='font-size:15px !important'>{{item.name}}</view>
+      <view class="" 
+      style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;line-height:40rpx;margin:10rpx"
+      >{{item.name}}</view>
     </view>
     <view class="content">
       <view class="cu-tag bg-yellow image-tag">{{tools.enrolStatusHandle(item.startTime,item.endTime,item.enrolStartTime,item.endEnrol)}}</view>
@@ -135,18 +136,15 @@ bindtap="goNewsDetail">
       <view class="box-size"></view>
     </view>
     <view class="content">
-
+ <image src="{{apiBaseUrl+item.poster}}" mode="aspectFill"></image>
       <view class="desc">
         <view class="text-content" style='color:black;'> {{item.title}}</view>
         <view class="flex justify-between">
           <view class="cu-tag  light  ">{{tools.dateHandle(item.createTime)}}</view>
-          <!-- <view 
-          v-if="{{tools.contentTypeHandle(item.contentType)}}"
-          class='cu-tag bg-blue light  margin-right-sm'>{{tools.contentTypeHandle(item.newsType)}}</view>-->
-        </view> 
+          </view> 
 
       </view>
-      <image src="{{apiBaseUrl+item.poster}}" mode="aspectFill"></image>
+     
     </view>
   </view>
 </view>
