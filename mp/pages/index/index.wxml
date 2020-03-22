@@ -1,4 +1,7 @@
-
+<!-- <cu-custom bgColor="bg-white" isBack="{{false}}">
+<view slot="backText">返回</view>
+<view slot="content">登录</view>
+</cu-custom> -->
 <view class="text-center margin-top">
   <text class="text-grey text-xl">{{motto}}</text>
 </view>

@@ -1,3 +1,6 @@
+<!-- <cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText"></view><view slot="content">
+活动报名
+</view></cu-custom> -->
 <form class="padding-sm">
 	<view wx:for="{{formItems}}" 
   wx:key="index"

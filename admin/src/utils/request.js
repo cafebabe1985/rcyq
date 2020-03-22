@@ -9,7 +9,7 @@ import { ACCESS_TOKEN } from "@/store/mutation-types"
 const service = axios.create({
 //  baseURL: '/jeecg-boot', 
  baseURL:'',
-  timeout: 60000 // 请求超时时间
+  timeout: 80000 // 请求超时时间
 })
 
 const err = (error) => {

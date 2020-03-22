@@ -28,7 +28,7 @@ function formatRichText(html) {
 }
 
 function scanVideo(html){
-  console.log(html)
+  
   if(!html){
     return {
       richTexts:[],
@@ -40,7 +40,7 @@ function scanVideo(html){
   //2.取video
   const reg = /<video[^>]*controls="([^"]*)"[^>]*>(.*?)<\/video>/gi
   let videos = html.match(reg)
-  console.log(videos)
+  
    //3.分割html
  let richTexts = html.replace(reg, '#cafebabe#').split("#cafebabe#")
   //4.取src字符串
@@ -70,7 +70,6 @@ function formatVideo(e){
   let vtagS = `" type="video/mp4" /></video>`
   for (let i in videoDataArr) {
     let src = videoDataArr[i].match(patternDataCustom)[1]
-
     let target = vtagP + src + vtagS
     all = all.replace(pattern, target)
   }

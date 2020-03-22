@@ -1,3 +1,6 @@
+<!-- <cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText"></view><view slot="content">
+景区负责人申请表单
+</view></cu-custom> -->
 <form>
   <view class="cu-form-group">
     <view class="title">真实姓名</view>

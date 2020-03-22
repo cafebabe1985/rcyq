@@ -10,6 +10,9 @@ import {
   News
 } from '../../net/news.js'
 import {
+  Article
+} from '../../net/article.js'
+import {
   Swiper
 } from '../../net/swiper.js'
 import {
@@ -25,6 +28,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    StatusBar:0,
+    Custom:0,
+    CustomBar:0,
+    interval:30000,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     apiBaseUrl: config.apiBaseUrl,
     TabCur: 0,
@@ -43,13 +50,16 @@ Page({
     swiperList: null,
     news: null,
     actives:null,
+    articles:null,
     scenicPageNo: 1,
     newsPageNo: 1,
     activePageNo:1,
+    articlePageNo:1,
     finishScenic: false,
     finishActive: false,
     finishNews: false,
-    finishLoad:false
+    finishLoad:false,
+    finishArticle:false
   },
   tabSelect(e) {
     if (e.currentTarget.dataset.id == 2) {
@@ -107,22 +117,40 @@ wx.navigateTo({
   url: '/pages/createActive/createActive',
 })
   },
-  cardSwiper() { },
+  cardSwiper(e) { 
+  
+    if(e.detail.current == 0){
+      this.setData({
+        interval:25000
+      })
+    }else{
+      this.setData({
+        interval: 3000
+      })
+    }
+  },
   handleFilePath(path) {
     return config.apiBaseUrl + path
   },
   previewImage(e) {
-    
-    wx.navigateTo({
-      url: `/pages/webpage/webpage?id=${e.currentTarget.dataset.id}`,
-      
-    })
    
+    if(e.currentTarget.dataset.index === 0){
+      return
+    }
+    wx.navigateTo({
+      url: `/pages/webpage/webpage?id=${e.currentTarget.dataset.id}`,      
+    })   
     
   },
   goActiveDetail(e){
     wx.navigateTo({
       url: `/pages/activeDetail/activeDetail?id=${e.currentTarget.dataset.id}`,
+
+    })
+  },
+  goArticleDetail(e){
+    wx.navigateTo({
+      url: `/pages/articleDetail/articleDetail?id=${e.currentTarget.dataset.item.id}&type=${this.data.TabCur}`,
 
     })
   },
@@ -205,6 +233,16 @@ wx.navigateTo({
         this.loadNews(this.data.newsPageNo, 10)
 
       }
+    } else if (this.data.TabCur == 3) {
+      if (this.data.finishArticle) {
+
+        return
+      } else {
+
+        this.data.articlePageNo++
+        this.loadArticle(this.data.articlePageNo, 10)
+
+      }
     }
 
   },
@@ -248,40 +286,76 @@ wx.navigateTo({
       finishNews: newNews.length == 0 ? true : newNews.length == totalNews
     })
   },
+  //加载新的文化杂谈
+  async loadArticle(pageNo, pageSize) {
+    const resArticleData = await Article.listArticle(pageNo, pageSize, 'createTime', 'desc', 1)
+    console.log(resArticleData)
+    let newArticle = resArticleData.result.records
+    let totalArticle = resArticleData.result.total
+    this.data.articles.push(...newArticle)
+    this.setData({
+      articles: this.data.articles,
+      finishArticle: newArticle.length == 0 ? true : newArticle.length == totalArticle
+    })
+  },
   //初始化页面数据
   async initPage() {
     // this.handleUserInfo()
     this.data.scenicPageNo = 1
     this.data.newsPageNo = 1
     this.data.activePageNo = 1
-    const resScenicData = await Scenic.listScenic(this.data.scenicPageNo, 20, 'createTime', 'desc', 1)
-   
-    const resActiveData = await Active.listActive(this.data.activePageNo, 10, 'createTime', 'desc', 1,{displayType:'1'})
-
-    const resNewsData = await News.listNews(this.data.newsPageNo, 20, 'createTime', 'desc', 1)
+    this.data.articlePageNo = 1
     const resSwiperData = await Swiper.listSwiper(1, 6, 'displayOrder', 'asc', 1)
-   
-    this.data.finishNews = false
-    this.data.finishScenic = false
-    this.data.finishActive = false
-    this.data.scenicsBak = resScenicData.result.records
     this.setData({
-      navCur:0,
-      scrollLeft:0,
+      swiperList: resSwiperData.result.records,
+    })
+    const resScenicData = await Scenic.listScenic(this.data.scenicPageNo, 20, 'createTime', 'desc', 1)
+    this.data.scenicsBak = resScenicData.result.records
+    this.data.finishScenic = false
+    // this.setData({
+    //   navCur: 0,
+    //   scrollLeft: 0,
+    //   scenics: resScenicData.result.records,
+      
+    // })
+
+    const resActiveData = await Active.listActive(this.data.activePageNo, 10, 'createTime', 'desc', 1,{displayType:'1'})
+    const resArticleData = await Article.listArticle(this.data.articlePageNo, 10, 'createTime', 'desc', 1)
+    const resNewsData = await News.listNews(this.data.newsPageNo, 20, 'createTime', 'desc', 1)       
+    this.data.finishNews = false    
+    this.data.finishActive = false    
+    this.data.finishArticle = false 
+    this.setData({
+      navCur: 0,
+      scrollLeft: 0,
       scenics: resScenicData.result.records,
       news: resNewsData.result.records,
-      swiperList: resSwiperData.result.records,
+      articles: resArticleData.result.records,
       actives: resActiveData.result.records,
      
     })
   
-    wx.hideLoading()
   },
   /**
    * 生命周期函数--监听页面加载
    */
   async onLoad(options) {
-   
+    // wx.getSystemInfo({
+    //   success: e => {
+    //     this.data.StatusBar = e.statusBarHeight;
+    //     let capsule = wx.getMenuButtonBoundingClientRect();
+    //     if (capsule) {
+    //       this.data.Custom = capsule;
+    //       this.data.CustomBar = capsule.bottom + capsule.top - e.statusBarHeight;
+    //     } else {
+    //       this.data.CustomBar = e.statusBarHeight + 50;
+    //     }
+    //     console.log(this.data.StatusBar, this.data.CustomBar)
+    //     this.setData({
+    //       CustomBar: this.data.CustomBar
+    //     })
+    //   }
+    // })
     wx.showLoading({
       title: '内容加载中',
     })
@@ -310,6 +384,8 @@ this.setData({
       }).exec();
     }
     this.data.finishLoad = true
+
+    wx.hideLoading()
   },
 
   /**

@@ -1,3 +1,6 @@
+<!-- <cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText"></view><view slot="content">
+报名填写项
+</view></cu-custom> -->
 <form>
   <view class="cu-form-group">
     <view class="title">报名填写项类型</view>

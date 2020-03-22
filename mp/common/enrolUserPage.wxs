@@ -1,0 +1,31 @@
+
+
+var handleEnrolUserInfo = function (opt, index, info) {
+  var gender = info.userGender
+  var cid = info.userCid
+  var realName = info.userRealName
+  var metaInfo = JSON.parse(info.metaInfo)
+  if (opt.name === '性别') {
+    return gender=='0'?'未知':(gender == '1'?'男':'女')
+  } else
+    if (opt.name === '身份证号') {
+      return cid
+    } else
+      if (opt.name === '真实姓名') {
+        return realName
+      } else {
+        for (var i = 0; i < metaInfo.length; i++) {
+          if (opt.name === metaInfo[i].name) {
+
+            return metaInfo[i].label || metaInfo[i].value
+          }
+        }
+      }
+
+}
+
+module.exports = {
+  
+  handleEnrolUserInfo: handleEnrolUserInfo,
+  
+};

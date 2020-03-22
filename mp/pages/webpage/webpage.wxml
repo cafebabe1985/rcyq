@@ -1,0 +1,9 @@
+ <wxs src="../../common/activeDetail.wxs" module="tools" />
+ <!-- <cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText"></view><view slot="content">
+景区介绍
+</view></cu-custom> -->
+ <view class="padding bg-white solid-bottom text-lg" style="line-hight:38px !important" wx:for="{{content}}" wx:key="index">
+    <rich-text wx:if="{{item.type==0}}" nodes="{{item.content}}">
+    </rich-text>
+    <video style="width:100%" wx:if="{{item.type==1}}" src="{{tools.pathHandle(apiBaseUrl,item.src)}}" controls></video>
+  </view>

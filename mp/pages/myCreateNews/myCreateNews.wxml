@@ -1,6 +1,9 @@
 <wxs src="../../common/home.wxs" module="tools" />
+<!-- <cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText"></view><view slot="content">
+我的快讯
+</view></cu-custom> -->
 <view class="navbar-wrap" id="fixedViewWrap">
-  <view class="bg-white nav text-center fixed-nav {{isFixedTop?'fixed':''}}" id="navbar">
+  <view class="bg-white nav text-center fixed-nav {{isFixedTop?'fixed':''}}" id="navbar" style="{{isFixedTop?'top:'+CustomBar+'px;':''}}">
     <view class="cu-item {{0==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="0">
       <text class="cuIcon-cascades"></text> 全部
     </view>

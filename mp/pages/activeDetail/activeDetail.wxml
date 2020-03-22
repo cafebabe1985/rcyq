@@ -1,5 +1,8 @@
 <wxs src="../../common/activeDetail.wxs" module="tools" />
-
+<!-- <cu-custom bgColor="bg-white" isBack="{{true}}">
+<view slot="backText">返回</view>
+<view slot="content">线下活动</view>
+</cu-custom> -->
 <view class=" text-xl bg-white  text-center">
   <image src="{{apiBaseUrl+detail.poster}}" mode="aspectFit" style="height:230rpx;width:100%"></image>
   <text class="text-black ">{{detail.name}}

@@ -11,6 +11,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    StatusBar: 0,
+    Custom: 0,
+    CustomBar: 0,
     apiBaseUrl: config.apiBaseUrl,
     TabCur: 0,
     news: null,
@@ -84,6 +87,22 @@ Page({
    */
   onLoad(options) {
     wx.hideShareMenu()
+    // wx.getSystemInfo({
+    //   success: e => {
+    //     this.data.StatusBar = e.statusBarHeight;
+    //     let capsule = wx.getMenuButtonBoundingClientRect();
+    //     if (capsule) {
+    //       this.data.Custom = capsule;
+    //       this.data.CustomBar = capsule.bottom + capsule.top - e.statusBarHeight;
+    //     } else {
+    //       this.data.CustomBar = e.statusBarHeight + 50;
+    //     }
+       
+    //     this.setData({
+    //       CustomBar: this.data.CustomBar
+    //     })
+    //   }
+    // })
     this.data.openId = options.id
 
   },

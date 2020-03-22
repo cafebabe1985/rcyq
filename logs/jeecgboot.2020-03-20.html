@@ -1,0 +1,2792 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Fri Mar 20 16:07:34 CST 2020</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="Level">Level</td>
+<td class="Date">Date</td>
+<td class="Message">Message</td>
+<td class="MethodOfCaller">MethodOfCaller</td>
+<td class="FileOfCaller">FileOfCaller</td>
+<td class="LineOfCaller">LineOfCaller</td>
+</tr>
+
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:34,375</td>
+<td class="Message">Starting JeecgApplication on DESKTOP-F7RLFV9 with PID 11040 (C:\Users\cafebabe\important\rcyq_app\rcyq\server\jeecg-boot-module-system\target\classes started by cafebabe in C:\Users\cafebabe\important\rcyq_app\rcyq\server)</td>
+<td class="MethodOfCaller">logStarting</td>
+<td class="FileOfCaller">StartupInfoLogger.java</td>
+<td class="LineOfCaller">50</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:34,379</td>
+<td class="Message">The following profiles are active: dev</td>
+<td class="MethodOfCaller">logStartupProfileInfo</td>
+<td class="FileOfCaller">SpringApplication.java</td>
+<td class="LineOfCaller">679</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:36,548</td>
+<td class="Message">Multiple Spring Data modules found, entering strict repository configuration mode!</td>
+<td class="MethodOfCaller">multipleStoresDetected</td>
+<td class="FileOfCaller">RepositoryConfigurationDelegate.java</td>
+<td class="LineOfCaller">244</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:36,552</td>
+<td class="Message">Bootstrapping Spring Data repositories in DEFAULT mode.</td>
+<td class="MethodOfCaller">registerRepositoriesIn</td>
+<td class="FileOfCaller">RepositoryConfigurationDelegate.java</td>
+<td class="LineOfCaller">126</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:36,825</td>
+<td class="Message">Finished Spring Data repository scanning in 254ms. Found 0 repository interfaces.</td>
+<td class="MethodOfCaller">registerRepositoriesIn</td>
+<td class="FileOfCaller">RepositoryConfigurationDelegate.java</td>
+<td class="LineOfCaller">182</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:37,237</td>
+<td class="Message">Bean &#39;shiroConfig&#39; of type [org.jeecg.config.ShiroConfig$$EnhancerBySpringCGLIB$$b03e7313] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:37,409</td>
+<td class="Message">Bean &#39;shiroRealm&#39; of type [org.jeecg.modules.shiro.authc.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:37,873</td>
+<td class="Message">===============(1)创建缓存管理器RedisCacheManager</td>
+<td class="MethodOfCaller">redisCacheManager</td>
+<td class="FileOfCaller">ShiroConfig.java</td>
+<td class="LineOfCaller">200</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:37,875</td>
+<td class="Message">===============(2)创建RedisManager,连接Redis..URL= 127.0.0.1:6379</td>
+<td class="MethodOfCaller">redisManager</td>
+<td class="FileOfCaller">ShiroConfig.java</td>
+<td class="LineOfCaller">218</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:37,879</td>
+<td class="Message">Bean &#39;redisManager&#39; of type [org.crazycake.shiro.RedisManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:37,886</td>
+<td class="Message">Bean &#39;securityManager&#39; of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:37,921</td>
+<td class="Message">Bean &#39;authorizationAttributeSourceAdvisor&#39; of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:37,992</td>
+<td class="Message">Bean &#39;org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration&#39; of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$9039097d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:38,171</td>
+<td class="Message">Bean &#39;spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties&#39; of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:38,177</td>
+<td class="Message">Bean &#39;com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration&#39; of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$f9c77a4e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:38,188</td>
+<td class="Message">Bean &#39;dsProcessor&#39; of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:38,197</td>
+<td class="Message">Bean &#39;dynamicDatasourceAnnotationAdvisor&#39; of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:38,223</td>
+<td class="Message">Bean &#39;spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties&#39; of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:38,232</td>
+<td class="Message">Bean &#39;org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration&#39; of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$a552c7c7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:38,391</td>
+<td class="Message">Bean &#39;lettuceClientResources&#39; of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:38,493</td>
+<td class="Message">Bean &#39;redisConnectionFactory&#39; of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:38,507</td>
+<td class="Message">Bean &#39;redisConfig&#39; of type [org.jeecg.config.RedisConfig$$EnhancerBySpringCGLIB$$fb0cfa5d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:38,544</td>
+<td class="Message">Bean &#39;org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration&#39; of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$a351e72d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:38,551</td>
+<td class="Message">Bean &#39;eventBus&#39; of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:39,053</td>
+<td class="Message">Tomcat initialized with port(s): 8080 (http)</td>
+<td class="MethodOfCaller">initialize</td>
+<td class="FileOfCaller">TomcatWebServer.java</td>
+<td class="LineOfCaller">90</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:39,072</td>
+<td class="Message">Initializing ProtocolHandler [&quot;http-nio-8080&quot;]</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:39,083</td>
+<td class="Message">Starting service [Tomcat]</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:39,083</td>
+<td class="Message">Starting Servlet engine: [Apache Tomcat/9.0.16]</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:39,090</td>
+<td class="Message">The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_171\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Java\jdk1.8.0_171\bin;C:\apache-maven-3.5.3\bin;C:\Program Files\Apache Software Foundation\Tomcat 9.0\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\dotnet\;C:\Users\cafebabe\ffmpeg-20181105-beaa350-win64-static\bin;C:\Program Files\TortoiseGit;C:\Users\cafebabe\nvm-noinstall;C:\Program Files\nodejs;C:\Program Files\nodejs\;C:\工具软件\Redis-x64-3.2.100;C:\;sers\cafebabe\flutter_windows_v1.7.8+hotfix.3-stable\flutter\bin;C:\Program Files\Git\cmd;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Users\cafebabe\AppData\Local\Microsoft\WindowsApps;C:\Users\cafebabe\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\cafebabe\AppData\Roaming\npm;C:\Users\cafebabe\AppData\Local\Programs\Fiddler;.]</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:39,335</td>
+<td class="Message">Initializing Spring embedded WebApplicationContext</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:39,336</td>
+<td class="Message">Root WebApplicationContext: initialization completed in 4877 ms</td>
+<td class="MethodOfCaller">prepareWebApplicationContext</td>
+<td class="FileOfCaller">ServletWebServerApplicationContext.java</td>
+<td class="LineOfCaller">296</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:39,716</td>
+<td class="Message">动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置</td>
+<td class="MethodOfCaller">&lt;init&gt;</td>
+<td class="FileOfCaller">DynamicDataSourceCreator.java</td>
+<td class="LineOfCaller">113</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:40,003</td>
+<td class="Message">{dataSource-1,master} inited</td>
+<td class="MethodOfCaller">init</td>
+<td class="FileOfCaller">DruidDataSource.java</td>
+<td class="LineOfCaller">1003</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:40,003</td>
+<td class="Message">初始共加载 1 个数据源</td>
+<td class="MethodOfCaller">afterPropertiesSet</td>
+<td class="FileOfCaller">DynamicRoutingDataSource.java</td>
+<td class="LineOfCaller">203</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:40,004</td>
+<td class="Message">动态数据源-加载 master 成功</td>
+<td class="MethodOfCaller">addDataSource</td>
+<td class="FileOfCaller">DynamicRoutingDataSource.java</td>
+<td class="LineOfCaller">142</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:40,004</td>
+<td class="Message">当前的默认数据源是单数据源，数据源名为 master</td>
+<td class="MethodOfCaller">afterPropertiesSet</td>
+<td class="FileOfCaller">DynamicRoutingDataSource.java</td>
+<td class="LineOfCaller">212</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:44,008</td>
+<td class="Message">Using default implementation for ThreadExecutor</td>
+<td class="MethodOfCaller">instantiate</td>
+<td class="FileOfCaller">StdSchedulerFactory.java</td>
+<td class="LineOfCaller">1208</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:44,023</td>
+<td class="Message">Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl</td>
+<td class="MethodOfCaller">&lt;init&gt;</td>
+<td class="FileOfCaller">SchedulerSignalerImpl.java</td>
+<td class="LineOfCaller">61</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:44,024</td>
+<td class="Message">Quartz Scheduler v.2.3.0 created.</td>
+<td class="MethodOfCaller">&lt;init&gt;</td>
+<td class="FileOfCaller">QuartzScheduler.java</td>
+<td class="LineOfCaller">229</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:44,030</td>
+<td class="Message">Using db table-based data access locking (synchronization).</td>
+<td class="MethodOfCaller">initialize</td>
+<td class="FileOfCaller">JobStoreSupport.java</td>
+<td class="LineOfCaller">672</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:44,033</td>
+<td class="Message">JobStoreCMT initialized.</td>
+<td class="MethodOfCaller">initialize</td>
+<td class="FileOfCaller">JobStoreCMT.java</td>
+<td class="LineOfCaller">145</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:44,034</td>
+<td class="Message">Scheduler meta-data: Quartz Scheduler (v2.3.0) &#39;quartzScheduler&#39; with instanceId &#39;NON_CLUSTERED&#39;
+  Scheduler class: &#39;org.quartz.core.QuartzScheduler&#39; - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool &#39;org.quartz.simpl.SimpleThreadPool&#39; - with 10 threads.
+  Using job-store &#39;org.springframework.scheduling.quartz.LocalDataSourceJobStore&#39; - which supports persistence. and is not clustered.
+</td>
+<td class="MethodOfCaller">initialize</td>
+<td class="FileOfCaller">QuartzScheduler.java</td>
+<td class="LineOfCaller">294</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:44,035</td>
+<td class="Message">Quartz scheduler &#39;quartzScheduler&#39; initialized from an externally provided properties instance.</td>
+<td class="MethodOfCaller">instantiate</td>
+<td class="FileOfCaller">StdSchedulerFactory.java</td>
+<td class="LineOfCaller">1362</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:44,035</td>
+<td class="Message">Quartz scheduler version: 2.3.0</td>
+<td class="MethodOfCaller">instantiate</td>
+<td class="FileOfCaller">StdSchedulerFactory.java</td>
+<td class="LineOfCaller">1366</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:44,035</td>
+<td class="Message">JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@7de2bdc7</td>
+<td class="MethodOfCaller">setJobFactory</td>
+<td class="FileOfCaller">QuartzScheduler.java</td>
+<td class="LineOfCaller">2287</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Level">WARN</td>
+<td class="Date">2020-03-20 16:07:47,076</td>
+<td class="Message">ElasticSearch 服务连接失败，原因：配置未通过。可能是BaseURL未配置或配置有误，也可能是Elasticsearch服务未启动。接下来将会拒绝执行任何方法！</td>
+<td class="MethodOfCaller">&lt;init&gt;</td>
+<td class="FileOfCaller">JeecgElasticsearchTemplate.java</td>
+<td class="LineOfCaller">61</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:49,505</td>
+<td class="Message">Exposing 2 endpoint(s) beneath base path &#39;/actuator&#39;</td>
+<td class="MethodOfCaller">&lt;init&gt;</td>
+<td class="FileOfCaller">EndpointLinksResolver.java</td>
+<td class="LineOfCaller">59</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:49,689</td>
+<td class="Message">Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity&lt;springfox.documentation.spring.web.json.Json&gt; springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]</td>
+<td class="MethodOfCaller">initHandlerMethods</td>
+<td class="FileOfCaller">PropertySourcedRequestMappingHandlerMapping.java</td>
+<td class="LineOfCaller">69</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:50,000</td>
+<td class="Message">Initializing ExecutorService &#39;applicationTaskExecutor&#39;</td>
+<td class="MethodOfCaller">initialize</td>
+<td class="FileOfCaller">ExecutorConfigurationSupport.java</td>
+<td class="LineOfCaller">171</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:50,969</td>
+<td class="Message">Context refreshed</td>
+<td class="MethodOfCaller">start</td>
+<td class="FileOfCaller">DocumentationPluginsBootstrapper.java</td>
+<td class="LineOfCaller">160</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:50,993</td>
+<td class="Message">Found 1 custom documentation plugin(s)</td>
+<td class="MethodOfCaller">start</td>
+<td class="FileOfCaller">DocumentationPluginsBootstrapper.java</td>
+<td class="LineOfCaller">163</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,060</td>
+<td class="Message">Scanning for api listing references</td>
+<td class="MethodOfCaller">scan</td>
+<td class="FileOfCaller">ApiListingReferenceScanner.java</td>
+<td class="LineOfCaller">41</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,249</td>
+<td class="Message">Generating unique operation named: addUsingPOST_1</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,251</td>
+<td class="Message">Generating unique operation named: deleteUsingDELETE_1</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,252</td>
+<td class="Message">Generating unique operation named: deleteBatchUsingDELETE_1</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,253</td>
+<td class="Message">Generating unique operation named: editUsingPUT_1</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,255</td>
+<td class="Message">Generating unique operation named: queryByIdUsingGET_1</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,267</td>
+<td class="Message">Generating unique operation named: addUsingPOST_2</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,268</td>
+<td class="Message">Generating unique operation named: deleteUsingDELETE_2</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,269</td>
+<td class="Message">Generating unique operation named: deleteBatchUsingDELETE_2</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,271</td>
+<td class="Message">Generating unique operation named: editUsingPUT_2</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,272</td>
+<td class="Message">Generating unique operation named: queryByIdUsingGET_2</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,281</td>
+<td class="Message">Generating unique operation named: queryPageListUsingGET_1</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,294</td>
+<td class="Message">Starting Quartz Scheduler now</td>
+<td class="MethodOfCaller">startScheduler</td>
+<td class="FileOfCaller">SchedulerFactoryBean.java</td>
+<td class="LineOfCaller">726</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,429</td>
+<td class="Message">Freed 0 triggers from &#39;acquired&#39; / &#39;blocked&#39; state.</td>
+<td class="MethodOfCaller">recoverJobs</td>
+<td class="FileOfCaller">JobStoreSupport.java</td>
+<td class="LineOfCaller">866</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,437</td>
+<td class="Message">Recovering 0 jobs that were in-progress at the time of the last shut-down.</td>
+<td class="MethodOfCaller">recoverJobs</td>
+<td class="FileOfCaller">JobStoreSupport.java</td>
+<td class="LineOfCaller">876</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,437</td>
+<td class="Message">Recovery complete.</td>
+<td class="MethodOfCaller">recoverJobs</td>
+<td class="FileOfCaller">JobStoreSupport.java</td>
+<td class="LineOfCaller">889</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,438</td>
+<td class="Message">Removed 0 &#39;complete&#39; triggers.</td>
+<td class="MethodOfCaller">recoverJobs</td>
+<td class="FileOfCaller">JobStoreSupport.java</td>
+<td class="LineOfCaller">896</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,440</td>
+<td class="Message">Removed 0 stale fired job entries.</td>
+<td class="MethodOfCaller">recoverJobs</td>
+<td class="FileOfCaller">JobStoreSupport.java</td>
+<td class="LineOfCaller">901</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,441</td>
+<td class="Message">Scheduler quartzScheduler_$_NON_CLUSTERED started.</td>
+<td class="MethodOfCaller">start</td>
+<td class="FileOfCaller">QuartzScheduler.java</td>
+<td class="LineOfCaller">547</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,458</td>
+<td class="Message">Starting ProtocolHandler [&quot;http-nio-8080&quot;]</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,488</td>
+<td class="Message">Tomcat started on port(s): 8080 (http) with context path &#39;/jeecg-boot&#39;</td>
+<td class="MethodOfCaller">start</td>
+<td class="FileOfCaller">TomcatWebServer.java</td>
+<td class="LineOfCaller">204</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,491</td>
+<td class="Message">Started JeecgApplication in 17.965 seconds (JVM running for 19.235)</td>
+<td class="MethodOfCaller">logStarted</td>
+<td class="FileOfCaller">StartupInfoLogger.java</td>
+<td class="LineOfCaller">59</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,505</td>
+<td class="Message">
+----------------------------------------------------------
+	Application Jeecg-Boot is running! Access URLs:
+	Local: 		http://localhost:8080/jeecg-boot/
+	External: 	http://192.168.1.105:8080/jeecg-boot/
+	swagger-ui: 		http://192.168.1.105:8080/jeecg-boot/doc.html
+----------------------------------------------------------</td>
+<td class="MethodOfCaller">main</td>
+<td class="FileOfCaller">JeecgApplication.java</td>
+<td class="LineOfCaller">33</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,724</td>
+<td class="Message">Initializing Spring DispatcherServlet &#39;dispatcherServlet&#39;</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,724</td>
+<td class="Message">Initializing Servlet &#39;dispatcherServlet&#39;</td>
+<td class="MethodOfCaller">initServletBean</td>
+<td class="FileOfCaller">FrameworkServlet.java</td>
+<td class="LineOfCaller">524</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,745</td>
+<td class="Message">Completed initialization in 20 ms</td>
+<td class="MethodOfCaller">initServletBean</td>
+<td class="FileOfCaller">FrameworkServlet.java</td>
+<td class="LineOfCaller">546</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,873</td>
+<td class="Message">Starting without optional epoll library</td>
+<td class="MethodOfCaller">&lt;clinit&gt;</td>
+<td class="FileOfCaller">EpollProvider.java</td>
+<td class="LineOfCaller">68</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:07:51,876</td>
+<td class="Message">Starting without optional kqueue library</td>
+<td class="MethodOfCaller">&lt;clinit&gt;</td>
+<td class="FileOfCaller">KqueueProvider.java</td>
+<td class="LineOfCaller">70</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:09:48,794</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:09:48,804</td>
+<td class="Message">==&gt; Parameters: admin(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:09:48,816</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:09:56,904</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:09:56,906</td>
+<td class="Message">==&gt; Parameters: admin(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:09:56,908</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,236</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,238</td>
+<td class="Message">==&gt; Parameters: admin(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,244</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,282</td>
+<td class="Message">==&gt;  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,285</td>
+<td class="Message">==&gt; Parameters: e9ca23d68d884d4ebb19d07889727dae(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,291</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,295</td>
+<td class="Message">==&gt;  Preparing: UPDATE sys_user SET org_code = ? where username = ? </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,297</td>
+<td class="Message">==&gt; Parameters: A03(String), admin(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,298</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,671</td>
+<td class="Message">==&gt;  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,680</td>
+<td class="Message">==&gt; Parameters: 1240913498137878529(String), 2020-03-20 16:10:07.316(Timestamp), 127.0.0.1(String), 用户名: admin,登录成功！(String), 1(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,686</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:07,732</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,743</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,744</td>
+<td class="Message">==&gt; Parameters: admin(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,747</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:07,810</td>
+<td class="Message"> ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">getUserPermissionByToken</td>
+<td class="FileOfCaller">SysPermissionController.java</td>
+<td class="LineOfCaller">182</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,818</td>
+<td class="Message">==&gt;  Preparing: SELECT p.* FROM sys_permission p WHERE exists( select a.id from sys_role_permission a join sys_role b on a.role_id = b.id join sys_user_role c on c.role_id = b.id join sys_user d on d.id = c.user_id where p.id = a.permission_id AND d.username = ? ) and p.del_flag = 0 order by p.sort_no ASC </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,823</td>
+<td class="Message">==&gt; Parameters: admin(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,849</td>
+<td class="Message">&lt;==      Total: 39</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,892</td>
+<td class="Message">==&gt;  Preparing: SELECT id,parent_id,name,perms,perms_type,icon,component,component_name,url,redirect,sort_no,menu_type,is_leaf AS leaf,is_route AS route,keep_alive,description,create_by,del_flag,rule_flag,hidden,create_time,update_by,update_time,status,always_show,internal_or_external FROM sys_permission WHERE del_flag = ? AND menu_type = ? </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,894</td>
+<td class="Message">==&gt; Parameters: 0(Integer), 2(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:07,896</td>
+<td class="Message">&lt;==      Total: 3</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:09,089</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:11,593</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:11,671</td>
+<td class="Message">--查询规则--&gt;copy_type = 0</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:11,894</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:11,916</td>
+<td class="Message"> dictCode : cgform_table_type</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">130</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:11,935</td>
+<td class="Message">无缓存dictCache的时候调用这里！</td>
+<td class="MethodOfCaller">queryDictItemsByCode</td>
+<td class="FileOfCaller">SysDictServiceImpl.java</td>
+<td class="LineOfCaller">51</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:11,938</td>
+<td class="Message">==&gt;  Preparing: select s.item_value as &quot;value&quot;,s.item_text as &quot;text&quot; from sys_dict_item s where dict_id = (select id from sys_dict where dict_code = ?) order by s.sort_order asc </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:11,943</td>
+<td class="Message">==&gt; Parameters: cgform_table_type(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 16:10:11,948</td>
+<td class="Message">&lt;==      Total: 3</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:11,957</td>
+<td class="Message">Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=单表), DictModel(value=2, text=主表), DictModel(value=3, text=附表)], timestamp=1584691811917)</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">163</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:12,266</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:12,280</td>
+<td class="Message"> dictCode : cgform_table_type</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">130</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:12,286</td>
+<td class="Message">Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=单表), DictModel(value=2, text=主表), DictModel(value=3, text=附表)], timestamp=1584691812281)</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">163</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:23,317</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:23,332</td>
+<td class="Message">--查询规则--&gt;copy_type = 0</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:30,089</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:30,719</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:30,727</td>
+<td class="Message">--查询规则--&gt;copy_type = 0</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:33,799</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:34,316</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:34,322</td>
+<td class="Message">--查询规则--&gt;copy_type = 0</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:38,479</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:38,937</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:38,948</td>
+<td class="Message">--查询规则--&gt;copy_type = 0</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:40,824</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:10:41,126</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:33,001</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:33,370</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:34,148</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:34,158</td>
+<td class="Message">--查询规则--&gt;copy_type = 0</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,649</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,686</td>
+<td class="Message">数据库表：【wx_swiper】已存在</td>
+<td class="MethodOfCaller">a</td>
+<td class="FileOfCaller">DbTableUtil.java</td>
+<td class="LineOfCaller">191</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,687</td>
+<td class="Message">==判断表是否存在消耗时间19毫秒</td>
+<td class="MethodOfCaller">doDbSynch</td>
+<td class="FileOfCaller">OnlCgformHeadServiceImpl.java</td>
+<td class="LineOfCaller">279</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,700</td>
+<td class="Message">getColumnMetadataFormDataBase ---&gt;COLUMN_NAME:ID TYPE_NAME :VARCHAR DECIMAL_DIGITS:0 COLUMN_SIZE:36</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">284</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,701</td>
+<td class="Message">getColumnMetadataFormDataBase ---&gt;COLUMN_NAME:CREATE_BY TYPE_NAME :VARCHAR DECIMAL_DIGITS:0 COLUMN_SIZE:50</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">284</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,705</td>
+<td class="Message">getColumnMetadataFormDataBase ---&gt;COLUMN_NAME:CREATE_TIME TYPE_NAME :DATETIME DECIMAL_DIGITS:0 COLUMN_SIZE:19</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">284</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,707</td>
+<td class="Message">getColumnMetadataFormDataBase ---&gt;COLUMN_NAME:UPDATE_BY TYPE_NAME :VARCHAR DECIMAL_DIGITS:0 COLUMN_SIZE:50</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">284</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,707</td>
+<td class="Message">getColumnMetadataFormDataBase ---&gt;COLUMN_NAME:UPDATE_TIME TYPE_NAME :DATETIME DECIMAL_DIGITS:0 COLUMN_SIZE:19</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">284</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,708</td>
+<td class="Message">getColumnMetadataFormDataBase ---&gt;COLUMN_NAME:SYS_ORG_CODE TYPE_NAME :VARCHAR DECIMAL_DIGITS:0 COLUMN_SIZE:64</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">284</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,708</td>
+<td class="Message">getColumnMetadataFormDataBase ---&gt;COLUMN_NAME:IMG TYPE_NAME :VARCHAR DECIMAL_DIGITS:0 COLUMN_SIZE:300</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">284</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,708</td>
+<td class="Message">getColumnMetadataFormDataBase ---&gt;COLUMN_NAME:TARGET_HREF TYPE_NAME :VARCHAR DECIMAL_DIGITS:0 COLUMN_SIZE:300</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">284</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,709</td>
+<td class="Message">getColumnMetadataFormDataBase ---&gt;COLUMN_NAME:TYPE TYPE_NAME :VARCHAR DECIMAL_DIGITS:0 COLUMN_SIZE:1</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">284</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,709</td>
+<td class="Message">getColumnMetadataFormDataBase ---&gt;COLUMN_NAME:NAME TYPE_NAME :VARCHAR DECIMAL_DIGITS:0 COLUMN_SIZE:64</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">284</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,709</td>
+<td class="Message">getColumnMetadataFormDataBase ---&gt;COLUMN_NAME:DISPLAY_ORDER TYPE_NAME :INT DECIMAL_DIGITS:0 COLUMN_SIZE:10</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">284</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,710</td>
+<td class="Message">getColumnMetadataFormDataBase ---&gt;COLUMN_NAME:DISPLAY TYPE_NAME :VARCHAR DECIMAL_DIGITS:0 COLUMN_SIZE:1</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">284</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,711</td>
+<td class="Message">getColumnMetadataFormCgForm ----&gt;COLUMN_NAME:id TYPE_NAME:string DECIMAL_DIGITS:0 COLUMN_SIZE:36</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">314</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,711</td>
+<td class="Message">getColumnMetadataFormCgForm ----&gt;COLUMN_NAME:create_by TYPE_NAME:string DECIMAL_DIGITS:0 COLUMN_SIZE:50</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">314</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,712</td>
+<td class="Message">getColumnMetadataFormCgForm ----&gt;COLUMN_NAME:create_time TYPE_NAME:date DECIMAL_DIGITS:0 COLUMN_SIZE:20</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">314</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,712</td>
+<td class="Message">getColumnMetadataFormCgForm ----&gt;COLUMN_NAME:update_by TYPE_NAME:string DECIMAL_DIGITS:0 COLUMN_SIZE:50</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">314</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,712</td>
+<td class="Message">getColumnMetadataFormCgForm ----&gt;COLUMN_NAME:update_time TYPE_NAME:date DECIMAL_DIGITS:0 COLUMN_SIZE:20</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">314</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,712</td>
+<td class="Message">getColumnMetadataFormCgForm ----&gt;COLUMN_NAME:sys_org_code TYPE_NAME:string DECIMAL_DIGITS:0 COLUMN_SIZE:64</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">314</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,713</td>
+<td class="Message">getColumnMetadataFormCgForm ----&gt;COLUMN_NAME:img TYPE_NAME:string DECIMAL_DIGITS:0 COLUMN_SIZE:300</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">314</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,713</td>
+<td class="Message">getColumnMetadataFormCgForm ----&gt;COLUMN_NAME:target_href TYPE_NAME:string DECIMAL_DIGITS:0 COLUMN_SIZE:300</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">314</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,713</td>
+<td class="Message">getColumnMetadataFormCgForm ----&gt;COLUMN_NAME:type TYPE_NAME:string DECIMAL_DIGITS:0 COLUMN_SIZE:1</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">314</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,713</td>
+<td class="Message">getColumnMetadataFormCgForm ----&gt;COLUMN_NAME:name TYPE_NAME:string DECIMAL_DIGITS:0 COLUMN_SIZE:64</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">314</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,713</td>
+<td class="Message">getColumnMetadataFormCgForm ----&gt;COLUMN_NAME:display_order TYPE_NAME:int DECIMAL_DIGITS:0 COLUMN_SIZE:2</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">314</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,714</td>
+<td class="Message">getColumnMetadataFormCgForm ----&gt;COLUMN_NAME:display TYPE_NAME:string DECIMAL_DIGITS:0 COLUMN_SIZE:1</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">314</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,714</td>
+<td class="Message">getColumnMetadataFormCgForm ----&gt;COLUMN_NAME:content TYPE_NAME:text DECIMAL_DIGITS:0 COLUMN_SIZE:0</td>
+<td class="MethodOfCaller">c</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">314</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,714</td>
+<td class="Message">[alter table  wx_swiper  MODIFY COLUMN img varchar(300) NULL COMMENT &#39;广告图&#39; ;, alter table  wx_swiper  MODIFY COLUMN target_href varchar(300) NULL COMMENT &#39;跳转地址&#39; ;, alter table  wx_swiper  MODIFY COLUMN create_time datetime NULL COMMENT &#39;创建日期&#39; ;, alter table  wx_swiper  MODIFY COLUMN display varchar(1) NULL COMMENT &#39;是否展示&#39; DEFAULT 0;, alter table  wx_swiper  MODIFY COLUMN display_order int(2) NULL COMMENT &#39;轮播顺序&#39; DEFAULT 0;, alter table  wx_swiper  MODIFY COLUMN type varchar(1) NULL COMMENT &#39;类型&#39; ;, alter table  wx_swiper  ADD COLUMN content text NULL COMMENT &#39;内容&#39; ;, , alter table  wx_swiper  MODIFY COLUMN update_time datetime NULL COMMENT &#39;更新日期&#39; ;, alter table  wx_swiper  MODIFY COLUMN name varchar(64) NULL COMMENT &#39;名称&#39; ;, alter table  wx_swiper  MODIFY COLUMN id varchar(36) NOT NULL COMMENT &#39;主键&#39; ;, ]</td>
+<td class="MethodOfCaller">b</td>
+<td class="FileOfCaller">DbTableProcess.java</td>
+<td class="LineOfCaller">218</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:38,916</td>
+<td class="Message">==同步数据库消耗时间258毫秒</td>
+<td class="MethodOfCaller">g</td>
+<td class="FileOfCaller">OnlCgformApiController.java</td>
+<td class="LineOfCaller">601</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:39,276</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:39,282</td>
+<td class="Message">--查询规则--&gt;copy_type = 0</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:52,732</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:52,731</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:57,206</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:57,339</td>
+<td class="Message">----jeecg---Code----Generation----[单表模型:wx_swiper]------- 生成中。。。</td>
+<td class="MethodOfCaller">generateCodeFile</td>
+<td class="FileOfCaller">CodeGenerateOne.java</td>
+<td class="LineOfCaller">122</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:57,341</td>
+<td class="Message">code template data: {primaryKeyPolicy=java.lang.String, serialVersionUID=5134317745483057800, entityPackage=wx, entityName=WxSwiper, primaryKeyField=id, columns=[{&quot;fieldDbName&quot;:&quot;img&quot;,&quot;fieldName&quot;:&quot;img&quot;,&quot;filedComment&quot;:&quot;广告图&quot;,&quot;fieldType&quot;:&quot;java.lang.String&quot;,&quot;fieldDbType&quot;:&quot;String&quot;,&quot;classType&quot;:&quot;image&quot;,&quot;classType_row&quot;:&quot;image&quot;,&quot;optionType&quot;:&quot;&quot;,&quot;charmaxLength&quot;:&quot;&quot;,&quot;precision&quot;:&quot;null&quot;,&quot;scale&quot;:&quot;null&quot;,&quot;nullable&quot;:&quot;N&quot;,&quot;fieldLength&quot;:&quot;120&quot;,&quot;fieldHref&quot;:&quot;&quot;,&quot;fieldValidType&quot;:&quot;*&quot;,&quot;fieldDefault&quot;:&quot;&quot;,&quot;fieldShowType&quot;:&quot;image&quot;,&quot;fieldOrderNum&quot;:&quot;7&quot;,&quot;isKey&quot;:&quot;N&quot;,&quot;isShow&quot;:&quot;Y&quot;,&quot;isShowList&quot;:&quot;Y&quot;,&quot;isQuery&quot;:&quot;N&quot;,&quot;queryMode&quot;:&quot;single&quot;,&quot;dictField&quot;:&quot;&quot;,&quot;dictTable&quot;:&quot;&quot;,&quot;dictText&quot;:&quot;&quot;}, {&quot;fieldDbName&quot;:&quot;target_href&quot;,&quot;fieldName&quot;:&quot;targetHref&quot;,&quot;filedComment&quot;:&quot;跳转地址&quot;,&quot;fieldType&quot;:&quot;java.lang.String&quot;,&quot;fieldDbType&quot;:&quot;String&quot;,&quot;classType&quot;:&quot;text&quot;,&quot;classType_row&quot;:&quot;text&quot;,&quot;optionType&quot;:&quot;&quot;,&quot;charmaxLength&quot;:&quot;&quot;,&quot;precision&quot;:&quot;null&quot;,&quot;scale&quot;:&quot;null&quot;,&quot;nullable&quot;:&quot;Y&quot;,&quot;fieldLength&quot;:&quot;120&quot;,&quot;fieldHref&quot;:&quot;&quot;,&quot;fieldValidType&quot;:&quot;null&quot;,&quot;fieldDefault&quot;:&quot;&quot;,&quot;fieldShowType&quot;:&quot;text&quot;,&quot;fieldOrderNum&quot;:&quot;8&quot;,&quot;isKey&quot;:&quot;N&quot;,&quot;isShow&quot;:&quot;Y&quot;,&quot;isShowList&quot;:&quot;Y&quot;,&quot;isQuery&quot;:&quot;N&quot;,&quot;queryMode&quot;:&quot;single&quot;,&quot;dictField&quot;:&quot;&quot;,&quot;dictTable&quot;:&quot;&quot;,&quot;dictText&quot;:&quot;&quot;}, {&quot;fieldDbName&quot;:&quot;type&quot;,&quot;fieldName&quot;:&quot;type&quot;,&quot;filedComment&quot;:&quot;类型&quot;,&quot;fieldType&quot;:&quot;java.lang.String&quot;,&quot;fieldDbType&quot;:&quot;String&quot;,&quot;classType&quot;:&quot;list&quot;,&quot;classType_row&quot;:&quot;list&quot;,&quot;optionType&quot;:&quot;&quot;,&quot;charmaxLength&quot;:&quot;&quot;,&quot;precision&quot;:&quot;null&quot;,&quot;scale&quot;:&quot;null&quot;,&quot;nullable&quot;:&quot;N&quot;,&quot;fieldLength&quot;:&quot;120&quot;,&quot;fieldHref&quot;:&quot;&quot;,&quot;fieldValidType&quot;:&quot;*&quot;,&quot;fieldDefault&quot;:&quot;&quot;,&quot;fieldShowType&quot;:&quot;list&quot;,&quot;fieldOrderNum&quot;:&quot;9&quot;,&quot;isKey&quot;:&quot;N&quot;,&quot;isShow&quot;:&quot;Y&quot;,&quot;isShowList&quot;:&quot;Y&quot;,&quot;isQuery&quot;:&quot;N&quot;,&quot;queryMode&quot;:&quot;single&quot;,&quot;dictField&quot;:&quot;swiper_type&quot;,&quot;dictTable&quot;:&quot;&quot;,&quot;dictText&quot;:&quot;&quot;}, {&quot;fieldDbName&quot;:&quot;name&quot;,&quot;fieldName&quot;:&quot;name&quot;,&quot;filedComment&quot;:&quot;名称&quot;,&quot;fieldType&quot;:&quot;java.lang.String&quot;,&quot;fieldDbType&quot;:&quot;String&quot;,&quot;classType&quot;:&quot;text&quot;,&quot;classType_row&quot;:&quot;text&quot;,&quot;optionType&quot;:&quot;&quot;,&quot;charmaxLength&quot;:&quot;&quot;,&quot;precision&quot;:&quot;null&quot;,&quot;scale&quot;:&quot;null&quot;,&quot;nullable&quot;:&quot;N&quot;,&quot;fieldLength&quot;:&quot;120&quot;,&quot;fieldHref&quot;:&quot;&quot;,&quot;fieldValidType&quot;:&quot;*&quot;,&quot;fieldDefault&quot;:&quot;&quot;,&quot;fieldShowType&quot;:&quot;text&quot;,&quot;fieldOrderNum&quot;:&quot;10&quot;,&quot;isKey&quot;:&quot;N&quot;,&quot;isShow&quot;:&quot;Y&quot;,&quot;isShowList&quot;:&quot;Y&quot;,&quot;isQuery&quot;:&quot;N&quot;,&quot;queryMode&quot;:&quot;single&quot;,&quot;dictField&quot;:&quot;&quot;,&quot;dictTable&quot;:&quot;&quot;,&quot;dictText&quot;:&quot;&quot;}, {&quot;fieldDbName&quot;:&quot;display_order&quot;,&quot;fieldName&quot;:&quot;displayOrder&quot;,&quot;filedComment&quot;:&quot;轮播顺序&quot;,&quot;fieldType&quot;:&quot;java.lang.Integer&quot;,&quot;fieldDbType&quot;:&quot;int&quot;,&quot;classType&quot;:&quot;text&quot;,&quot;classType_row&quot;:&quot;text&quot;,&quot;optionType&quot;:&quot;&quot;,&quot;charmaxLength&quot;:&quot;&quot;,&quot;precision&quot;:&quot;null&quot;,&quot;scale&quot;:&quot;null&quot;,&quot;nullable&quot;:&quot;N&quot;,&quot;fieldLength&quot;:&quot;120&quot;,&quot;fieldHref&quot;:&quot;&quot;,&quot;fieldValidType&quot;:&quot;n&quot;,&quot;fieldDefault&quot;:&quot;0&quot;,&quot;fieldShowType&quot;:&quot;text&quot;,&quot;fieldOrderNum&quot;:&quot;11&quot;,&quot;isKey&quot;:&quot;N&quot;,&quot;isShow&quot;:&quot;Y&quot;,&quot;isShowList&quot;:&quot;Y&quot;,&quot;isQuery&quot;:&quot;N&quot;,&quot;queryMode&quot;:&quot;single&quot;,&quot;dictField&quot;:&quot;&quot;,&quot;dictTable&quot;:&quot;&quot;,&quot;dictText&quot;:&quot;&quot;}, {&quot;fieldDbName&quot;:&quot;display&quot;,&quot;fieldName&quot;:&quot;display&quot;,&quot;filedComment&quot;:&quot;是否展示&quot;,&quot;fieldType&quot;:&quot;java.lang.String&quot;,&quot;fieldDbType&quot;:&quot;String&quot;,&quot;classType&quot;:&quot;list&quot;,&quot;classType_row&quot;:&quot;list&quot;,&quot;optionType&quot;:&quot;&quot;,&quot;charmaxLength&quot;:&quot;&quot;,&quot;precision&quot;:&quot;null&quot;,&quot;scale&quot;:&quot;null&quot;,&quot;nullable&quot;:&quot;N&quot;,&quot;fieldLength&quot;:&quot;120&quot;,&quot;fieldHref&quot;:&quot;&quot;,&quot;fieldValidType&quot;:&quot;*&quot;,&quot;fieldDefault&quot;:&quot;0&quot;,&quot;fieldShowType&quot;:&quot;list&quot;,&quot;fieldOrderNum&quot;:&quot;12&quot;,&quot;isKey&quot;:&quot;N&quot;,&quot;isShow&quot;:&quot;Y&quot;,&quot;isShowList&quot;:&quot;Y&quot;,&quot;isQuery&quot;:&quot;N&quot;,&quot;queryMode&quot;:&quot;single&quot;,&quot;dictField&quot;:&quot;display_type&quot;,&quot;dictTable&quot;:&quot;&quot;,&quot;dictText&quot;:&quot;&quot;}, {&quot;fieldDbName&quot;:&quot;content&quot;,&quot;fieldName&quot;:&quot;content&quot;,&quot;filedComment&quot;:&quot;内容&quot;,&quot;fieldType&quot;:&quot;java.lang.String&quot;,&quot;fieldDbType&quot;:&quot;Text&quot;,&quot;classType&quot;:&quot;umeditor&quot;,&quot;classType_row&quot;:&quot;umeditor&quot;,&quot;optionType&quot;:&quot;&quot;,&quot;charmaxLength&quot;:&quot;&quot;,&quot;precision&quot;:&quot;null&quot;,&quot;scale&quot;:&quot;null&quot;,&quot;nullable&quot;:&quot;Y&quot;,&quot;fieldLength&quot;:&quot;120&quot;,&quot;fieldHref&quot;:&quot;&quot;,&quot;fieldValidType&quot;:&quot;null&quot;,&quot;fieldDefault&quot;:&quot;&quot;,&quot;fieldShowType&quot;:&quot;umeditor&quot;,&quot;fieldOrderNum&quot;:&quot;13&quot;,&quot;isKey&quot;:&quot;N&quot;,&quot;isShow&quot;:&quot;Y&quot;,&quot;isShowList&quot;:&quot;Y&quot;,&quot;isQuery&quot;:&quot;N&quot;,&quot;queryMode&quot;:&quot;single&quot;,&quot;dictField&quot;:&quot;&quot;,&quot;dictTable&quot;:&quot;&quot;,&quot;dictText&quot;:&quot;&quot;}], tableVo={&quot;tableName&quot;:&quot;wx_swiper&quot;,&quot;ftlDescription&quot;:&quot;首页轮播图管理&quot;,&quot;primaryKeyPolicy&quot;:&quot;null&quot;,&quot;sequenceCode&quot;:&quot;null&quot;,&quot;entityPackage&quot;:&quot;wx&quot;,&quot;entityName&quot;:&quot;WxSwiper&quot;,&quot;fieldRowNum&quot;:&quot;1&quot;,&quot;searchFieldNum&quot;:&quot;-1&quot;,&quot;fieldRequiredNum&quot;:&quot;4&quot;}, originalColumns=[{&quot;fieldDbName&quot;:&quot;id&quot;,&quot;fieldName&quot;:&quot;id&quot;,&quot;filedComment&quot;:&quot;主键&quot;,&quot;fieldType&quot;:&quot;java.lang.String&quot;,&quot;fieldDbType&quot;:&quot;string&quot;,&quot;classType&quot;:&quot;text&quot;,&quot;classType_row&quot;:&quot;text&quot;,&quot;optionType&quot;:&quot;&quot;,&quot;charmaxLength&quot;:&quot;&quot;,&quot;precision&quot;:&quot;null&quot;,&quot;scale&quot;:&quot;null&quot;,&quot;nullable&quot;:&quot;N&quot;,&quot;fieldLength&quot;:&quot;120&quot;,&quot;fieldHref&quot;:&quot;&quot;,&quot;fieldValidType&quot;:&quot;null&quot;,&quot;fieldDefault&quot;:&quot;&quot;,&quot;fieldShowType&quot;:&quot;text&quot;,&quot;fieldOrderNum&quot;:&quot;1&quot;,&quot;isKey&quot;:&quot;Y&quot;,&quot;isShow&quot;:&quot;N&quot;,&quot;isShowList&quot;:&quot;N&quot;,&quot;isQuery&quot;:&quot;N&quot;,&quot;queryMode&quot;:&quot;single&quot;,&quot;dictField&quot;:&quot;&quot;,&quot;dictTable&quot;:&quot;&quot;,&quot;dictText&quot;:&quot;&quot;}, {&quot;fieldDbName&quot;:&quot;create_by&quot;,&quot;fieldName&quot;:&quot;createBy&quot;,&quot;filedComment&quot;:&quot;创建人&quot;,&quot;fieldType&quot;:&quot;java.lang.String&quot;,&quot;fieldDbType&quot;:&quot;string&quot;,&quot;classType&quot;:&quot;text&quot;,&quot;classType_row&quot;:&quot;text&quot;,&quot;optionType&quot;:&quot;&quot;,&quot;charmaxLength&quot;:&quot;&quot;,&quot;precision&quot;:&quot;null&quot;,&quot;scale&quot;:&quot;null&quot;,&quot;nullable&quot;:&quot;Y&quot;,&quot;fieldLength&quot;:&quot;120&quot;,&quot;fieldHref&quot;:&quot;&quot;,&quot;fieldValidType&quot;:&quot;null&quot;,&quot;fieldDefault&quot;:&quot;&quot;,&quot;fieldShowType&quot;:&quot;text&quot;,&quot;fieldOrderNum&quot;:&quot;2&quot;,&quot;isKey&quot;:&quot;N&quot;,&quot;isShow&quot;:&quot;N&quot;,&quot;isShowList&quot;:&quot;N&quot;,&quot;isQuery&quot;:&quot;N&quot;,&quot;queryMode&quot;:&quot;single&quot;,&quot;dictField&quot;:&quot;&quot;,&quot;dictTable&quot;:&quot;&quot;,&quot;dictText&quot;:&quot;&quot;}, {&quot;fieldDbName&quot;:&quot;create_time&quot;,&quot;fieldName&quot;:&quot;createTime&quot;,&quot;filedComment&quot;:&quot;创建日期&quot;,&quot;fieldType&quot;:&quot;java.util.Date&quot;,&quot;fieldDbType&quot;:&quot;Date&quot;,&quot;classType&quot;:&quot;datetime&quot;,&quot;classType_row&quot;:&quot;datetime&quot;,&quot;optionType&quot;:&quot;&quot;,&quot;charmaxLength&quot;:&quot;&quot;,&quot;precision&quot;:&quot;null&quot;,&quot;scale&quot;:&quot;null&quot;,&quot;nullable&quot;:&quot;Y&quot;,&quot;fieldLength&quot;:&quot;120&quot;,&quot;fieldHref&quot;:&quot;&quot;,&quot;fieldValidType&quot;:&quot;null&quot;,&quot;fieldDefault&quot;:&quot;&quot;,&quot;fieldShowType&quot;:&quot;datetime&quot;,&quot;fieldOrderNum&quot;:&quot;3&quot;,&quot;isKey&quot;:&quot;N&quot;,&quot;isShow&quot;:&quot;N&quot;,&quot;isShowList&quot;:&quot;N&quot;,&quot;isQuery&quot;:&quot;N&quot;,&quot;queryMode&quot;:&quot;single&quot;,&quot;dictField&quot;:&quot;&quot;,&quot;dictTable&quot;:&quot;&quot;,&quot;dictText&quot;:&quot;&quot;}, {&quot;fieldDbName&quot;:&quot;update_by&quot;,&quot;fieldName&quot;:&quot;updateBy&quot;,&quot;filedComment&quot;:&quot;更新人&quot;,&quot;fieldType&quot;:&quot;java.lang.String&quot;,&quot;fieldDbType&quot;:&quot;string&quot;,&quot;classType&quot;:&quot;text&quot;,&quot;classType_row&quot;:&quot;text&quot;,&quot;optionType&quot;:&quot;&quot;,&quot;charmaxLength&quot;:&quot;&quot;,&quot;precision&quot;:&quot;null&quot;,&quot;scale&quot;:&quot;null&quot;,&quot;nullable&quot;:&quot;Y&quot;,&quot;fieldLength&quot;:&quot;120&quot;,&quot;fieldHref&quot;:&quot;&quot;,&quot;fieldValidType&quot;:&quot;null&quot;,&quot;fieldDefault&quot;:&quot;&quot;,&quot;fieldShowType&quot;:&quot;text&quot;,&quot;fieldOrderNum&quot;:&quot;4&quot;,&quot;isKey&quot;:&quot;N&quot;,&quot;isShow&quot;:&quot;N&quot;,&quot;isShowList&quot;:&quot;N&quot;,&quot;isQuery&quot;:&quot;N&quot;,&quot;queryMode&quot;:&quot;single&quot;,&quot;dictField&quot;:&quot;&quot;,&quot;dictTable&quot;:&quot;&quot;,&quot;dictText&quot;:&quot;&quot;}, {&quot;fieldDbName&quot;:&quot;update_time&quot;,&quot;fieldName&quot;:&quot;updateTime&quot;,&quot;filedComment&quot;:&quot;更新日期&quot;,&quot;fieldType&quot;:&quot;java.util.Date&quot;,&quot;fieldDbType&quot;:&quot;Date&quot;,&quot;classType&quot;:&quot;datetime&quot;,&quot;classType_row&quot;:&quot;datetime&quot;,&quot;optionType&quot;:&quot;&quot;,&quot;charmaxLength&quot;:&quot;&quot;,&quot;precision&quot;:&quot;null&quot;,&quot;scale&quot;:&quot;null&quot;,&quot;nullable&quot;:&quot;Y&quot;,&quot;fieldLength&quot;:&quot;120&quot;,&quot;fieldHref&quot;:&quot;&quot;,&quot;fieldValidType&quot;:&quot;null&quot;,&quot;fieldDefault&quot;:&quot;&quot;,&quot;fieldShowType&quot;:&quot;datetime&quot;,&quot;fieldOrderNum&quot;:&quot;5&quot;,&quot;isKey&quot;:&quot;N&quot;,&quot;isShow&quot;:&quot;N&quot;,&quot;isShowList&quot;:&quot;N&quot;,&quot;isQuery&quot;:&quot;N&quot;,&quot;queryMode&quot;:&quot;single&quot;,&quot;dictField&quot;:&quot;&quot;,&quot;dictTable&quot;:&quot;&quot;,&quot;dictText&quot;:&quot;&quot;}, {&quot;fieldDbName&quot;:&quot;sys_org_code&quot;,&quot;fieldName&quot;:&quot;sysOrgCode&quot;,&quot;filedComment&quot;:&quot;所属部门&quot;,&quot;fieldType&quot;:&quot;java.lang.String&quot;,&quot;fieldDbType&quot;:&quot;string&quot;,&quot;classType&quot;:&quot;text&quot;,&quot;classType_row&quot;:&quot;text&quot;,&quot;optionType&quot;:&quot;&quot;,&quot;charmaxLength&quot;:&quot;&quot;,&quot;precision&quot;:&quot;null&quot;,&quot;scale&quot;:&quot;null&quot;,&quot;nullable&quot;:&quot;Y&quot;,&quot;fieldLength&quot;:&quot;120&quot;,&quot;fieldHref&quot;:&quot;&quot;,&quot;fieldValidType&quot;:&quot;null&quot;,&quot;fieldDefault&quot;:&quot;&quot;,&quot;fieldShowType&quot;:&quot;text&quot;,&quot;fieldOrderNum&quot;:&quot;6&quot;,&quot;isKey&quot;:&quot;N&quot;,&quot;isShow&quot;:&quot;N&quot;,&quot;isShowList&quot;:&quot;N&quot;,&quot;isQuery&quot;:&quot;N&quot;,&quot;queryMode&quot;:&quot;single&quot;,&quot;dictField&quot;:&quot;&quot;,&quot;dictTable&quot;:&quot;&quot;,&quot;dictText&quot;:&quot;&quot;}, {&quot;fieldDbName&quot;:&quot;img&quot;,&quot;fieldName&quot;:&quot;img&quot;,&quot;filedComment&quot;:&quot;广告图&quot;,&quot;fieldType&quot;:&quot;java.lang.String&quot;,&quot;fieldDbType&quot;:&quot;String&quot;,&quot;classType&quot;:&quot;image&quot;,&quot;classType_row&quot;:&quot;image&quot;,&quot;optionType&quot;:&quot;&quot;,&quot;charmaxLength&quot;:&quot;&quot;,&quot;precision&quot;:&quot;null&quot;,&quot;scale&quot;:&quot;null&quot;,&quot;nullable&quot;:&quot;N&quot;,&quot;fieldLength&quot;:&quot;120&quot;,&quot;fieldHref&quot;:&quot;&quot;,&quot;fieldValidType&quot;:&quot;*&quot;,&quot;fieldDefault&quot;:&quot;&quot;,&quot;fieldShowType&quot;:&quot;image&quot;,&quot;fieldOrderNum&quot;:&quot;7&quot;,&quot;isKey&quot;:&quot;N&quot;,&quot;isShow&quot;:&quot;Y&quot;,&quot;isShowList&quot;:&quot;Y&quot;,&quot;isQuery&quot;:&quot;N&quot;,&quot;queryMode&quot;:&quot;single&quot;,&quot;dictField&quot;:&quot;&quot;,&quot;dictTable&quot;:&quot;&quot;,&quot;dictText&quot;:&quot;&quot;}, {&quot;fieldDbName&quot;:&quot;target_href&quot;,&quot;fieldName&quot;:&quot;targetHref&quot;,&quot;filedComment&quot;:&quot;跳转地址&quot;,&quot;fieldType&quot;:&quot;java.lang.String&quot;,&quot;fieldDbType&quot;:&quot;String&quot;,&quot;classType&quot;:&quot;text&quot;,&quot;classType_row&quot;:&quot;text&quot;,&quot;optionType&quot;:&quot;&quot;,&quot;charmaxLength&quot;:&quot;&quot;,&quot;precision&quot;:&quot;null&quot;,&quot;scale&quot;:&quot;null&quot;,&quot;nullable&quot;:&quot;Y&quot;,&quot;fieldLength&quot;:&quot;120&quot;,&quot;fieldHref&quot;:&quot;&quot;,&quot;fieldValidType&quot;:&quot;null&quot;,&quot;fieldDefault&quot;:&quot;&quot;,&quot;fieldShowType&quot;:&quot;text&quot;,&quot;fieldOrderNum&quot;:&quot;8&quot;,&quot;isKey&quot;:&quot;N&quot;,&quot;isShow&quot;:&quot;Y&quot;,&quot;isShowList&quot;:&quot;Y&quot;,&quot;isQuery&quot;:&quot;N&quot;,&quot;queryMode&quot;:&quot;single&quot;,&quot;dictField&quot;:&quot;&quot;,&quot;dictTable&quot;:&quot;&quot;,&quot;dictText&quot;:&quot;&quot;}, {&quot;fieldDbName&quot;:&quot;type&quot;,&quot;fieldName&quot;:&quot;type&quot;,&quot;filedComment&quot;:&quot;类型&quot;,&quot;fieldType&quot;:&quot;java.lang.String&quot;,&quot;fieldDbType&quot;:&quot;String&quot;,&quot;classType&quot;:&quot;list&quot;,&quot;classType_row&quot;:&quot;list&quot;,&quot;optionType&quot;:&quot;&quot;,&quot;charmaxLength&quot;:&quot;&quot;,&quot;precision&quot;:&quot;null&quot;,&quot;scale&quot;:&quot;null&quot;,&quot;nullable&quot;:&quot;N&quot;,&quot;fieldLength&quot;:&quot;120&quot;,&quot;fieldHref&quot;:&quot;&quot;,&quot;fieldValidType&quot;:&quot;*&quot;,&quot;fieldDefault&quot;:&quot;&quot;,&quot;fieldShowType&quot;:&quot;list&quot;,&quot;fieldOrderNum&quot;:&quot;9&quot;,&quot;isKey&quot;:&quot;N&quot;,&quot;isShow&quot;:&quot;Y&quot;,&quot;isShowList&quot;:&quot;Y&quot;,&quot;isQuery&quot;:&quot;N&quot;,&quot;queryMode&quot;:&quot;single&quot;,&quot;dictField&quot;:&quot;swiper_type&quot;,&quot;dictTable&quot;:&quot;&quot;,&quot;dictText&quot;:&quot;&quot;}, {&quot;fieldDbName&quot;:&quot;name&quot;,&quot;fieldName&quot;:&quot;name&quot;,&quot;filedComment&quot;:&quot;名称&quot;,&quot;fieldType&quot;:&quot;java.lang.String&quot;,&quot;fieldDbType&quot;:&quot;String&quot;,&quot;classType&quot;:&quot;text&quot;,&quot;classType_row&quot;:&quot;text&quot;,&quot;optionType&quot;:&quot;&quot;,&quot;charmaxLength&quot;:&quot;&quot;,&quot;precision&quot;:&quot;null&quot;,&quot;scale&quot;:&quot;null&quot;,&quot;nullable&quot;:&quot;N&quot;,&quot;fieldLength&quot;:&quot;120&quot;,&quot;fieldHref&quot;:&quot;&quot;,&quot;fieldValidType&quot;:&quot;*&quot;,&quot;fieldDefault&quot;:&quot;&quot;,&quot;fieldShowType&quot;:&quot;text&quot;,&quot;fieldOrderNum&quot;:&quot;10&quot;,&quot;isKey&quot;:&quot;N&quot;,&quot;isShow&quot;:&quot;Y&quot;,&quot;isShowList&quot;:&quot;Y&quot;,&quot;isQuery&quot;:&quot;N&quot;,&quot;queryMode&quot;:&quot;single&quot;,&quot;dictField&quot;:&quot;&quot;,&quot;dictTable&quot;:&quot;&quot;,&quot;dictText&quot;:&quot;&quot;}, {&quot;fieldDbName&quot;:&quot;display_order&quot;,&quot;fieldName&quot;:&quot;displayOrder&quot;,&quot;filedComment&quot;:&quot;轮播顺序&quot;,&quot;fieldType&quot;:&quot;java.lang.Integer&quot;,&quot;fieldDbType&quot;:&quot;int&quot;,&quot;classType&quot;:&quot;text&quot;,&quot;classType_row&quot;:&quot;text&quot;,&quot;optionType&quot;:&quot;&quot;,&quot;charmaxLength&quot;:&quot;&quot;,&quot;precision&quot;:&quot;null&quot;,&quot;scale&quot;:&quot;null&quot;,&quot;nullable&quot;:&quot;N&quot;,&quot;fieldLength&quot;:&quot;120&quot;,&quot;fieldHref&quot;:&quot;&quot;,&quot;fieldValidType&quot;:&quot;n&quot;,&quot;fieldDefault&quot;:&quot;0&quot;,&quot;fieldShowType&quot;:&quot;text&quot;,&quot;fieldOrderNum&quot;:&quot;11&quot;,&quot;isKey&quot;:&quot;N&quot;,&quot;isShow&quot;:&quot;Y&quot;,&quot;isShowList&quot;:&quot;Y&quot;,&quot;isQuery&quot;:&quot;N&quot;,&quot;queryMode&quot;:&quot;single&quot;,&quot;dictField&quot;:&quot;&quot;,&quot;dictTable&quot;:&quot;&quot;,&quot;dictText&quot;:&quot;&quot;}, {&quot;fieldDbName&quot;:&quot;display&quot;,&quot;fieldName&quot;:&quot;display&quot;,&quot;filedComment&quot;:&quot;是否展示&quot;,&quot;fieldType&quot;:&quot;java.lang.String&quot;,&quot;fieldDbType&quot;:&quot;String&quot;,&quot;classType&quot;:&quot;list&quot;,&quot;classType_row&quot;:&quot;list&quot;,&quot;optionType&quot;:&quot;&quot;,&quot;charmaxLength&quot;:&quot;&quot;,&quot;precision&quot;:&quot;null&quot;,&quot;scale&quot;:&quot;null&quot;,&quot;nullable&quot;:&quot;N&quot;,&quot;fieldLength&quot;:&quot;120&quot;,&quot;fieldHref&quot;:&quot;&quot;,&quot;fieldValidType&quot;:&quot;*&quot;,&quot;fieldDefault&quot;:&quot;0&quot;,&quot;fieldShowType&quot;:&quot;list&quot;,&quot;fieldOrderNum&quot;:&quot;12&quot;,&quot;isKey&quot;:&quot;N&quot;,&quot;isShow&quot;:&quot;Y&quot;,&quot;isShowList&quot;:&quot;Y&quot;,&quot;isQuery&quot;:&quot;N&quot;,&quot;queryMode&quot;:&quot;single&quot;,&quot;dictField&quot;:&quot;display_type&quot;,&quot;dictTable&quot;:&quot;&quot;,&quot;dictText&quot;:&quot;&quot;}, {&quot;fieldDbName&quot;:&quot;content&quot;,&quot;fieldName&quot;:&quot;content&quot;,&quot;filedComment&quot;:&quot;内容&quot;,&quot;fieldType&quot;:&quot;java.lang.String&quot;,&quot;fieldDbType&quot;:&quot;Text&quot;,&quot;classType&quot;:&quot;umeditor&quot;,&quot;classType_row&quot;:&quot;umeditor&quot;,&quot;optionType&quot;:&quot;&quot;,&quot;charmaxLength&quot;:&quot;&quot;,&quot;precision&quot;:&quot;null&quot;,&quot;scale&quot;:&quot;null&quot;,&quot;nullable&quot;:&quot;Y&quot;,&quot;fieldLength&quot;:&quot;120&quot;,&quot;fieldHref&quot;:&quot;&quot;,&quot;fieldValidType&quot;:&quot;null&quot;,&quot;fieldDefault&quot;:&quot;&quot;,&quot;fieldShowType&quot;:&quot;umeditor&quot;,&quot;fieldOrderNum&quot;:&quot;13&quot;,&quot;isKey&quot;:&quot;N&quot;,&quot;isShow&quot;:&quot;Y&quot;,&quot;isShowList&quot;:&quot;Y&quot;,&quot;isQuery&quot;:&quot;N&quot;,&quot;queryMode&quot;:&quot;single&quot;,&quot;dictField&quot;:&quot;&quot;,&quot;dictTable&quot;:&quot;&quot;,&quot;dictText&quot;:&quot;&quot;}], bussiPackage=org.jeecg.modules, tableName=wx_swiper}</td>
+<td class="MethodOfCaller">a</td>
+<td class="FileOfCaller">CodeGenerateOne.java</td>
+<td class="LineOfCaller">117</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:57,345</td>
+<td class="Message">----templatePath-----------------/jeecg/code-template-online/one</td>
+<td class="MethodOfCaller">&lt;init&gt;</td>
+<td class="FileOfCaller">CreateFileConfig.java</td>
+<td class="LineOfCaller">34</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:57,346</td>
+<td class="Message">--------generate----projectPath--------C:\Users\cafebabe\important\rcyq_app\rcyq\server\jeecg-boot-module-wx</td>
+<td class="MethodOfCaller">a</td>
+<td class="FileOfCaller">BaseCodeGenerate.java</td>
+<td class="LineOfCaller">36</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 16:11:57,764</td>
+<td class="Message">----jeecg----Code----Generation-----[单表模型：wx_swiper]------ 生成完成。。。</td>
+<td class="MethodOfCaller">generateCodeFile</td>
+<td class="FileOfCaller">CodeGenerateOne.java</td>
+<td class="LineOfCaller">136</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:15,914</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:15,914</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:15,914</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:15,930</td>
+<td class="Message"> dictCode : display_type</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">130</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:15,930</td>
+<td class="Message"> dictCode : swiper_type</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">130</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:15,936</td>
+<td class="Message">无缓存dictCache的时候调用这里！</td>
+<td class="MethodOfCaller">queryDictItemsByCode</td>
+<td class="FileOfCaller">SysDictServiceImpl.java</td>
+<td class="LineOfCaller">51</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:15,936</td>
+<td class="Message">无缓存dictCache的时候调用这里！</td>
+<td class="MethodOfCaller">queryDictItemsByCode</td>
+<td class="FileOfCaller">SysDictServiceImpl.java</td>
+<td class="LineOfCaller">51</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 17:45:15,940</td>
+<td class="Message">==&gt;  Preparing: select s.item_value as &quot;value&quot;,s.item_text as &quot;text&quot; from sys_dict_item s where dict_id = (select id from sys_dict where dict_code = ?) order by s.sort_order asc </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 17:45:15,940</td>
+<td class="Message">==&gt;  Preparing: select s.item_value as &quot;value&quot;,s.item_text as &quot;text&quot; from sys_dict_item s where dict_id = (select id from sys_dict where dict_code = ?) order by s.sort_order asc </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 17:45:15,942</td>
+<td class="Message">==&gt; Parameters: swiper_type(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 17:45:15,942</td>
+<td class="Message">==&gt; Parameters: display_type(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 17:45:15,946</td>
+<td class="Message">&lt;==      Total: 3</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 17:45:15,946</td>
+<td class="Message">&lt;==      Total: 4</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:15,954</td>
+<td class="Message">Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=发布), DictModel(value=0, text=不发布), DictModel(value=3, text=草稿)], timestamp=1584697515931)</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">163</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:15,954</td>
+<td class="Message">Result(success=true, message=操作成功！, code=0, result=[DictModel(value=0, text=展示图), DictModel(value=1, text=小程序页面图), DictModel(value=2, text=公众号素材页面), DictModel(value=3, text=第三方页面)], timestamp=1584697515931)</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">163</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:18,642</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:18,650</td>
+<td class="Message"> dictCode : swiper_type</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">130</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:18,653</td>
+<td class="Message">Result(success=true, message=操作成功！, code=0, result=[DictModel(value=0, text=展示图), DictModel(value=1, text=小程序页面图), DictModel(value=2, text=公众号素材页面), DictModel(value=3, text=第三方页面)], timestamp=1584697518651)</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">163</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:18,946</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:18,954</td>
+<td class="Message"> dictCode : display_type</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">130</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:18,956</td>
+<td class="Message">Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=发布), DictModel(value=0, text=不发布), DictModel(value=3, text=草稿)], timestamp=1584697518954)</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">163</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:28,208</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:28,215</td>
+<td class="Message"> ------ 通过令牌获取用户拥有的访问菜单 ---- TOKEN ------ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">getUserPermissionByToken</td>
+<td class="FileOfCaller">SysPermissionController.java</td>
+<td class="LineOfCaller">182</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 17:45:28,217</td>
+<td class="Message">==&gt;  Preparing: SELECT p.* FROM sys_permission p WHERE exists( select a.id from sys_role_permission a join sys_role b on a.role_id = b.id join sys_user_role c on c.role_id = b.id join sys_user d on d.id = c.user_id where p.id = a.permission_id AND d.username = ? ) and p.del_flag = 0 order by p.sort_no ASC </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 17:45:28,219</td>
+<td class="Message">==&gt; Parameters: admin(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 17:45:28,234</td>
+<td class="Message">&lt;==      Total: 39</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 17:45:28,241</td>
+<td class="Message">==&gt;  Preparing: SELECT id,parent_id,name,perms,perms_type,icon,component,component_name,url,redirect,sort_no,menu_type,is_leaf AS leaf,is_route AS route,keep_alive,description,create_by,del_flag,rule_flag,hidden,create_time,update_by,update_time,status,always_show,internal_or_external FROM sys_permission WHERE del_flag = ? AND menu_type = ? </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 17:45:28,242</td>
+<td class="Message">==&gt; Parameters: 0(Integer), 2(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-20 17:45:28,244</td>
+<td class="Message">&lt;==      Total: 3</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:29,008</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:39,442</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:39,444</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:39,445</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:39,457</td>
+<td class="Message"> dictCode : display_type</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">130</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:39,457</td>
+<td class="Message"> dictCode : swiper_type</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">130</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:39,462</td>
+<td class="Message">Result(success=true, message=操作成功！, code=0, result=[DictModel(value=0, text=展示图), DictModel(value=1, text=小程序页面图), DictModel(value=2, text=公众号素材页面), DictModel(value=3, text=第三方页面)], timestamp=1584697539459)</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">163</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:39,462</td>
+<td class="Message">Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=发布), DictModel(value=0, text=不发布), DictModel(value=3, text=草稿)], timestamp=1584697539459)</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">163</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:40,619</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:40,625</td>
+<td class="Message"> dictCode : swiper_type</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">130</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:40,627</td>
+<td class="Message">Result(success=true, message=操作成功！, code=0, result=[DictModel(value=0, text=展示图), DictModel(value=1, text=小程序页面图), DictModel(value=2, text=公众号素材页面), DictModel(value=3, text=第三方页面)], timestamp=1584697540626)</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">163</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:40,634</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQ3MDk4MDcsInVzZXJuYW1lIjoiYWRtaW4ifQ.DPQzHp_EsyIThaEpr86TgoU1hFGRMtZf6cCfXpZ5xU8</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:40,641</td>
+<td class="Message"> dictCode : display_type</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">130</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:45:40,644</td>
+<td class="Message">Result(success=true, message=操作成功！, code=0, result=[DictModel(value=1, text=发布), DictModel(value=0, text=不发布), DictModel(value=3, text=草稿)], timestamp=1584697540642)</td>
+<td class="MethodOfCaller">getDictItems</td>
+<td class="FileOfCaller">SysDictController.java</td>
+<td class="LineOfCaller">163</td>
+</tr>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Fri Mar 20 17:46:17 CST 2020</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="Level">Level</td>
+<td class="Date">Date</td>
+<td class="Message">Message</td>
+<td class="MethodOfCaller">MethodOfCaller</td>
+<td class="FileOfCaller">FileOfCaller</td>
+<td class="LineOfCaller">LineOfCaller</td>
+</tr>
+
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:17,274</td>
+<td class="Message">Starting JeecgApplication on DESKTOP-F7RLFV9 with PID 11676 (C:\Users\cafebabe\important\rcyq_app\rcyq\server\jeecg-boot-module-system\target\classes started by cafebabe in C:\Users\cafebabe\important\rcyq_app\rcyq\server)</td>
+<td class="MethodOfCaller">logStarting</td>
+<td class="FileOfCaller">StartupInfoLogger.java</td>
+<td class="LineOfCaller">50</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:17,281</td>
+<td class="Message">The following profiles are active: dev</td>
+<td class="MethodOfCaller">logStartupProfileInfo</td>
+<td class="FileOfCaller">SpringApplication.java</td>
+<td class="LineOfCaller">679</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:20,525</td>
+<td class="Message">Multiple Spring Data modules found, entering strict repository configuration mode!</td>
+<td class="MethodOfCaller">multipleStoresDetected</td>
+<td class="FileOfCaller">RepositoryConfigurationDelegate.java</td>
+<td class="LineOfCaller">244</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:20,530</td>
+<td class="Message">Bootstrapping Spring Data repositories in DEFAULT mode.</td>
+<td class="MethodOfCaller">registerRepositoriesIn</td>
+<td class="FileOfCaller">RepositoryConfigurationDelegate.java</td>
+<td class="LineOfCaller">126</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:21,090</td>
+<td class="Message">Finished Spring Data repository scanning in 531ms. Found 0 repository interfaces.</td>
+<td class="MethodOfCaller">registerRepositoriesIn</td>
+<td class="FileOfCaller">RepositoryConfigurationDelegate.java</td>
+<td class="LineOfCaller">182</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:21,840</td>
+<td class="Message">Bean &#39;shiroConfig&#39; of type [org.jeecg.config.ShiroConfig$$EnhancerBySpringCGLIB$$b34bac09] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:22,007</td>
+<td class="Message">Bean &#39;shiroRealm&#39; of type [org.jeecg.modules.shiro.authc.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:22,701</td>
+<td class="Message">===============(1)创建缓存管理器RedisCacheManager</td>
+<td class="MethodOfCaller">redisCacheManager</td>
+<td class="FileOfCaller">ShiroConfig.java</td>
+<td class="LineOfCaller">200</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:22,705</td>
+<td class="Message">===============(2)创建RedisManager,连接Redis..URL= 127.0.0.1:6379</td>
+<td class="MethodOfCaller">redisManager</td>
+<td class="FileOfCaller">ShiroConfig.java</td>
+<td class="LineOfCaller">218</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:22,710</td>
+<td class="Message">Bean &#39;redisManager&#39; of type [org.crazycake.shiro.RedisManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:22,719</td>
+<td class="Message">Bean &#39;securityManager&#39; of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:22,770</td>
+<td class="Message">Bean &#39;authorizationAttributeSourceAdvisor&#39; of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:22,873</td>
+<td class="Message">Bean &#39;org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration&#39; of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$93464273] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:23,137</td>
+<td class="Message">Bean &#39;spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties&#39; of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:23,147</td>
+<td class="Message">Bean &#39;com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration&#39; of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$fcd4b344] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:23,164</td>
+<td class="Message">Bean &#39;dsProcessor&#39; of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:23,176</td>
+<td class="Message">Bean &#39;dynamicDatasourceAnnotationAdvisor&#39; of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:23,211</td>
+<td class="Message">Bean &#39;spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties&#39; of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:23,223</td>
+<td class="Message">Bean &#39;org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration&#39; of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$a86000bd] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:23,406</td>
+<td class="Message">Bean &#39;lettuceClientResources&#39; of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:23,540</td>
+<td class="Message">Bean &#39;redisConnectionFactory&#39; of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:23,560</td>
+<td class="Message">Bean &#39;redisConfig&#39; of type [org.jeecg.config.RedisConfig$$EnhancerBySpringCGLIB$$fe1a3353] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:23,618</td>
+<td class="Message">Bean &#39;org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration&#39; of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$a65f2023] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:23,633</td>
+<td class="Message">Bean &#39;eventBus&#39; of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:24,272</td>
+<td class="Message">Tomcat initialized with port(s): 8080 (http)</td>
+<td class="MethodOfCaller">initialize</td>
+<td class="FileOfCaller">TomcatWebServer.java</td>
+<td class="LineOfCaller">90</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:24,298</td>
+<td class="Message">Initializing ProtocolHandler [&quot;http-nio-8080&quot;]</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:24,315</td>
+<td class="Message">Starting service [Tomcat]</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:24,315</td>
+<td class="Message">Starting Servlet engine: [Apache Tomcat/9.0.16]</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:24,324</td>
+<td class="Message">The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_171\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Java\jdk1.8.0_171\bin;C:\apache-maven-3.5.3\bin;C:\Program Files\Apache Software Foundation\Tomcat 9.0\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\dotnet\;C:\Users\cafebabe\ffmpeg-20181105-beaa350-win64-static\bin;C:\Program Files\TortoiseGit;C:\Users\cafebabe\nvm-noinstall;C:\Program Files\nodejs;C:\Program Files\nodejs\;C:\工具软件\Redis-x64-3.2.100;C:\;sers\cafebabe\flutter_windows_v1.7.8+hotfix.3-stable\flutter\bin;C:\Program Files\Git\cmd;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Users\cafebabe\AppData\Local\Microsoft\WindowsApps;C:\Users\cafebabe\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\cafebabe\AppData\Roaming\npm;C:\Users\cafebabe\AppData\Local\Programs\Fiddler;.]</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:24,645</td>
+<td class="Message">Initializing Spring embedded WebApplicationContext</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:24,646</td>
+<td class="Message">Root WebApplicationContext: initialization completed in 7218 ms</td>
+<td class="MethodOfCaller">prepareWebApplicationContext</td>
+<td class="FileOfCaller">ServletWebServerApplicationContext.java</td>
+<td class="LineOfCaller">296</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:25,180</td>
+<td class="Message">动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置</td>
+<td class="MethodOfCaller">&lt;init&gt;</td>
+<td class="FileOfCaller">DynamicDataSourceCreator.java</td>
+<td class="LineOfCaller">113</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:25,568</td>
+<td class="Message">{dataSource-1,master} inited</td>
+<td class="MethodOfCaller">init</td>
+<td class="FileOfCaller">DruidDataSource.java</td>
+<td class="LineOfCaller">1003</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:25,569</td>
+<td class="Message">初始共加载 1 个数据源</td>
+<td class="MethodOfCaller">afterPropertiesSet</td>
+<td class="FileOfCaller">DynamicRoutingDataSource.java</td>
+<td class="LineOfCaller">203</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:25,570</td>
+<td class="Message">动态数据源-加载 master 成功</td>
+<td class="MethodOfCaller">addDataSource</td>
+<td class="FileOfCaller">DynamicRoutingDataSource.java</td>
+<td class="LineOfCaller">142</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:25,571</td>
+<td class="Message">当前的默认数据源是单数据源，数据源名为 master</td>
+<td class="MethodOfCaller">afterPropertiesSet</td>
+<td class="FileOfCaller">DynamicRoutingDataSource.java</td>
+<td class="LineOfCaller">212</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:31,793</td>
+<td class="Message">Using default implementation for ThreadExecutor</td>
+<td class="MethodOfCaller">instantiate</td>
+<td class="FileOfCaller">StdSchedulerFactory.java</td>
+<td class="LineOfCaller">1208</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:31,814</td>
+<td class="Message">Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl</td>
+<td class="MethodOfCaller">&lt;init&gt;</td>
+<td class="FileOfCaller">SchedulerSignalerImpl.java</td>
+<td class="LineOfCaller">61</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:31,820</td>
+<td class="Message">Quartz Scheduler v.2.3.0 created.</td>
+<td class="MethodOfCaller">&lt;init&gt;</td>
+<td class="FileOfCaller">QuartzScheduler.java</td>
+<td class="LineOfCaller">229</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:31,829</td>
+<td class="Message">Using db table-based data access locking (synchronization).</td>
+<td class="MethodOfCaller">initialize</td>
+<td class="FileOfCaller">JobStoreSupport.java</td>
+<td class="LineOfCaller">672</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:31,835</td>
+<td class="Message">JobStoreCMT initialized.</td>
+<td class="MethodOfCaller">initialize</td>
+<td class="FileOfCaller">JobStoreCMT.java</td>
+<td class="LineOfCaller">145</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:31,836</td>
+<td class="Message">Scheduler meta-data: Quartz Scheduler (v2.3.0) &#39;quartzScheduler&#39; with instanceId &#39;NON_CLUSTERED&#39;
+  Scheduler class: &#39;org.quartz.core.QuartzScheduler&#39; - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool &#39;org.quartz.simpl.SimpleThreadPool&#39; - with 10 threads.
+  Using job-store &#39;org.springframework.scheduling.quartz.LocalDataSourceJobStore&#39; - which supports persistence. and is not clustered.
+</td>
+<td class="MethodOfCaller">initialize</td>
+<td class="FileOfCaller">QuartzScheduler.java</td>
+<td class="LineOfCaller">294</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:31,837</td>
+<td class="Message">Quartz scheduler &#39;quartzScheduler&#39; initialized from an externally provided properties instance.</td>
+<td class="MethodOfCaller">instantiate</td>
+<td class="FileOfCaller">StdSchedulerFactory.java</td>
+<td class="LineOfCaller">1362</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:31,837</td>
+<td class="Message">Quartz scheduler version: 2.3.0</td>
+<td class="MethodOfCaller">instantiate</td>
+<td class="FileOfCaller">StdSchedulerFactory.java</td>
+<td class="LineOfCaller">1366</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:31,838</td>
+<td class="Message">JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@127d2aee</td>
+<td class="MethodOfCaller">setJobFactory</td>
+<td class="FileOfCaller">QuartzScheduler.java</td>
+<td class="LineOfCaller">2287</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Level">WARN</td>
+<td class="Date">2020-03-20 17:46:35,502</td>
+<td class="Message">ElasticSearch 服务连接失败，原因：配置未通过。可能是BaseURL未配置或配置有误，也可能是Elasticsearch服务未启动。接下来将会拒绝执行任何方法！</td>
+<td class="MethodOfCaller">&lt;init&gt;</td>
+<td class="FileOfCaller">JeecgElasticsearchTemplate.java</td>
+<td class="LineOfCaller">61</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:39,503</td>
+<td class="Message">Exposing 2 endpoint(s) beneath base path &#39;/actuator&#39;</td>
+<td class="MethodOfCaller">&lt;init&gt;</td>
+<td class="FileOfCaller">EndpointLinksResolver.java</td>
+<td class="LineOfCaller">59</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:39,747</td>
+<td class="Message">Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity&lt;springfox.documentation.spring.web.json.Json&gt; springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]</td>
+<td class="MethodOfCaller">initHandlerMethods</td>
+<td class="FileOfCaller">PropertySourcedRequestMappingHandlerMapping.java</td>
+<td class="LineOfCaller">69</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:40,378</td>
+<td class="Message">Initializing ExecutorService &#39;applicationTaskExecutor&#39;</td>
+<td class="MethodOfCaller">initialize</td>
+<td class="FileOfCaller">ExecutorConfigurationSupport.java</td>
+<td class="LineOfCaller">171</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,035</td>
+<td class="Message">Context refreshed</td>
+<td class="MethodOfCaller">start</td>
+<td class="FileOfCaller">DocumentationPluginsBootstrapper.java</td>
+<td class="LineOfCaller">160</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,070</td>
+<td class="Message">Found 1 custom documentation plugin(s)</td>
+<td class="MethodOfCaller">start</td>
+<td class="FileOfCaller">DocumentationPluginsBootstrapper.java</td>
+<td class="LineOfCaller">163</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,166</td>
+<td class="Message">Scanning for api listing references</td>
+<td class="MethodOfCaller">scan</td>
+<td class="FileOfCaller">ApiListingReferenceScanner.java</td>
+<td class="LineOfCaller">41</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,454</td>
+<td class="Message">Generating unique operation named: addUsingPOST_1</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,457</td>
+<td class="Message">Generating unique operation named: deleteUsingDELETE_1</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,459</td>
+<td class="Message">Generating unique operation named: deleteBatchUsingDELETE_1</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,461</td>
+<td class="Message">Generating unique operation named: editUsingPUT_1</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,463</td>
+<td class="Message">Generating unique operation named: queryByIdUsingGET_1</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,482</td>
+<td class="Message">Generating unique operation named: addUsingPOST_2</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,484</td>
+<td class="Message">Generating unique operation named: deleteUsingDELETE_2</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,486</td>
+<td class="Message">Generating unique operation named: deleteBatchUsingDELETE_2</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,488</td>
+<td class="Message">Generating unique operation named: editUsingPUT_2</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,491</td>
+<td class="Message">Generating unique operation named: queryByIdUsingGET_2</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,504</td>
+<td class="Message">Generating unique operation named: queryPageListUsingGET_1</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,522</td>
+<td class="Message">Starting Quartz Scheduler now</td>
+<td class="MethodOfCaller">startScheduler</td>
+<td class="FileOfCaller">SchedulerFactoryBean.java</td>
+<td class="LineOfCaller">726</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,742</td>
+<td class="Message">Freed 0 triggers from &#39;acquired&#39; / &#39;blocked&#39; state.</td>
+<td class="MethodOfCaller">recoverJobs</td>
+<td class="FileOfCaller">JobStoreSupport.java</td>
+<td class="LineOfCaller">866</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,754</td>
+<td class="Message">Recovering 0 jobs that were in-progress at the time of the last shut-down.</td>
+<td class="MethodOfCaller">recoverJobs</td>
+<td class="FileOfCaller">JobStoreSupport.java</td>
+<td class="LineOfCaller">876</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,754</td>
+<td class="Message">Recovery complete.</td>
+<td class="MethodOfCaller">recoverJobs</td>
+<td class="FileOfCaller">JobStoreSupport.java</td>
+<td class="LineOfCaller">889</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,757</td>
+<td class="Message">Removed 0 &#39;complete&#39; triggers.</td>
+<td class="MethodOfCaller">recoverJobs</td>
+<td class="FileOfCaller">JobStoreSupport.java</td>
+<td class="LineOfCaller">896</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,759</td>
+<td class="Message">Removed 0 stale fired job entries.</td>
+<td class="MethodOfCaller">recoverJobs</td>
+<td class="FileOfCaller">JobStoreSupport.java</td>
+<td class="LineOfCaller">901</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,761</td>
+<td class="Message">Scheduler quartzScheduler_$_NON_CLUSTERED started.</td>
+<td class="MethodOfCaller">start</td>
+<td class="FileOfCaller">QuartzScheduler.java</td>
+<td class="LineOfCaller">547</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,790</td>
+<td class="Message">Starting ProtocolHandler [&quot;http-nio-8080&quot;]</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,833</td>
+<td class="Message">Tomcat started on port(s): 8080 (http) with context path &#39;/jeecg-boot&#39;</td>
+<td class="MethodOfCaller">start</td>
+<td class="FileOfCaller">TomcatWebServer.java</td>
+<td class="LineOfCaller">204</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,838</td>
+<td class="Message">Started JeecgApplication in 26.998 seconds (JVM running for 29.002)</td>
+<td class="MethodOfCaller">logStarted</td>
+<td class="FileOfCaller">StartupInfoLogger.java</td>
+<td class="LineOfCaller">59</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:42,856</td>
+<td class="Message">
+----------------------------------------------------------
+	Application Jeecg-Boot is running! Access URLs:
+	Local: 		http://localhost:8080/jeecg-boot/
+	External: 	http://192.168.1.105:8080/jeecg-boot/
+	swagger-ui: 		http://192.168.1.105:8080/jeecg-boot/doc.html
+----------------------------------------------------------</td>
+<td class="MethodOfCaller">main</td>
+<td class="FileOfCaller">JeecgApplication.java</td>
+<td class="LineOfCaller">33</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:43,343</td>
+<td class="Message">Initializing Spring DispatcherServlet &#39;dispatcherServlet&#39;</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:43,345</td>
+<td class="Message">Initializing Servlet &#39;dispatcherServlet&#39;</td>
+<td class="MethodOfCaller">initServletBean</td>
+<td class="FileOfCaller">FrameworkServlet.java</td>
+<td class="LineOfCaller">524</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:43,368</td>
+<td class="Message">Completed initialization in 22 ms</td>
+<td class="MethodOfCaller">initServletBean</td>
+<td class="FileOfCaller">FrameworkServlet.java</td>
+<td class="LineOfCaller">546</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:43,538</td>
+<td class="Message">Starting without optional epoll library</td>
+<td class="MethodOfCaller">&lt;clinit&gt;</td>
+<td class="FileOfCaller">EpollProvider.java</td>
+<td class="LineOfCaller">68</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-20 17:46:43,542</td>
+<td class="Message">Starting without optional kqueue library</td>
+<td class="MethodOfCaller">&lt;clinit&gt;</td>
+<td class="FileOfCaller">KqueueProvider.java</td>
+<td class="LineOfCaller">70</td>
+</tr>

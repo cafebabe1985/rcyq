@@ -1,4 +1,6 @@
 <wxs src="../../common/activeDetail.wxs" module="tools" />
+
+<!-- <cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">{{pageTitle}}</view></cu-custom> -->
 <web-view wx:if="{{url}}" src="{{url}}"> </web-view>
 <view wx:else>
   <view class=" text-xxl bg-white padding">

@@ -1,0 +1,80 @@
+//1
+var dateHandle = function (date) {
+  return date.substring(0, 10)
+}
+
+//2
+var enrolStatusHandle = function (s, e, es, ee) {
+
+  var now = getDate().getTime()
+  var ss = getDate(s).getTime()//开始
+  var es = getDate(e).getTime()//结束
+  var ess = getDate(es).getTime()//报名开始
+  var ees = getDate(ee).getTime()//报名结束
+  
+  if (now >= ess && now <= ees) {
+
+    return '报名中'
+  }else{
+    if (now < ss) {
+
+      return '未开始'
+    } 
+    if (now >= ss && now <= es) {
+
+      return '进行中'
+    }
+
+    if (now > es) {
+
+      return '已结束'
+    } 
+  }
+
+  
+}
+
+//4
+var costTypeHandle = function (type) {
+  switch (type) {
+    case "0":
+      return "免费"
+      break
+    case "1":
+      return "报名后付费"
+      break
+    case "2":
+      return "活动中收费"
+      break
+    default:
+      return ""
+  }
+}
+//3
+var costHandle = function (cost) {
+
+  var total
+  if (cost && cost.opts && cost.opts.length > 0) {
+    total = 0
+    for (var i = 0; i < cost.opts.length; i++) {
+      total += parseFloat(cost.opts[i].cost)
+    }
+    if (total && total > 0) {
+      return "￥" + total
+    } else {
+      return "待定"
+    }
+  } else {
+    return "待定"
+  }
+}
+
+module.exports = {
+  dateHandle: dateHandle,
+  
+  enrolStatusHandle: enrolStatusHandle,
+  
+  costTypeHandle: costTypeHandle,
+  costHandle: costHandle,
+  
+};

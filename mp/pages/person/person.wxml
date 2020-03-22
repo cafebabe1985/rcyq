@@ -1,4 +1,7 @@
 <wxs src="../../common/person.wxs" module="tools" />
+<!-- <cu-custom bgColor="bg-white" isBack="{{false}}"><view slot="backText"></view><view slot="content">
+个人中心
+</view></cu-custom> -->
 <scroll-view scroll-y class="scrollPage">
   <view class="UCenter-bg margin-top-sm margin-left-sm margin-right-sm radius">
   <view class="flex  align-end">
@@ -35,12 +38,7 @@
     </view>
   </view>
   <view class="cu-list menu  margin-sm shadow-lg radius">
-    <!-- <view class="cu-item arrow">
-      <view class="content">
-        <text class="cuIcon-myfill text-orange"></text>
-        <text class="text-grey">个人信息</text>
-      </view>
-    </view> -->
+    
     <view class="cu-item arrow" bindtap="goApplyScenic">
       <view class="content">
         <text class="cuIcon-vip text-yellow"></text>
@@ -67,9 +65,9 @@
       </navigator>
     </view>
     <view class="cu-item arrow">
-     <navigator class="content" url="/pages/myCreateNews/myCreateNews?id={{userInfo.openId}}" hover-class="none">
+     <navigator class="content" url="/pages/myCreateArticle/myCreateArticle?id={{userInfo.openId}}" hover-class="none">
         <text class="cuIcon-newsfill text-brown"></text>
-        <text class="text-grey">我发布的快讯</text>
+        <text class="text-grey">我的文化杂谈</text>
       </navigator>
     </view>
       <view class="cu-item arrow">

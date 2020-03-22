@@ -2,8 +2,8 @@
   "navigationBarTextStyle": "black",
   "navigationBarBackgroundColor": "#fff",
   "enablePullDownRefresh":true,
-  "navigationBarTitleText": "儒此有趣首页", 
-   "usingComponents": {
-    
+  "navigationBarTitleText": "儒此有趣 文旅", 
+  "usingComponents": {
+     
    }
 }

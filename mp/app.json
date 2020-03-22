@@ -20,8 +20,11 @@
     "pages/myPublishScenic/myPublishScenice",
     "pages/myCreateNews/myCreateNews",
     "pages/createNews/createNews",
+    "pages/createArticle/createArticle",
     "pages/manageEnrolUser/manageEnrolUser",
-    "pages/webpage/webpage"
+    "pages/webpage/webpage",
+    "pages/myCreateArticle/myCreateArticle",
+    "pages/articleDetail/articleDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

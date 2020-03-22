@@ -1,42 +1,62 @@
-<!--轮播区-->
-<wxs src="../../common/home.wxs" module="tools" />
+<wxs  src="../../common/home.wxs" module="tools" />
+<!--banner-->
+
+<!-- <cu-custom 
+
+ bgColor="bg-white" isBack="{{false}}">
+<view slot="backText"></view>
+<view slot="content">
+儒此有趣 文旅
+
+</view>
+</cu-custom> -->
+
 <view class="home-banner bg-white">
-  <swiper class="card-swiper " circular="true" autoplay="false" interval="5000" duration="500" bindchange="cardSwiper">
-    <swiper-item 
-       class="swiper-banner  radius shadow-warp bg-white " wx:for="{{swiperList}}" wx:key="index">
-      <view class="swiper-item" 
+  
+  <swiper   
+   class="screen-swiper " circular="true" autoplay="false" 
+   indicator-active-color="#fff"
+   easing-function="easeInOutCubic"
+   indicator-dots="true" interval="{{interval}}" duration="500" bindchange="cardSwiper">
+     <swiper-item 
+      wx:for="{{swiperList}}" wx:key="index"
+      class="swiper-item" 
       data-imgs="{{swiperList}}"
       data-id = "{{item.id}}"
       data-url="{{item.targetHref}}"
+      data-index="{{index}}"
       bindtap="previewImage">
         <image src="{{apiBaseUrl+item.img}}" mode="aspectFill"></image>
-
-      </view>
+      
     </swiper-item>
   </swiper>
 </view>
 <!--吸顶分页导航-->
 <view class="navbar-wrap" id="fixedViewWrap">
-  <view class="bg-white nav flex text-center fixed-nav {{isFixedTop?'fixed':''}}" id="navbar">
-    <view class="cu-item flex-sub {{0==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="0" style="margin:0 70rpx">
+  <view class="bg-white nav flex text-center fixed-nav {{isFixedTop?'fixed':''}}" id="navbar" style="{{isFixedTop?'top:'+CustomBar+'px;':''}}">
+    <view class="tab-item cu-item flex-sub {{0==TabCur?'text-blue cur':''}} " bindtap="tabSelect" data-id="0" >
       <!-- <text class="cuIcon-cascades"></text>  -->
-      小片
+      景区视频
     </view>
-    <view class="cu-item flex-sub {{1==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="1" style="margin:0 70rpx">
+    <view class=" tab-item cu-item flex-sub {{1==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="1" >
       <!-- <text class="cuIcon-footprint"></text>  -->
-      活动
+      线下活动
     </view>
-    <view class="cu-item flex-sub {{2==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="2" style="margin:0 70rpx">
+    <view class="tab-item cu-item flex-sub {{2==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="2" >
       <!-- <text class="cuIcon-news"></text>  -->
-      快讯
+      周末快讯
+    </view>
+    <view class=" tab-item cu-item flex-sub {{3==TabCur?'text-blue cur':''}}" bindtap="tabSelect" data-id="3" >
+      <!-- <text class="cuIcon-news"></text>  -->
+      文化杂谈
     </view>
   </view>
   <!--分页列表头部0 小片城市滚动条导航-->
   <view  
   wx:if="{{0==TabCur}}"  
-  class="bg-white nav text-center  {{isFixedTop?'fixed':''}}" style="left:0;top:{{navbarHeight}}px;">
+  class="bg-white nav text-center  {{isFixedTop?'fixed':''}}" style="left:0;top:{{navbarHeight+CustomBar}}px;">
     <scroll-view 
-       scroll-x class="bg-white nav {{isFixedTop?'fixed':''}}" style="left:0;top:{{navbarHeight}}px" scroll-with-animation scroll-left="{{scrollLeft}}">
+       scroll-x class="bg-white nav {{isFixedTop?'fixed':''}}" style="left:0;top:{{navbarHeight+CustomBar}}px" scroll-with-animation scroll-left="{{scrollLeft}}">
       <view class="cu-item {{index==navCur?'text-green cu-tag  light round':''}}" wx:for="{{cityTabs}}" wx:key="index" bindtap="navSelect" data-id="{{index}}" data-name="{{item.name}}">
         {{item.name}}
       </view>
@@ -45,13 +65,12 @@
 <!--分页列表头部1 活动按钮导航-->
   <view  
   wx:if="{{1==TabCur}}"  
-  class="bg-white nav text-center  {{isFixedTop?'fixed':''}}" style="left:0;top:{{navbarHeight}}px;">
+  class="bg-white nav text-center  {{isFixedTop?'fixed':''}}" style="left:0;top:{{navbarHeight+CustomBar}}px;">
     <view 
-        class="bg-white nav {{isFixedTop?'fixed':''}}" style="left:0;top:{{navbarHeight}}px" >
+        class="bg-white nav {{isFixedTop?'fixed':''}}" style="left:0;top:{{navbarHeight+CustomBar}}px" >
       <!-- <view class="cu-item {{0==activeNavCur?'text-green cu-tag  light round':''}}"  wx:key bindtap="activeNavCurSelect" data-id="0"> -->
         <button class="cu-btn  margin-sm bg-orange">参与活动</button>
-      <!-- </view> -->
-      <!-- <view class="cu-item {{1==activeNavCur?'text-green cu-tag  light round':''}}"  wx:key bindtap="activeNavCurSelect" data-id="1"> -->
+     
       <button 
         class="cu-btn margin-sm line-orange"
             bindtap="getPhoneNumber">
@@ -80,7 +99,7 @@ bindtap="goNewsDetail">
        
         <view class='flex justify-between'>
           <view class="cu-tag  light  ">{{tools.dateHandle(item.createTime)}}</view>
-          <view class="cu-tag  light  bg-white text-blue">浏览数:{{item.hit}}</view>
+          <view class="cu-tag  light  bg-white text-blue">浏览数:{{item.hit||0}}</view>
         </view>
       </view>
     </view>
@@ -141,6 +160,29 @@ bindtap="goNewsDetail">
         <view class="text-content" style='color:black;'> {{item.title}}</view>
         <view class="flex justify-between">
           <view class="cu-tag  light  ">{{tools.dateHandle(item.createTime)}}</view>
+           <view class="cu-tag  light  bg-white text-blue">浏览数:{{item.hit||0}}</view>
+          </view> 
+
+      </view>
+     
+    </view>
+  </view>
+</view>
+<!--内容列表区域 3 文化杂谈-->
+<view wx:if="{{3==TabCur}}" class="cu-card article no-card solids-bottom" wx:for="{{articles}}" wx:key="index"
+data-item="{{item}}"
+bindtap="goArticleDetail">
+  <view class="cu-item shadow">
+    <view class="title">
+      <view class="box-size"></view>
+    </view>
+    <view class="content">
+ <image src="{{apiBaseUrl+item.poster}}" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-content" style='color:black;'> {{item.title}}</view>
+        <view class="flex justify-between">
+          <view class="cu-tag  light  ">{{tools.dateHandle(item.createTime)}}</view>
+           <view class="cu-tag  light  bg-white text-blue">浏览数:{{item.hit||0}}</view>
           </view> 
 
       </view>

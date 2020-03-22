@@ -1,0 +1,101 @@
+<wxs src="../../common/activeDetail.wxs" module="tools" />
+
+<!-- <cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText">返回</view><view slot="content">{{pageTitle}}</view></cu-custom> -->
+<web-view wx:if="{{url}}" src="{{url}}"> </web-view>
+<view wx:else>
+  <view class=" text-xxl bg-white padding">
+    <text class="text-black ">{{detail.title}}</text>
+  </view>
+  <view class="solid-bottom text-lg padding bg-white ">
+    <text class="text-black margin-right">{{detail.author}}</text>
+    <text class="text-black">{{detail.createTime}}</text>
+  </view>
+  <view class="padding bg-white solid-bottom text-lg" style="line-hight:38px !important" wx:for="{{content}}" wx:key="index">
+    <rich-text wx:if="{{item.type==0}}" nodes="{{item.content}}">
+    </rich-text>
+    <video style="width:100%" wx:if="{{item.type==1}}" src="{{tools.pathHandle(apiBaseUrl,item.src)}}" controls></video>
+  </view>
+</view>
+
+<view class="cu-bar bg-white solid-top solid-bottom">
+  <view class='action'>
+    <text class='cuIcon-titles text-red '></text> 评论
+  </view>
+</view>
+<!--评论区-->
+<view wx:if="{{comments.length == 0}}" style="margin-bottom:100rpx" class="bg-white text-grey text-lg padding-lg">
+  暂无评论
+</view>
+<view wx:else style="margin-bottom:100rpx">
+  <view class="cu-list menu-avatar comment ">
+    <view class="cu-item solids-bottom" wx:for="{{comments}}" wx:key="index">
+      <view class="cu-avatar round" style="background-image:url({{item.avatarUrl}});"></view>
+      <view class="content">
+        <view class="text-grey">{{item.nickName}}</view>
+        <view class="text-gray text-content text-df">
+          {{item.commentContent}}
+        </view>
+        <view 
+        wx:for="{{item.wxCommentVOs}}"
+        wx:for-item="child"
+        wx:key="index"
+        class="bg-grey padding-sm radius margin-top-sm  text-sm">
+          <view class="flex">
+            <view>{{child.nickName}}：</view>
+            <view class="flex-sub">{{child.commentContent}}</view>
+          </view>
+        </view>
+        <view class="margin-top-sm flex justify-between">
+          <view class="text-gray text-df">{{item.createTime}}</view>
+          <view>
+            <!-- <text class="cuIcon-appreciatefill text-red"></text> -->
+            <text class="cuIcon-messagefill text-gray margin-left-sm" 
+            data-id="{{item.id}}"
+            data-parent="{{item.nickName}}"
+            bindtap="commentAt"></text>
+          </view>
+        </view>
+      </view>
+    
+    
+    </view>
+  </view>
+  <view 
+  wx:if="{{haveMore}}"
+  class="solids-top  align-center text-center bg-white">
+    <view class=" padding align-center text-center text-blue"
+    bindtap="getMoreComment"
+    >点我看更多评论</view>
+  </view>
+</view>
+<!--操作条-->
+<view 
+wx:if="{{!isReview}}"
+class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
+
+   <input 
+   disabled="{{!isComment}}"
+   class="{{isComment?'solids':''}}" 
+   value="{{myComment.commentContent}}"
+   placeholder="{{isComment?placeHolder:''}}"
+   focus="{{inputFocus}}"
+   bindfocus="InputFocus" 
+   bindblur="InputBlur" 
+   bindinput="Input"
+   adjust-position="{{false}}" 
+   maxlength="150" cursor-spacing="10"></input>
+   <button 
+   wx:if="{{isComment}}"
+   class="cu-btn bg-orange shadow"
+  bindtap="submitComment"
+  >发表</button>
+   <button
+  wx:if="{{!isComment}}"
+   class="cu-btn bg-orange shadow"
+  bindtap="enableInput"
+  >写评论</button>
+  <button
+    class="cu-btn bg-blue shadow margin-left "
+  open-type="share"
+  ><text class="cuIcon-share"></text>分享</button>
+</view>

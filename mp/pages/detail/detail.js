@@ -5,6 +5,7 @@ import {
 import {
   News
 } from '../../net/news.js'
+
 import {
   Comment
 } from '../../net/comment.js'
@@ -19,6 +20,7 @@ Page({
    */
   data: {
     apiBaseUrl: config.apiBaseUrl,
+    pageTitle:'',
     isReview:false,
     queryPath:null,
     pagePath: null,
@@ -47,15 +49,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   async onLoad(opt) {
-    wx.setNavigationBarTitle({
-      title: opt.type=='0'? '景区详情':'咨询详情'
+    
+    this.setData({
+      pageTitle: opt.type == '0' ? '景区视频' : '周末快讯'
     })
     wx.showLoading({
       title: '内容加载中',
     })
     if(opt.target){
       this.setData({
-        isReview:true
+        isReview:true,
+       
       })
     }
     this.data.queryPath = `id=${opt.id}&type=${opt.type}&path=${opt.path}`

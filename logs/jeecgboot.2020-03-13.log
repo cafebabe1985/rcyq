@@ -1,0 +1,485 @@
+2020-03-13 11:10:19.176 [main] INFO  org.jeecg.JeecgApplication:50 - Starting JeecgApplication on DESKTOP-F7RLFV9 with PID 9156 (C:\Users\cafebabe\important\rcyq_app\rcyq\server\jeecg-boot-module-system\target\classes started by cafebabe in C:\Users\cafebabe\important\rcyq_app\rcyq\server)
+2020-03-13 11:10:19.180 [main] INFO  org.jeecg.JeecgApplication:679 - The following profiles are active: dev
+2020-03-13 11:10:21.105 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:244 - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-03-13 11:10:21.108 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:126 - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-03-13 11:10:21.310 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate:182 - Finished Spring Data repository scanning in 185ms. Found 0 repository interfaces.
+2020-03-13 11:10:21.666 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroConfig' of type [org.jeecg.config.ShiroConfig$$EnhancerBySpringCGLIB$$267ef076] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-13 11:10:21.807 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'shiroRealm' of type [org.jeecg.modules.shiro.authc.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-13 11:10:22.212 [main] INFO  org.jeecg.config.ShiroConfig:200 - ===============(1)创建缓存管理器RedisCacheManager
+2020-03-13 11:10:22.214 [main] INFO  org.jeecg.config.ShiroConfig:218 - ===============(2)创建RedisManager,连接Redis..URL= 127.0.0.1:6379
+2020-03-13 11:10:22.218 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisManager' of type [org.crazycake.shiro.RedisManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-13 11:10:22.223 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-13 11:10:22.252 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-13 11:10:22.312 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$67986e0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-13 11:10:22.468 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-13 11:10:22.474 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$7007f7b1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-13 11:10:22.484 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-13 11:10:22.490 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-13 11:10:22.512 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties' of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-13 11:10:22.520 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration' of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$1b93452a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-13 11:10:22.631 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'lettuceClientResources' of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-13 11:10:22.717 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisConnectionFactory' of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-13 11:10:22.729 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'redisConfig' of type [org.jeecg.config.RedisConfig$$EnhancerBySpringCGLIB$$714d77c0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-13 11:10:22.761 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration' of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$19926490] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-13 11:10:22.767 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'eventBus' of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-13 11:10:23.180 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:90 - Tomcat initialized with port(s): 8080 (http)
+2020-03-13 11:10:23.195 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Initializing ProtocolHandler ["http-nio-8080"]
+2020-03-13 11:10:23.206 [main] INFO  org.apache.catalina.core.StandardService:173 - Starting service [Tomcat]
+2020-03-13 11:10:23.206 [main] INFO  org.apache.catalina.core.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.16]
+2020-03-13 11:10:23.212 [main] INFO  org.apache.catalina.core.AprLifecycleListener:173 - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_171\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Java\jdk1.8.0_171\bin;C:\apache-maven-3.5.3\bin;C:\Program Files\Apache Software Foundation\Tomcat 9.0\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\dotnet\;C:\Users\cafebabe\ffmpeg-20181105-beaa350-win64-static\bin;C:\Program Files\TortoiseGit;C:\Users\cafebabe\nvm-noinstall;C:\Program Files\nodejs;C:\Program Files\nodejs\;C:\工具软件\Redis-x64-3.2.100;C:\;sers\cafebabe\flutter_windows_v1.7.8+hotfix.3-stable\flutter\bin;C:\Program Files\Git\cmd;C:\Users\cafebabe\AppData\Local\Microsoft\WindowsApps;C:\Users\cafebabe\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\cafebabe\AppData\Roaming\npm;C:\Users\cafebabe\AppData\Local\Programs\Fiddler;.]
+2020-03-13 11:10:23.410 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring embedded WebApplicationContext
+2020-03-13 11:10:23.411 [main] INFO  org.springframework.web.context.ContextLoader:296 - Root WebApplicationContext: initialization completed in 4156 ms
+2020-03-13 11:10:23.740 [main] INFO  c.b.dynamic.datasource.DynamicDataSourceCreator:113 - 动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置
+2020-03-13 11:10:24.006 [main] INFO  com.alibaba.druid.pool.DruidDataSource:1003 - {dataSource-1,master} inited
+2020-03-13 11:10:24.007 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:203 - 初始共加载 1 个数据源
+2020-03-13 11:10:24.007 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:142 - 动态数据源-加载 master 成功
+2020-03-13 11:10:24.007 [main] INFO  c.b.dynamic.datasource.DynamicRoutingDataSource:212 - 当前的默认数据源是单数据源，数据源名为 master
+2020-03-13 11:10:27.263 [main] INFO  org.quartz.impl.StdSchedulerFactory:1208 - Using default implementation for ThreadExecutor
+2020-03-13 11:10:27.277 [main] INFO  org.quartz.core.SchedulerSignalerImpl:61 - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-03-13 11:10:27.277 [main] INFO  org.quartz.core.QuartzScheduler:229 - Quartz Scheduler v.2.3.0 created.
+2020-03-13 11:10:27.282 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:672 - Using db table-based data access locking (synchronization).
+2020-03-13 11:10:27.284 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:145 - JobStoreCMT initialized.
+2020-03-13 11:10:27.285 [main] INFO  org.quartz.core.QuartzScheduler:294 - Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is not clustered.
+
+2020-03-13 11:10:27.286 [main] INFO  org.quartz.impl.StdSchedulerFactory:1362 - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-03-13 11:10:27.286 [main] INFO  org.quartz.impl.StdSchedulerFactory:1366 - Quartz scheduler version: 2.3.0
+2020-03-13 11:10:27.286 [main] INFO  org.quartz.core.QuartzScheduler:2287 - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@6bfbab1c
+2020-03-13 11:10:30.215 [main] WARN  org.jeecg.common.es.JeecgElasticsearchTemplate:61 - ElasticSearch 服务连接失败，原因：配置未通过。可能是BaseURL未配置或配置有误，也可能是Elasticsearch服务未启动。接下来将会拒绝执行任何方法！
+2020-03-13 11:10:32.347 [main] INFO  o.s.b.actuate.endpoint.web.EndpointLinksResolver:59 - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-03-13 11:10:32.517 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping:69 - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-03-13 11:10:32.829 [main] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor:171 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-13 11:10:33.660 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper:160 - Context refreshed
+2020-03-13 11:10:33.681 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper:163 - Found 1 custom documentation plugin(s)
+2020-03-13 11:10:33.739 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner:41 - Scanning for api listing references
+2020-03-13 11:10:33.909 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_1
+2020-03-13 11:10:33.910 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: deleteUsingDELETE_1
+2020-03-13 11:10:33.912 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: deleteBatchUsingDELETE_1
+2020-03-13 11:10:33.913 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: editUsingPUT_1
+2020-03-13 11:10:33.914 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: queryByIdUsingGET_1
+2020-03-13 11:10:33.925 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: addUsingPOST_2
+2020-03-13 11:10:33.926 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: deleteUsingDELETE_2
+2020-03-13 11:10:33.927 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: deleteBatchUsingDELETE_2
+2020-03-13 11:10:33.929 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: editUsingPUT_2
+2020-03-13 11:10:33.930 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: queryByIdUsingGET_2
+2020-03-13 11:10:33.939 [main] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator:40 - Generating unique operation named: queryPageListUsingGET_1
+2020-03-13 11:10:33.951 [main] INFO  o.s.scheduling.quartz.SchedulerFactoryBean:726 - Starting Quartz Scheduler now
+2020-03-13 11:10:34.090 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:866 - Freed 0 triggers from 'acquired' / 'blocked' state.
+2020-03-13 11:10:34.099 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:876 - Recovering 0 jobs that were in-progress at the time of the last shut-down.
+2020-03-13 11:10:34.100 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:889 - Recovery complete.
+2020-03-13 11:10:34.102 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:896 - Removed 0 'complete' triggers.
+2020-03-13 11:10:34.104 [main] INFO  o.s.scheduling.quartz.LocalDataSourceJobStore:901 - Removed 0 stale fired job entries.
+2020-03-13 11:10:34.105 [main] INFO  org.quartz.core.QuartzScheduler:547 - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-03-13 11:10:34.121 [main] INFO  org.apache.coyote.http11.Http11NioProtocol:173 - Starting ProtocolHandler ["http-nio-8080"]
+2020-03-13 11:10:34.148 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer:204 - Tomcat started on port(s): 8080 (http) with context path '/jeecg-boot'
+2020-03-13 11:10:34.151 [main] INFO  org.jeecg.JeecgApplication:59 - Started JeecgApplication in 15.758 seconds (JVM running for 17.105)
+2020-03-13 11:10:34.165 [main] INFO  org.jeecg.JeecgApplication:33 - 
+----------------------------------------------------------
+	Application Jeecg-Boot is running! Access URLs:
+	Local: 		http://localhost:8080/jeecg-boot/
+	External: 	http://10.18.219.70:8080/jeecg-boot/
+	swagger-ui: 		http://10.18.219.70:8080/jeecg-boot/doc.html
+----------------------------------------------------------
+2020-03-13 11:10:34.431 [RMI TCP Connection(4)-127.0.0.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/jeecg-boot]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-13 11:10:34.431 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet:524 - Initializing Servlet 'dispatcherServlet'
+2020-03-13 11:10:34.458 [RMI TCP Connection(4)-127.0.0.1] INFO  org.springframework.web.servlet.DispatcherServlet:546 - Completed initialization in 26 ms
+2020-03-13 11:10:34.596 [RMI TCP Connection(2)-127.0.0.1] INFO  io.lettuce.core.EpollProvider:68 - Starting without optional epoll library
+2020-03-13 11:10:34.598 [RMI TCP Connection(2)-127.0.0.1] INFO  io.lettuce.core.KqueueProvider:70 - Starting without optional kqueue library
+2020-03-13 12:49:53.989 [http-nio-8080-exec-1] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 12:49:53.999 [http-nio-8080-exec-1] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 12:49:54.018 [http-nio-8080-exec-1] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 12:49:54.100 [http-nio-8080-exec-1] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==>  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) 
+2020-03-13 12:49:54.103 [http-nio-8080-exec-1] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==> Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)
+2020-03-13 12:49:54.111 [http-nio-8080-exec-1] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - <==      Total: 0
+2020-03-13 12:49:54.457 [http-nio-8080-exec-1] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==>  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) 
+2020-03-13 12:49:54.464 [http-nio-8080-exec-1] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==> Parameters: 1238326396007182338(String), 2020-03-13 12:49:54.119(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)
+2020-03-13 12:49:54.474 [http-nio-8080-exec-1] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - <==    Updates: 1
+2020-03-13 12:49:55.783 [http-nio-8080-exec-3] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTI5OTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.1dumUUiu59PJPFVzyfK-cEfr9vw_XEf7Pxjbc0KYkAI
+2020-03-13 12:49:55.783 [http-nio-8080-exec-2] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTI5OTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.1dumUUiu59PJPFVzyfK-cEfr9vw_XEf7Pxjbc0KYkAI
+2020-03-13 12:49:55.831 [http-nio-8080-exec-3] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 12:49:55.831 [http-nio-8080-exec-2] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 12:49:55.833 [http-nio-8080-exec-3] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 12:49:55.834 [http-nio-8080-exec-2] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 12:49:55.837 [http-nio-8080-exec-3] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 12:49:55.838 [http-nio-8080-exec-2] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 12:49:56.015 [http-nio-8080-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 12:49:56.138 [http-nio-8080-exec-4] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTI5OTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.1dumUUiu59PJPFVzyfK-cEfr9vw_XEf7Pxjbc0KYkAI
+2020-03-13 12:49:56.184 [http-nio-8080-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 12:49:56.398 [http-nio-8080-exec-5] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTI5OTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.1dumUUiu59PJPFVzyfK-cEfr9vw_XEf7Pxjbc0KYkAI
+2020-03-13 12:49:56.457 [http-nio-8080-exec-6] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTI5OTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.1dumUUiu59PJPFVzyfK-cEfr9vw_XEf7Pxjbc0KYkAI
+2020-03-13 12:49:56.473 [http-nio-8080-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display = 1
+2020-03-13 12:52:12.133 [http-nio-8080-exec-10] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTI5OTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.1dumUUiu59PJPFVzyfK-cEfr9vw_XEf7Pxjbc0KYkAI
+2020-03-13 12:52:12.184 [http-nio-8080-exec-9] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTI5OTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.1dumUUiu59PJPFVzyfK-cEfr9vw_XEf7Pxjbc0KYkAI
+2020-03-13 12:52:12.203 [http-nio-8080-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->enrol_status = 1
+2020-03-13 12:52:12.204 [http-nio-8080-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ
+2020-03-13 12:52:12.265 [http-nio-8080-exec-1] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTI5OTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.1dumUUiu59PJPFVzyfK-cEfr9vw_XEf7Pxjbc0KYkAI
+2020-03-13 12:53:04.656 [http-nio-8080-exec-2] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 12:53:04.657 [http-nio-8080-exec-2] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 12:53:04.660 [http-nio-8080-exec-2] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 12:53:04.669 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==>  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) 
+2020-03-13 12:53:04.670 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==> Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)
+2020-03-13 12:53:04.673 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - <==      Total: 0
+2020-03-13 12:53:04.676 [http-nio-8080-exec-2] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==>  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) 
+2020-03-13 12:53:04.678 [http-nio-8080-exec-2] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==> Parameters: 1238327193839300609(String), 2020-03-13 12:53:04.674(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)
+2020-03-13 12:53:04.683 [http-nio-8080-exec-2] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - <==    Updates: 1
+2020-03-13 12:53:05.618 [http-nio-8080-exec-3] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxODQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.bniwTlPaLXGZwKMfS0fnk6aKKNFx5mgmfjKuL_oj9sE
+2020-03-13 12:53:05.633 [http-nio-8080-exec-4] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxODQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.bniwTlPaLXGZwKMfS0fnk6aKKNFx5mgmfjKuL_oj9sE
+2020-03-13 12:53:05.643 [http-nio-8080-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 12:53:05.774 [http-nio-8080-exec-5] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxODQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.bniwTlPaLXGZwKMfS0fnk6aKKNFx5mgmfjKuL_oj9sE
+2020-03-13 12:53:05.781 [http-nio-8080-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 12:53:05.823 [http-nio-8080-exec-6] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxODQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.bniwTlPaLXGZwKMfS0fnk6aKKNFx5mgmfjKuL_oj9sE
+2020-03-13 12:53:05.955 [http-nio-8080-exec-7] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxODQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.bniwTlPaLXGZwKMfS0fnk6aKKNFx5mgmfjKuL_oj9sE
+2020-03-13 12:53:05.962 [http-nio-8080-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display = 1
+2020-03-13 12:53:06.008 [http-nio-8080-exec-8] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxODQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.bniwTlPaLXGZwKMfS0fnk6aKKNFx5mgmfjKuL_oj9sE
+2020-03-13 12:53:06.109 [http-nio-8080-exec-10] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxODQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.bniwTlPaLXGZwKMfS0fnk6aKKNFx5mgmfjKuL_oj9sE
+2020-03-13 12:53:06.118 [http-nio-8080-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->enrol_status = 1
+2020-03-13 12:53:06.119 [http-nio-8080-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ
+2020-03-13 12:53:06.231 [http-nio-8080-exec-9] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxODQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.bniwTlPaLXGZwKMfS0fnk6aKKNFx5mgmfjKuL_oj9sE
+2020-03-13 12:53:14.762 [http-nio-8080-exec-1] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 12:53:14.764 [http-nio-8080-exec-1] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 12:53:14.766 [http-nio-8080-exec-1] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 12:53:14.772 [http-nio-8080-exec-1] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==>  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) 
+2020-03-13 12:53:14.773 [http-nio-8080-exec-1] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==> Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)
+2020-03-13 12:53:14.775 [http-nio-8080-exec-1] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - <==      Total: 0
+2020-03-13 12:53:14.777 [http-nio-8080-exec-1] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==>  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) 
+2020-03-13 12:53:14.779 [http-nio-8080-exec-1] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==> Parameters: 1238327236180799490(String), 2020-03-13 12:53:14.776(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)
+2020-03-13 12:53:14.782 [http-nio-8080-exec-1] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - <==    Updates: 1
+2020-03-13 12:53:15.578 [http-nio-8080-exec-2] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxOTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.x1NOkmL3sPtnZxzIt5a6D7qVDu6UC0YxfJlS7T-YbGA
+2020-03-13 12:53:15.597 [http-nio-8080-exec-4] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxOTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.x1NOkmL3sPtnZxzIt5a6D7qVDu6UC0YxfJlS7T-YbGA
+2020-03-13 12:53:15.607 [http-nio-8080-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 12:53:15.641 [http-nio-8080-exec-3] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxOTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.x1NOkmL3sPtnZxzIt5a6D7qVDu6UC0YxfJlS7T-YbGA
+2020-03-13 12:53:15.648 [http-nio-8080-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 12:53:15.689 [http-nio-8080-exec-5] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxOTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.x1NOkmL3sPtnZxzIt5a6D7qVDu6UC0YxfJlS7T-YbGA
+2020-03-13 12:53:15.714 [http-nio-8080-exec-6] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxOTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.x1NOkmL3sPtnZxzIt5a6D7qVDu6UC0YxfJlS7T-YbGA
+2020-03-13 12:53:15.719 [http-nio-8080-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display = 1
+2020-03-13 12:53:16.648 [http-nio-8080-exec-7] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxOTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.x1NOkmL3sPtnZxzIt5a6D7qVDu6UC0YxfJlS7T-YbGA
+2020-03-13 12:53:16.727 [http-nio-8080-exec-8] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxOTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.x1NOkmL3sPtnZxzIt5a6D7qVDu6UC0YxfJlS7T-YbGA
+2020-03-13 12:53:16.732 [http-nio-8080-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->enrol_status = 1
+2020-03-13 12:53:16.733 [http-nio-8080-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ
+2020-03-13 12:53:16.764 [http-nio-8080-exec-10] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxOTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.x1NOkmL3sPtnZxzIt5a6D7qVDu6UC0YxfJlS7T-YbGA
+2020-03-13 12:58:11.546 [http-nio-8080-exec-2] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 12:58:11.547 [http-nio-8080-exec-2] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 12:58:11.550 [http-nio-8080-exec-2] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 12:58:11.555 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==>  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) 
+2020-03-13 12:58:11.555 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==> Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)
+2020-03-13 12:58:11.558 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - <==      Total: 0
+2020-03-13 12:58:11.560 [http-nio-8080-exec-2] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==>  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) 
+2020-03-13 12:58:11.561 [http-nio-8080-exec-2] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==> Parameters: 1238328480999895041(String), 2020-03-13 12:58:11.559(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)
+2020-03-13 12:58:11.564 [http-nio-8080-exec-2] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - <==    Updates: 1
+2020-03-13 12:58:12.368 [http-nio-8080-exec-4] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM0OTEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.Wdj5G5wnmmvAoicWDYhlVtTt5Zul-FXeYgF_K9j4KOk
+2020-03-13 12:58:12.384 [http-nio-8080-exec-3] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM0OTEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.Wdj5G5wnmmvAoicWDYhlVtTt5Zul-FXeYgF_K9j4KOk
+2020-03-13 12:58:12.390 [http-nio-8080-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 12:58:12.427 [http-nio-8080-exec-5] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM0OTEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.Wdj5G5wnmmvAoicWDYhlVtTt5Zul-FXeYgF_K9j4KOk
+2020-03-13 12:58:12.432 [http-nio-8080-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 12:58:12.468 [http-nio-8080-exec-6] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM0OTEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.Wdj5G5wnmmvAoicWDYhlVtTt5Zul-FXeYgF_K9j4KOk
+2020-03-13 12:58:12.494 [http-nio-8080-exec-7] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM0OTEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.Wdj5G5wnmmvAoicWDYhlVtTt5Zul-FXeYgF_K9j4KOk
+2020-03-13 12:58:12.498 [http-nio-8080-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display = 1
+2020-03-13 12:58:12.941 [http-nio-8080-exec-8] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM0OTEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.Wdj5G5wnmmvAoicWDYhlVtTt5Zul-FXeYgF_K9j4KOk
+2020-03-13 12:58:13.022 [http-nio-8080-exec-10] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM0OTEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.Wdj5G5wnmmvAoicWDYhlVtTt5Zul-FXeYgF_K9j4KOk
+2020-03-13 12:58:13.026 [http-nio-8080-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->enrol_status = 1
+2020-03-13 12:58:13.027 [http-nio-8080-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ
+2020-03-13 12:58:13.090 [http-nio-8080-exec-9] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM0OTEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.Wdj5G5wnmmvAoicWDYhlVtTt5Zul-FXeYgF_K9j4KOk
+2020-03-13 12:58:34.528 [http-nio-8080-exec-1] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 12:58:34.529 [http-nio-8080-exec-1] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 12:58:34.532 [http-nio-8080-exec-1] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 12:58:34.536 [http-nio-8080-exec-1] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==>  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) 
+2020-03-13 12:58:34.537 [http-nio-8080-exec-1] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==> Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)
+2020-03-13 12:58:34.539 [http-nio-8080-exec-1] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - <==      Total: 0
+2020-03-13 12:58:34.542 [http-nio-8080-exec-1] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==>  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) 
+2020-03-13 12:58:34.543 [http-nio-8080-exec-1] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==> Parameters: 1238328577397583873(String), 2020-03-13 12:58:34.541(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)
+2020-03-13 12:58:34.546 [http-nio-8080-exec-1] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - <==    Updates: 1
+2020-03-13 12:58:35.461 [http-nio-8080-exec-2] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM1MTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8_p4LsQW-zZR5jUR6Km9hIqCzeH1EfLJPonmqw682K4
+2020-03-13 12:58:35.475 [http-nio-8080-exec-3] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM1MTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8_p4LsQW-zZR5jUR6Km9hIqCzeH1EfLJPonmqw682K4
+2020-03-13 12:58:35.481 [http-nio-8080-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 12:58:35.579 [http-nio-8080-exec-4] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM1MTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8_p4LsQW-zZR5jUR6Km9hIqCzeH1EfLJPonmqw682K4
+2020-03-13 12:58:35.585 [http-nio-8080-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 12:58:35.619 [http-nio-8080-exec-5] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM1MTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8_p4LsQW-zZR5jUR6Km9hIqCzeH1EfLJPonmqw682K4
+2020-03-13 12:58:35.642 [http-nio-8080-exec-6] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM1MTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8_p4LsQW-zZR5jUR6Km9hIqCzeH1EfLJPonmqw682K4
+2020-03-13 12:58:35.646 [http-nio-8080-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display = 1
+2020-03-13 12:58:36.162 [http-nio-8080-exec-7] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM1MTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8_p4LsQW-zZR5jUR6Km9hIqCzeH1EfLJPonmqw682K4
+2020-03-13 12:58:36.222 [http-nio-8080-exec-8] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM1MTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8_p4LsQW-zZR5jUR6Km9hIqCzeH1EfLJPonmqw682K4
+2020-03-13 12:58:36.229 [http-nio-8080-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->enrol_status = 1
+2020-03-13 12:58:36.230 [http-nio-8080-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ
+2020-03-13 12:58:36.327 [http-nio-8080-exec-10] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM1MTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8_p4LsQW-zZR5jUR6Km9hIqCzeH1EfLJPonmqw682K4
+2020-03-13 13:02:01.339 [http-nio-8080-exec-2] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 13:02:01.340 [http-nio-8080-exec-2] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 13:02:01.342 [http-nio-8080-exec-2] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 13:02:01.346 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==>  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) 
+2020-03-13 13:02:01.347 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==> Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)
+2020-03-13 13:02:01.349 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - <==      Total: 0
+2020-03-13 13:02:01.351 [http-nio-8080-exec-2] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==>  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) 
+2020-03-13 13:02:01.352 [http-nio-8080-exec-2] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==> Parameters: 1238329444800622593(String), 2020-03-13 13:02:01.349(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)
+2020-03-13 13:02:01.355 [http-nio-8080-exec-2] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - <==    Updates: 1
+2020-03-13 13:02:02.289 [http-nio-8080-exec-3] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3MjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.vL_IPivOkqcOovMbaUgXfVl78Zge_s2xb60loMzf-Gc
+2020-03-13 13:02:02.304 [http-nio-8080-exec-4] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3MjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.vL_IPivOkqcOovMbaUgXfVl78Zge_s2xb60loMzf-Gc
+2020-03-13 13:02:02.309 [http-nio-8080-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:02:02.408 [http-nio-8080-exec-5] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3MjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.vL_IPivOkqcOovMbaUgXfVl78Zge_s2xb60loMzf-Gc
+2020-03-13 13:02:02.418 [http-nio-8080-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:02:02.459 [http-nio-8080-exec-6] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3MjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.vL_IPivOkqcOovMbaUgXfVl78Zge_s2xb60loMzf-Gc
+2020-03-13 13:02:02.481 [http-nio-8080-exec-7] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3MjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.vL_IPivOkqcOovMbaUgXfVl78Zge_s2xb60loMzf-Gc
+2020-03-13 13:02:02.484 [http-nio-8080-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display = 1
+2020-03-13 13:02:05.310 [http-nio-8080-exec-8] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3MjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.vL_IPivOkqcOovMbaUgXfVl78Zge_s2xb60loMzf-Gc
+2020-03-13 13:02:05.339 [http-nio-8080-exec-10] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3MjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.vL_IPivOkqcOovMbaUgXfVl78Zge_s2xb60loMzf-Gc
+2020-03-13 13:02:05.345 [http-nio-8080-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->enrol_status = 1
+2020-03-13 13:02:05.346 [http-nio-8080-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ
+2020-03-13 13:02:05.435 [http-nio-8080-exec-9] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3MjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.vL_IPivOkqcOovMbaUgXfVl78Zge_s2xb60loMzf-Gc
+2020-03-13 13:02:24.096 [http-nio-8080-exec-1] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 13:02:24.097 [http-nio-8080-exec-1] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 13:02:24.099 [http-nio-8080-exec-1] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 13:02:24.108 [http-nio-8080-exec-1] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==>  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) 
+2020-03-13 13:02:24.109 [http-nio-8080-exec-1] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==> Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)
+2020-03-13 13:02:24.111 [http-nio-8080-exec-1] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - <==      Total: 0
+2020-03-13 13:02:24.113 [http-nio-8080-exec-1] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==>  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) 
+2020-03-13 13:02:24.114 [http-nio-8080-exec-1] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==> Parameters: 1238329540258787329(String), 2020-03-13 13:02:24.112(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)
+2020-03-13 13:02:24.117 [http-nio-8080-exec-1] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - <==    Updates: 1
+2020-03-13 13:02:25.330 [http-nio-8080-exec-2] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q
+2020-03-13 13:02:25.342 [http-nio-8080-exec-3] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q
+2020-03-13 13:02:25.347 [http-nio-8080-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:02:25.555 [http-nio-8080-exec-4] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q
+2020-03-13 13:02:25.580 [http-nio-8080-exec-5] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q
+2020-03-13 13:02:25.587 [http-nio-8080-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:02:25.680 [http-nio-8080-exec-6] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q
+2020-03-13 13:02:25.688 [http-nio-8080-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->enrol_status = 1
+2020-03-13 13:02:25.688 [http-nio-8080-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ
+2020-03-13 13:02:25.707 [http-nio-8080-exec-7] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q
+2020-03-13 13:02:25.725 [http-nio-8080-exec-8] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q
+2020-03-13 13:02:25.741 [http-nio-8080-exec-10] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q
+2020-03-13 13:02:25.745 [http-nio-8080-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display = 1
+2020-03-13 13:02:47.502 [http-nio-8080-exec-9] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q
+2020-03-13 13:02:47.507 [http-nio-8080-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ
+2020-03-13 13:02:49.269 [http-nio-8080-exec-1] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q
+2020-03-13 13:02:49.298 [http-nio-8080-exec-2] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q
+2020-03-13 13:02:49.303 [http-nio-8080-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->enrol_status = 1
+2020-03-13 13:02:49.304 [http-nio-8080-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ
+2020-03-13 13:02:49.324 [http-nio-8080-exec-3] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q
+2020-03-13 13:03:12.127 [http-nio-8080-exec-4] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 13:03:12.129 [http-nio-8080-exec-4] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 13:03:12.131 [http-nio-8080-exec-4] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 13:03:12.136 [http-nio-8080-exec-4] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==>  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) 
+2020-03-13 13:03:12.137 [http-nio-8080-exec-4] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==> Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)
+2020-03-13 13:03:12.139 [http-nio-8080-exec-4] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - <==      Total: 0
+2020-03-13 13:03:12.143 [http-nio-8080-exec-4] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==>  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) 
+2020-03-13 13:03:12.145 [http-nio-8080-exec-4] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==> Parameters: 1238329741618933762(String), 2020-03-13 13:03:12.141(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)
+2020-03-13 13:03:12.148 [http-nio-8080-exec-4] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - <==    Updates: 1
+2020-03-13 13:03:13.190 [http-nio-8080-exec-5] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3OTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.XBLgasQMszFLmxj28T_ddZLLn31K6FzOSwkz3BjL-iM
+2020-03-13 13:03:13.250 [http-nio-8080-exec-6] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3OTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.XBLgasQMszFLmxj28T_ddZLLn31K6FzOSwkz3BjL-iM
+2020-03-13 13:03:13.254 [http-nio-8080-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:03:13.405 [http-nio-8080-exec-7] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3OTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.XBLgasQMszFLmxj28T_ddZLLn31K6FzOSwkz3BjL-iM
+2020-03-13 13:03:13.411 [http-nio-8080-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:03:13.492 [http-nio-8080-exec-8] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3OTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.XBLgasQMszFLmxj28T_ddZLLn31K6FzOSwkz3BjL-iM
+2020-03-13 13:03:13.535 [http-nio-8080-exec-10] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3OTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.XBLgasQMszFLmxj28T_ddZLLn31K6FzOSwkz3BjL-iM
+2020-03-13 13:03:13.579 [http-nio-8080-exec-9] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3OTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.XBLgasQMszFLmxj28T_ddZLLn31K6FzOSwkz3BjL-iM
+2020-03-13 13:03:13.584 [http-nio-8080-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->enrol_status = 1
+2020-03-13 13:03:13.585 [http-nio-8080-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ
+2020-03-13 13:03:13.597 [http-nio-8080-exec-1] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3OTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.XBLgasQMszFLmxj28T_ddZLLn31K6FzOSwkz3BjL-iM
+2020-03-13 13:03:13.601 [http-nio-8080-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display = 1
+2020-03-13 13:03:13.662 [http-nio-8080-exec-2] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3OTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.XBLgasQMszFLmxj28T_ddZLLn31K6FzOSwkz3BjL-iM
+2020-03-13 13:03:26.717 [http-nio-8080-exec-4] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 13:03:26.719 [http-nio-8080-exec-4] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 13:03:26.721 [http-nio-8080-exec-4] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 13:03:26.753 [http-nio-8080-exec-4] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==>  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) 
+2020-03-13 13:03:26.755 [http-nio-8080-exec-4] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==> Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)
+2020-03-13 13:03:26.756 [http-nio-8080-exec-4] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - <==      Total: 0
+2020-03-13 13:03:26.758 [http-nio-8080-exec-4] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==>  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) 
+2020-03-13 13:03:26.759 [http-nio-8080-exec-4] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==> Parameters: 1238329803040321538(String), 2020-03-13 13:03:26.757(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)
+2020-03-13 13:03:26.763 [http-nio-8080-exec-4] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - <==    Updates: 1
+2020-03-13 13:03:27.795 [http-nio-8080-exec-5] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM4MDYsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.CIWOV3BGeKkohh5eLLSSyy-VL8MdgjisCnNd9E_UvGQ
+2020-03-13 13:03:27.811 [http-nio-8080-exec-6] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM4MDYsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.CIWOV3BGeKkohh5eLLSSyy-VL8MdgjisCnNd9E_UvGQ
+2020-03-13 13:03:27.816 [http-nio-8080-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:03:27.854 [http-nio-8080-exec-7] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM4MDYsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.CIWOV3BGeKkohh5eLLSSyy-VL8MdgjisCnNd9E_UvGQ
+2020-03-13 13:03:27.857 [http-nio-8080-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:03:27.888 [http-nio-8080-exec-8] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM4MDYsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.CIWOV3BGeKkohh5eLLSSyy-VL8MdgjisCnNd9E_UvGQ
+2020-03-13 13:03:27.911 [http-nio-8080-exec-10] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM4MDYsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.CIWOV3BGeKkohh5eLLSSyy-VL8MdgjisCnNd9E_UvGQ
+2020-03-13 13:03:27.916 [http-nio-8080-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display = 1
+2020-03-13 13:04:08.075 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 13:04:08.076 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 13:04:08.078 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 13:04:08.097 [http-nio-8080-exec-9] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==>  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) 
+2020-03-13 13:04:08.098 [http-nio-8080-exec-9] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==> Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)
+2020-03-13 13:04:08.099 [http-nio-8080-exec-9] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - <==      Total: 0
+2020-03-13 13:04:08.100 [http-nio-8080-exec-9] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==>  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) 
+2020-03-13 13:04:08.102 [http-nio-8080-exec-9] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==> Parameters: 1238329976407683073(String), 2020-03-13 13:04:08.1(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)
+2020-03-13 13:04:08.117 [http-nio-8080-exec-9] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - <==    Updates: 1
+2020-03-13 13:04:09.004 [http-nio-8080-exec-1] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM4NDgsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.yjPw-M1s-OGHLRDKEQj3xnPYFa1qGM_AAe7r19E4aO0
+2020-03-13 13:04:09.027 [http-nio-8080-exec-2] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM4NDgsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.yjPw-M1s-OGHLRDKEQj3xnPYFa1qGM_AAe7r19E4aO0
+2020-03-13 13:04:09.032 [http-nio-8080-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:04:09.065 [http-nio-8080-exec-3] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM4NDgsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.yjPw-M1s-OGHLRDKEQj3xnPYFa1qGM_AAe7r19E4aO0
+2020-03-13 13:04:09.069 [http-nio-8080-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:04:09.100 [http-nio-8080-exec-4] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM4NDgsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.yjPw-M1s-OGHLRDKEQj3xnPYFa1qGM_AAe7r19E4aO0
+2020-03-13 13:04:09.127 [http-nio-8080-exec-5] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM4NDgsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.yjPw-M1s-OGHLRDKEQj3xnPYFa1qGM_AAe7r19E4aO0
+2020-03-13 13:04:09.138 [http-nio-8080-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display = 1
+2020-03-13 13:06:04.834 [http-nio-8080-exec-8] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 13:06:04.835 [http-nio-8080-exec-8] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 13:06:04.837 [http-nio-8080-exec-8] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 13:06:04.842 [http-nio-8080-exec-8] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==>  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) 
+2020-03-13 13:06:04.843 [http-nio-8080-exec-8] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==> Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)
+2020-03-13 13:06:04.844 [http-nio-8080-exec-8] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - <==      Total: 0
+2020-03-13 13:06:04.846 [http-nio-8080-exec-8] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==>  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) 
+2020-03-13 13:06:04.847 [http-nio-8080-exec-8] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==> Parameters: 1238330466054926337(String), 2020-03-13 13:06:04.846(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)
+2020-03-13 13:06:04.850 [http-nio-8080-exec-8] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - <==    Updates: 1
+2020-03-13 13:06:05.910 [http-nio-8080-exec-10] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM5NjQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.wAy2M-d9xSRK7hb3lQhs0IYeirNsUf5zR_8r4UvKv7o
+2020-03-13 13:06:05.922 [http-nio-8080-exec-9] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM5NjQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.wAy2M-d9xSRK7hb3lQhs0IYeirNsUf5zR_8r4UvKv7o
+2020-03-13 13:06:05.927 [http-nio-8080-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:06:06.017 [http-nio-8080-exec-1] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM5NjQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.wAy2M-d9xSRK7hb3lQhs0IYeirNsUf5zR_8r4UvKv7o
+2020-03-13 13:06:06.021 [http-nio-8080-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:06:06.053 [http-nio-8080-exec-2] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM5NjQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.wAy2M-d9xSRK7hb3lQhs0IYeirNsUf5zR_8r4UvKv7o
+2020-03-13 13:06:06.075 [http-nio-8080-exec-3] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM5NjQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.wAy2M-d9xSRK7hb3lQhs0IYeirNsUf5zR_8r4UvKv7o
+2020-03-13 13:06:06.079 [http-nio-8080-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display = 1
+2020-03-13 13:07:01.101 [http-nio-8080-exec-4] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 13:07:01.102 [http-nio-8080-exec-4] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 13:07:01.104 [http-nio-8080-exec-4] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 13:07:01.108 [http-nio-8080-exec-4] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==>  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) 
+2020-03-13 13:07:01.109 [http-nio-8080-exec-4] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==> Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)
+2020-03-13 13:07:01.110 [http-nio-8080-exec-4] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - <==      Total: 0
+2020-03-13 13:07:01.112 [http-nio-8080-exec-4] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==>  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) 
+2020-03-13 13:07:01.113 [http-nio-8080-exec-4] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==> Parameters: 1238330702043246594(String), 2020-03-13 13:07:01.111(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)
+2020-03-13 13:07:01.124 [http-nio-8080-exec-4] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - <==    Updates: 1
+2020-03-13 13:07:02.108 [http-nio-8080-exec-5] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQwMjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.FzO8sz0JAPJE-GpUpsUS0UnY9KjwdCSVY04BZdUWgHE
+2020-03-13 13:07:02.121 [http-nio-8080-exec-6] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQwMjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.FzO8sz0JAPJE-GpUpsUS0UnY9KjwdCSVY04BZdUWgHE
+2020-03-13 13:07:02.125 [http-nio-8080-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:07:02.219 [http-nio-8080-exec-7] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQwMjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.FzO8sz0JAPJE-GpUpsUS0UnY9KjwdCSVY04BZdUWgHE
+2020-03-13 13:07:02.225 [http-nio-8080-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:07:02.257 [http-nio-8080-exec-8] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQwMjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.FzO8sz0JAPJE-GpUpsUS0UnY9KjwdCSVY04BZdUWgHE
+2020-03-13 13:07:02.277 [http-nio-8080-exec-10] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQwMjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.FzO8sz0JAPJE-GpUpsUS0UnY9KjwdCSVY04BZdUWgHE
+2020-03-13 13:07:02.280 [http-nio-8080-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display = 1
+2020-03-13 13:07:13.331 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 13:07:13.332 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 13:07:13.334 [http-nio-8080-exec-9] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 13:07:13.338 [http-nio-8080-exec-9] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==>  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) 
+2020-03-13 13:07:13.339 [http-nio-8080-exec-9] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==> Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)
+2020-03-13 13:07:13.340 [http-nio-8080-exec-9] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - <==      Total: 0
+2020-03-13 13:07:13.342 [http-nio-8080-exec-9] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==>  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) 
+2020-03-13 13:07:13.343 [http-nio-8080-exec-9] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==> Parameters: 1238330753394110466(String), 2020-03-13 13:07:13.341(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)
+2020-03-13 13:07:13.346 [http-nio-8080-exec-9] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - <==    Updates: 1
+2020-03-13 13:07:14.358 [http-nio-8080-exec-1] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQwMzMsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.iYlglU72N-Rvv4KzV_EkgY9_gcr5xpKsTZgNBSAxkNE
+2020-03-13 13:07:14.368 [http-nio-8080-exec-2] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQwMzMsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.iYlglU72N-Rvv4KzV_EkgY9_gcr5xpKsTZgNBSAxkNE
+2020-03-13 13:07:14.373 [http-nio-8080-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:07:14.411 [http-nio-8080-exec-3] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQwMzMsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.iYlglU72N-Rvv4KzV_EkgY9_gcr5xpKsTZgNBSAxkNE
+2020-03-13 13:07:14.416 [http-nio-8080-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:07:14.492 [http-nio-8080-exec-4] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQwMzMsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.iYlglU72N-Rvv4KzV_EkgY9_gcr5xpKsTZgNBSAxkNE
+2020-03-13 13:07:14.512 [http-nio-8080-exec-5] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQwMzMsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.iYlglU72N-Rvv4KzV_EkgY9_gcr5xpKsTZgNBSAxkNE
+2020-03-13 13:07:14.516 [http-nio-8080-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display = 1
+2020-03-13 13:16:12.093 [http-nio-8080-exec-8] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 13:16:12.094 [http-nio-8080-exec-8] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 13:16:12.098 [http-nio-8080-exec-8] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 13:16:12.105 [http-nio-8080-exec-8] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==>  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) 
+2020-03-13 13:16:12.105 [http-nio-8080-exec-8] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==> Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)
+2020-03-13 13:16:12.107 [http-nio-8080-exec-8] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - <==      Total: 0
+2020-03-13 13:16:12.109 [http-nio-8080-exec-8] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==>  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) 
+2020-03-13 13:16:12.110 [http-nio-8080-exec-8] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==> Parameters: 1238333013050224642(String), 2020-03-13 13:16:12.108(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)
+2020-03-13 13:16:12.117 [http-nio-8080-exec-8] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - <==    Updates: 1
+2020-03-13 13:16:13.054 [http-nio-8080-exec-10] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQ1NzIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.yHko9UJS7EuXFKc_pPG20JXYz6F-2xqqgTzrlS6Jau4
+2020-03-13 13:16:13.067 [http-nio-8080-exec-9] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQ1NzIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.yHko9UJS7EuXFKc_pPG20JXYz6F-2xqqgTzrlS6Jau4
+2020-03-13 13:16:13.072 [http-nio-8080-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:16:13.171 [http-nio-8080-exec-1] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQ1NzIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.yHko9UJS7EuXFKc_pPG20JXYz6F-2xqqgTzrlS6Jau4
+2020-03-13 13:16:13.175 [http-nio-8080-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:16:13.208 [http-nio-8080-exec-2] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQ1NzIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.yHko9UJS7EuXFKc_pPG20JXYz6F-2xqqgTzrlS6Jau4
+2020-03-13 13:16:13.229 [http-nio-8080-exec-3] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQ1NzIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.yHko9UJS7EuXFKc_pPG20JXYz6F-2xqqgTzrlS6Jau4
+2020-03-13 13:16:13.233 [http-nio-8080-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display = 1
+2020-03-13 13:20:04.355 [http-nio-8080-exec-6] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 13:20:04.356 [http-nio-8080-exec-6] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 13:20:04.359 [http-nio-8080-exec-6] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 13:20:04.363 [http-nio-8080-exec-6] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==>  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) 
+2020-03-13 13:20:04.365 [http-nio-8080-exec-6] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==> Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)
+2020-03-13 13:20:04.366 [http-nio-8080-exec-6] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - <==      Total: 0
+2020-03-13 13:20:04.368 [http-nio-8080-exec-6] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==>  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) 
+2020-03-13 13:20:04.369 [http-nio-8080-exec-6] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==> Parameters: 1238333987324129282(String), 2020-03-13 13:20:04.368(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)
+2020-03-13 13:20:04.373 [http-nio-8080-exec-6] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - <==    Updates: 1
+2020-03-13 13:20:05.186 [http-nio-8080-exec-7] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQ4MDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.R3ClBjeJ7skIUyCUehTfEcXKbJqalLIamUtfS8rdR70
+2020-03-13 13:20:05.211 [http-nio-8080-exec-8] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQ4MDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.R3ClBjeJ7skIUyCUehTfEcXKbJqalLIamUtfS8rdR70
+2020-03-13 13:20:05.215 [http-nio-8080-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:20:05.246 [http-nio-8080-exec-10] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQ4MDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.R3ClBjeJ7skIUyCUehTfEcXKbJqalLIamUtfS8rdR70
+2020-03-13 13:20:05.249 [http-nio-8080-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:20:05.279 [http-nio-8080-exec-9] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQ4MDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.R3ClBjeJ7skIUyCUehTfEcXKbJqalLIamUtfS8rdR70
+2020-03-13 13:20:05.304 [http-nio-8080-exec-1] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQ4MDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.R3ClBjeJ7skIUyCUehTfEcXKbJqalLIamUtfS8rdR70
+2020-03-13 13:20:05.309 [http-nio-8080-exec-1] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display = 1
+2020-03-13 13:25:35.151 [http-nio-8080-exec-3] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 13:25:35.153 [http-nio-8080-exec-3] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 13:25:35.156 [http-nio-8080-exec-3] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 13:25:35.163 [http-nio-8080-exec-3] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==>  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) 
+2020-03-13 13:25:35.164 [http-nio-8080-exec-3] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==> Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)
+2020-03-13 13:25:35.166 [http-nio-8080-exec-3] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - <==      Total: 0
+2020-03-13 13:25:35.169 [http-nio-8080-exec-3] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==>  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) 
+2020-03-13 13:25:35.171 [http-nio-8080-exec-3] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==> Parameters: 1238335374799892482(String), 2020-03-13 13:25:35.167(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)
+2020-03-13 13:25:35.179 [http-nio-8080-exec-3] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - <==    Updates: 1
+2020-03-13 13:25:36.117 [http-nio-8080-exec-4] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUxMzUsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.BugEUmtDOEWAZ1oIHqouUNDwFoxxBHxkTB1HLhCeY-E
+2020-03-13 13:25:36.130 [http-nio-8080-exec-5] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUxMzUsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.BugEUmtDOEWAZ1oIHqouUNDwFoxxBHxkTB1HLhCeY-E
+2020-03-13 13:25:36.137 [http-nio-8080-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:25:36.230 [http-nio-8080-exec-6] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUxMzUsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.BugEUmtDOEWAZ1oIHqouUNDwFoxxBHxkTB1HLhCeY-E
+2020-03-13 13:25:36.243 [http-nio-8080-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:25:36.283 [http-nio-8080-exec-7] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUxMzUsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.BugEUmtDOEWAZ1oIHqouUNDwFoxxBHxkTB1HLhCeY-E
+2020-03-13 13:25:36.306 [http-nio-8080-exec-8] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUxMzUsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.BugEUmtDOEWAZ1oIHqouUNDwFoxxBHxkTB1HLhCeY-E
+2020-03-13 13:25:36.310 [http-nio-8080-exec-8] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display = 1
+2020-03-13 13:29:12.486 [http-nio-8080-exec-1] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 13:29:12.487 [http-nio-8080-exec-1] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 13:29:12.489 [http-nio-8080-exec-1] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 13:29:12.493 [http-nio-8080-exec-1] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==>  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) 
+2020-03-13 13:29:12.494 [http-nio-8080-exec-1] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==> Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)
+2020-03-13 13:29:12.496 [http-nio-8080-exec-1] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - <==      Total: 0
+2020-03-13 13:29:12.497 [http-nio-8080-exec-1] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==>  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) 
+2020-03-13 13:29:12.498 [http-nio-8080-exec-1] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==> Parameters: 1238336286310232065(String), 2020-03-13 13:29:12.496(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)
+2020-03-13 13:29:12.514 [http-nio-8080-exec-1] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - <==    Updates: 1
+2020-03-13 13:29:13.476 [http-nio-8080-exec-2] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzNTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.VjcE6yAuespxLbURXRGTwQjykbqz2r4LBdzKdasZDew
+2020-03-13 13:29:13.488 [http-nio-8080-exec-3] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzNTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.VjcE6yAuespxLbURXRGTwQjykbqz2r4LBdzKdasZDew
+2020-03-13 13:29:13.493 [http-nio-8080-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:29:13.578 [http-nio-8080-exec-4] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzNTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.VjcE6yAuespxLbURXRGTwQjykbqz2r4LBdzKdasZDew
+2020-03-13 13:29:13.582 [http-nio-8080-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:29:13.619 [http-nio-8080-exec-5] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzNTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.VjcE6yAuespxLbURXRGTwQjykbqz2r4LBdzKdasZDew
+2020-03-13 13:29:13.640 [http-nio-8080-exec-6] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzNTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.VjcE6yAuespxLbURXRGTwQjykbqz2r4LBdzKdasZDew
+2020-03-13 13:29:13.644 [http-nio-8080-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display = 1
+2020-03-13 13:29:42.032 [http-nio-8080-exec-7] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 13:29:42.034 [http-nio-8080-exec-7] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 13:29:42.036 [http-nio-8080-exec-7] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 13:29:42.040 [http-nio-8080-exec-7] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==>  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) 
+2020-03-13 13:29:42.041 [http-nio-8080-exec-7] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==> Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)
+2020-03-13 13:29:42.043 [http-nio-8080-exec-7] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - <==      Total: 0
+2020-03-13 13:29:42.044 [http-nio-8080-exec-7] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==>  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) 
+2020-03-13 13:29:42.045 [http-nio-8080-exec-7] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==> Parameters: 1238336410277081090(String), 2020-03-13 13:29:42.043(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)
+2020-03-13 13:29:42.049 [http-nio-8080-exec-7] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - <==    Updates: 1
+2020-03-13 13:29:43.028 [http-nio-8080-exec-8] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo
+2020-03-13 13:29:43.042 [http-nio-8080-exec-10] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo
+2020-03-13 13:29:43.046 [http-nio-8080-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:29:43.084 [http-nio-8080-exec-9] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo
+2020-03-13 13:29:43.088 [http-nio-8080-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:29:43.180 [http-nio-8080-exec-1] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo
+2020-03-13 13:29:43.204 [http-nio-8080-exec-2] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo
+2020-03-13 13:29:43.208 [http-nio-8080-exec-2] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display = 1
+2020-03-13 13:29:50.816 [http-nio-8080-exec-3] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo
+2020-03-13 13:29:50.822 [http-nio-8080-exec-3] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:29:50.841 [http-nio-8080-exec-4] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo
+2020-03-13 13:29:50.845 [http-nio-8080-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:29:50.874 [http-nio-8080-exec-5] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo
+2020-03-13 13:29:50.895 [http-nio-8080-exec-6] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo
+2020-03-13 13:29:50.899 [http-nio-8080-exec-6] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display = 1
+2020-03-13 13:40:49.052 [http-nio-8080-exec-10] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo
+2020-03-13 13:40:49.086 [http-nio-8080-exec-9] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo
+2020-03-13 13:40:49.090 [http-nio-8080-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->enrol_status = 1
+2020-03-13 13:40:49.091 [http-nio-8080-exec-9] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ
+2020-03-13 13:40:49.179 [http-nio-8080-exec-1] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo
+2020-03-13 13:41:14.116 [http-nio-8080-exec-2] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==>  Preparing: select * from sys_user where username = ? and del_flag = '0' 
+2020-03-13 13:41:14.118 [http-nio-8080-exec-2] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - ==> Parameters: cafebabe(String)
+2020-03-13 13:41:14.125 [http-nio-8080-exec-2] DEBUG o.j.m.system.mapper.SysUserMapper.getUserByName:143 - <==      Total: 1
+2020-03-13 13:41:14.130 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==>  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) 
+2020-03-13 13:41:14.131 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - ==> Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)
+2020-03-13 13:41:14.133 [http-nio-8080-exec-2] DEBUG o.j.m.s.mapper.SysDepartMapper.queryUserDeparts:143 - <==      Total: 0
+2020-03-13 13:41:14.135 [http-nio-8080-exec-2] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==>  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) 
+2020-03-13 13:41:14.136 [http-nio-8080-exec-2] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - ==> Parameters: 1238339313112936449(String), 2020-03-13 13:41:14.134(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)
+2020-03-13 13:41:14.139 [http-nio-8080-exec-2] DEBUG o.jeecg.modules.system.mapper.SysLogMapper.insert:143 - <==    Updates: 1
+2020-03-13 13:41:15.133 [http-nio-8080-exec-3] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTYwNzQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.LlZXZ68DJV84-6DGVW-KNYtfwiRCQsV816CYqP6l9vc
+2020-03-13 13:41:15.149 [http-nio-8080-exec-4] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTYwNzQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.LlZXZ68DJV84-6DGVW-KNYtfwiRCQsV816CYqP6l9vc
+2020-03-13 13:41:15.153 [http-nio-8080-exec-4] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:41:15.249 [http-nio-8080-exec-5] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTYwNzQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.LlZXZ68DJV84-6DGVW-KNYtfwiRCQsV816CYqP6l9vc
+2020-03-13 13:41:15.254 [http-nio-8080-exec-5] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display_type = 1
+2020-03-13 13:41:15.292 [http-nio-8080-exec-6] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTYwNzQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.LlZXZ68DJV84-6DGVW-KNYtfwiRCQsV816CYqP6l9vc
+2020-03-13 13:41:15.319 [http-nio-8080-exec-7] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTYwNzQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.LlZXZ68DJV84-6DGVW-KNYtfwiRCQsV816CYqP6l9vc
+2020-03-13 13:41:15.322 [http-nio-8080-exec-7] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->display = 1
+2020-03-13 13:41:15.808 [http-nio-8080-exec-8] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTYwNzQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.LlZXZ68DJV84-6DGVW-KNYtfwiRCQsV816CYqP6l9vc
+2020-03-13 13:41:15.909 [http-nio-8080-exec-10] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTYwNzQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.LlZXZ68DJV84-6DGVW-KNYtfwiRCQsV816CYqP6l9vc
+2020-03-13 13:41:15.914 [http-nio-8080-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->enrol_status = 1
+2020-03-13 13:41:15.915 [http-nio-8080-exec-10] INFO  org.jeecg.common.system.query.QueryGenerator:389 - --查询规则-->user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ
+2020-03-13 13:41:15.954 [http-nio-8080-exec-9] INFO  org.jeecg.modules.shiro.authc.ShiroRealm:118 - ———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTYwNzQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.LlZXZ68DJV84-6DGVW-KNYtfwiRCQsV816CYqP6l9vc

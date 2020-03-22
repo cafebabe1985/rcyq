@@ -1,4 +1,6 @@
-<!--pages/createActive/createActive.wxml-->
+<!-- <cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText"></view><view slot="content">
+创建活动
+</view></cu-custom> -->
 <form bindreset="formReset">
   <view class="cu-form-group">
     <input placeholder="{{validates.name.validate?'活动主题':'*必须填写主题名称'}}" placeholder-style="{{validates.name.validate?'':'color:red'}}" name="name" maxlength="30" value="{{form.name}}" data-name="name" data-key="validates.name.validate" bindblur="onBlur"></input>

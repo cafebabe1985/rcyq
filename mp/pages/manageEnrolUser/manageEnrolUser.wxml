@@ -1,4 +1,7 @@
 <wxs src="../../common/enrolUserPage.wxs" module="tools" />
+<!-- <cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText"></view><view slot="content">
+报名管理
+</view></cu-custom> -->
 <view class="cu-card article" wx:for="{{enrolUsers}}">
   <view class="cu-item shadow">
     <view class="title">

@@ -1,16 +1,16 @@
-.card-swiper swiper-item{
+/* .card-swiper swiper-item{
   width: 300rpx !important;
   left: 300rpx !important;
   padding: 0
   
-}
+} */
 .card-swiper{
  height:220rpx !important
 
 }
-.home-banner{
+/* .home-banner{
   padding-top:30rpx
-}
+} */
 .box-size{
   height: 20rpx
 }
@@ -21,7 +21,7 @@
   width: 100%;
 }
 .navbar-wrap .fixed-nav{
-  top: 0;
+  /* top: 0; */
   left: 0;
   /* z-index: 100; */
     
@@ -43,3 +43,7 @@
 page{
   background-color: white
 }
+.tab-item{
+  margin:0 50rpx
+}
+

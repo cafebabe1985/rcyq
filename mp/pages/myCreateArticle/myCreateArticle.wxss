@@ -1,0 +1,7 @@
+/* pages/myPublishScenic/myPublishScenice.wxss */
+.float-btn{
+  position: fixed;
+  right: 30rpx;
+  bottom: 250rpx;
+  z-index: 999
+}

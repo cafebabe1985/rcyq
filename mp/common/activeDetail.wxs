@@ -1,0 +1,64 @@
+
+//2
+var pathHandle = function (base, src) {
+  return (src.indexOf("http:") != -1 || src.indexOf("https:") != -1) ? src : base + src
+}
+
+
+//1
+var costHandle = function (cost) {
+
+  var total
+  if (cost && cost.opts && cost.opts.length > 0) {
+    total = 0
+    for (var i = 0; i < cost.opts.length; i++) {
+      total += parseFloat(cost.opts[i].cost)
+    }
+    if (total && total > 0) {
+      return "￥" + total
+    } else {
+      return "待定"
+    }
+  } else {
+    return "待定"
+  }
+}
+//5
+var needExamineEnrolTypeHandle = function (type) {
+  if (type == '0') {
+    return '不需要'
+  } else {
+    return '需要'
+  }
+}
+//4
+var allowEnrolAgentTypeHandle = function (type) {
+  if (type == '0') {
+    return '不允许'
+  } else {
+    return '允许'
+  }
+}
+//6
+var insuranceTypeHandle = function (type) {
+  var index = parseInt(type)
+  var insuranceType = ['无保险要求', '会员自行购买', '主办方统一购买']
+  return insuranceType[index]
+}
+//3
+var enrolWayHandle = function (type) {
+  if (type == '0') {
+    return '个人报名'
+  } else {
+    return '团队报名'
+  }
+}
+
+module.exports = {
+  pathHandle: pathHandle, 
+  costHandle: costHandle,
+  needExamineEnrolTypeHandle: needExamineEnrolTypeHandle,
+  allowEnrolAgentTypeHandle: allowEnrolAgentTypeHandle,
+  insuranceTypeHandle: insuranceTypeHandle,
+  enrolWayHandle: enrolWayHandle
+};

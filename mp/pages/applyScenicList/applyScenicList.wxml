@@ -1,3 +1,6 @@
+<!-- <cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText"></view><view slot="content">
+景区负责人管理列表
+</view></cu-custom> -->
  <view  class="bg-white nav text-center">
   <view class="cu-item {{index==cur?'text-blue cur':''}}" wx:for="{{tabs}}" wx:key bindtap="tabSelect" data-id="{{index}}">
     {{item}}

@@ -1,0 +1,4294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Fri Mar 13 11:10:19 CST 2020</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="Level">Level</td>
+<td class="Date">Date</td>
+<td class="Message">Message</td>
+<td class="MethodOfCaller">MethodOfCaller</td>
+<td class="FileOfCaller">FileOfCaller</td>
+<td class="LineOfCaller">LineOfCaller</td>
+</tr>
+
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:19,176</td>
+<td class="Message">Starting JeecgApplication on DESKTOP-F7RLFV9 with PID 9156 (C:\Users\cafebabe\important\rcyq_app\rcyq\server\jeecg-boot-module-system\target\classes started by cafebabe in C:\Users\cafebabe\important\rcyq_app\rcyq\server)</td>
+<td class="MethodOfCaller">logStarting</td>
+<td class="FileOfCaller">StartupInfoLogger.java</td>
+<td class="LineOfCaller">50</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:19,180</td>
+<td class="Message">The following profiles are active: dev</td>
+<td class="MethodOfCaller">logStartupProfileInfo</td>
+<td class="FileOfCaller">SpringApplication.java</td>
+<td class="LineOfCaller">679</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:21,105</td>
+<td class="Message">Multiple Spring Data modules found, entering strict repository configuration mode!</td>
+<td class="MethodOfCaller">multipleStoresDetected</td>
+<td class="FileOfCaller">RepositoryConfigurationDelegate.java</td>
+<td class="LineOfCaller">244</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:21,108</td>
+<td class="Message">Bootstrapping Spring Data repositories in DEFAULT mode.</td>
+<td class="MethodOfCaller">registerRepositoriesIn</td>
+<td class="FileOfCaller">RepositoryConfigurationDelegate.java</td>
+<td class="LineOfCaller">126</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:21,310</td>
+<td class="Message">Finished Spring Data repository scanning in 185ms. Found 0 repository interfaces.</td>
+<td class="MethodOfCaller">registerRepositoriesIn</td>
+<td class="FileOfCaller">RepositoryConfigurationDelegate.java</td>
+<td class="LineOfCaller">182</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:21,666</td>
+<td class="Message">Bean &#39;shiroConfig&#39; of type [org.jeecg.config.ShiroConfig$$EnhancerBySpringCGLIB$$267ef076] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:21,807</td>
+<td class="Message">Bean &#39;shiroRealm&#39; of type [org.jeecg.modules.shiro.authc.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:22,212</td>
+<td class="Message">===============(1)创建缓存管理器RedisCacheManager</td>
+<td class="MethodOfCaller">redisCacheManager</td>
+<td class="FileOfCaller">ShiroConfig.java</td>
+<td class="LineOfCaller">200</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:22,214</td>
+<td class="Message">===============(2)创建RedisManager,连接Redis..URL= 127.0.0.1:6379</td>
+<td class="MethodOfCaller">redisManager</td>
+<td class="FileOfCaller">ShiroConfig.java</td>
+<td class="LineOfCaller">218</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:22,218</td>
+<td class="Message">Bean &#39;redisManager&#39; of type [org.crazycake.shiro.RedisManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:22,223</td>
+<td class="Message">Bean &#39;securityManager&#39; of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:22,252</td>
+<td class="Message">Bean &#39;authorizationAttributeSourceAdvisor&#39; of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:22,312</td>
+<td class="Message">Bean &#39;org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration&#39; of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$67986e0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:22,468</td>
+<td class="Message">Bean &#39;spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties&#39; of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:22,474</td>
+<td class="Message">Bean &#39;com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration&#39; of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$7007f7b1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:22,484</td>
+<td class="Message">Bean &#39;dsProcessor&#39; of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:22,490</td>
+<td class="Message">Bean &#39;dynamicDatasourceAnnotationAdvisor&#39; of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:22,512</td>
+<td class="Message">Bean &#39;spring.redis-org.springframework.boot.autoconfigure.data.redis.RedisProperties&#39; of type [org.springframework.boot.autoconfigure.data.redis.RedisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:22,520</td>
+<td class="Message">Bean &#39;org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration&#39; of type [org.springframework.boot.autoconfigure.data.redis.LettuceConnectionConfiguration$$EnhancerBySpringCGLIB$$1b93452a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:22,631</td>
+<td class="Message">Bean &#39;lettuceClientResources&#39; of type [io.lettuce.core.resource.DefaultClientResources] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:22,717</td>
+<td class="Message">Bean &#39;redisConnectionFactory&#39; of type [org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:22,729</td>
+<td class="Message">Bean &#39;redisConfig&#39; of type [org.jeecg.config.RedisConfig$$EnhancerBySpringCGLIB$$714d77c0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:22,761</td>
+<td class="Message">Bean &#39;org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration&#39; of type [org.apache.shiro.spring.boot.autoconfigure.ShiroBeanAutoConfiguration$$EnhancerBySpringCGLIB$$19926490] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:22,767</td>
+<td class="Message">Bean &#39;eventBus&#39; of type [org.apache.shiro.event.support.DefaultEventBus] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)</td>
+<td class="MethodOfCaller">postProcessAfterInitialization</td>
+<td class="FileOfCaller">PostProcessorRegistrationDelegate.java</td>
+<td class="LineOfCaller">330</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:23,180</td>
+<td class="Message">Tomcat initialized with port(s): 8080 (http)</td>
+<td class="MethodOfCaller">initialize</td>
+<td class="FileOfCaller">TomcatWebServer.java</td>
+<td class="LineOfCaller">90</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:23,195</td>
+<td class="Message">Initializing ProtocolHandler [&quot;http-nio-8080&quot;]</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:23,206</td>
+<td class="Message">Starting service [Tomcat]</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:23,206</td>
+<td class="Message">Starting Servlet engine: [Apache Tomcat/9.0.16]</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:23,212</td>
+<td class="Message">The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_171\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Python27\;C:\Python27\Scripts;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Java\jdk1.8.0_171\bin;C:\apache-maven-3.5.3\bin;C:\Program Files\Apache Software Foundation\Tomcat 9.0\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\dotnet\;C:\Users\cafebabe\ffmpeg-20181105-beaa350-win64-static\bin;C:\Program Files\TortoiseGit;C:\Users\cafebabe\nvm-noinstall;C:\Program Files\nodejs;C:\Program Files\nodejs\;C:\工具软件\Redis-x64-3.2.100;C:\;sers\cafebabe\flutter_windows_v1.7.8+hotfix.3-stable\flutter\bin;C:\Program Files\Git\cmd;C:\Users\cafebabe\AppData\Local\Microsoft\WindowsApps;C:\Users\cafebabe\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\cafebabe\AppData\Roaming\npm;C:\Users\cafebabe\AppData\Local\Programs\Fiddler;.]</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:23,410</td>
+<td class="Message">Initializing Spring embedded WebApplicationContext</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:23,411</td>
+<td class="Message">Root WebApplicationContext: initialization completed in 4156 ms</td>
+<td class="MethodOfCaller">prepareWebApplicationContext</td>
+<td class="FileOfCaller">ServletWebServerApplicationContext.java</td>
+<td class="LineOfCaller">296</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:23,740</td>
+<td class="Message">动态数据源-检测到druid存在,如配置中未指定type,druid会默认配置</td>
+<td class="MethodOfCaller">&lt;init&gt;</td>
+<td class="FileOfCaller">DynamicDataSourceCreator.java</td>
+<td class="LineOfCaller">113</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:24,006</td>
+<td class="Message">{dataSource-1,master} inited</td>
+<td class="MethodOfCaller">init</td>
+<td class="FileOfCaller">DruidDataSource.java</td>
+<td class="LineOfCaller">1003</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:24,007</td>
+<td class="Message">初始共加载 1 个数据源</td>
+<td class="MethodOfCaller">afterPropertiesSet</td>
+<td class="FileOfCaller">DynamicRoutingDataSource.java</td>
+<td class="LineOfCaller">203</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:24,007</td>
+<td class="Message">动态数据源-加载 master 成功</td>
+<td class="MethodOfCaller">addDataSource</td>
+<td class="FileOfCaller">DynamicRoutingDataSource.java</td>
+<td class="LineOfCaller">142</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:24,007</td>
+<td class="Message">当前的默认数据源是单数据源，数据源名为 master</td>
+<td class="MethodOfCaller">afterPropertiesSet</td>
+<td class="FileOfCaller">DynamicRoutingDataSource.java</td>
+<td class="LineOfCaller">212</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:27,263</td>
+<td class="Message">Using default implementation for ThreadExecutor</td>
+<td class="MethodOfCaller">instantiate</td>
+<td class="FileOfCaller">StdSchedulerFactory.java</td>
+<td class="LineOfCaller">1208</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:27,277</td>
+<td class="Message">Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl</td>
+<td class="MethodOfCaller">&lt;init&gt;</td>
+<td class="FileOfCaller">SchedulerSignalerImpl.java</td>
+<td class="LineOfCaller">61</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:27,277</td>
+<td class="Message">Quartz Scheduler v.2.3.0 created.</td>
+<td class="MethodOfCaller">&lt;init&gt;</td>
+<td class="FileOfCaller">QuartzScheduler.java</td>
+<td class="LineOfCaller">229</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:27,282</td>
+<td class="Message">Using db table-based data access locking (synchronization).</td>
+<td class="MethodOfCaller">initialize</td>
+<td class="FileOfCaller">JobStoreSupport.java</td>
+<td class="LineOfCaller">672</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:27,284</td>
+<td class="Message">JobStoreCMT initialized.</td>
+<td class="MethodOfCaller">initialize</td>
+<td class="FileOfCaller">JobStoreCMT.java</td>
+<td class="LineOfCaller">145</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:27,285</td>
+<td class="Message">Scheduler meta-data: Quartz Scheduler (v2.3.0) &#39;quartzScheduler&#39; with instanceId &#39;NON_CLUSTERED&#39;
+  Scheduler class: &#39;org.quartz.core.QuartzScheduler&#39; - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool &#39;org.quartz.simpl.SimpleThreadPool&#39; - with 10 threads.
+  Using job-store &#39;org.springframework.scheduling.quartz.LocalDataSourceJobStore&#39; - which supports persistence. and is not clustered.
+</td>
+<td class="MethodOfCaller">initialize</td>
+<td class="FileOfCaller">QuartzScheduler.java</td>
+<td class="LineOfCaller">294</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:27,286</td>
+<td class="Message">Quartz scheduler &#39;quartzScheduler&#39; initialized from an externally provided properties instance.</td>
+<td class="MethodOfCaller">instantiate</td>
+<td class="FileOfCaller">StdSchedulerFactory.java</td>
+<td class="LineOfCaller">1362</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:27,286</td>
+<td class="Message">Quartz scheduler version: 2.3.0</td>
+<td class="MethodOfCaller">instantiate</td>
+<td class="FileOfCaller">StdSchedulerFactory.java</td>
+<td class="LineOfCaller">1366</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:27,286</td>
+<td class="Message">JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@6bfbab1c</td>
+<td class="MethodOfCaller">setJobFactory</td>
+<td class="FileOfCaller">QuartzScheduler.java</td>
+<td class="LineOfCaller">2287</td>
+</tr>
+
+<tr class="warn odd">
+<td class="Level">WARN</td>
+<td class="Date">2020-03-13 11:10:30,215</td>
+<td class="Message">ElasticSearch 服务连接失败，原因：配置未通过。可能是BaseURL未配置或配置有误，也可能是Elasticsearch服务未启动。接下来将会拒绝执行任何方法！</td>
+<td class="MethodOfCaller">&lt;init&gt;</td>
+<td class="FileOfCaller">JeecgElasticsearchTemplate.java</td>
+<td class="LineOfCaller">61</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:32,347</td>
+<td class="Message">Exposing 2 endpoint(s) beneath base path &#39;/actuator&#39;</td>
+<td class="MethodOfCaller">&lt;init&gt;</td>
+<td class="FileOfCaller">EndpointLinksResolver.java</td>
+<td class="LineOfCaller">59</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:32,517</td>
+<td class="Message">Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity&lt;springfox.documentation.spring.web.json.Json&gt; springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]</td>
+<td class="MethodOfCaller">initHandlerMethods</td>
+<td class="FileOfCaller">PropertySourcedRequestMappingHandlerMapping.java</td>
+<td class="LineOfCaller">69</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:32,829</td>
+<td class="Message">Initializing ExecutorService &#39;applicationTaskExecutor&#39;</td>
+<td class="MethodOfCaller">initialize</td>
+<td class="FileOfCaller">ExecutorConfigurationSupport.java</td>
+<td class="LineOfCaller">171</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:33,660</td>
+<td class="Message">Context refreshed</td>
+<td class="MethodOfCaller">start</td>
+<td class="FileOfCaller">DocumentationPluginsBootstrapper.java</td>
+<td class="LineOfCaller">160</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:33,681</td>
+<td class="Message">Found 1 custom documentation plugin(s)</td>
+<td class="MethodOfCaller">start</td>
+<td class="FileOfCaller">DocumentationPluginsBootstrapper.java</td>
+<td class="LineOfCaller">163</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:33,739</td>
+<td class="Message">Scanning for api listing references</td>
+<td class="MethodOfCaller">scan</td>
+<td class="FileOfCaller">ApiListingReferenceScanner.java</td>
+<td class="LineOfCaller">41</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:33,909</td>
+<td class="Message">Generating unique operation named: addUsingPOST_1</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:33,910</td>
+<td class="Message">Generating unique operation named: deleteUsingDELETE_1</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:33,912</td>
+<td class="Message">Generating unique operation named: deleteBatchUsingDELETE_1</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:33,913</td>
+<td class="Message">Generating unique operation named: editUsingPUT_1</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:33,914</td>
+<td class="Message">Generating unique operation named: queryByIdUsingGET_1</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:33,925</td>
+<td class="Message">Generating unique operation named: addUsingPOST_2</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:33,926</td>
+<td class="Message">Generating unique operation named: deleteUsingDELETE_2</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:33,927</td>
+<td class="Message">Generating unique operation named: deleteBatchUsingDELETE_2</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:33,929</td>
+<td class="Message">Generating unique operation named: editUsingPUT_2</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:33,930</td>
+<td class="Message">Generating unique operation named: queryByIdUsingGET_2</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:33,939</td>
+<td class="Message">Generating unique operation named: queryPageListUsingGET_1</td>
+<td class="MethodOfCaller">startingWith</td>
+<td class="FileOfCaller">CachingOperationNameGenerator.java</td>
+<td class="LineOfCaller">40</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:33,951</td>
+<td class="Message">Starting Quartz Scheduler now</td>
+<td class="MethodOfCaller">startScheduler</td>
+<td class="FileOfCaller">SchedulerFactoryBean.java</td>
+<td class="LineOfCaller">726</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:34,090</td>
+<td class="Message">Freed 0 triggers from &#39;acquired&#39; / &#39;blocked&#39; state.</td>
+<td class="MethodOfCaller">recoverJobs</td>
+<td class="FileOfCaller">JobStoreSupport.java</td>
+<td class="LineOfCaller">866</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:34,099</td>
+<td class="Message">Recovering 0 jobs that were in-progress at the time of the last shut-down.</td>
+<td class="MethodOfCaller">recoverJobs</td>
+<td class="FileOfCaller">JobStoreSupport.java</td>
+<td class="LineOfCaller">876</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:34,100</td>
+<td class="Message">Recovery complete.</td>
+<td class="MethodOfCaller">recoverJobs</td>
+<td class="FileOfCaller">JobStoreSupport.java</td>
+<td class="LineOfCaller">889</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:34,102</td>
+<td class="Message">Removed 0 &#39;complete&#39; triggers.</td>
+<td class="MethodOfCaller">recoverJobs</td>
+<td class="FileOfCaller">JobStoreSupport.java</td>
+<td class="LineOfCaller">896</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:34,104</td>
+<td class="Message">Removed 0 stale fired job entries.</td>
+<td class="MethodOfCaller">recoverJobs</td>
+<td class="FileOfCaller">JobStoreSupport.java</td>
+<td class="LineOfCaller">901</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:34,105</td>
+<td class="Message">Scheduler quartzScheduler_$_NON_CLUSTERED started.</td>
+<td class="MethodOfCaller">start</td>
+<td class="FileOfCaller">QuartzScheduler.java</td>
+<td class="LineOfCaller">547</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:34,121</td>
+<td class="Message">Starting ProtocolHandler [&quot;http-nio-8080&quot;]</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:34,148</td>
+<td class="Message">Tomcat started on port(s): 8080 (http) with context path &#39;/jeecg-boot&#39;</td>
+<td class="MethodOfCaller">start</td>
+<td class="FileOfCaller">TomcatWebServer.java</td>
+<td class="LineOfCaller">204</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:34,151</td>
+<td class="Message">Started JeecgApplication in 15.758 seconds (JVM running for 17.105)</td>
+<td class="MethodOfCaller">logStarted</td>
+<td class="FileOfCaller">StartupInfoLogger.java</td>
+<td class="LineOfCaller">59</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:34,165</td>
+<td class="Message">
+----------------------------------------------------------
+	Application Jeecg-Boot is running! Access URLs:
+	Local: 		http://localhost:8080/jeecg-boot/
+	External: 	http://10.18.219.70:8080/jeecg-boot/
+	swagger-ui: 		http://10.18.219.70:8080/jeecg-boot/doc.html
+----------------------------------------------------------</td>
+<td class="MethodOfCaller">main</td>
+<td class="FileOfCaller">JeecgApplication.java</td>
+<td class="LineOfCaller">33</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:34,431</td>
+<td class="Message">Initializing Spring DispatcherServlet &#39;dispatcherServlet&#39;</td>
+<td class="MethodOfCaller">log</td>
+<td class="FileOfCaller">DirectJDKLog.java</td>
+<td class="LineOfCaller">173</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:34,431</td>
+<td class="Message">Initializing Servlet &#39;dispatcherServlet&#39;</td>
+<td class="MethodOfCaller">initServletBean</td>
+<td class="FileOfCaller">FrameworkServlet.java</td>
+<td class="LineOfCaller">524</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:34,458</td>
+<td class="Message">Completed initialization in 26 ms</td>
+<td class="MethodOfCaller">initServletBean</td>
+<td class="FileOfCaller">FrameworkServlet.java</td>
+<td class="LineOfCaller">546</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:34,596</td>
+<td class="Message">Starting without optional epoll library</td>
+<td class="MethodOfCaller">&lt;clinit&gt;</td>
+<td class="FileOfCaller">EpollProvider.java</td>
+<td class="LineOfCaller">68</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 11:10:34,598</td>
+<td class="Message">Starting without optional kqueue library</td>
+<td class="MethodOfCaller">&lt;clinit&gt;</td>
+<td class="FileOfCaller">KqueueProvider.java</td>
+<td class="LineOfCaller">70</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:49:53,989</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:49:53,999</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:49:54,018</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:49:54,100</td>
+<td class="Message">==&gt;  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:49:54,103</td>
+<td class="Message">==&gt; Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:49:54,111</td>
+<td class="Message">&lt;==      Total: 0</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:49:54,457</td>
+<td class="Message">==&gt;  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:49:54,464</td>
+<td class="Message">==&gt; Parameters: 1238326396007182338(String), 2020-03-13 12:49:54.119(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:49:54,474</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:49:55,783</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTI5OTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.1dumUUiu59PJPFVzyfK-cEfr9vw_XEf7Pxjbc0KYkAI</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:49:55,783</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTI5OTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.1dumUUiu59PJPFVzyfK-cEfr9vw_XEf7Pxjbc0KYkAI</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:49:55,831</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:49:55,831</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:49:55,833</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:49:55,834</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:49:55,837</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:49:55,838</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:49:56,015</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:49:56,138</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTI5OTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.1dumUUiu59PJPFVzyfK-cEfr9vw_XEf7Pxjbc0KYkAI</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:49:56,184</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:49:56,398</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTI5OTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.1dumUUiu59PJPFVzyfK-cEfr9vw_XEf7Pxjbc0KYkAI</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:49:56,457</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTI5OTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.1dumUUiu59PJPFVzyfK-cEfr9vw_XEf7Pxjbc0KYkAI</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:49:56,473</td>
+<td class="Message">--查询规则--&gt;display = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:52:12,133</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTI5OTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.1dumUUiu59PJPFVzyfK-cEfr9vw_XEf7Pxjbc0KYkAI</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:52:12,184</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTI5OTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.1dumUUiu59PJPFVzyfK-cEfr9vw_XEf7Pxjbc0KYkAI</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:52:12,203</td>
+<td class="Message">--查询规则--&gt;enrol_status = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:52:12,204</td>
+<td class="Message">--查询规则--&gt;user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:52:12,265</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTI5OTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.1dumUUiu59PJPFVzyfK-cEfr9vw_XEf7Pxjbc0KYkAI</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:53:04,656</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:53:04,657</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:53:04,660</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:53:04,669</td>
+<td class="Message">==&gt;  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:53:04,670</td>
+<td class="Message">==&gt; Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:53:04,673</td>
+<td class="Message">&lt;==      Total: 0</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:53:04,676</td>
+<td class="Message">==&gt;  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:53:04,678</td>
+<td class="Message">==&gt; Parameters: 1238327193839300609(String), 2020-03-13 12:53:04.674(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:53:04,683</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:05,618</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxODQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.bniwTlPaLXGZwKMfS0fnk6aKKNFx5mgmfjKuL_oj9sE</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:05,633</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxODQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.bniwTlPaLXGZwKMfS0fnk6aKKNFx5mgmfjKuL_oj9sE</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:05,643</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:05,774</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxODQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.bniwTlPaLXGZwKMfS0fnk6aKKNFx5mgmfjKuL_oj9sE</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:05,781</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:05,823</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxODQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.bniwTlPaLXGZwKMfS0fnk6aKKNFx5mgmfjKuL_oj9sE</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:05,955</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxODQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.bniwTlPaLXGZwKMfS0fnk6aKKNFx5mgmfjKuL_oj9sE</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:05,962</td>
+<td class="Message">--查询规则--&gt;display = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:06,008</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxODQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.bniwTlPaLXGZwKMfS0fnk6aKKNFx5mgmfjKuL_oj9sE</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:06,109</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxODQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.bniwTlPaLXGZwKMfS0fnk6aKKNFx5mgmfjKuL_oj9sE</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:06,118</td>
+<td class="Message">--查询规则--&gt;enrol_status = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:06,119</td>
+<td class="Message">--查询规则--&gt;user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:06,231</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxODQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.bniwTlPaLXGZwKMfS0fnk6aKKNFx5mgmfjKuL_oj9sE</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:53:14,762</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:53:14,764</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:53:14,766</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:53:14,772</td>
+<td class="Message">==&gt;  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:53:14,773</td>
+<td class="Message">==&gt; Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:53:14,775</td>
+<td class="Message">&lt;==      Total: 0</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:53:14,777</td>
+<td class="Message">==&gt;  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:53:14,779</td>
+<td class="Message">==&gt; Parameters: 1238327236180799490(String), 2020-03-13 12:53:14.776(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:53:14,782</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:15,578</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxOTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.x1NOkmL3sPtnZxzIt5a6D7qVDu6UC0YxfJlS7T-YbGA</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:15,597</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxOTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.x1NOkmL3sPtnZxzIt5a6D7qVDu6UC0YxfJlS7T-YbGA</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:15,607</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:15,641</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxOTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.x1NOkmL3sPtnZxzIt5a6D7qVDu6UC0YxfJlS7T-YbGA</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:15,648</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:15,689</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxOTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.x1NOkmL3sPtnZxzIt5a6D7qVDu6UC0YxfJlS7T-YbGA</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:15,714</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxOTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.x1NOkmL3sPtnZxzIt5a6D7qVDu6UC0YxfJlS7T-YbGA</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:15,719</td>
+<td class="Message">--查询规则--&gt;display = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:16,648</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxOTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.x1NOkmL3sPtnZxzIt5a6D7qVDu6UC0YxfJlS7T-YbGA</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:16,727</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxOTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.x1NOkmL3sPtnZxzIt5a6D7qVDu6UC0YxfJlS7T-YbGA</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:16,732</td>
+<td class="Message">--查询规则--&gt;enrol_status = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:16,733</td>
+<td class="Message">--查询规则--&gt;user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:53:16,764</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTMxOTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.x1NOkmL3sPtnZxzIt5a6D7qVDu6UC0YxfJlS7T-YbGA</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:58:11,546</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:58:11,547</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:58:11,550</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:58:11,555</td>
+<td class="Message">==&gt;  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:58:11,555</td>
+<td class="Message">==&gt; Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:58:11,558</td>
+<td class="Message">&lt;==      Total: 0</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:58:11,560</td>
+<td class="Message">==&gt;  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:58:11,561</td>
+<td class="Message">==&gt; Parameters: 1238328480999895041(String), 2020-03-13 12:58:11.559(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:58:11,564</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:12,368</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM0OTEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.Wdj5G5wnmmvAoicWDYhlVtTt5Zul-FXeYgF_K9j4KOk</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:12,384</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM0OTEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.Wdj5G5wnmmvAoicWDYhlVtTt5Zul-FXeYgF_K9j4KOk</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:12,390</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:12,427</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM0OTEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.Wdj5G5wnmmvAoicWDYhlVtTt5Zul-FXeYgF_K9j4KOk</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:12,432</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:12,468</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM0OTEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.Wdj5G5wnmmvAoicWDYhlVtTt5Zul-FXeYgF_K9j4KOk</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:12,494</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM0OTEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.Wdj5G5wnmmvAoicWDYhlVtTt5Zul-FXeYgF_K9j4KOk</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:12,498</td>
+<td class="Message">--查询规则--&gt;display = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:12,941</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM0OTEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.Wdj5G5wnmmvAoicWDYhlVtTt5Zul-FXeYgF_K9j4KOk</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:13,022</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM0OTEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.Wdj5G5wnmmvAoicWDYhlVtTt5Zul-FXeYgF_K9j4KOk</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:13,026</td>
+<td class="Message">--查询规则--&gt;enrol_status = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:13,027</td>
+<td class="Message">--查询规则--&gt;user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:13,090</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM0OTEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.Wdj5G5wnmmvAoicWDYhlVtTt5Zul-FXeYgF_K9j4KOk</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:58:34,528</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:58:34,529</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:58:34,532</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:58:34,536</td>
+<td class="Message">==&gt;  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:58:34,537</td>
+<td class="Message">==&gt; Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:58:34,539</td>
+<td class="Message">&lt;==      Total: 0</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:58:34,542</td>
+<td class="Message">==&gt;  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:58:34,543</td>
+<td class="Message">==&gt; Parameters: 1238328577397583873(String), 2020-03-13 12:58:34.541(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 12:58:34,546</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:35,461</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM1MTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8_p4LsQW-zZR5jUR6Km9hIqCzeH1EfLJPonmqw682K4</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:35,475</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM1MTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8_p4LsQW-zZR5jUR6Km9hIqCzeH1EfLJPonmqw682K4</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:35,481</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:35,579</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM1MTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8_p4LsQW-zZR5jUR6Km9hIqCzeH1EfLJPonmqw682K4</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:35,585</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:35,619</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM1MTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8_p4LsQW-zZR5jUR6Km9hIqCzeH1EfLJPonmqw682K4</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:35,642</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM1MTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8_p4LsQW-zZR5jUR6Km9hIqCzeH1EfLJPonmqw682K4</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:35,646</td>
+<td class="Message">--查询规则--&gt;display = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:36,162</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM1MTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8_p4LsQW-zZR5jUR6Km9hIqCzeH1EfLJPonmqw682K4</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:36,222</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM1MTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8_p4LsQW-zZR5jUR6Km9hIqCzeH1EfLJPonmqw682K4</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:36,229</td>
+<td class="Message">--查询规则--&gt;enrol_status = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:36,230</td>
+<td class="Message">--查询规则--&gt;user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 12:58:36,327</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM1MTQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8_p4LsQW-zZR5jUR6Km9hIqCzeH1EfLJPonmqw682K4</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:02:01,339</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:02:01,340</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:02:01,342</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:02:01,346</td>
+<td class="Message">==&gt;  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:02:01,347</td>
+<td class="Message">==&gt; Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:02:01,349</td>
+<td class="Message">&lt;==      Total: 0</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:02:01,351</td>
+<td class="Message">==&gt;  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:02:01,352</td>
+<td class="Message">==&gt; Parameters: 1238329444800622593(String), 2020-03-13 13:02:01.349(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:02:01,355</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:02,289</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3MjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.vL_IPivOkqcOovMbaUgXfVl78Zge_s2xb60loMzf-Gc</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:02,304</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3MjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.vL_IPivOkqcOovMbaUgXfVl78Zge_s2xb60loMzf-Gc</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:02,309</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:02,408</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3MjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.vL_IPivOkqcOovMbaUgXfVl78Zge_s2xb60loMzf-Gc</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:02,418</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:02,459</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3MjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.vL_IPivOkqcOovMbaUgXfVl78Zge_s2xb60loMzf-Gc</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:02,481</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3MjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.vL_IPivOkqcOovMbaUgXfVl78Zge_s2xb60loMzf-Gc</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:02,484</td>
+<td class="Message">--查询规则--&gt;display = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:05,310</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3MjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.vL_IPivOkqcOovMbaUgXfVl78Zge_s2xb60loMzf-Gc</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:05,339</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3MjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.vL_IPivOkqcOovMbaUgXfVl78Zge_s2xb60loMzf-Gc</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:05,345</td>
+<td class="Message">--查询规则--&gt;enrol_status = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:05,346</td>
+<td class="Message">--查询规则--&gt;user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:05,435</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3MjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.vL_IPivOkqcOovMbaUgXfVl78Zge_s2xb60loMzf-Gc</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:02:24,096</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:02:24,097</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:02:24,099</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:02:24,108</td>
+<td class="Message">==&gt;  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:02:24,109</td>
+<td class="Message">==&gt; Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:02:24,111</td>
+<td class="Message">&lt;==      Total: 0</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:02:24,113</td>
+<td class="Message">==&gt;  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:02:24,114</td>
+<td class="Message">==&gt; Parameters: 1238329540258787329(String), 2020-03-13 13:02:24.112(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:02:24,117</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:25,330</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:25,342</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:25,347</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:25,555</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:25,580</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:25,587</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:25,680</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:25,688</td>
+<td class="Message">--查询规则--&gt;enrol_status = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:25,688</td>
+<td class="Message">--查询规则--&gt;user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:25,707</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:25,725</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:25,741</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:25,745</td>
+<td class="Message">--查询规则--&gt;display = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:47,502</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:47,507</td>
+<td class="Message">--查询规则--&gt;user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:49,269</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:49,298</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:49,303</td>
+<td class="Message">--查询规则--&gt;enrol_status = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:49,304</td>
+<td class="Message">--查询规则--&gt;user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:02:49,324</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3NDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.sZ61h-2Emsfn8xWSexe-sH1-4EBETRqx9gwCc5uWO9Q</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:03:12,127</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:03:12,129</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:03:12,131</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:03:12,136</td>
+<td class="Message">==&gt;  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:03:12,137</td>
+<td class="Message">==&gt; Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:03:12,139</td>
+<td class="Message">&lt;==      Total: 0</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:03:12,143</td>
+<td class="Message">==&gt;  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:03:12,145</td>
+<td class="Message">==&gt; Parameters: 1238329741618933762(String), 2020-03-13 13:03:12.141(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:03:12,148</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:13,190</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3OTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.XBLgasQMszFLmxj28T_ddZLLn31K6FzOSwkz3BjL-iM</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:13,250</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3OTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.XBLgasQMszFLmxj28T_ddZLLn31K6FzOSwkz3BjL-iM</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:13,254</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:13,405</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3OTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.XBLgasQMszFLmxj28T_ddZLLn31K6FzOSwkz3BjL-iM</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:13,411</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:13,492</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3OTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.XBLgasQMszFLmxj28T_ddZLLn31K6FzOSwkz3BjL-iM</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:13,535</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3OTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.XBLgasQMszFLmxj28T_ddZLLn31K6FzOSwkz3BjL-iM</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:13,579</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3OTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.XBLgasQMszFLmxj28T_ddZLLn31K6FzOSwkz3BjL-iM</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:13,584</td>
+<td class="Message">--查询规则--&gt;enrol_status = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:13,585</td>
+<td class="Message">--查询规则--&gt;user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:13,597</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3OTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.XBLgasQMszFLmxj28T_ddZLLn31K6FzOSwkz3BjL-iM</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:13,601</td>
+<td class="Message">--查询规则--&gt;display = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:13,662</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM3OTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.XBLgasQMszFLmxj28T_ddZLLn31K6FzOSwkz3BjL-iM</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:03:26,717</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:03:26,719</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:03:26,721</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:03:26,753</td>
+<td class="Message">==&gt;  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:03:26,755</td>
+<td class="Message">==&gt; Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:03:26,756</td>
+<td class="Message">&lt;==      Total: 0</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:03:26,758</td>
+<td class="Message">==&gt;  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:03:26,759</td>
+<td class="Message">==&gt; Parameters: 1238329803040321538(String), 2020-03-13 13:03:26.757(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:03:26,763</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:27,795</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM4MDYsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.CIWOV3BGeKkohh5eLLSSyy-VL8MdgjisCnNd9E_UvGQ</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:27,811</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM4MDYsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.CIWOV3BGeKkohh5eLLSSyy-VL8MdgjisCnNd9E_UvGQ</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:27,816</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:27,854</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM4MDYsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.CIWOV3BGeKkohh5eLLSSyy-VL8MdgjisCnNd9E_UvGQ</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:27,857</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:27,888</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM4MDYsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.CIWOV3BGeKkohh5eLLSSyy-VL8MdgjisCnNd9E_UvGQ</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:27,911</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM4MDYsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.CIWOV3BGeKkohh5eLLSSyy-VL8MdgjisCnNd9E_UvGQ</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:03:27,916</td>
+<td class="Message">--查询规则--&gt;display = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:04:08,075</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:04:08,076</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:04:08,078</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:04:08,097</td>
+<td class="Message">==&gt;  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:04:08,098</td>
+<td class="Message">==&gt; Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:04:08,099</td>
+<td class="Message">&lt;==      Total: 0</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:04:08,100</td>
+<td class="Message">==&gt;  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:04:08,102</td>
+<td class="Message">==&gt; Parameters: 1238329976407683073(String), 2020-03-13 13:04:08.1(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:04:08,117</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:04:09,004</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM4NDgsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.yjPw-M1s-OGHLRDKEQj3xnPYFa1qGM_AAe7r19E4aO0</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:04:09,027</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM4NDgsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.yjPw-M1s-OGHLRDKEQj3xnPYFa1qGM_AAe7r19E4aO0</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:04:09,032</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:04:09,065</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM4NDgsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.yjPw-M1s-OGHLRDKEQj3xnPYFa1qGM_AAe7r19E4aO0</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:04:09,069</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:04:09,100</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM4NDgsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.yjPw-M1s-OGHLRDKEQj3xnPYFa1qGM_AAe7r19E4aO0</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:04:09,127</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM4NDgsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.yjPw-M1s-OGHLRDKEQj3xnPYFa1qGM_AAe7r19E4aO0</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:04:09,138</td>
+<td class="Message">--查询规则--&gt;display = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:06:04,834</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:06:04,835</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:06:04,837</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:06:04,842</td>
+<td class="Message">==&gt;  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:06:04,843</td>
+<td class="Message">==&gt; Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:06:04,844</td>
+<td class="Message">&lt;==      Total: 0</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:06:04,846</td>
+<td class="Message">==&gt;  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:06:04,847</td>
+<td class="Message">==&gt; Parameters: 1238330466054926337(String), 2020-03-13 13:06:04.846(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:06:04,850</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:06:05,910</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM5NjQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.wAy2M-d9xSRK7hb3lQhs0IYeirNsUf5zR_8r4UvKv7o</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:06:05,922</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM5NjQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.wAy2M-d9xSRK7hb3lQhs0IYeirNsUf5zR_8r4UvKv7o</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:06:05,927</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:06:06,017</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM5NjQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.wAy2M-d9xSRK7hb3lQhs0IYeirNsUf5zR_8r4UvKv7o</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:06:06,021</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:06:06,053</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM5NjQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.wAy2M-d9xSRK7hb3lQhs0IYeirNsUf5zR_8r4UvKv7o</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:06:06,075</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTM5NjQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.wAy2M-d9xSRK7hb3lQhs0IYeirNsUf5zR_8r4UvKv7o</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:06:06,079</td>
+<td class="Message">--查询规则--&gt;display = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:07:01,101</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:07:01,102</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:07:01,104</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:07:01,108</td>
+<td class="Message">==&gt;  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:07:01,109</td>
+<td class="Message">==&gt; Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:07:01,110</td>
+<td class="Message">&lt;==      Total: 0</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:07:01,112</td>
+<td class="Message">==&gt;  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:07:01,113</td>
+<td class="Message">==&gt; Parameters: 1238330702043246594(String), 2020-03-13 13:07:01.111(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:07:01,124</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:07:02,108</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQwMjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.FzO8sz0JAPJE-GpUpsUS0UnY9KjwdCSVY04BZdUWgHE</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:07:02,121</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQwMjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.FzO8sz0JAPJE-GpUpsUS0UnY9KjwdCSVY04BZdUWgHE</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:07:02,125</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:07:02,219</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQwMjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.FzO8sz0JAPJE-GpUpsUS0UnY9KjwdCSVY04BZdUWgHE</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:07:02,225</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:07:02,257</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQwMjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.FzO8sz0JAPJE-GpUpsUS0UnY9KjwdCSVY04BZdUWgHE</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:07:02,277</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQwMjEsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.FzO8sz0JAPJE-GpUpsUS0UnY9KjwdCSVY04BZdUWgHE</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:07:02,280</td>
+<td class="Message">--查询规则--&gt;display = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:07:13,331</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:07:13,332</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:07:13,334</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:07:13,338</td>
+<td class="Message">==&gt;  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:07:13,339</td>
+<td class="Message">==&gt; Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:07:13,340</td>
+<td class="Message">&lt;==      Total: 0</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:07:13,342</td>
+<td class="Message">==&gt;  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:07:13,343</td>
+<td class="Message">==&gt; Parameters: 1238330753394110466(String), 2020-03-13 13:07:13.341(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:07:13,346</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:07:14,358</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQwMzMsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.iYlglU72N-Rvv4KzV_EkgY9_gcr5xpKsTZgNBSAxkNE</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:07:14,368</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQwMzMsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.iYlglU72N-Rvv4KzV_EkgY9_gcr5xpKsTZgNBSAxkNE</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:07:14,373</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:07:14,411</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQwMzMsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.iYlglU72N-Rvv4KzV_EkgY9_gcr5xpKsTZgNBSAxkNE</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:07:14,416</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:07:14,492</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQwMzMsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.iYlglU72N-Rvv4KzV_EkgY9_gcr5xpKsTZgNBSAxkNE</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:07:14,512</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQwMzMsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.iYlglU72N-Rvv4KzV_EkgY9_gcr5xpKsTZgNBSAxkNE</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:07:14,516</td>
+<td class="Message">--查询规则--&gt;display = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:16:12,093</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:16:12,094</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:16:12,098</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:16:12,105</td>
+<td class="Message">==&gt;  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:16:12,105</td>
+<td class="Message">==&gt; Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:16:12,107</td>
+<td class="Message">&lt;==      Total: 0</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:16:12,109</td>
+<td class="Message">==&gt;  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:16:12,110</td>
+<td class="Message">==&gt; Parameters: 1238333013050224642(String), 2020-03-13 13:16:12.108(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:16:12,117</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:16:13,054</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQ1NzIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.yHko9UJS7EuXFKc_pPG20JXYz6F-2xqqgTzrlS6Jau4</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:16:13,067</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQ1NzIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.yHko9UJS7EuXFKc_pPG20JXYz6F-2xqqgTzrlS6Jau4</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:16:13,072</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:16:13,171</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQ1NzIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.yHko9UJS7EuXFKc_pPG20JXYz6F-2xqqgTzrlS6Jau4</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:16:13,175</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:16:13,208</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQ1NzIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.yHko9UJS7EuXFKc_pPG20JXYz6F-2xqqgTzrlS6Jau4</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:16:13,229</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQ1NzIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.yHko9UJS7EuXFKc_pPG20JXYz6F-2xqqgTzrlS6Jau4</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:16:13,233</td>
+<td class="Message">--查询规则--&gt;display = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:20:04,355</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:20:04,356</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:20:04,359</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:20:04,363</td>
+<td class="Message">==&gt;  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:20:04,365</td>
+<td class="Message">==&gt; Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:20:04,366</td>
+<td class="Message">&lt;==      Total: 0</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:20:04,368</td>
+<td class="Message">==&gt;  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:20:04,369</td>
+<td class="Message">==&gt; Parameters: 1238333987324129282(String), 2020-03-13 13:20:04.368(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:20:04,373</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:20:05,186</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQ4MDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.R3ClBjeJ7skIUyCUehTfEcXKbJqalLIamUtfS8rdR70</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:20:05,211</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQ4MDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.R3ClBjeJ7skIUyCUehTfEcXKbJqalLIamUtfS8rdR70</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:20:05,215</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:20:05,246</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQ4MDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.R3ClBjeJ7skIUyCUehTfEcXKbJqalLIamUtfS8rdR70</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:20:05,249</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:20:05,279</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQ4MDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.R3ClBjeJ7skIUyCUehTfEcXKbJqalLIamUtfS8rdR70</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:20:05,304</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTQ4MDQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.R3ClBjeJ7skIUyCUehTfEcXKbJqalLIamUtfS8rdR70</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:20:05,309</td>
+<td class="Message">--查询规则--&gt;display = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:25:35,151</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:25:35,153</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:25:35,156</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:25:35,163</td>
+<td class="Message">==&gt;  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:25:35,164</td>
+<td class="Message">==&gt; Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:25:35,166</td>
+<td class="Message">&lt;==      Total: 0</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:25:35,169</td>
+<td class="Message">==&gt;  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:25:35,171</td>
+<td class="Message">==&gt; Parameters: 1238335374799892482(String), 2020-03-13 13:25:35.167(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:25:35,179</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:25:36,117</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUxMzUsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.BugEUmtDOEWAZ1oIHqouUNDwFoxxBHxkTB1HLhCeY-E</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:25:36,130</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUxMzUsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.BugEUmtDOEWAZ1oIHqouUNDwFoxxBHxkTB1HLhCeY-E</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:25:36,137</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:25:36,230</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUxMzUsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.BugEUmtDOEWAZ1oIHqouUNDwFoxxBHxkTB1HLhCeY-E</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:25:36,243</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:25:36,283</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUxMzUsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.BugEUmtDOEWAZ1oIHqouUNDwFoxxBHxkTB1HLhCeY-E</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:25:36,306</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUxMzUsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.BugEUmtDOEWAZ1oIHqouUNDwFoxxBHxkTB1HLhCeY-E</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:25:36,310</td>
+<td class="Message">--查询规则--&gt;display = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:29:12,486</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:29:12,487</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:29:12,489</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:29:12,493</td>
+<td class="Message">==&gt;  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:29:12,494</td>
+<td class="Message">==&gt; Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:29:12,496</td>
+<td class="Message">&lt;==      Total: 0</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:29:12,497</td>
+<td class="Message">==&gt;  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:29:12,498</td>
+<td class="Message">==&gt; Parameters: 1238336286310232065(String), 2020-03-13 13:29:12.496(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:29:12,514</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:13,476</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzNTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.VjcE6yAuespxLbURXRGTwQjykbqz2r4LBdzKdasZDew</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:13,488</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzNTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.VjcE6yAuespxLbURXRGTwQjykbqz2r4LBdzKdasZDew</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:13,493</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:13,578</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzNTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.VjcE6yAuespxLbURXRGTwQjykbqz2r4LBdzKdasZDew</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:13,582</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:13,619</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzNTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.VjcE6yAuespxLbURXRGTwQjykbqz2r4LBdzKdasZDew</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:13,640</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzNTIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.VjcE6yAuespxLbURXRGTwQjykbqz2r4LBdzKdasZDew</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:13,644</td>
+<td class="Message">--查询规则--&gt;display = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:29:42,032</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:29:42,034</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:29:42,036</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:29:42,040</td>
+<td class="Message">==&gt;  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:29:42,041</td>
+<td class="Message">==&gt; Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:29:42,043</td>
+<td class="Message">&lt;==      Total: 0</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:29:42,044</td>
+<td class="Message">==&gt;  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:29:42,045</td>
+<td class="Message">==&gt; Parameters: 1238336410277081090(String), 2020-03-13 13:29:42.043(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:29:42,049</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:43,028</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:43,042</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:43,046</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:43,084</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:43,088</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:43,180</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:43,204</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:43,208</td>
+<td class="Message">--查询规则--&gt;display = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:50,816</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:50,822</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:50,841</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:50,845</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:50,874</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:50,895</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:29:50,899</td>
+<td class="Message">--查询规则--&gt;display = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:40:49,052</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:40:49,086</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:40:49,090</td>
+<td class="Message">--查询规则--&gt;enrol_status = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:40:49,091</td>
+<td class="Message">--查询规则--&gt;user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:40:49,179</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTUzODIsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.8QJLUtH45lcij8mF3n3dFO5A7U6mEIFsujkTLx_z8Qo</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:41:14,116</td>
+<td class="Message">==&gt;  Preparing: select * from sys_user where username = ? and del_flag = &#39;0&#39; </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:41:14,118</td>
+<td class="Message">==&gt; Parameters: cafebabe(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:41:14,125</td>
+<td class="Message">&lt;==      Total: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:41:14,130</td>
+<td class="Message">==&gt;  Preparing: select * from sys_depart where id IN ( select dep_id from sys_user_depart where user_id = ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:41:14,131</td>
+<td class="Message">==&gt; Parameters: o9McX1pC7rP1bl33FFl6y5zkMEuQ(String)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:41:14,133</td>
+<td class="Message">&lt;==      Total: 0</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:41:14,135</td>
+<td class="Message">==&gt;  Preparing: INSERT INTO sys_log ( id, create_time, ip, log_content, log_type ) VALUES ( ?, ?, ?, ?, ? ) </td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug odd">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:41:14,136</td>
+<td class="Message">==&gt; Parameters: 1238339313112936449(String), 2020-03-13 13:41:14.134(Timestamp), 0:0:0:0:0:0:0:1(String), 用户名: cafebabe,登录成功！(String), 1(Integer)</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="debug even">
+<td class="Level">DEBUG</td>
+<td class="Date">2020-03-13 13:41:14,139</td>
+<td class="Message">&lt;==    Updates: 1</td>
+<td class="MethodOfCaller">debug</td>
+<td class="FileOfCaller">BaseJdbcLogger.java</td>
+<td class="LineOfCaller">143</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:41:15,133</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTYwNzQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.LlZXZ68DJV84-6DGVW-KNYtfwiRCQsV816CYqP6l9vc</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:41:15,149</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTYwNzQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.LlZXZ68DJV84-6DGVW-KNYtfwiRCQsV816CYqP6l9vc</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:41:15,153</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:41:15,249</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTYwNzQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.LlZXZ68DJV84-6DGVW-KNYtfwiRCQsV816CYqP6l9vc</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:41:15,254</td>
+<td class="Message">--查询规则--&gt;display_type = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:41:15,292</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTYwNzQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.LlZXZ68DJV84-6DGVW-KNYtfwiRCQsV816CYqP6l9vc</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:41:15,319</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTYwNzQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.LlZXZ68DJV84-6DGVW-KNYtfwiRCQsV816CYqP6l9vc</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:41:15,322</td>
+<td class="Message">--查询规则--&gt;display = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:41:15,808</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTYwNzQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.LlZXZ68DJV84-6DGVW-KNYtfwiRCQsV816CYqP6l9vc</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:41:15,909</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTYwNzQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.LlZXZ68DJV84-6DGVW-KNYtfwiRCQsV816CYqP6l9vc</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:41:15,914</td>
+<td class="Message">--查询规则--&gt;enrol_status = 1</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info even">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:41:15,915</td>
+<td class="Message">--查询规则--&gt;user_opne_id = o9McX1pC7rP1bl33FFl6y5zkMEuQ</td>
+<td class="MethodOfCaller">addEasyQuery</td>
+<td class="FileOfCaller">QueryGenerator.java</td>
+<td class="LineOfCaller">389</td>
+</tr>
+
+<tr class="info odd">
+<td class="Level">INFO</td>
+<td class="Date">2020-03-13 13:41:15,954</td>
+<td class="Message">———校验token是否有效————checkUserTokenIsEffect——————— eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODQwOTYwNzQsInVzZXJuYW1lIjoiY2FmZWJhYmUifQ.LlZXZ68DJV84-6DGVW-KNYtfwiRCQsV816CYqP6l9vc</td>
+<td class="MethodOfCaller">checkUserTokenIsEffect</td>
+<td class="FileOfCaller">ShiroRealm.java</td>
+<td class="LineOfCaller">118</td>
+</tr>

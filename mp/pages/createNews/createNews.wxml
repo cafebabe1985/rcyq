@@ -1,3 +1,6 @@
+<!-- <cu-custom bgColor="bg-white" isBack="{{true}}"><view slot="backText"></view><view slot="content">
+创建快讯
+</view></cu-custom> -->
 <form>
   <view class="cu-form-group">
     <view class="title">标题</view>
@@ -16,7 +19,7 @@
     <view class="text-red" wx:if="{{!validatorRules.author}}">*必填</view>
   </view>
 
-  <wxEditor editorHeight="{{editorHeight}}" placeholder="输入景点详情"  initText="{{form.content}}" bindGetFocus="getEditorFocus" id="editor"
+  <wxEditor editorHeight="{{editorHeight}}" placeholder="输入详情"  initText="{{form.content}}" bindGetFocus="getEditorFocus" id="editor"
   bindGetContents="getContents"
   ></wxEditor>
 

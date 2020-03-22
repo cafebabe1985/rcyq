@@ -1,0 +1,7 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff",
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "儒此有趣",
+  "usingComponents": {}
+}

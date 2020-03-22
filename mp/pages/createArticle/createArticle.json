@@ -1,0 +1,8 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "发布文章",
+  "usingComponents": {
+    "wxEditor": "/pages/component/editor2/wxEditor"
+  }
+}
