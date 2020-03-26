@@ -24,7 +24,9 @@
     "pages/manageEnrolUser/manageEnrolUser",
     "pages/webpage/webpage",
     "pages/myCreateArticle/myCreateArticle",
-    "pages/articleDetail/articleDetail"
+    "pages/articleDetail/articleDetail",
+    "pages/vr/vr",
+    "pages/vr/vrVideo"
   ],
   "window": {
     "backgroundTextStyle": "light",

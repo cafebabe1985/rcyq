@@ -106,6 +106,12 @@
         <text class="text-grey">联系客服</text>
       </navigator>
     </view>
+    <view class=" cu-item arrow">
+     <navigator class="content tab-item cu-item flex-sub " style="padding:0" url="/pages/vr/vrVideo" >
+        <text class="cuIcon-servicefill text-red"></text>
+        <text class="text-grey">VR视频</text>
+      </navigator>
+    </view>
   </view>
   <view class="cu-tabbar-height"></view>
 </scroll-view>

@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
@@ -196,6 +196,19 @@
 					"name": "pages/index/index",
 					"pathName": "pages/index/index",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/vr/vr",
+					"pathName": "pages/vr/vr",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/vr/vrVideo",
+					"pathName": "pages/vr/vrVideo",
 					"scene": null
 				}
 			]

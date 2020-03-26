@@ -309,7 +309,7 @@ wx.navigateTo({
     this.setData({
       swiperList: resSwiperData.result.records,
     })
-    const resScenicData = await Scenic.listScenic(this.data.scenicPageNo, 20, 'createTime', 'desc', 1)
+    const resScenicData = await Scenic.listScenic(this.data.scenicPageNo, 15, 'createTime', 'desc', 1)
     this.data.scenicsBak = resScenicData.result.records
     this.data.finishScenic = false
     // this.setData({

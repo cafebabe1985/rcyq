@@ -34,6 +34,10 @@
 <!--吸顶分页导航-->
 <view class="navbar-wrap" id="fixedViewWrap">
   <view class="bg-white nav flex text-center fixed-nav {{isFixedTop?'fixed':''}}" id="navbar" style="{{isFixedTop?'top:'+CustomBar+'px;':''}}">
+   <!-- <navigator class="tab-item cu-item flex-sub " style="padding:0" url="/pages/vr/vr" >
+      
+      景区VR
+    </navigator> -->
     <view class="tab-item cu-item flex-sub {{0==TabCur?'text-blue cur':''}} " bindtap="tabSelect" data-id="0" >
       <!-- <text class="cuIcon-cascades"></text>  -->
       景区视频

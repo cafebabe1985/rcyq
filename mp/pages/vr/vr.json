@@ -1,0 +1,7 @@
+{
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff",
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "景区VR",
+  "usingComponents": {}
+}
